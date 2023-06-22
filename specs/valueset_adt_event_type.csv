@@ -1,0 +1,6 @@
+﻿concept_id,concept_name,domain_id,vocabulary_id,concept_code
+2000000083,Admission,ADT Event Type,PEDSnet,PEDSnet generated
+2000000084,Discharge,ADT Event Type,PEDSnet,PEDSnet generated
+2000000085,Transfer in,ADT Event Type,PEDSnet,PEDSnet generated
+2000000086,Transfer out,ADT Event Type,PEDSnet,PEDSnet generated
+2000000087,Census,ADT Event Type,PEDSnet,PEDSnet generated

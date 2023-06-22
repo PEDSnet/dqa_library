@@ -1,0 +1,56 @@
+﻿concept_id,concept_name,domain_id,vocabulary_id,concept_code
+8515,Asian,Race,Race,2
+8516,Black or African American,Race,Race,3
+8527,White,Race,Race,5
+8557,Native Hawaiian or Other Pacific Islander,Race,Race,4
+8657,American Indian or Alaska Native,Race,Race,1
+38003572,American Indian,Race,Race,1.01
+38003573,Alaska Native,Race,Race,1.02
+38003574,Asian Indian,Race,Race,2.01
+38003575,Bangladeshi,Race,Race,2.02
+38003576,Bhutanese,Race,Race,2.03
+38003577,Burmese,Race,Race,2.04
+38003578,Cambodian,Race,Race,2.05
+38003579,Chinese,Race,Race,2.06
+38003580,Taiwanese,Race,Race,2.07
+38003581,Filipino,Race,Race,2.08
+38003582,Hmong,Race,Race,2.09
+38003583,Indonesian,Race,Race,2.1
+38003584,Japanese,Race,Race,2.11
+38003585,Korean,Race,Race,2.12
+38003586,Laotian,Race,Race,2.13
+38003587,Malaysian,Race,Race,2.14
+38003588,Okinawan,Race,Race,2.15
+38003589,Pakistani,Race,Race,2.16
+38003590,Sri Lankan,Race,Race,2.17
+38003591,Thai,Race,Race,2.18
+38003592,Vietnamese,Race,Race,2.19
+38003593,Iwo Jiman,Race,Race,2.2
+38003594,Maldivian,Race,Race,2.21
+38003595,Nepalese,Race,Race,2.22
+38003596,Singaporean,Race,Race,2.23
+38003597,Madagascar,Race,Race,2.24
+38003598,Black,Race,Race,3.01
+38003599,African American,Race,Race,3.02
+38003600,African,Race,Race,3.03
+38003601,Bahamian,Race,Race,3.04
+38003602,Barbadian,Race,Race,3.05
+38003603,Dominican,Race,Race,3.06
+38003604,Dominica Islander,Race,Race,3.07
+38003605,Haitian,Race,Race,3.08
+38003606,Jamaican,Race,Race,3.09
+38003607,Tobagoan,Race,Race,3.1
+38003608,Trinidadian,Race,Race,3.11
+38003609,West Indian,Race,Race,3.12
+38003610,Polynesian,Race,Race,4.01
+38003611,Micronesian,Race,Race,4.02
+38003612,Melanesian,Race,Race,4.03
+38003613,Other Pacific Islander,Race,Race,4.04
+38003614,European,Race,Race,5.01
+38003615,Middle Eastern or North African,Race,Race,5.02
+38003616,Arab,Race,Race,5.03
+44814649,Other,Observation,PCORNet,Generic-OT
+44814650,No information,Observation,PCORNet,Generic-NI
+44814653,Unknown,Observation,PCORNet,Generic-UN
+44814659,Multiple race,Observation,PCORNet,Race-06
+44814660,Refuse to answer,Observation,PCORNet,Race-07

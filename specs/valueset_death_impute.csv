@@ -1,0 +1,6 @@
+﻿concept_id,concept_name,domain_id,vocabulary_id,concept_code
+2000000034,Both month and day imputed,Metadata,PEDSnet,B
+2000000035,Day imputed,Metadata,PEDSnet,D
+2000000036,Month imputed ,Metadata,PEDSnet,M
+2000000037,Not imputed,Metadata,PEDSnet,N
+2000000038,Full Date Imputed,Metadata,PEDSnet,FD

@@ -1,0 +1,17 @@
+concept_id,concept_code,concept_name,vocabulary_id
+2002907,47,Appendectomy,ICD9Proc
+2002908,47.01,Laparoscopic appendectomy,ICD9Proc
+2002909,47.09,Other appendectomy,ICD9Proc
+2002910,47.1,Incidental appendectomy,ICD9Proc
+2002911,47.11,Laparoscopic incidental appendectomy,ICD9Proc
+2002922,47.19,Other incidental appendectomy,ICD9Proc
+2753382,0DTJ0ZZ,"Resection of Appendix, Open Approach",ICD10PCS
+2753383,0DTJ4ZZ,"Resection of Appendix, Percutaneous Endoscopic Approach",ICD10PCS
+2753384,0DTJ7ZZ,"Resection of Appendix, Via Natural or Artificial Opening",ICD10PCS
+2753385,0DTJ8ZZ,"Resection of Appendix, Via Natural or Artificial Opening Endoscopic",ICD10PCS
+2109141,44950,Appendectomy,CPT4
+2109142,44955,Appendectomy; when done for indicated purpose at time of other major procedure (not as separate procedure) (List separately in addition to code for primary procedure),CPT4
+2109143,44960,Appendectomy; for ruptured appendix with abscess or generalized peritonitis,CPT4
+2109144,44970,"Laparoscopy, surgical, appendectomy",CPT4
+45888248,1014622,Appendectomy,CPT4
+2722210,56315,"Laparoscopy, surgical; appendectomy (Deprecated)",CPT4

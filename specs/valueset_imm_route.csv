@@ -1,0 +1,334 @@
+﻿concept_id,concept_name,domain_id,vocabulary_id,concept_code
+703330,Intraglandular,Route,SNOMED,3.82332E+16
+762840,Arteriovenous graft route,Route,SNOMED,4.32671E+14
+3194207,Topical route,Route,Nebraska Lexicon,6064005
+3260615,Extracorporeal route,Route,Nebraska Lexicon,714743009
+3268575,Intrabiliary route,Route,Nebraska Lexicon,404819002
+3291800,Intravitreal route,Route,Nebraska Lexicon,418401004
+3321811,Transtympanic route,Route,Nebraska Lexicon,447227007
+3352259,Peribulbar route,Route,Nebraska Lexicon,418722009
+3353173,Route of administration values,Route,Nebraska Lexicon,284009009
+3358045,Intrabursal route,Route,Nebraska Lexicon,372459003
+3426621,Intrauterine route,Route,Nebraska Lexicon,62226000
+3427133,Buccal route,Route,Nebraska Lexicon,54471007
+3427177,Subtendinous route,Route,Nebraska Lexicon,419320008
+3427636,Arteriovenous graft route,Route,Nebraska Lexicon,4.32671E+14
+3428189,Intralymphatic route,Route,Nebraska Lexicon,372467006
+3428307,Endotracheopulmonary route,Route,Nebraska Lexicon,372452007
+3428386,Intracoronal route,Route,Nebraska Lexicon,418287000
+3428575,Epidural route,Route,Nebraska Lexicon,404820008
+3428624,Intracerebral route,Route,Nebraska Lexicon,446540005
+3428733,Orogastric route,Route,Nebraska Lexicon,418441008
+3428815,Ophthalmic route,Route,Nebraska Lexicon,54485002
+3428818,Gastroenteral route,Route,Nebraska Lexicon,372454008
+3429189,Intracutaneous route,Route,Nebraska Lexicon,372464004
+3429328,Intraesophageal route,Route,Nebraska Lexicon,445752009
+3429423,Sublesional route,Route,Nebraska Lexicon,1.611E+12
+3429728,Infiltration route,Route,Nebraska Lexicon,718329006
+3430479,Periarticular route,Route,Nebraska Lexicon,372474001
+3430538,Intradiscal route,Route,Nebraska Lexicon,372465003
+3430552,Intraprostatic route,Route,Nebraska Lexicon,419810008
+3430631,Intrathoracic route,Route,Nebraska Lexicon,417950001
+3431013,Intravenous central route,Route,Nebraska Lexicon,418114005
+3432045,Intratendinous route,Route,Nebraska Lexicon,418586008
+3432638,Intralingual route,Route,Nebraska Lexicon,445913005
+3433980,Intracolonic route,Route,Nebraska Lexicon,448492006
+3434214,Intraluminal route,Route,Nebraska Lexicon,37737002
+3435195,Intracavitary route,Route,Nebraska Lexicon,420254004
+3435395,Dental route,Route,Nebraska Lexicon,372449004
+3435485,Nasogastric route,Route,Nebraska Lexicon,127492001
+3435507,Urethral route,Route,Nebraska Lexicon,90028008
+3436332,Transurethral route,Route,Nebraska Lexicon,418511008
+3436543,Intracardial route,Route,Nebraska Lexicon,372460008
+3437154,Intravesical route,Route,Nebraska Lexicon,372471009
+3437316,Intraduodenal route,Route,Nebraska Lexicon,418887008
+3437732,Intraperitoneal route,Route,Nebraska Lexicon,38239002
+3438117,Transcervical route,Route,Nebraska Lexicon,419243002
+3438405,Peritendinous route,Route,Nebraska Lexicon,419762003
+3438945,Intrasternal route,Route,Nebraska Lexicon,372470005
+3439359,Intracavernous route,Route,Nebraska Lexicon,372461007
+3439751,Intramuscular route,Route,Nebraska Lexicon,78421000
+3439820,Intrapericardial route,Route,Nebraska Lexicon,445771006
+3440150,Extracorporeal haemodialysis route,Route,Nebraska Lexicon,766790006
+3440180,Intrathecal route,Route,Nebraska Lexicon,72607000
+3440344,Intracoronary route,Route,Nebraska Lexicon,372463005
+3440358,Intracorpus cavernosum route,Route,Nebraska Lexicon,445769006
+3440359,Jejunostomy route,Route,Nebraska Lexicon,127491008
+3440402,Intracisternal route,Route,Nebraska Lexicon,418892005
+3441064,Intraneural route,Route,Nebraska Lexicon,711360002
+3441279,Digestive tract route,Route,Nebraska Lexicon,447964005
+3441425,Intrameningeal route,Route,Nebraska Lexicon,445767008
+3441539,Intrahepatic route,Route,Nebraska Lexicon,445941009
+3442124,Intravenous peripheral route,Route,Nebraska Lexicon,419993007
+3442301,Intracartilaginous route,Route,Nebraska Lexicon,418331006
+3442315,Intrapleural route,Route,Nebraska Lexicon,372469009
+3442508,Intratympanic route,Route,Nebraska Lexicon,418091004
+3442749,Transtracheal route,Route,Nebraska Lexicon,447229005
+3443306,Mucous fistula route,Route,Nebraska Lexicon,420204005
+3443353,Nasal route,Route,Nebraska Lexicon,46713006
+3444385,Transendocardial route,Route,Nebraska Lexicon,446435000
+3445842,Intratumour route,Route,Nebraska Lexicon,447122006
+3446120,Intradural route,Route,Nebraska Lexicon,445756007
+3446145,Intragastric route,Route,Nebraska Lexicon,445768003
+3446521,Intraepidermal route,Route,Nebraska Lexicon,448077001
+3446601,Ureteral route,Route,Nebraska Lexicon,419684008
+3447496,Intrasinal route,Route,Nebraska Lexicon,419231003
+3447607,Paravertebral route,Route,Nebraska Lexicon,419165009
+3447997,Intrapulmonary route,Route,Nebraska Lexicon,420201002
+3448005,Arteriovenous fistula route,Route,Nebraska Lexicon,697971008
+3448783,Gastrostomy route,Route,Nebraska Lexicon,127490009
+3449595,Intravenous route,Route,Nebraska Lexicon,47625008
+3449921,Intramedullary route,Route,Nebraska Lexicon,60213007
+3449965,Suborbital route,Route,Nebraska Lexicon,416174007
+3450349,Subgingival route,Route,Nebraska Lexicon,419601003
+3450363,Surgical cavity route,Route,Nebraska Lexicon,419894000
+3450902,Subdermal route,Route,Nebraska Lexicon,34206005
+3451228,Intraabdominal route,Route,Nebraska Lexicon,419396008
+3451385,Intraocular route,Route,Nebraska Lexicon,372468001
+3452207,Intrajejunal route,Route,Nebraska Lexicon,448491004
+3452632,Endosinusial route,Route,Nebraska Lexicon,372451000
+3453163,Periosteal route,Route,Nebraska Lexicon,420047004
+3453685,Rectal route,Route,Nebraska Lexicon,37161004
+3453895,Intraspinal route,Route,Nebraska Lexicon,418418000
+3453908,Percutaneous route,Route,Nebraska Lexicon,428191002
+3454961,Fistula route,Route,Nebraska Lexicon,418743005
+3455518,Intratesticular route,Route,Nebraska Lexicon,418947002
+3456483,Peridural route,Route,Nebraska Lexicon,447080003
+3456547,Laryngeal route,Route,Nebraska Lexicon,420185003
+3457124,Conjunctival route,Route,Nebraska Lexicon,446105004
+3457617,Intracranial route,Route,Nebraska Lexicon,418987007
+3458278,Oesophagostomy route,Route,Nebraska Lexicon,420163009
+3458517,Periodontal route,Route,Nebraska Lexicon,447052000
+3459070,Ileostomy route,Route,Nebraska Lexicon,419954003
+3459214,Intrabronchial route,Route,Nebraska Lexicon,419778001
+3459494,Submucosal route,Route,Nebraska Lexicon,419874009
+3459499,Intra-arterial route,Route,Nebraska Lexicon,58100008
+3459856,Intracerebroventricular route,Route,Nebraska Lexicon,420719007
+3460124,Oromucosal route,Route,Nebraska Lexicon,372473007
+3460529,Intraileal route,Route,Nebraska Lexicon,447026006
+3462017,Gastro-intestinal stoma route,Route,Nebraska Lexicon,418136008
+3462478,Urostomy route,Route,Nebraska Lexicon,420168000
+3462504,Intraductal route,Route,Nebraska Lexicon,417989007
+3462514,Enteral route,Route,Nebraska Lexicon,417985001
+3462554,Intracorneal route,Route,Nebraska Lexicon,418608002
+3462848,Oropharyngeal route,Route,Nebraska Lexicon,418664002
+3463531,Intravascular route,Route,Nebraska Lexicon,445755006
+3463760,Perineural route,Route,Nebraska Lexicon,372475000
+3464050,Interstitial route,Route,Nebraska Lexicon,429817007
+3464305,Epilesional route,Route,Nebraska Lexicon,764723001
+3464397,Gingival route,Route,Nebraska Lexicon,372457001
+3465130,Intraepicardial route,Route,Nebraska Lexicon,446407004
+3465607,Endocervical route,Route,Nebraska Lexicon,372450004
+3465709,Intramammary route,Route,Nebraska Lexicon,447121004
+3466218,Periurethral route,Route,Nebraska Lexicon,418204005
+3466984,Per oral route,Route,Nebraska Lexicon,26643006
+3467301,Sublingual route,Route,Nebraska Lexicon,37839007
+3468796,Auricular route,Route,Nebraska Lexicon,10547007
+3468862,Intra-articular route,Route,Nebraska Lexicon,12130007
+3468894,Intra-osseous route,Route,Nebraska Lexicon,417255000
+3468965,Cutaneous route,Route,Nebraska Lexicon,448598008
+3469509,Tumour cavity route,Route,Nebraska Lexicon,419021003
+3469966,Intraventricular route - cardiac,Route,Nebraska Lexicon,420287000
+3470379,Nasojejunal route,Route,Nebraska Lexicon,418730005
+3470407,Retrobulbar route,Route,Nebraska Lexicon,418321004
+3470666,Caudal route,Route,Nebraska Lexicon,417070009
+3470731,Intralesional route,Route,Nebraska Lexicon,372466002
+3470815,Intramyometrial route,Route,Nebraska Lexicon,418133000
+3470961,Inhalation route,Route,Nebraska Lexicon,447694001
+3470987,Transmucosal route,Route,Nebraska Lexicon,404815008
+3471060,Lower respiratory tract route,Route,Nebraska Lexicon,447081004
+3471240,Intrasynovial route,Route,Nebraska Lexicon,418877009
+3471951,Vaginal route,Route,Nebraska Lexicon,16857009
+3472532,Transdermal route,Route,Nebraska Lexicon,45890007
+3472734,Transplacental route,Route,Nebraska Lexicon,446442000
+3473135,Nasoduodenal route,Route,Nebraska Lexicon,420218003
+3473194,Surgical drain route,Route,Nebraska Lexicon,418813001
+3473265,Colostomy route,Route,Nebraska Lexicon,418162004
+3473360,Intraamniotic route,Route,Nebraska Lexicon,372458006
+3473689,Subconjunctival route,Route,Nebraska Lexicon,372476004
+3473897,Intramural route,Route,Nebraska Lexicon,711378007
+3475030,Intraovarian route,Route,Nebraska Lexicon,419631009
+3475265,Paracervical route,Route,Nebraska Lexicon,418851001
+3475463,Intratracheal route,Route,Nebraska Lexicon,404818005
+3475873,Intracameral route,Route,Nebraska Lexicon,418821007
+3476279,Extra-amniotic route,Route,Nebraska Lexicon,372453002
+3477280,Intragingival route,Route,Nebraska Lexicon,445754005
+4006860,Intraarticular,Route,SNOMED,12130007
+4023156,Auricular,Route,SNOMED,10547007
+4057765,Vaginal,Route,SNOMED,16857009
+4106215,Route of administration value,Route,SNOMED,284009009
+4132161,Oral,Route,SNOMED,26643006
+4132254,Gastrostomy route,Route,SNOMED,127490009
+4132711,Nasogastric route,Route,SNOMED,127492001
+4133177,Jejunostomy route,Route,SNOMED,127491008
+4142048,Subcutaneous,Route,SNOMED,34206005
+4156704,Gingival,Route,SNOMED,372457001
+4156705,Intracardiac,Route,SNOMED,372460008
+4156706,Intradermal,Route,SNOMED,372464004
+4156707,Intrapleural,Route,SNOMED,372469009
+4156708,Periarticular,Route,SNOMED,372474001
+4157756,Endosinusial,Route,SNOMED,372451000
+4157757,Intracavernous,Route,SNOMED,372461007
+4157758,Intralesional,Route,SNOMED,372466002
+4157759,Intralymphatic,Route,SNOMED,372467006
+4157760,Intraocular,Route,SNOMED,372468001
+4157761,Perineural,Route,SNOMED,372475000
+4163765,Dental,Route,SNOMED,372449004
+4163767,Intraamniotic,Route,SNOMED,372458006
+4163768,Intrabursal,Route,SNOMED,372459003
+4163769,Intradiscal,Route,SNOMED,372465003
+4163770,Subconjunctival,Route,SNOMED,372476004
+4166865,Suborbital route,Route,SNOMED,416174007
+4167393,Intrathoracic route,Route,SNOMED,417950001
+4167540,Enteral route,Route,SNOMED,417985001
+4168038,Intramyometrial route,Route,SNOMED,418133000
+4168047,Colostomy route,Route,SNOMED,418162004
+4168656,Intratympanic route,Route,SNOMED,418091004
+4168665,Gastro-intestinal stoma route,Route,SNOMED,418136008
+4169270,Intrapulmonary route,Route,SNOMED,420201002
+4169440,Intrasinal route,Route,SNOMED,419231003
+4169472,Tumor cavity route,Route,SNOMED,419021003
+4169634,Submucosal route,Route,SNOMED,419874009
+4170083,Intraductal route,Route,SNOMED,417989007
+4170113,Intravenous central route,Route,SNOMED,418114005
+4170267,Paravertebral route,Route,SNOMED,419165009
+4170435,Urostomy route,Route,SNOMED,420168000
+4170440,Laryngeal route,Route,SNOMED,420185003
+4170771,Surgical cavity route,Route,SNOMED,419894000
+4171047,Intravenous,Route,SNOMED,47625008
+4171067,Intratesticular route,Route,SNOMED,418947002
+4171079,Intracranial route,Route,SNOMED,418987007
+4171243,Mucous fistula route,Route,SNOMED,420204005
+4171725,Intraprostatic route,Route,SNOMED,419810008
+4171884,Intravenous peripheral route,Route,SNOMED,419993007
+4171893,Periosteal route,Route,SNOMED,420047004
+4172191,Esophagostomy route,Route,SNOMED,420163009
+4172316,Nasoduodenal route,Route,SNOMED,420218003
+4177987,Percutaneous route,Route,SNOMED,428191002
+4181897,Buccal,Route,SNOMED,54471007
+4184451,Ocular,Route,SNOMED,54485002
+4186831,Endocervical,Route,SNOMED,372450004
+4186832,Endotracheopulmonary,Route,SNOMED,372452007
+4186833,Extraamniotic,Route,SNOMED,372453002
+4186834,Gastroenteral,Route,SNOMED,372454008
+4186836,Intracoronary,Route,SNOMED,372463005
+4186837,Intrasternal,Route,SNOMED,372470005
+4186838,Intravesical,Route,SNOMED,372471009
+4186839,Oromucosal,Route,SNOMED,372473007
+4213522,Intraosseous,Route,SNOMED,417255000
+4217202,Intrathecal,Route,SNOMED,72607000
+4220455,Caudal route,Route,SNOMED,417070009
+4222254,Body cavity use,Route,SNOMED,420254004
+4222259,Intraventricular cardiac,Route,SNOMED,420287000
+4223965,Intrabiliary route,Route,SNOMED,404819002
+4224886,Intracerebroventricular,Route,SNOMED,420719007
+4225555,Epidural,Route,SNOMED,404820008
+4229543,Intratracheal route,Route,SNOMED,404818005
+4232601,Transmucosal route,Route,SNOMED,404815008
+4233974,Urethral,Route,SNOMED,90028008
+4240824,Intraarterial,Route,SNOMED,58100008
+4243022,Intraperitoneal,Route,SNOMED,38239002
+4246511,Intramedullary route,Route,SNOMED,60213007
+4262099,Transdermal,Route,SNOMED,45890007
+4262914,Nasal,Route,SNOMED,46713006
+4263689,Topical route,Route,SNOMED,6064005
+4269621,Intrauterine,Route,SNOMED,62226000
+4290759,Rectal,Route,SNOMED,37161004
+4292110,Sublingual,Route,SNOMED,37839007
+4292410,Intraluminal route,Route,SNOMED,37737002
+4302352,Intrasynovial route,Route,SNOMED,418877009
+4302354,Intraduodenal route,Route,SNOMED,418887008
+4302493,Subtendinous route,Route,SNOMED,419320008
+4302612,Intramuscular,Route,SNOMED,78421000
+4302785,Intravitreal,Route,SNOMED,418401004
+4302788,Intraspinal route,Route,SNOMED,418418000
+4303263,Intrabronchial route,Route,SNOMED,419778001
+4303277,Oropharyngeal route,Route,SNOMED,418664002
+4303409,Intracameral,Route,SNOMED,418821007
+4303515,Paracervical route,Route,SNOMED,418851001
+4303646,Periurethral route,Route,SNOMED,418204005
+4303667,Intracoronal route,Route,SNOMED,418287000
+4303673,Retrobulbar route,Route,SNOMED,418321004
+4303676,Intracartilaginous route,Route,SNOMED,418331006
+4303795,Orogastric route,Route,SNOMED,418441008
+4303939,Intratendinous route,Route,SNOMED,418586008
+4304274,Peribulbar route,Route,SNOMED,418722009
+4304277,Fistula route,Route,SNOMED,418743005
+4304412,Surgical drain route,Route,SNOMED,418813001
+4304571,Ureteral route,Route,SNOMED,419684008
+4304730,Transcervical route,Route,SNOMED,419243002
+4304882,Intraabdominal route,Route,SNOMED,419396008
+4305382,Transurethral route,Route,SNOMED,418511008
+4305564,Peritendinous route,Route,SNOMED,419762003
+4305679,Ileostomy route,Route,SNOMED,419954003
+4305690,Intracorneal route,Route,SNOMED,418608002
+4305834,Nasojejunal route,Route,SNOMED,418730005
+4305993,Intracisternal route,Route,SNOMED,418892005
+4306649,Subgingival route,Route,SNOMED,419601003
+4306657,Intraovarian route,Route,SNOMED,419631009
+4327128,Interstitial route,Route,SNOMED,429817007
+35608078,Epilesional route,Route,SNOMED,764723001
+35608653,Subdermal route,Route,SNOMED,1.03641E+16
+35611042,Periosseous route,Route,SNOMED,1.14789E+16
+35611043,Translingual route,Route,SNOMED,1.1479E+16
+35615950,Intracavernosal route,Route,SNOMED,2.7648E+15
+35616193,Genito-urinary route,Route,SNOMED,3.3069E+15
+35616224,Pericardial route,Route,SNOMED,3.323E+15
+35624178,Extracorporeal hemodialysis route,Route,SNOMED,766790006
+35627166,Haemodiafiltration,Route,SNOMED,9.1914E+15
+35627167,Percutaneous,Route,SNOMED,9.1915E+15
+35631981,Line lock,Route,SNOMED,9.907E+15
+36703536,Subretinal,Route,SNOMED,3.37707E+16
+37018288,Extracorporeal route,Route,SNOMED,714743009
+37103746,Intestinal use,Route,SNOMED,3.47775E+16
+37207459,Intestinal route,Route,SNOMED,5.8731E+13
+37207460,Intraglandular route,Route,SNOMED,5.8751E+13
+37207461,Intracholangiopancreatic route,Route,SNOMED,5.8761E+13
+37207462,Intraportal route,Route,SNOMED,5.8771E+13
+37207463,Peritumoral route,Route,SNOMED,5.8811E+13
+37207464,Posterior juxtascleral route,Route,SNOMED,5.8821E+13
+37207465,Subretinal route,Route,SNOMED,5.8831E+13
+37397638,Infiltration route,Route,SNOMED,718329006
+40486069,Respiratory tract route,Route,SNOMED,447694001
+40486444,Conjunctival route,Route,SNOMED,446105004
+40487473,Intraepicardial route,Route,SNOMED,446407004
+40487501,Digestive tract route,Route,SNOMED,447964005
+40487850,Transendocardial route,Route,SNOMED,446435000
+40487858,Transplacental route,Route,SNOMED,446442000
+40487983,Intraepidermal,Route,SNOMED,448077001
+40488317,Intracerebral route,Route,SNOMED,446540005
+40489989,Intrajejunal route,Route,SNOMED,448491004
+40489990,Intracolonic route,Route,SNOMED,448492006
+40490507,Cutaneous route,Route,SNOMED,448598008
+40490837,Intraileal route,Route,SNOMED,447026006
+40490866,Periodontal route,Route,SNOMED,447052000
+40490896,Peridural route,Route,SNOMED,447080003
+40490898,Lower respiratory tract route,Route,SNOMED,447081004
+40491321,Intramammary route,Route,SNOMED,447121004
+40491322,Intratumoral,Route,SNOMED,447122006
+40491830,Transtympanic route,Route,SNOMED,447227007
+40491832,Transtracheal route,Route,SNOMED,447229005
+40492284,Intraesophageal route,Route,SNOMED,445752009
+40492286,Intragingival route,Route,SNOMED,445754005
+40492287,Intravascular route,Route,SNOMED,445755006
+40492288,Intradural route,Route,SNOMED,445756007
+40492300,Intrameningeal route,Route,SNOMED,445767008
+40492301,Intragastric route,Route,SNOMED,445768003
+40492302,Intracorpus cavernosum route,Route,SNOMED,445769006
+40492305,Intrapericardial route,Route,SNOMED,445771006
+40493227,Intralingual route,Route,SNOMED,445913005
+40493258,Intrahepatic route,Route,SNOMED,445941009
+44783786,Arteriovenous fistula route,Route,SNOMED,697971008
+44801748,Haemodiafiltration route,Route,SNOMED,3.34251E+14
+45956871,Haemodialysis,Route,SNOMED,1.86829E+16
+45956872,Intracervical,Route,SNOMED,1.95372E+16
+45956874,Inhalation,Route,SNOMED,1.8679E+16
+45956875,Route of administration not applicable,Route,SNOMED,3.59401E+15
+45956877,Haemofiltration,Route,SNOMED,1.03342E+16
+45956878,Submucosal rectal,Route,SNOMED,1.15642E+16
+45956879,Regional perfusion,Route,SNOMED,1.15643E+16
+45956880,Epilesional,Route,SNOMED,1.82467E+16
+45956881,Iontophoresis,Route,SNOMED,2.18568E+16
+46270168,Sublesional route,Route,SNOMED,1.611E+12
+46272911,Intraneural route,Route,SNOMED,711360002
+46272926,Intramural route,Route,SNOMED,711378007

@@ -1,0 +1,81 @@
+﻿concept_id,concept_name,concept_code,vocabulary_id
+317009,Asthma,195967001,SNOMED
+37109103,Oral steroid-dependent asthma,1.6585E+16,SNOMED
+4155469,Moderate asthma,370219009,SNOMED
+42539549,Uncomplicated allergic asthma,735588005,SNOMED
+44810117,Chronic asthma with fixed airflow obstruction,8.66881E+14,SNOMED
+45769441,Acute exacerbation of allergic asthma,708093000,SNOMED
+46269784,Moderate persistent allergic asthma,1.06764E+16,SNOMED
+4051466,Childhood asthma,233678006,SNOMED
+45769438,Status asthmaticus,708090002,SNOMED
+42536649,Uncomplicated non-allergic asthma,735589002,SNOMED
+4142738,Moderate persistent asthma,427295004,SNOMED
+4022592,Millers asthma',11641008,SNOMED
+46274062,Asthma-chronic obstructive pulmonary disease overlap syndrome,1.06928E+16,SNOMED
+256448,Chronic asthmatic bronchitis,195949008,SNOMED
+4312524,Substance induced asthma,424199006,SNOMED
+45768910,Uncomplicated asthma,707444001,SNOMED
+45769352,Acute severe exacerbation of mild persistent asthma,707981009,SNOMED
+45772073,Asthma in mother complicating childbirth,1.07421E+16,SNOMED
+45768963,Uncomplicated mild persistent asthma,707511009,SNOMED
+4125022,Acute asthma,304527002,SNOMED
+4244339,Drug-induced asthma,93432008,SNOMED
+4232595,Platinum asthma,404804003,SNOMED
+37108581,Severe uncontrolled persistent asthma,1.06758E+16,SNOMED
+4155470,Occasional asthma,370220003,SNOMED
+4250128,Aspirin-induced asthma,407674008,SNOMED
+4143474,Bakers asthma',34015007,SNOMED
+45769351,Acute severe exacerbation of moderate persistent asthma,707980005,SNOMED
+46270029,Mild persistent asthma co-occurrent with allergic rhinitis,1.25011E+14,SNOMED
+252658,Intrinsic asthma without status asthmaticus,12428000,SNOMED
+4075237,Brittle asthma,225057002,SNOMED
+4245292,Weavers cough',59786004,SNOMED
+46273635,Steroid dependent asthma,2.36E+15,SNOMED
+42535716,Asthma in pregnancy,7.2301E+13,SNOMED
+4080516,Printers asthma',18041002,SNOMED
+4119298,Late onset asthma,233679003,SNOMED
+4057952,Meat-wrappers asthma',19849005,SNOMED
+4145497,Intrinsic asthma,266361008,SNOMED
+4138760,Exacerbation of intermittent asthma,425969006,SNOMED
+46274124,Acute severe exacerbation of mild persistent allergic asthma,1.06759E+16,SNOMED
+46269771,Acute severe exacerbation of severe persistent asthma co-occurrent with allergic rhinitis,1.06756E+16,SNOMED
+4212099,Occupational asthma,57607007,SNOMED
+45768965,Uncomplicated severe persistent asthma,707513007,SNOMED
+46269777,Acute severe exacerbation of mild persistent allergic asthma co-occurrent with allergic rhinitis,1.0676E+16,SNOMED
+46269767,Acute severe exacerbation of asthma co-occurrent with allergic rhinitis,1.06747E+16,SNOMED
+46269770,Severe persistent allergic asthma,1.06754E+16,SNOMED
+4309833,Non-IgE mediated allergic asthma,423889005,SNOMED
+45769350,Acute severe exacerbation of severe persistent asthma,707979007,SNOMED
+46273452,Acute exacerbation of asthma co-occurrent with allergic rhinitis,9.9031E+13,SNOMED
+4225554,Isocyanate induced asthma,404808000,SNOMED
+45771045,Acute exacerbation of asthma,708038006,SNOMED
+46269802,Chronic obstructive asthma co-occurrent with acute exacerbation of asthma,1.06927E+16,SNOMED
+42538744,Exacerbation of allergic asthma,762521001,SNOMED
+46273487,Acute exacerbation of moderate persistent asthma,1.35171E+14,SNOMED
+46270322,Intermittent asthma uncontrolled,1.741E+12,SNOMED
+764949,"Persistent asthma, well controlled",9.01E+11,SNOMED
+4145356,Severe persistent asthma,426656000,SNOMED
+257581,Exacerbation of asthma,281239006,SNOMED
+37108580,Severe controlled persistent asthma,1.06754E+16,SNOMED
+4155468,Mild asthma,370218001,SNOMED
+42690582,Moderate acute exacerbation of asthma,1.06481E+15,SNOMED
+46269801,Aspirin exacerbated respiratory disease,1.06927E+16,SNOMED
+4311814,Byssinosis,85761009,SNOMED
+4120261,Sulfite-induced asthma,233688007,SNOMED
+46270030,Intermittent asthma co-occurrent with allergic rhinitis,1.25021E+14,SNOMED
+4152913,Severe asthma,370221004,SNOMED
+312950,IgE-mediated allergic asthma,424643009,SNOMED
+4143828,Mild persistent asthma,426979002,SNOMED
+313236,Cough variant asthma,409663006,SNOMED
+46270082,Acute exacerbation of mild persistent asthma,1.35181E+14,SNOMED
+761844,Inhaled steroid-dependent asthma,1.60553E+16,SNOMED
+4191479,Allergic asthma,389145006,SNOMED
+46270028,Severe persistent asthma co-occurrent with allergic rhinitis,1.24991E+14,SNOMED
+4147509,Allergic-infective asthma,30352005,SNOMED
+45766727,Allergic asthma due to Dermatophagoides pteronyssinus,703953004,SNOMED
+40481763,Acute exacerbation of chronic asthmatic bronchitis,442025000,SNOMED
+45768912,Exacerbation of severe persistent asthma,707447008,SNOMED
+764677,Persistent asthma,5.281E+12,SNOMED
+42536207,Life threatening acute exacerbation of asthma,734904007,SNOMED
+46273462,Acute severe exacerbation of moderate persistent allergic asthma,1.06764E+16,SNOMED
+4245676,Chemical-induced asthma,9280700,SNOMED

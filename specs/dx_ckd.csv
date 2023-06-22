@@ -1,0 +1,380 @@
+concept_id,concept_code,concept_name,vocabulary_id,pcornet_vocabulary_id,cc_decimal_removal
+193782,46177005,End-stage renal disease,SNOMED,SM,FALSE
+196991,236425005,Chronic renal impairment,SNOMED,SM,FALSE
+198185,90688005,Chronic renal failure,SNOMED,SM,FALSE
+443597,433144002,Chronic kidney disease stage 3,SNOMED,SM,FALSE
+443601,431856006,Chronic kidney disease stage 2,SNOMED,SM,FALSE
+443611,433146000,Chronic kidney disease stage 5,SNOMED,SM,FALSE
+443612,431857002,Chronic kidney disease stage 4,SNOMED,SM,FALSE
+443614,431855005,Chronic kidney disease stage 1,SNOMED,SM,FALSE
+443961,49708008,Anemia of chronic renal failure,SNOMED,SM,FALSE
+725440,N18.30,"Chronic kidney disease, stage 3 unspecified",ICD10CM,10,FALSE
+725440,N1830,"Chronic kidney disease, stage 3 unspecified",ICD10CM,10,TRUE
+725441,N18.31,"Chronic kidney disease, stage 3a",ICD10CM,10,FALSE
+725441,N1831,"Chronic kidney disease, stage 3a",ICD10CM,10,TRUE
+725442,N18.32,"Chronic kidney disease, stage 3b",ICD10CM,10,FALSE
+725442,N1832,"Chronic kidney disease, stage 3b",ICD10CM,10,TRUE
+760850,1.20261E+14,Benign hypertensive heart disease and chronic renal disease stage 5,SNOMED,SM,FALSE
+762000,2.85061E+14,Benign hypertensive heart disease and chronic renal disease stage 2,SNOMED,SM,FALSE
+762001,2.85081E+14,Benign hypertensive heart disease and chronic renal disease stage 3,SNOMED,SM,FALSE
+762033,2.85911E+14,Malignant hypertensive heart disease and chronic renal disease stage 3,SNOMED,SM,FALSE
+762034,2.85921E+14,Malignant hypertensive heart disease and chronic renal disease stage 4,SNOMED,SM,FALSE
+762973,4.34431E+14,Hypertensive end stage renal disease,SNOMED,SM,FALSE
+764011,4.49631E+14,Benign hypertensive heart disease and chronic renal disease,SNOMED,SM,FALSE
+765535,2.85041E+14,Benign hypertensive heart disease and chronic renal disease stage 1,SNOMED,SM,FALSE
+765536,2.85101E+14,Benign hypertensive heart disease and chronic renal disease stage 4,SNOMED,SM,FALSE
+1569121,I12,Hypertensive chronic kidney disease,ICD10CM,10,FALSE
+1569122,I13,Hypertensive heart and chronic kidney disease,ICD10CM,10,FALSE
+1569123,I13.1,Hypertensive heart and chronic kidney disease without heart failure,ICD10CM,10,FALSE
+1569123,I131,Hypertensive heart and chronic kidney disease without heart failure,ICD10CM,10,TRUE
+1571486,N18,Chronic kidney disease (CKD),ICD10CM,10,FALSE
+1571639,O10.2,"Pre-existing hypertensive chronic kidney disease complicating pregnancy, childbirth and the puerperium",ICD10CM,10,FALSE
+1571639,O102,"Pre-existing hypertensive chronic kidney disease complicating pregnancy, childbirth and the puerperium",ICD10CM,10,TRUE
+1571640,O10.21,Pre-existing hypertensive chronic kidney disease complicating pregnancy,ICD10CM,10,FALSE
+1571640,O1021,Pre-existing hypertensive chronic kidney disease complicating pregnancy,ICD10CM,10,TRUE
+1571641,O10.3,"Pre-existing hypertensive heart and chronic kidney disease complicating pregnancy, childbirth and the puerperium",ICD10CM,10,FALSE
+1571641,O103,"Pre-existing hypertensive heart and chronic kidney disease complicating pregnancy, childbirth and the puerperium",ICD10CM,10,TRUE
+1571642,O10.31,Pre-existing hypertensive heart and chronic kidney disease complicating pregnancy,ICD10CM,10,FALSE
+1571642,O1031,Pre-existing hypertensive heart and chronic kidney disease complicating pregnancy,ICD10CM,10,TRUE
+3543812,7.68681E+14,H/O: chronic kidney disease,SNOMED,SM,FALSE
+3547154,9.39221E+14,Chronic kidney disease resolved,SNOMED,SM,FALSE
+3553407,2.00431E+14,Chronic kidney disease stage 1,SNOMED,SM,FALSE
+3553408,2.00461E+14,Chronic kidney disease stage 4,SNOMED,SM,FALSE
+3553409,2.00471E+14,Chronic kidney disease stage 5,SNOMED,SM,FALSE
+3553775,2.11901E+14,Chronic renal impairment,SNOMED,SM,FALSE
+3553776,2.11921E+14,Chronic kidney disease stage 1,SNOMED,SM,FALSE
+3553777,2.11931E+14,Chronic kidney disease stage 1,SNOMED,SM,FALSE
+3553778,2.11951E+14,Chronic kidney disease stage 2,SNOMED,SM,FALSE
+3553779,2.11971E+14,Chronic kidney disease stage 3,SNOMED,SM,FALSE
+3553780,2.11991E+14,Chronic kidney disease stage 4,SNOMED,SM,FALSE
+3554166,2.19601E+14,End stage renal disease,SNOMED,SM,FALSE
+3555421,3.24131E+14,Chronic kidney disease stage 1 with proteinuria,SNOMED,SM,FALSE
+3555422,3.24141E+14,Chronic kidney disease stage 1 with proteinuria,SNOMED,SM,FALSE
+3555423,3.24161E+14,Chronic kidney disease stage 1 without proteinuria,SNOMED,SM,FALSE
+3555424,3.24171E+14,Chronic kidney disease stage 1 without proteinuria,SNOMED,SM,FALSE
+3555425,3.24191E+14,Chronic kidney disease stage 1 with proteinuria,SNOMED,SM,FALSE
+3555426,3.24201E+14,Chronic kidney disease stage 1 with proteinuria,SNOMED,SM,FALSE
+3555427,3.24221E+14,Chronic kidney disease stage 2 without proteinuria,SNOMED,SM,FALSE
+3555428,3.24231E+14,Chronic kidney disease stage 2 without proteinuria,SNOMED,SM,FALSE
+3555429,3.24261E+14,Chronic kidney disease stage 3 with proteinuria,SNOMED,SM,FALSE
+3555430,3.24271E+14,Chronic kidney disease stage 3 with proteinuria,SNOMED,SM,FALSE
+3555431,3.24291E+14,Chronic kidney disease stage 3 without proteinuria,SNOMED,SM,FALSE
+3555432,3.24301E+14,Chronic kidney disease stage 3 without proteinuria,SNOMED,SM,FALSE
+3555433,3.24321E+14,Chronic kidney disease stage 3A with proteinuria,SNOMED,SM,FALSE
+3555434,3.24331E+14,Chronic kidney disease stage 3A with proteinuria,SNOMED,SM,FALSE
+3555435,3.24351E+14,Chronic kidney disease stage 3A without proteinuria,SNOMED,SM,FALSE
+3555436,3.24361E+14,Chronic kidney disease stage 3A without proteinuria,SNOMED,SM,FALSE
+3555437,3.24381E+14,Chronic kidney disease stage 3B with proteinuria,SNOMED,SM,FALSE
+3555438,3.24391E+14,Chronic kidney disease stage 3B with proteinuria,SNOMED,SM,FALSE
+3555439,3.24421E+14,Chronic kidney disease stage 3B without proteinuria,SNOMED,SM,FALSE
+3555440,3.24431E+14,Chronic kidney disease stage 3B without proteinuria,SNOMED,SM,FALSE
+3555441,3.24451E+14,Chronic kidney disease stage 4 with proteinuria,SNOMED,SM,FALSE
+3555442,3.24461E+14,Chronic kidney disease stage 4 with proteinuria,SNOMED,SM,FALSE
+3555443,3.24481E+14,Chronic kidney disease stage 4 without proteinuria,SNOMED,SM,FALSE
+3555444,3.24491E+14,Chronic kidney disease stage 4 without proteinuria,SNOMED,SM,FALSE
+3555445,3.24511E+14,Chronic kidney disease stage 5 with proteinuria,SNOMED,SM,FALSE
+3555446,3.24521E+14,Chronic kidney disease stage 5 with proteinuria,SNOMED,SM,FALSE
+3555447,3.24551E+14,Chronic kidney disease stage 5 without proteinuria,SNOMED,SM,FALSE
+3555448,3.24561E+14,Chronic kidney disease stage 5 without proteinuria,SNOMED,SM,FALSE
+3555546,3.37491E+14,Chronic kidney disease stage 3B,SNOMED,SM,FALSE
+3556614,4.34421E+14,Hypertensive chronic kidney disease,SNOMED,SM,FALSE
+3558295,7.09381E+14,Acute-on-chronic renal failure,SNOMED,SM,FALSE
+3559375,8.34001E+14,Chronic kidney disease stage 1,SNOMED,SM,FALSE
+3559376,8.34011E+14,Chronic kidney disease stage 2,SNOMED,SM,FALSE
+3559377,8.34021E+14,Chronic kidney disease stage 3,SNOMED,SM,FALSE
+3559378,8.34031E+14,Chronic kidney disease stage 4,SNOMED,SM,FALSE
+3559379,8.34041E+14,Chronic kidney disease stage 5,SNOMED,SM,FALSE
+3561143,9.49411E+14,Chronic kidney disease with glomerular filtration rate category G1 and albuminuria category A1,SNOMED,SM,FALSE
+3561144,9.49431E+14,Chronic kidney disease with glomerular filtration rate category G1 and albuminuria category A2,SNOMED,SM,FALSE
+3561145,9.49491E+14,Chronic kidney disease with glomerular filtration rate category G1 and albuminuria category A3,SNOMED,SM,FALSE
+3561146,9.49531E+14,Chronic kidney disease with glomerular filtration rate category G2 and albuminuria category A1,SNOMED,SM,FALSE
+3561147,9.49571E+14,Chronic kidney disease with glomerular filtration rate category G2 and albuminuria category A2,SNOMED,SM,FALSE
+3561148,9.49631E+14,Chronic kidney disease with glomerular filtration rate category G2 and albuminuria category A3,SNOMED,SM,FALSE
+3561149,9.49891E+14,Chronic kidney disease with glomerular filtration rate category G3a and albuminuria category A1,SNOMED,SM,FALSE
+3561150,9.49911E+14,Chronic kidney disease with glomerular filtration rate category G3a and albuminuria category A2,SNOMED,SM,FALSE
+3561151,9.49931E+14,Chronic kidney disease with glomerular filtration rate category G3a and albuminuria category A3,SNOMED,SM,FALSE
+3561152,9.50071E+14,Chronic kidney disease with glomerular filtration rate category G3b and albuminuria category A1,SNOMED,SM,FALSE
+3561153,9.50091E+14,Chronic kidney disease with glomerular filtration rate category G3b and albuminuria category A2,SNOMED,SM,FALSE
+3561154,9.50111E+14,Chronic kidney disease with glomerular filtration rate category G3b and albuminuria category A3,SNOMED,SM,FALSE
+3561155,9.50191E+14,Chronic kidney disease with glomerular filtration rate category G4 and albuminuria category A1,SNOMED,SM,FALSE
+3561156,9.50221E+14,Chronic kidney disease with glomerular filtration rate category G4 and albuminuria category A2,SNOMED,SM,FALSE
+3561157,9.50241E+14,Chronic kidney disease with glomerular filtration rate category G4 and albuminuria category A3,SNOMED,SM,FALSE
+3561158,9.50261E+14,Chronic kidney disease with glomerular filtration rate category G5 and albuminuria category A1,SNOMED,SM,FALSE
+3561159,9.50301E+14,Chronic kidney disease with glomerular filtration rate category G5 and albuminuria category A2,SNOMED,SM,FALSE
+3561160,9.50321E+14,Chronic kidney disease with glomerular filtration rate category G5 and albuminuria category A3,SNOMED,SM,FALSE
+3564953,2.00451E+14,Chronic kidney disease stage 3,SNOMED,SM,FALSE
+3566135,2.00441E+14,Chronic kidney disease stage 2,SNOMED,SM,FALSE
+3577568,2.11941E+14,Chronic kidney disease stage 2,SNOMED,SM,FALSE
+3577569,2.11961E+14,Chronic kidney disease stage 3,SNOMED,SM,FALSE
+3577570,2.11981E+14,Chronic kidney disease stage 4,SNOMED,SM,FALSE
+3577571,2.12001E+14,Chronic kidney disease stage 5,SNOMED,SM,FALSE
+3577573,2.12011E+14,Chronic kidney disease stage 5,SNOMED,SM,FALSE
+3579736,3.37041E+14,Chronic kidney disease stage 3A,SNOMED,SM,FALSE
+3579737,3.37051E+14,Chronic kidney disease stage 3B,SNOMED,SM,FALSE
+3579741,3.37481E+14,Chronic kidney disease stage 3A,SNOMED,SM,FALSE
+4030520,236435004,End stage renal failure on dialysis,SNOMED,SM,FALSE
+4125970,236436003,End stage renal failure with renal transplant,SNOMED,SM,FALSE
+4128067,236433006,Acute-on-chronic renal failure,SNOMED,SM,FALSE
+4128200,236434000,End stage renal failure untreated by renal replacement therapy,SNOMED,SM,FALSE
+4145100,307532008,Acute-on-chronic renal impairment,SNOMED,SM,FALSE
+4239804,57557005,Chronic milk alkali syndrome,SNOMED,SM,FALSE
+4322556,425369003,Chronic progressive renal failure,SNOMED,SM,FALSE
+35207671,I12.0,Hypertensive chronic kidney disease with stage 5 chronic kidney disease or end stage renal disease,ICD10CM,10,FALSE
+35207671,I120,Hypertensive chronic kidney disease with stage 5 chronic kidney disease or end stage renal disease,ICD10CM,10,TRUE
+35207672,I12.9,"Hypertensive chronic kidney disease with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease",ICD10CM,10,FALSE
+35207672,I129,"Hypertensive chronic kidney disease with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease",ICD10CM,10,TRUE
+35207673,I13.0,"Hypertensive heart and chronic kidney disease with heart failure and stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease",ICD10CM,10,FALSE
+35207673,I130,"Hypertensive heart and chronic kidney disease with heart failure and stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease",ICD10CM,10,TRUE
+35207674,I13.2,"Hypertensive heart and chronic kidney disease with heart failure and with stage 5 chronic kidney disease, or end stage renal disease",ICD10CM,10,FALSE
+35207674,I132,"Hypertensive heart and chronic kidney disease with heart failure and with stage 5 chronic kidney disease, or end stage renal disease",ICD10CM,10,TRUE
+35209274,N18.1,"Chronic kidney disease, stage 1",ICD10CM,10,FALSE
+35209274,N181,"Chronic kidney disease, stage 1",ICD10CM,10,TRUE
+35209275,N18.2,"Chronic kidney disease, stage 2 (mild)",ICD10CM,10,FALSE
+35209275,N182,"Chronic kidney disease, stage 2 (mild)",ICD10CM,10,TRUE
+35209276,N18.3,"Chronic kidney disease, stage 3 (moderate)",ICD10CM,10,FALSE
+35209276,N183,"Chronic kidney disease, stage 3 (moderate)",ICD10CM,10,TRUE
+35209277,N18.4,"Chronic kidney disease, stage 4 (severe)",ICD10CM,10,FALSE
+35209277,N184,"Chronic kidney disease, stage 4 (severe)",ICD10CM,10,TRUE
+35209278,N18.5,"Chronic kidney disease, stage 5",ICD10CM,10,FALSE
+35209278,N185,"Chronic kidney disease, stage 5",ICD10CM,10,TRUE
+35209279,N18.9,"Chronic kidney disease, unspecified",ICD10CM,10,FALSE
+35209279,N189,"Chronic kidney disease, unspecified",ICD10CM,10,TRUE
+36679002,776416004,"Hyperuricemia, pulmonary hypertension, renal failure, alkalosis syndrome",SNOMED,SM,FALSE
+36715491,721183009,Low alkaline phosphatase due to chronic kidney disease,SNOMED,SM,FALSE
+36716184,722098007,Chronic kidney disease following donor nephrectomy,SNOMED,SM,FALSE
+36716455,722467000,Chronic kidney disease due to traumatic loss of kidney,SNOMED,SM,FALSE
+36716947,723190009,Chronic renal insufficiency,SNOMED,SM,FALSE
+36717349,722150000,Chronic kidney disease due to systemic infection,SNOMED,SM,FALSE
+36717534,722149000,Chronic kidney disease following excision of renal neoplasm,SNOMED,SM,FALSE
+37017104,713313000,Chronic kidney disease mineral and bone disorder,SNOMED,SM,FALSE
+37017813,714152005,Chronic kidney disease stage 5 on dialysis,SNOMED,SM,FALSE
+37018761,714153000,Chronic kidney disease stage 5 with transplant,SNOMED,SM,FALSE
+37018886,1.11411E+14,End stage renal disease due to hypertension,SNOMED,SM,FALSE
+37019193,6.91421E+14,Anemia co-occurrent and due to chronic kidney disease stage 3,SNOMED,SM,FALSE
+37395652,6.91411E+14,Anemia in chronic kidney disease stage 5,SNOMED,SM,FALSE
+37398911,6.91401E+14,Anemia in chronic kidney disease stage 4,SNOMED,SM,FALSE
+40317621,155856009,Renal failure: [chronic] or [end stage],SNOMED,SM,FALSE
+40390443,191270002,Anemia secondary to chronic renal failure,SNOMED,SM,FALSE
+40395140,197654000,Renal failure: [chronic] or [end stage],SNOMED,SM,FALSE
+40395141,197655004,End stage renal failure,SNOMED,SM,FALSE
+40395607,197755007,End stage renal failure,SNOMED,SM,FALSE
+40478891,444271000,Erythropoietin resistance in anemia of chronic kidney disease,SNOMED,SM,FALSE
+40535124,35533001,Chronic uremia,SNOMED,SM,FALSE
+42872405,1.801E+12,"Anemia, pre-end stage renal disease on erythropoietin protocol",SNOMED,SM,FALSE
+43020437,1.53851E+14,Malignant hypertensive chronic kidney disease stage 5,SNOMED,SM,FALSE
+43020455,2.85841E+14,Malignant hypertensive end stage renal disease,SNOMED,SM,FALSE
+43020456,2.85871E+14,Malignant hypertensive chronic kidney disease stage 3,SNOMED,SM,FALSE
+43020457,2.85881E+14,Malignant hypertensive chronic kidney disease stage 4,SNOMED,SM,FALSE
+43021835,9.6731E+13,Hypertensive heart AND chronic kidney disease stage 3,SNOMED,SM,FALSE
+43021836,9.6741E+13,Hypertensive heart AND chronic kidney disease stage 2,SNOMED,SM,FALSE
+43021852,2.85831E+14,Malignant hypertensive chronic kidney disease,SNOMED,SM,FALSE
+43021853,2.85851E+14,Malignant hypertensive chronic kidney disease stage 1,SNOMED,SM,FALSE
+43021854,2.85861E+14,Malignant hypertensive chronic kidney disease stage 2,SNOMED,SM,FALSE
+43021864,2.86371E+14,Malignant hypertensive end stage renal disease on dialysis,SNOMED,SM,FALSE
+43531559,7.51E+11,Chronic kidney disease stage 1 due to type 2 diabetes mellitus,SNOMED,SM,FALSE
+43531562,7.11E+11,Chronic kidney disease stage 5 due to type 2 diabetes mellitus,SNOMED,SM,FALSE
+43531566,7.41E+11,Chronic kidney disease stage 2 due to type 2 diabetes mellitus,SNOMED,SM,FALSE
+43531577,7.21E+11,Chronic kidney disease stage 4 due to type 2 diabetes mellitus,SNOMED,SM,FALSE
+43531578,7.71E+11,Chronic kidney disease due to type 2 diabetes mellitus,SNOMED,SM,FALSE
+43531653,7.31E+11,Chronic kidney disease stage 3 due to type 2 diabetes mellitus,SNOMED,SM,FALSE
+44782429,1.04931E+14,Chronic kidney disease due to hypertension,SNOMED,SM,FALSE
+44782689,1.29151E+14,Chronic kidney disease stage 4 due to hypertension,SNOMED,SM,FALSE
+44782690,1.29161E+14,Chronic kidney disease stage 5 due to hypertension,SNOMED,SM,FALSE
+44782691,1.29171E+14,Chronic kidney disease stage 3 due to hypertension,SNOMED,SM,FALSE
+44782692,1.29181E+14,Chronic kidney disease stage 2 due to hypertension,SNOMED,SM,FALSE
+44782703,1.17681E+14,Chronic kidney disease stage 1 due to hypertension,SNOMED,SM,FALSE
+44782717,1.53891E+14,End stage renal disease on dialysis due to hypertension,SNOMED,SM,FALSE
+44782728,1.5781E+13,Hypertensive heart AND chronic kidney disease with congestive heart failure,SNOMED,SM,FALSE
+44782813,698810000,Hypertensive renal disease with end stage renal failure,SNOMED,SM,FALSE
+44784621,8.501E+12,Hypertensive heart and chronic kidney disease,SNOMED,SM,FALSE
+44784637,9.6701E+13,Hypertensive heart AND chronic kidney disease on dialysis,SNOMED,SM,FALSE
+44784638,9.6711E+13,Hypertensive heart AND chronic kidney disease stage 5,SNOMED,SM,FALSE
+44784639,9.6721E+13,Hypertensive heart AND chronic kidney disease stage 4,SNOMED,SM,FALSE
+44784640,9.6751E+13,Hypertensive heart AND chronic kidney disease stage 1,SNOMED,SM,FALSE
+44792017,3.09861E+14,Chronic kidney disease stage 3A,SNOMED,SM,FALSE
+44792018,3.09871E+14,Chronic kidney disease stage 3B,SNOMED,SM,FALSE
+44792226,3.24121E+14,Chronic kidney disease stage 1 with proteinuria,SNOMED,SM,FALSE
+44792227,3.24151E+14,Chronic kidney disease stage 1 without proteinuria,SNOMED,SM,FALSE
+44792228,3.24181E+14,Chronic kidney disease stage 2 with proteinuria,SNOMED,SM,FALSE
+44792229,3.24211E+14,Chronic kidney disease stage 2 without proteinuria,SNOMED,SM,FALSE
+44792230,3.24251E+14,Chronic kidney disease stage 3 with proteinuria,SNOMED,SM,FALSE
+44792231,3.24281E+14,Chronic kidney disease stage 3 without proteinuria,SNOMED,SM,FALSE
+44792232,3.24311E+14,Chronic kidney disease stage 3A with proteinuria,SNOMED,SM,FALSE
+44792249,3.24341E+14,Chronic kidney disease stage 3A without proteinuria,SNOMED,SM,FALSE
+44792250,3.24371E+14,Chronic kidney disease stage 3B with proteinuria,SNOMED,SM,FALSE
+44792251,3.24411E+14,Chronic kidney disease stage 3B without proteinuria,SNOMED,SM,FALSE
+44792252,3.24441E+14,Chronic kidney disease stage 4 with proteinuria,SNOMED,SM,FALSE
+44792253,3.24471E+14,Chronic kidney disease stage 4 without proteinuria,SNOMED,SM,FALSE
+44792254,3.24501E+14,Chronic kidney disease stage 5 with proteinuria,SNOMED,SM,FALSE
+44792255,3.24541E+14,Chronic kidney disease stage 5 without proteinuria,SNOMED,SM,FALSE
+44819692,404.01,"Hypertensive heart and chronic kidney disease, malignant, with heart failure and with chronic kidney disease stage I through stage IV, or unspecified",ICD9CM,9,FALSE
+44819692,40401,"Hypertensive heart and chronic kidney disease, malignant, with heart failure and with chronic kidney disease stage I through stage IV, or unspecified",ICD9CM,9,TRUE
+44819693,404.03,"Hypertensive heart and chronic kidney disease, malignant, with heart failure and with chronic kidney disease stage V or end stage renal disease",ICD9CM,9,FALSE
+44819693,40403,"Hypertensive heart and chronic kidney disease, malignant, with heart failure and with chronic kidney disease stage V or end stage renal disease",ICD9CM,9,TRUE
+44819694,404.1,"Hypertensive heart and chronic kidney disease, benign, without heart failure and with chronic kidney disease stage I through stage IV, or unspecified",ICD9CM,9,FALSE
+44819694,40410,"Hypertensive heart and chronic kidney disease, benign, without heart failure and with chronic kidney disease stage I through stage IV, or unspecified",ICD9CM,9,TRUE
+44819695,404.11,"Hypertensive heart and chronic kidney disease, benign, with heart failure and with chronic kidney disease stage I through stage IV, or unspecified",ICD9CM,9,FALSE
+44819695,40411,"Hypertensive heart and chronic kidney disease, benign, with heart failure and with chronic kidney disease stage I through stage IV, or unspecified",ICD9CM,9,TRUE
+44819696,404.91,"Hypertensive heart and chronic kidney disease, unspecified, with heart failure and with chronic kidney disease stage I through stage IV, or unspecified",ICD9CM,9,FALSE
+44819696,40491,"Hypertensive heart and chronic kidney disease, unspecified, with heart failure and with chronic kidney disease stage I through stage IV, or unspecified",ICD9CM,9,TRUE
+44820856,404.13,"Hypertensive heart and chronic kidney disease, benign, with heart failure and chronic kidney disease stage V or end stage renal disease",ICD9CM,9,FALSE
+44820856,40413,"Hypertensive heart and chronic kidney disease, benign, with heart failure and chronic kidney disease stage V or end stage renal disease",ICD9CM,9,TRUE
+44820970,585.4,"Chronic kidney disease, Stage IV (severe)",ICD9CM,9,FALSE
+44820970,5854,"Chronic kidney disease, Stage IV (severe)",ICD9CM,9,TRUE
+44821950,404.92,"Hypertensive heart and chronic kidney disease, unspecified, without heart failure and with chronic kidney disease stage V or end stage renal disease",ICD9CM,9,FALSE
+44821950,40492,"Hypertensive heart and chronic kidney disease, unspecified, without heart failure and with chronic kidney disease stage V or end stage renal disease",ICD9CM,9,TRUE
+44824235,404.93,"Hypertensive heart and chronic kidney disease, unspecified, with heart failure and chronic kidney disease stage V or end stage renal disease",ICD9CM,9,FALSE
+44824235,40493,"Hypertensive heart and chronic kidney disease, unspecified, with heart failure and chronic kidney disease stage V or end stage renal disease",ICD9CM,9,TRUE
+44825426,403.01,"Hypertensive chronic kidney disease, malignant, with chronic kidney disease stage V or end stage renal disease",ICD9CM,9,FALSE
+44825426,40301,"Hypertensive chronic kidney disease, malignant, with chronic kidney disease stage V or end stage renal disease",ICD9CM,9,TRUE
+44827780,404,Hypertensive heart and chronic kidney disease,ICD9CM,9,FALSE
+44827888,585.3,"Chronic kidney disease, Stage III (moderate)",ICD9CM,9,FALSE
+44827888,5853,"Chronic kidney disease, Stage III (moderate)",ICD9CM,9,TRUE
+44827889,585.6,End stage renal disease,ICD9CM,9,FALSE
+44827889,5856,End stage renal disease,ICD9CM,9,TRUE
+44828971,403.91,"Hypertensive chronic kidney disease, unspecified, with chronic kidney disease stage V or end stage renal disease",ICD9CM,9,FALSE
+44828971,40391,"Hypertensive chronic kidney disease, unspecified, with chronic kidney disease stage V or end stage renal disease",ICD9CM,9,TRUE
+44830172,585,Chronic kidney disease (CKD),ICD9CM,9,FALSE
+44830173,585.2,"Chronic kidney disease, Stage II (mild)",ICD9CM,9,FALSE
+44830173,5852,"Chronic kidney disease, Stage II (mild)",ICD9CM,9,TRUE
+44831068,285.21,Anemia in chronic kidney disease,ICD9CM,9,FALSE
+44831068,28521,Anemia in chronic kidney disease,ICD9CM,9,TRUE
+44831231,403.11,"Hypertensive chronic kidney disease, benign, with chronic kidney disease stage V or end stage renal disease",ICD9CM,9,FALSE
+44831231,40311,"Hypertensive chronic kidney disease, benign, with chronic kidney disease stage V or end stage renal disease",ICD9CM,9,TRUE
+44831232,404.02,"Hypertensive heart and chronic kidney disease, malignant, without heart failure and with chronic kidney disease stage V or end stage renal disease",ICD9CM,9,FALSE
+44831232,40402,"Hypertensive heart and chronic kidney disease, malignant, without heart failure and with chronic kidney disease stage V or end stage renal disease",ICD9CM,9,TRUE
+44832367,403,Hypertensive chronic kidney disease,ICD9CM,9,FALSE
+44832368,403,"Hypertensive chronic kidney disease, malignant, with chronic kidney disease stage I through stage IV, or unspecified",ICD9CM,9,FALSE
+44832368,40300,"Hypertensive chronic kidney disease, malignant, with chronic kidney disease stage I through stage IV, or unspecified",ICD9CM,9,TRUE
+44832369,404,"Hypertensive heart and chronic kidney disease, malignant, without heart failure and with chronic kidney disease stage I through stage IV, or unspecified",ICD9CM,9,FALSE
+44832369,40400,"Hypertensive heart and chronic kidney disease, malignant, without heart failure and with chronic kidney disease stage I through stage IV, or unspecified",ICD9CM,9,TRUE
+44833558,403,"Hypertensive chronic kidney disease, malignant",ICD9CM,9,FALSE
+44833558,4030,"Hypertensive chronic kidney disease, malignant",ICD9CM,9,TRUE
+44833559,404,"Hypertensive heart and chronic kidney disease, malignant",ICD9CM,9,FALSE
+44833559,4040,"Hypertensive heart and chronic kidney disease, malignant",ICD9CM,9,TRUE
+44833560,404.12,"Hypertensive heart and chronic kidney disease, benign, without heart failure and with chronic kidney disease stage V or end stage renal disease",ICD9CM,9,FALSE
+44833560,40412,"Hypertensive heart and chronic kidney disease, benign, without heart failure and with chronic kidney disease stage V or end stage renal disease",ICD9CM,9,TRUE
+44835922,403.1,"Hypertensive chronic kidney disease, benign, with chronic kidney disease stage I through stage IV, or unspecified",ICD9CM,9,FALSE
+44835922,40310,"Hypertensive chronic kidney disease, benign, with chronic kidney disease stage I through stage IV, or unspecified",ICD9CM,9,TRUE
+44835923,403.9,"Hypertensive chronic kidney disease, unspecified, with chronic kidney disease stage I through stage IV, or unspecified",ICD9CM,9,FALSE
+44835923,40390,"Hypertensive chronic kidney disease, unspecified, with chronic kidney disease stage I through stage IV, or unspecified",ICD9CM,9,TRUE
+44835924,404.9,"Hypertensive heart and chronic kidney disease, unspecified, without heart failure and with chronic kidney disease stage I through stage IV, or unspecified",ICD9CM,9,FALSE
+44835924,40490,"Hypertensive heart and chronic kidney disease, unspecified, without heart failure and with chronic kidney disease stage I through stage IV, or unspecified",ICD9CM,9,TRUE
+44836035,585.9,"Chronic kidney disease, unspecified",ICD9CM,9,FALSE
+44836035,5859,"Chronic kidney disease, unspecified",ICD9CM,9,TRUE
+44837191,585.1,"Chronic kidney disease, Stage I",ICD9CM,9,FALSE
+44837191,5851,"Chronic kidney disease, Stage I",ICD9CM,9,TRUE
+44837192,585.5,"Chronic kidney disease, Stage V",ICD9CM,9,FALSE
+44837192,5855,"Chronic kidney disease, Stage V",ICD9CM,9,TRUE
+45534123,N18.8,Other chronic renal failure,ICD10,10,FALSE
+45534123,N188,Other chronic renal failure,ICD10,10,TRUE
+45534171,O10.219,"Pre-existing hypertensive chronic kidney disease complicating pregnancy, unspecified trimester",ICD10CM,10,FALSE
+45534171,O10219,"Pre-existing hypertensive chronic kidney disease complicating pregnancy, unspecified trimester",ICD10CM,10,TRUE
+45534172,O10.22,Pre-existing hypertensive chronic kidney disease complicating childbirth,ICD10CM,10,FALSE
+45534172,O1022,Pre-existing hypertensive chronic kidney disease complicating childbirth,ICD10CM,10,TRUE
+45539086,O10.23,Pre-existing hypertensive chronic kidney disease complicating the puerperium,ICD10CM,10,FALSE
+45539086,O1023,Pre-existing hypertensive chronic kidney disease complicating the puerperium,ICD10CM,10,TRUE
+45539087,O10.319,"Pre-existing hypertensive heart and chronic kidney disease complicating pregnancy, unspecified trimester",ICD10CM,10,FALSE
+45539087,O10319,"Pre-existing hypertensive heart and chronic kidney disease complicating pregnancy, unspecified trimester",ICD10CM,10,TRUE
+45543164,I13.10,"Hypertensive heart and chronic kidney disease without heart failure, with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease",ICD10CM,10,FALSE
+45543164,I1310,"Hypertensive heart and chronic kidney disease without heart failure, with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease",ICD10CM,10,TRUE
+45543858,N18.3,"Chronic kidney disease, stage 3",ICD10,10,FALSE
+45543858,N183,"Chronic kidney disease, stage 3",ICD10,10,TRUE
+45547621,E10.22,Type 1 diabetes mellitus with diabetic chronic kidney disease,ICD10CM,10,FALSE
+45547621,E1022,Type 1 diabetes mellitus with diabetic chronic kidney disease,ICD10CM,10,TRUE
+45548653,N18.6,End stage renal disease,ICD10CM,10,FALSE
+45548653,N186,End stage renal disease,ICD10CM,10,TRUE
+45548697,O10.212,"Pre-existing hypertensive chronic kidney disease complicating pregnancy, second trimester",ICD10CM,10,FALSE
+45548697,O10212,"Pre-existing hypertensive chronic kidney disease complicating pregnancy, second trimester",ICD10CM,10,TRUE
+45552372,E08.22,Diabetes mellitus due to underlying condition with diabetic chronic kidney disease,ICD10CM,10,FALSE
+45552372,E0822,Diabetes mellitus due to underlying condition with diabetic chronic kidney disease,ICD10CM,10,TRUE
+45553437,N18.2,"Chronic kidney disease, stage 2",ICD10,10,FALSE
+45553437,N182,"Chronic kidney disease, stage 2",ICD10,10,TRUE
+45553438,N18.9,"Chronic kidney disease, unspecified",ICD10,10,FALSE
+45553438,N189,"Chronic kidney disease, unspecified",ICD10,10,TRUE
+45557089,D63.1,Anemia in chronic kidney disease,ICD10CM,10,FALSE
+45557089,D631,Anemia in chronic kidney disease,ICD10CM,10,TRUE
+45558201,O10.313,"Pre-existing hypertensive heart and chronic kidney disease complicating pregnancy, third trimester",ICD10CM,10,FALSE
+45558201,O10313,"Pre-existing hypertensive heart and chronic kidney disease complicating pregnancy, third trimester",ICD10CM,10,TRUE
+45558202,O10.32,Pre-existing hypertensive heart and chronic kidney disease complicating childbirth,ICD10CM,10,FALSE
+45558202,O1032,Pre-existing hypertensive heart and chronic kidney disease complicating childbirth,ICD10CM,10,TRUE
+45561945,E09.22,Drug or chemical induced diabetes mellitus with diabetic chronic kidney disease,ICD10CM,10,FALSE
+45561945,E0922,Drug or chemical induced diabetes mellitus with diabetic chronic kidney disease,ICD10CM,10,TRUE
+45561955,E13.22,Other specified diabetes mellitus with diabetic chronic kidney disease,ICD10CM,10,FALSE
+45561955,E1322,Other specified diabetes mellitus with diabetic chronic kidney disease,ICD10CM,10,TRUE
+45567886,O10.211,"Pre-existing hypertensive chronic kidney disease complicating pregnancy, first trimester",ICD10CM,10,FALSE
+45567886,O10211,"Pre-existing hypertensive chronic kidney disease complicating pregnancy, first trimester",ICD10CM,10,TRUE
+45577557,O10.312,"Pre-existing hypertensive heart and chronic kidney disease complicating pregnancy, second trimester",ICD10CM,10,FALSE
+45577557,O10312,"Pre-existing hypertensive heart and chronic kidney disease complicating pregnancy, second trimester",ICD10CM,10,TRUE
+45582391,N18,Chronic kidney disease,ICD10,10,FALSE
+45582392,N18.1,"Chronic kidney disease, stage 1",ICD10,10,FALSE
+45582392,N181,"Chronic kidney disease, stage 1",ICD10,10,TRUE
+45582393,N18.4,"Chronic kidney disease, stage 4",ICD10,10,FALSE
+45582393,N184,"Chronic kidney disease, stage 4",ICD10,10,TRUE
+45582394,N18.5,"Chronic kidney disease, stage 5",ICD10,10,FALSE
+45582394,N185,"Chronic kidney disease, stage 5",ICD10,10,TRUE
+45582443,O10.2,"Pre-existing hypertensive renal disease complicating pregnancy, childbirth and the puerperium",ICD10,10,FALSE
+45582443,O102,"Pre-existing hypertensive renal disease complicating pregnancy, childbirth and the puerperium",ICD10,10,TRUE
+45582444,O10.33,Pre-existing hypertensive heart and chronic kidney disease complicating the puerperium,ICD10CM,10,FALSE
+45582444,O1033,Pre-existing hypertensive heart and chronic kidney disease complicating the puerperium,ICD10CM,10,TRUE
+45587280,O10.213,"Pre-existing hypertensive chronic kidney disease complicating pregnancy, third trimester",ICD10CM,10,FALSE
+45587280,O10213,"Pre-existing hypertensive chronic kidney disease complicating pregnancy, third trimester",ICD10CM,10,TRUE
+45587281,O10.311,"Pre-existing hypertensive heart and chronic kidney disease complicating pregnancy, first trimester",ICD10CM,10,FALSE
+45587281,O10311,"Pre-existing hypertensive heart and chronic kidney disease complicating pregnancy, first trimester",ICD10CM,10,TRUE
+45595797,E11.22,Type 2 diabetes mellitus with diabetic chronic kidney disease,ICD10CM,10,FALSE
+45595797,E1122,Type 2 diabetes mellitus with diabetic chronic kidney disease,ICD10CM,10,TRUE
+45596188,I13.11,"Hypertensive heart and chronic kidney disease without heart failure, with stage 5 chronic kidney disease, or end stage renal disease",ICD10CM,10,FALSE
+45596188,I1311,"Hypertensive heart and chronic kidney disease without heart failure, with stage 5 chronic kidney disease, or end stage renal disease",ICD10CM,10,TRUE
+45601717,N18.0,End-stage renal disease,ICD10,10,FALSE
+45601717,N180,End-stage renal disease,ICD10,10,TRUE
+45757137,1.07574E+16,Pre-existing hypertensive heart and chronic kidney disease in mother complicating childbirth,SNOMED,SM,FALSE
+45757139,1.07575E+16,Pre-existing hypertensive heart and chronic kidney disease in mother complicating pregnancy,SNOMED,SM,FALSE
+45757356,1.18781E+14,Pre-existing hypertensive chronic kidney disease in mother complicating pregnancy,SNOMED,SM,FALSE
+45757392,1.27991E+14,Hypertension concurrent and due to end stage renal disease on dialysis due to type 2 diabetes mellitus,SNOMED,SM,FALSE
+45757393,1.28001E+14,Hypertension concurrent and due to end stage renal disease on dialysis due to type 1 diabetes mellitus,SNOMED,SM,FALSE
+45757444,1.40101E+14,Hypertension in chronic kidney disease stage 5 due to type 2 diabetes mellitus,SNOMED,SM,FALSE
+45757445,1.40111E+14,Hypertension in chronic kidney disease stage 4 due to type 2 diabetes mellitus,SNOMED,SM,FALSE
+45757446,1.40121E+14,Hypertension in chronic kidney disease stage 3 due to type 2 diabetes mellitus,SNOMED,SM,FALSE
+45757447,1.40131E+14,Hypertension in chronic kidney disease stage 2 due to type 2 diabetes mellitus,SNOMED,SM,FALSE
+45763854,700378005,Chronic kidney disease stage 3A,SNOMED,SM,FALSE
+45763855,700379002,Chronic kidney disease stage 3B,SNOMED,SM,FALSE
+45768812,707323002,Anemia in chronic kidney disease,SNOMED,SM,FALSE
+45768813,707324008,Anemia in end stage renal disease,SNOMED,SM,FALSE
+45769901,9.0731E+13,Chronic kidney disease stage 2 due to type 1 diabetes mellitus,SNOMED,SM,FALSE
+45769902,9.0751E+13,Chronic kidney disease stage 4 due to type 1 diabetes mellitus,SNOMED,SM,FALSE
+45769903,9.0761E+13,Chronic kidney disease stage 5 due to type 1 diabetes mellitus,SNOMED,SM,FALSE
+45769904,9.0771E+13,End stage renal disease on dialysis due to type 1 diabetes mellitus,SNOMED,SM,FALSE
+45769906,9.0791E+13,End stage renal disease on dialysis due to type 2 diabetes mellitus,SNOMED,SM,FALSE
+45771064,7.1421E+13,Hypertension in chronic kidney disease due to type 2 diabetes mellitus,SNOMED,SM,FALSE
+45771067,7.1701E+13,Hypertension in chronic kidney disease due to type 1 diabetes mellitus,SNOMED,SM,FALSE
+45771075,9.0741E+13,Chronic kidney disease stage 3 due to type 1 diabetes mellitus,SNOMED,SM,FALSE
+45772751,704667004,Hypertension concurrent and due to end stage renal disease on dialysis,SNOMED,SM,FALSE
+45773576,9.0721E+13,Chronic kidney disease stage 1 due to type 1 diabetes mellitus,SNOMED,SM,FALSE
+45773688,9.6441E+13,Chronic kidney disease due to type 1 diabetes mellitus,SNOMED,SM,FALSE
+46270353,2.84961E+14,Chronic kidney disease due to benign hypertension,SNOMED,SM,FALSE
+46270354,2.84971E+14,Chronic kidney disease stage 1 due to benign hypertension,SNOMED,SM,FALSE
+46270355,2.84981E+14,Chronic kidney disease stage 2 due to benign hypertension,SNOMED,SM,FALSE
+46270356,2.85011E+14,Chronic kidney disease stage 5 due to benign hypertension,SNOMED,SM,FALSE
+46271022,709044004,Chronic kidney disease,SNOMED,SM,FALSE
+46273164,712487000,End stage renal disease due to benign hypertension,SNOMED,SM,FALSE
+46273514,2.85001E+14,Chronic kidney disease stage 4 due to benign hypertension,SNOMED,SM,FALSE
+46273636,2.84991E+14,Chronic kidney disease stage 3 due to benign hypertension,SNOMED,SM,FALSE
+46284080,9.39211E+14,Chronic kidney disease resolved,SNOMED,SM,FALSE
+46284566,9.49401E+14,CKD G1A1 - chronic kidney disease with glomerular filtration rate category G1 and albuminuria category A1,SNOMED,SM,FALSE
+46284567,9.49421E+14,CKD G1A2 - chronic kidney disease with glomerular filtration rate category G1 and albuminuria category A2,SNOMED,SM,FALSE
+46284570,9.49481E+14,CKD G1A3 - chronic kidney disease with glomerular filtration rate category G1 and albuminuria category A3,SNOMED,SM,FALSE
+46284572,9.49521E+14,CKD G2A1 - chronic kidney disease with glomerular filtration rate category G2 and albuminuria category A1,SNOMED,SM,FALSE
+46284575,9.49621E+14,CKD G2A3 - chronic kidney disease with glomerular filtration rate category G2 and albuminuria category A3,SNOMED,SM,FALSE
+46284587,9.49881E+14,CKD G3aA1 - chronic kidney disease with glomerular filtration rate category G3a and albuminuria category A1,SNOMED,SM,FALSE
+46284588,9.49921E+14,CKD G3aA3 - chronic kidney disease with glomerular filtration rate category G3a and albuminuria category A3,SNOMED,SM,FALSE
+46284591,9.50061E+14,CKD G3bA1 - chronic kidney disease with glomerular filtration rate category G3b and albuminuria category A1,SNOMED,SM,FALSE
+46284592,9.50081E+14,CKD G3bA2 - chronic kidney disease with glomerular filtration rate category G3b and albuminuria category A2,SNOMED,SM,FALSE
+46284593,9.50101E+14,CKD G3bA3 - chronic kidney disease with glomerular filtration rate category G3b and albuminuria category A3,SNOMED,SM,FALSE
+46284597,9.50181E+14,CKD G4A1 - chronic kidney disease with glomerular filtration rate category G4 and albuminuria category A1,SNOMED,SM,FALSE
+46284598,9.50211E+14,CKD G4A2 - chronic kidney disease with glomerular filtration rate category G4 and albuminuria category A2,SNOMED,SM,FALSE
+46284599,9.50231E+14,CKD G4A3 - chronic kidney disease with glomerular filtration rate category G4 and albuminuria category A3,SNOMED,SM,FALSE
+46284600,9.50251E+14,CKD G5A1 - chronic kidney disease with glomerular filtration rate category G5 and albuminuria category A1,SNOMED,SM,FALSE
+46284602,9.50291E+14,CKD G5A2 - chronic kidney disease with glomerular filtration rate category G5 and albuminuria category A2,SNOMED,SM,FALSE
+46284603,9.50311E+14,CKD G5A3 - chronic kidney disease with glomerular filtration rate category G5 and albuminuria category A3,SNOMED,SM,FALSE
+46286992,9.49901E+14,CKD G3aA2 - chronic kidney disease with glomerular filtration rate category G3a and albuminuria category A2,SNOMED,SM,FALSE
+46287169,9.49561E+14,CKD G2A2 - chronic kidney disease with glomerular filtration rate category G2 and albuminuria category A2,SNOMED,SM,FALSE

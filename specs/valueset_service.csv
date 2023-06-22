@@ -1,0 +1,15 @@
+﻿concept_id,concept_name,domain_id,vocabulary_id,concept_code
+2000000067,Critical Care,Service Type,PEDSnet,Critical Care
+2000000068,Intermediate care,Service Type,PEDSnet,Intermediate care
+2000000069,Acute care,Service Type,PEDSnet,Acute care
+2000000070,Observation care,Service Type,PEDSnet,Observation care
+2000000071,"Surgical site (includes OR, ASC)",Service Type,PEDSnet,Surgical site
+2000000072,Procedural service,Service Type,PEDSnet,Procedural service
+2000000073,Behavioral health,Service Type,PEDSnet,Behavioral health
+2000000074,"Rehabilitative service (includes PT, OT, ST)",Service Type,PEDSnet,Rehabilitative service
+2000000075,Specialty service,Service Type,PEDSnet,Specialty service
+2000000076,Radiology,Service Type,PEDSnet,Radiology
+2000000077,Hospital Outpatient,Service Type,PEDSnet,Hospital Outpatient
+2000000078,PICU,Service Type,PEDSnet,PICU
+2000000079,CICU,Service Type,PEDSnet,CICU
+2000000080,NICU,Service Type,PEDSnet,NICU

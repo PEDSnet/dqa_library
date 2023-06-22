@@ -1,0 +1,44 @@
+﻿concept_id,concept_name,domain_id,vocabulary_id,concept_code
+3001537,Head Occipital-frontal circumference by Tape measure,Measurement,LOINC,8287-5
+3001668,Forced vital capacity [Volume] Respiratory system --post bronchodilation,Measurement,LOINC,19875-4
+3004249,Systolic blood pressure,Measurement,LOINC,8480-6
+3005025,FEV1 --pre bronchodilation,Measurement,LOINC,20157-4
+3005424,Body surface area,Measurement,LOINC,8277-6
+3009395,Systolic blood pressure--supine,Measurement,LOINC,8461-6
+3012888,Diastolic blood pressure,Measurement,LOINC,8462-4
+3013762,Body weight Measured,Measurement,LOINC,3141-9
+3013940,Diastolic blood pressure--supine,Measurement,LOINC,8455-8
+3018586,Systolic blood pressure--sitting,Measurement,LOINC,8459-0
+3019962,Diastolic blood pressure--standing,Measurement,LOINC,8454-1
+3020158,Forced vital capacity [Volume] Respiratory system,Measurement,LOINC,19870-5
+3020891,Body temperature,Measurement,LOINC,8310-5
+3023329,Maximum expiratory gas flow Respiratory system airway by Peak flow meter,Measurement,LOINC,19935-6
+3023540,Body height Measured,Measurement,LOINC,3137-7
+3023550,FEV1 --post bronchodilation,Measurement,LOINC,20155-8
+3024171,Respiratory rate,Measurement,LOINC,9279-1
+3024653,FEV1,Measurement,LOINC,20150-9
+3027018,Heart rate,Measurement,LOINC,8867-4
+3034703,Diastolic blood pressure--sitting,Measurement,LOINC,8453-3
+3035856,Systolic blood pressure--standing,Measurement,LOINC,8460-8
+3037879,Forced vital capacity [Volume] Respiratory system --pre bronchodilation,Measurement,LOINC,19877-0
+3038553,Body mass index (BMI) [Ratio],Measurement,LOINC,39156-5
+4353936,Inspired oxygen concentration,Observation,SNOMED,250774007
+21490852,Invasive Mean blood pressure,Measurement,LOINC,76214-6
+21492241,Mean blood pressure by Noninvasive,Measurement,LOINC,76536-2
+40762499,Oxygen saturation in Arterial blood by Pulse oximetry,Measurement,LOINC,59408-5
+42868460,FEF 25-75% Predicted,Measurement,LOINC,69971-0
+42868461,FEF 25-75% --pre bronchodilation,Measurement,LOINC,69972-8
+42868462,FEF 25-75% --post bronchodilation,Measurement,LOINC,69973-6
+44818702,Lab result,Type Concept,Meas Type,OMOP4822274
+44818704,Patient reported value,Type Concept,Meas Type,OMOP4822272
+2000000032,Healthcare device direct feed,Type Concept,PEDSnet,HD
+2000000033,Healthcare delivery setting,Type Concept,PEDSnet,HC
+2000000041,Weight for age z score NHANES 2000,Measurement,PEDSnet,NHANES WFA Z
+2000000042,Height for age z score NHANES 2000,Measurement,PEDSnet,NHANES HFA Z
+2000000043,BMI for age z score NHANES 2000,Measurement,PEDSnet,BMIFA Z NHANES
+2000000044,Systolic BP for age/height Z score NHBPEP 4th Task Force Report,Measurement,PEDSnet,SBP Z NHBPEP
+2000000045,Diastolic BP for age/height Z score NHBPEP 4th Task Force Report,Measurement,PEDSnet,DBP Z NHBPEP
+2000000046,Weight for age z score WHO,Measurement,PEDSnet,WFA Z WHO
+2000000047,Length for age z score WHO,Measurement,PEDSnet,LFA Z WHO
+2000000064,Peak flow post bronchodilation,Measurement,PEDSnet,PF Post
+2000001422,Peripheral oxygen saturation/fraction of inspired oxygen,Measurement,PEDSnet,SpO2/FiO2

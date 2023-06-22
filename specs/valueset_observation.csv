@@ -1,0 +1,55 @@
+﻿concept_id,concept_name,domain_id,vocabulary_id,concept_code
+756083,Suspected exposure to Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2),Observation,OMOP Extension,OMOP4873962
+3040464,Hospital discharge DRG [Interpretation],Observation,LOINC,38999-9
+4005823,Tobacco user,Observation,SNOMED,110483000
+4219336,Tobacco,Observation,SNOMED,39953003
+4275495,Tobacco smoking behavior - finding,Observation,SNOMED,365981007
+36716478,Electronic cigarette user,Condition,SNOMED,722499006
+40760190,Obstetric delivery method,Observation,LOINC,57071-3
+42894222,EHR Chief Complaint,Type Concept,Condition Type,OMOP4822124
+44813951,Discharge details,Type Concept,SNOMED,8.87E+14
+2000001434,Abdominal Pain,Observation,PEDSnet,PEDSnet Generated
+2000001435,None,Observation,PEDSnet,PEDSnet Generated
+2000001438,Rectal Bleeding,Observation,PEDSnet,PEDSnet Generated
+2000001442,Stool Consistency of Most Stools,Observation,PEDSnet,PEDSnet Generated
+2000001446,Number of Stools per 24h,Observation,PEDSnet,PEDSnet Generated
+2000001447,Nocturnal stools (any episode causing awakening),Observation,PEDSnet,PEDSnet Generated
+2000001450,Activity Level,Observation,PEDSnet,PEDSnet Generated
+2000001454,Well being,Observation,PEDSnet,PEDSnet Generated
+2000001458,Abdomen Exam,Observation,PEDSnet,PEDSnet Generated
+2000001462,Peri-rectal disease exam,Observation,PEDSnet,PEDSnet Generated
+2000001466,Erythema nodusum,Observation,PEDSnet,PEDSnet Generated
+2000001467,Pyoderma gangrenosum,Observation,PEDSnet,PEDSnet Generated
+2000001468,Fever >38.5 x 3 days  in a week,Observation,PEDSnet,PEDSnet Generated
+2000001469,Arthritis,Observation,PEDSnet,PEDSnet Generated
+2000001470,Uveitis,Observation,PEDSnet,PEDSnet Generated
+2000001473,Physicians Global Assessment of Current Disease Status,Observation,PEDSnet,PEDSnet Generated
+2000001478,Extent of Macroscopic Lower GI Disease,Observation,PEDSnet,PEDSnet Generated
+2000001484,Crohn’s disease Phenotype,Observation,PEDSnet,PEDSnet Generated
+2000001411,COVID-19 Cohort Status,Observation,PEDSnet,PEDSnet Generated
+4108138,Ventilator rate,Observation,SNOMED,250876000
+4215838,Inspiratory pressure setting,Observation,SNOMED,417071008
+4216746,Positive end expiratory pressure setting,Observation,SNOMED,416595007
+4220163,Tidal volume setting,Observation,SNOMED,416811008
+4353947,Inspiratory time,Measurement,SNOMED,250819002
+2000001495,Device Interface,Device,PEDSnet,PEDSnet Generated
+2000001496,Ventilation Mode,Device,PEDSnet,PEDSnet Generated
+2000001497,Time off vent per day,Device,PEDSnet,PEDSnet Generated
+46235214,Sexual Orientation,Observation,LOINC,76690-7
+1175108,Personal Pronouns,Observation,LOINC,90778-2
+46235215,Gender Identity,Observation,LOINC,76691-5
+40192517,"Within the past 12 months, were you worried whether your food would run out before you got money to buy more?",Observation,PPI,hvs_1
+40192426,"Within the past 12 months, were you worried whether the food you had bought just didn't last and you didn't have money to get more?	",Observation,PPI,hvs_2
+37116643,Food insecurity,Observation,SNOMED,733423003
+44810949,Gross Motor Function Classification System for Cerebral Palsy level finding,Condition,SNOMED,8.82E+14
+3042924,Little interest or pleasure in doing things in last 2 weeks,Observation,LOINC,44250-9
+3045858,"Feeling down, depressed, or hopeless in last 2 weeks",Observation,LOINC,44255-8
+3045933,"Trouble falling or staying asleep, or sleeping too much in last 2 weeks [Reported.PHQ]",Observation,LOINC,44259-0
+3044964,Feeling tired or having little energy in last 2 weeks [Reported.PHQ],Observation,LOINC,44254-1
+3044098,Poor appetite or overeating in last 2 weeks [Reported.PHQ],Observation,LOINC,44251-7
+3043801,Feeling bad about yourself - or that you are a failure or have let yourself or your family down in last 2 weeks [Reported.PHQ],Observation,LOINC,44258-2
+3045019,"Trouble concentrating on things, such as reading the newspaper or watching television in last 2 weeks [Reported.PHQ]",Observation,LOINC,44252-5
+3043785,Moving or speaking so slowly that other people could have noticed. Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual in last 2 weeks [Reported.PHQ],Observation,LOINC,44253-3
+3043462,"Thoughts that you would be better off dead, or of hurting yourself in some way in last 2 weeks [Reported.PHQ]",Observation,LOINC,44260-8
+40758879,Patient Health Questionnaire 2 item (PHQ-2) total score [Reported],Observation,LOINC,55758-7
+3042932,Patient Health Questionnaire 9 item (PHQ-9) total score [Reported],Observation,LOINC,44261-6

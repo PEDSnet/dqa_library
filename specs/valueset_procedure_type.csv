@@ -1,0 +1,98 @@
+﻿concept_id,concept_name,domain_id,vocabulary_id,concept_code
+32468,Inferred from claim,Type Concept,Procedure Type,OMOP4822347
+32425,NLP derived,Type Concept,Procedure Type,OMOP4822348
+38000248,Inpatient detail - primary position,Type Concept,Procedure Type,OMOP4822349
+38000249,Inpatient detail - 1st position,Type Concept,Procedure Type,OMOP4822350
+38000250,Inpatient header - primary position,Type Concept,Procedure Type,OMOP4822351
+38000251,Inpatient header - 1st position,Type Concept,Procedure Type,OMOP4822352
+38000252,Inpatient header - 2nd position,Type Concept,Procedure Type,OMOP4822353
+38000253,Inpatient header - 3rd position,Type Concept,Procedure Type,OMOP4822354
+38000254,Inpatient header - 4th position,Type Concept,Procedure Type,OMOP4822355
+38000255,Inpatient header - 5th position,Type Concept,Procedure Type,OMOP4822356
+38000256,Inpatient header - 6th position,Type Concept,Procedure Type,OMOP4822357
+38000257,Inpatient header - 7th position,Type Concept,Procedure Type,OMOP4822358
+38000258,Inpatient header - 8th position,Type Concept,Procedure Type,OMOP4822359
+38000259,Inpatient header - 9th position,Type Concept,Procedure Type,OMOP4822360
+38000260,Inpatient header - 10th position,Type Concept,Procedure Type,OMOP4822361
+38000261,Inpatient header - 11th position,Type Concept,Procedure Type,OMOP4822362
+38000262,Inpatient header - 12th position,Type Concept,Procedure Type,OMOP4822363
+38000263,Inpatient header - 13th position,Type Concept,Procedure Type,OMOP4822364
+38000264,Inpatient header - 14th position,Type Concept,Procedure Type,OMOP4822365
+38000265,Inpatient header - 15th position,Type Concept,Procedure Type,OMOP4822366
+38000266,Outpatient detail - primary position,Type Concept,Procedure Type,OMOP4822367
+38000267,Outpatient detail - 1st position,Type Concept,Procedure Type,OMOP4822368
+38000268,Outpatient header - primary position,Type Concept,Procedure Type,OMOP4822369
+38000269,Outpatient header - 1st position,Type Concept,Procedure Type,OMOP4822370
+38000270,Outpatient header - 2nd position,Type Concept,Procedure Type,OMOP4822371
+38000271,Outpatient header - 3rd position,Type Concept,Procedure Type,OMOP4822372
+38000272,Outpatient header - 4th position,Type Concept,Procedure Type,OMOP4822373
+38000273,Outpatient header - 5th position,Type Concept,Procedure Type,OMOP4822374
+38000274,Outpatient header - 6th position,Type Concept,Procedure Type,OMOP4822375
+38000275,EHR order list entry,Type Concept,Procedure Type,OMOP4822376
+38003621,Procedure recorded as lab test,Type Concept,Procedure Type,OMOP4822377
+38003622,Procedure recorded as diagnostic code,Type Concept,Procedure Type,OMOP4822378
+42865905,Facility header,Type Concept,Procedure Type,OMOP4822379
+42865906,Condition Procedure,Type Concept,Procedure Type,OMOP4822380
+42898141,Referral record,Type Concept,Procedure Type,OMOP4822381
+43542354,Physician administered drug (identified as procedure),Type Concept,Procedure Type,OMOP4822382
+44786630,Primary Procedure,Type Concept,Procedure Type,OMOP4822383
+44786631,Secondary Procedure,Type Concept,Procedure Type,OMOP4822384
+45756856,Outpatient detail - 2nd position,Type Concept,Procedure Type,OMOP4822385
+45756857,Outpatient detail - 3rd position,Type Concept,Procedure Type,OMOP4822386
+45756858,Outpatient detail - 4th position,Type Concept,Procedure Type,OMOP4822387
+45756859,Outpatient detail - 5th position,Type Concept,Procedure Type,OMOP4822388
+45756860,Outpatient detail - 6th position,Type Concept,Procedure Type,OMOP4822389
+45756861,Outpatient detail - 7th position,Type Concept,Procedure Type,OMOP4822390
+45756862,Outpatient detail - 8th position,Type Concept,Procedure Type,OMOP4822391
+45756863,Outpatient detail - 9th position,Type Concept,Procedure Type,OMOP4822392
+45756864,Outpatient detail - 10th position,Type Concept,Procedure Type,OMOP4822393
+45756865,Outpatient detail - 11th position,Type Concept,Procedure Type,OMOP4822394
+45756866,Outpatient detail - 12th position,Type Concept,Procedure Type,OMOP4822395
+45756867,Outpatient detail - 13th position,Type Concept,Procedure Type,OMOP4822396
+45756868,Outpatient detail - 14th position,Type Concept,Procedure Type,OMOP4822397
+45756869,Outpatient detail - 15th position,Type Concept,Procedure Type,OMOP4822398
+45756870,Outpatient detail - 16th position,Type Concept,Procedure Type,OMOP4822399
+45756871,Outpatient detail - 17th position,Type Concept,Procedure Type,OMOP4822400
+45756872,Outpatient detail - 18th position,Type Concept,Procedure Type,OMOP4822401
+45756873,Outpatient detail - 19th position,Type Concept,Procedure Type,OMOP4822402
+45756874,Outpatient detail - 20th position,Type Concept,Procedure Type,OMOP4822403
+45756875,Outpatient detail - 21th position,Type Concept,Procedure Type,OMOP4822404
+45756876,Outpatient detail - 22th position,Type Concept,Procedure Type,OMOP4822405
+45756877,Outpatient detail - 23th position,Type Concept,Procedure Type,OMOP4822406
+45756878,Outpatient detail - 24th position,Type Concept,Procedure Type,OMOP4822407
+45756879,Outpatient detail - 25th position,Type Concept,Procedure Type,OMOP4822408
+45756880,Outpatient detail - 26th position,Type Concept,Procedure Type,OMOP4822409
+45756881,Outpatient detail - 27th position,Type Concept,Procedure Type,OMOP4822410
+45756882,Outpatient detail - 28th position,Type Concept,Procedure Type,OMOP4822411
+45756883,Outpatient detail - 29th position,Type Concept,Procedure Type,OMOP4822412
+45756884,Outpatient detail - 30th position,Type Concept,Procedure Type,OMOP4822413
+45756885,Outpatient detail - 31th position,Type Concept,Procedure Type,OMOP4822414
+45756886,Outpatient detail - 32th position,Type Concept,Procedure Type,OMOP4822415
+45756887,Outpatient detail - 33th position,Type Concept,Procedure Type,OMOP4822416
+45756888,Outpatient detail - 34th position,Type Concept,Procedure Type,OMOP4822417
+45756889,Outpatient detail - 35th position,Type Concept,Procedure Type,OMOP4822418
+45756890,Outpatient detail - 36th position,Type Concept,Procedure Type,OMOP4822419
+45756891,Outpatient detail - 37th position,Type Concept,Procedure Type,OMOP4822420
+45756892,Outpatient detail - 38th position,Type Concept,Procedure Type,OMOP4822421
+45756893,Outpatient detail - 39th position,Type Concept,Procedure Type,OMOP4822422
+45756894,Outpatient detail - 40th position,Type Concept,Procedure Type,OMOP4822423
+45756895,Outpatient detail - 41th position,Type Concept,Procedure Type,OMOP4822424
+45756896,Outpatient detail - 42th position,Type Concept,Procedure Type,OMOP4822425
+45756897,Outpatient detail - 43th position,Type Concept,Procedure Type,OMOP4822426
+45756898,Outpatient detail - 44th position,Type Concept,Procedure Type,OMOP4822427
+45756899,Outpatient detail - 45th position,Type Concept,Procedure Type,OMOP4822428
+45756900,Carrier claim detail - 1st position,Type Concept,Procedure Type,OMOP4822429
+45756901,Carrier claim detail - 2nd position,Type Concept,Procedure Type,OMOP4822430
+45756902,Carrier claim detail - 3rd position,Type Concept,Procedure Type,OMOP4822431
+45756903,Carrier claim detail - 4th position,Type Concept,Procedure Type,OMOP4822432
+45756904,Carrier claim detail - 5th position,Type Concept,Procedure Type,OMOP4822433
+45756905,Carrier claim detail - 6th position,Type Concept,Procedure Type,OMOP4822434
+45756906,Carrier claim detail - 7th position,Type Concept,Procedure Type,OMOP4822435
+45756907,Carrier claim detail - 8th position,Type Concept,Procedure Type,OMOP4822436
+45756908,Carrier claim detail - 9th position,Type Concept,Procedure Type,OMOP4822437
+45756909,Carrier claim detail - 10th position,Type Concept,Procedure Type,OMOP4822438
+45756910,Carrier claim detail - 11th position,Type Concept,Procedure Type,OMOP4822439
+45756911,Carrier claim detail - 12th position,Type Concept,Procedure Type,OMOP4822440
+45756912,Carrier claim detail - 13th position,Type Concept,Procedure Type,OMOP4822441
+257,Hospitalization Cost Record,Type Concept,Procedure Type,OMOP4822442
+581412,Procedure Recorded from a Survey,Type Concept,Procedure Type,OMOP4822443

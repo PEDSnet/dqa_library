@@ -1,0 +1,8 @@
+﻿check_type,check_name,check_category,db_tbl_name,check_app_col,meta_or_fact,join_by_col,check_application,instructions,result_pts,result_visits,result_rows,results_other
+st_comp_facts,Completeness of Patient and Visit Records,AB1,st_comp_facts,measure_tbl,fact,,,,facts_pts_prop,fact_visits_prop,,
+st_conf_concepts_unmapped,Concept Mapping Conformance,AB2,st_conf_concepts_unmapped,measure,fact,,,,,,unmapped_prop,
+st_cons_dc,Data Cycle Consistency,AC1,st_cons_dc_meta,table_descriptioon,meta,table_name,,,prop_pt_change,,prop_total_change,
+st_conf_vs,Valueset and Vocabulary Conformance,AA1,st_conf_vs_violations,measurement_column,fact,,,,total_pt_ct,,total_ct,
+st_conf_visit_id,Visit Identifier Conformance,AA2,st_conf_visit_id,measure,fact,,,,,visit_na,,total_id
+st_conf_rxnorm,Drug RxNorm Conformance,AA3,st_conf_rx_norm_meta,table_description,meta,table_name,,rule_rxnorm,person_proportions,,row_proportions,
+st_cons_temp,Visit Temporality ,AC2,st_cons_temp_meta,table_description,meta,,,,,,,

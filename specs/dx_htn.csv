@@ -1,0 +1,99 @@
+﻿concept_id,concept_code,concept_name,vocabulary_id
+45771067,7.1701E+13,Hypertension in chronic kidney disease due to type 1 diabetes mellitus,SNOMED
+45771064,7.1421E+13,Hypertension in chronic kidney disease due to type 2 diabetes mellitus,SNOMED
+45768449,706882009,Hypertensive crisis,SNOMED
+45757447,1.40131E+14,Hypertension in chronic kidney disease stage 2 due to type 2 diabetes mellitus,SNOMED
+45757446,1.40121E+14,Hypertension in chronic kidney disease stage 3 due to type 2 diabetes mellitus,SNOMED
+45757445,1.40111E+14,Hypertension in chronic kidney disease stage 4 due to type 2 diabetes mellitus,SNOMED
+45757444,1.40101E+14,Hypertension in chronic kidney disease stage 5 due to type 2 diabetes mellitus,SNOMED
+44811933,9.08651E+14,Stage 1 hypertension (NICE 2011) with evidence of end organ damage,SNOMED
+44811932,9.08631E+14,Stage 1 hypertension (NICE 2011) without evidence of end organ damage,SNOMED
+44811110,8.63191E+14,Nocturnal hypertension,SNOMED
+44809569,8.46371E+14,Stage 2 hypertension,SNOMED
+44809548,8.45891E+14,Hypertension resistant to drug therapy,SNOMED
+44809027,8.43841E+14,Severe hypertension,SNOMED
+44809026,8.43821E+14,Stage 1 hypertension,SNOMED
+43020424,1.32721E+14,Hypertensive emergency,SNOMED
+42538697,762463000,Diastolic hypertension and systolic hypertension,SNOMED
+40481896,443482000,Hypertensive urgency,SNOMED
+37016726,712832005,Supine hypertension,SNOMED
+35624277,766937004,Hypertension due to gain-of-function mutation in mineralocorticoid receptor,SNOMED
+4322735,427889009,Hypertension associated with transplantation,SNOMED
+4316372,95605009,HELLP syndrome,SNOMED
+4305599,39018007,Renal arterial hypertension,SNOMED
+4289933,70272006,Malignant hypertension,SNOMED
+4263067,46481004,Low-renin essential hypertension,SNOMED
+4262182,397748008,Hypertension with albuminuria,SNOMED
+4253928,74451002,Secondary diastolic hypertension,SNOMED
+4249016,73410007,Benign secondary renovascular hypertension,SNOMED
+4243055,59997006,Endocrine hypertension,SNOMED
+4242878,59720008,Sustained diastolic hypertension,SNOMED
+4221991,84094009,Rebound hypertension,SNOMED
+4212496,57684003,Parenchymal renal hypertension,SNOMED
+4209293,56218007,Systolic hypertension,SNOMED
+4199306,52698002,Transient hypertension,SNOMED
+4180283,429457004,Systolic essential hypertension,SNOMED
+4179379,429198000,Exertional hypertension,SNOMED
+4178312,428575007,Hypertension secondary to kidney transplant,SNOMED
+4167358,48146000,Diastolic hypertension,SNOMED
+4110948,194788005,Hypertension secondary to endocrine disorder,SNOMED
+4110947,194783001,Malignant secondary renovascular hypertension,SNOMED
+4108213,194791005,Hypertension secondary to drug,SNOMED
+4058987,19769006,High-renin essential hypertension,SNOMED
+4049389,23130000,Paroxysmal hypertension,SNOMED
+4048212,123800009,Goldblatt hypertension,SNOMED
+4032952,14973001,Renal sclerosis with hypertension,SNOMED
+4028741,10725009,Benign hypertension,SNOMED
+443771,28119000,Renal hypertension,SNOMED
+320128,59621000,Essential hypertension,SNOMED
+319826,31992008,Secondary hypertension,SNOMED
+318437,89242004,Malignant secondary hypertension,SNOMED
+317898,78975002,Malignant essential hypertension,SNOMED
+317895,123799005,Renovascular hypertension,SNOMED
+316866,38341003,Hypertensive disorder,SNOMED
+314958,194785008,Benign secondary hypertension,SNOMED
+312648,1201005,Benign essential hypertension,SNOMED
+NA,1.0783E+15,Multiple drug intolerant hypertension,SNOMED
+NA,4.61301E+14,Resistant hypertensive disorder,SNOMED
+201313,38481006,Hypertensive renal disease,SNOMED
+193493,193003,Benign hypertensive renal disease,SNOMED
+443919,49220004,Hypertensive renal failure,SNOMED
+442766,65443008,Malignant hypertensive renal disease,SNOMED
+43021748,473392002,Hypertensive nephrosclerosis,SNOMED
+44782429,1.04931E+14,Chronic kidney disease due to hypertension,SNOMED
+44782703,1.17681E+14,Chronic kidney disease stage 1 due to hypertension,SNOMED
+44782692,1.29181E+14,Chronic kidney disease stage 2 due to hypertension,SNOMED
+44782691,1.29171E+14,Chronic kidney disease stage 3 due to hypertension,SNOMED
+44782689,1.29151E+14,Chronic kidney disease stage 4 due to hypertension,SNOMED
+44782690,1.29161E+14,Chronic kidney disease stage 5 due to hypertension,SNOMED
+43021852,2.85831E+14,Malignant hypertensive chronic kidney disease,SNOMED
+46270353,2.84961E+14,Chronic kidney disease due to benign hypertension,SNOMED
+46270354,2.84971E+14,Chronic kidney disease stage 1 due to benign hypertension,SNOMED
+46270355,2.84981E+14,Chronic kidney disease stage 2 due to benign hypertension,SNOMED
+46273636,2.84991E+14,Chronic kidney disease stage 3 due to benign hypertension,SNOMED
+46273514,2.85001E+14,Chronic kidney disease stage 4 due to benign hypertension,SNOMED
+46270356,2.85011E+14,Chronic kidney disease stage 5 due to benign hypertension,SNOMED
+4302748,78544004,Chronic hypertensive uremia,SNOMED
+37018886,1.11411E+14,End stage renal disease due to hypertension,SNOMED
+762973,4.34431E+14,Hypertensive end stage renal disease,SNOMED
+442604,64715009,Hypertensive heart disease,SNOMED
+4263504,36221001,Benign hypertensive heart disease,SNOMED
+319034,60899001,Hypertensive heart disease without congestive heart failure,SNOMED
+444101,46113002,Hypertensive heart failure,SNOMED
+4322893,428163005,Hypertensive left ventricular hypertrophy,SNOMED
+4183981,54225002,Malignant hypertensive heart disease,SNOMED
+4173820,275516004,Cardiomegaly - hypertensive,SNOMED
+36712757,1.08701E+14,Cardiomyopathy due to hypertension ,SNOMED
+195556,86234004,Hypertensive heart and renal disease,SNOMED
+44784637,9.6701E+13,Hypertensive heart and chronic kidney disease on dialysis,SNOMED
+44784621,8.501E+12,Hypertensive heart and chronic kidney disease  ,SNOMED
+42709887,449759005,Hypertensive complication,SNOMED
+312938,50490005,Hypertensive encephalopathy,SNOMED
+42872891,450886002,Posterior reversible encephalopathy syndrome,SNOMED
+4227517,422001004,Hypertensive choroidopathy,SNOMED
+4317265,95343001,Hypertensive ischemic ulcer,SNOMED
+4228419,421731000,Hypertensive optic neuropathy,SNOMED
+42019597,6962006,Hypertensive retinopathy,SNOMED
+36684780,3.45771E+14,Bilateral hypertension with disorder of retinas,SNOMED
+36684718,3.40441E+14,Hypertension with disorder of left retina,SNOMED
+36684653,3.34831E+14,Hypertension with disorder of right retina,SNOMED

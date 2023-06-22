@@ -1,0 +1,6 @@
+﻿concept_id,concept_name,domain_id,vocabulary_id,concept_code
+38003563,Hispanic or Latino,Ethnicity,Ethnicity,Hispanic
+38003564,Not Hispanic or Latino,Ethnicity,Ethnicity,Not Hispanic
+44814649,Other,Observation,PCORNet,Generic-OT
+44814650,No information,Observation,PCORNet,Generic-NI
+44814653,Unknown,Observation,PCORNet,Generic-UN

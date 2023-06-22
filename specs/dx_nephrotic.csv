@@ -1,0 +1,113 @@
+﻿concept_id,concept_name,concept_code,vocabulary_id
+4056472,"Acute nephritic syndrome, diffuse membranous glomerulonephritis",197683002,SNOMED
+4058985,"Acute nephritic syndrome, focal and segmental glomerular lesions",197682007,SNOMED
+46270347,Chronic nephritic syndrome with membranous glomerulonephritis,2.8191E+13,SNOMED
+4056479,"Chronic nephritic syndrome, focal and segmental glomerular lesions",197709005,SNOMED
+45769466,Collagenofibrotic glomerulopathy,708127008,SNOMED
+36716430,Dyschondrosteosis and nephritis syndrome,722433005,SNOMED
+37311772,Fibronectin glomerulopathy,818952002,SNOMED
+4222610,Focal AND segmental proliferative glomerulonephritis,83866005,SNOMED
+4059452,Glomerular disease,197679002,SNOMED
+36717238,Glomerular disorder due to non-neuropathic heredofamilial amyloidosis,722948009,SNOMED
+4056017,Glomerular disorders in blood diseases and disorders involving the immune mechanism,197739000,SNOMED
+37311327,Glomerular fibrosis,816069008,SNOMED
+4128231,Glomerulopathy with fibronectin deposits 1,236535001,SNOMED
+36716650,Glomerulopathy with fibronectin deposits 2,722759007,SNOMED
+261071,Glomerulosclerosis,197661001,SNOMED
+45757751,Hereditary minor glomerular abnormality,3.67581E+14,SNOMED
+36715483,Idiopathic glomerular disease,721175003,SNOMED
+4055901,"Isolated proteinuria with specified morphological lesion, diffuse mesangial proliferative glomerulonephritis",197721009,SNOMED
+40490326,Lipoprotein glomerulopathy,446923008,SNOMED
+4056344,"Nephritis, nephrosis and nephrotic syndrome",197577008,SNOMED
+40317613,"Nephritis, nephrosis and nephrotic syndrome",155849003,SNOMED
+4056019,"Nephritis, nephrosis and nephrotic syndrome NOS",197758009,SNOMED
+4176957,Nephrotic syndrome secondary to glomerulonephritis,363233007,SNOMED
+4221663,Nephrotic-nephritic syndrome,40233000,SNOMED
+37397533,Non-amyloid fibrillary glomerulonephritis,718192000,SNOMED
+4056596,"Other specified nephritis, nephrosis or nephrotic syndrome",197756008,SNOMED
+37018349,Persistent hematuria co-occurrent and due to diffuse membranous glomerulonephritis,714822004,SNOMED
+4058989,"Rapidly progressive nephritic syndrome, diffuse membranous glomerulonephritis",197692004,SNOMED
+4058988,"Rapidly progressive nephritic syndrome, focal and segmental glomerular lesions",197691006,SNOMED
+37018348,Recurrent hematuria co-occurrent and due to diffuse membranous glomerulonephritis,714821006,SNOMED
+4059460,"Recurrent or persistent hematuria, diffuse membranous glomerulonephritis",197701008,SNOMED
+40374521,[EDTA] Focal segmental glomeruloscerosis with nephrotic syndrome in adults with renal failure,285278004,SNOMED
+40353442,[EDTA] Severe nephrotic syndrome with focal sclerosis (paediatric patients only) associated with renal failure,274552005,SNOMED
+37208344,Acute nephrotic syndrome,1.0818E+15,SNOMED
+40481596,Autosomal dominant focal segmental glomerulosclerosis,444977005,SNOMED
+36717210,Autosomal dominant intermediate Charcot-Marie-Tooth disease type E,722294004,SNOMED
+40483353,Autosomal recessive focal segmental glomerulosclerosis,445388002,SNOMED
+4030514,C1q nephropathy,236412002,SNOMED
+45771482,Childhood nephrotic syndrome,705065000,SNOMED
+44803617,Childhood nephrotic syndrome,7.29911E+14,SNOMED
+4128059,Classical focal segmental glomerulosclerosis,236404005,SNOMED
+37111021,Congenital membranous nephropathy due to maternal anti-neutral endopeptidase alloimmunization,725592009,SNOMED
+4172011,Congenital nephrotic syndrome,48796009,SNOMED
+36717532,Congenital nephrotic syndrome due to congenital infection,722118005,SNOMED
+36717553,Congenital nephrotic syndrome due to diffuse mesangial sclerosis,722369003,SNOMED
+4058845,Congenital nephrotic syndrome NOS,197602005,SNOMED
+4030510,Congenital nephrotic syndrome with focal glomerulosclerosis,236384008,SNOMED
+37116655,"Congenital nephrotic syndrome, interstitial lung disease, epidermolysis bullosa syndrome",733453005,SNOMED
+4008560,Diffuse mesangial sclerosis,111406002,SNOMED
+4030675,Diffuse mesangial sclerosis with ocular abnormalities,236528009,SNOMED
+4125955,Drash syndrome,236385009,SNOMED
+36716200,Drug-induced membranous nephropathy,722120008,SNOMED
+37397492,Familial idiopathic steroid-resistant nephrotic syndrome,718141008,SNOMED
+4128056,Familial mesangial sclerosis,236383002,SNOMED
+37204730,Familial steroid-resistant nephrotic syndrome with sensorineural deafness,783614008,SNOMED
+4058844,Finnish congenital nephrotic syndrome,197601003,SNOMED
+4093431,Focal glomerular sclerosis,25821008,SNOMED
+4030513,Focal segmental glomerulosclerosis,236403004,SNOMED
+36716214,Focal segmental glomerulosclerosis caused by lithium,722139003,SNOMED
+37017586,Focal segmental glomerulosclerosis co-occurrent with human immunodeficiency virus infection,713887002,SNOMED
+36716221,Focal segmental glomerulosclerosis due to sickle cell disease,722147003,SNOMED
+36715581,Galloway Mowat syndrome,721297008,SNOMED
+45757747,Hereditary diffuse membranous glomerulonephritis,3.67541E+14,SNOMED
+45757750,Hereditary focal and segmental glomerular lesions,3.67571E+14,SNOMED
+4059126,"Hereditary nephropathy, not elsewhere classified, diffuse membranous glomerulonephritis",197731002,SNOMED
+4126302,Hyperfiltration focal segmental glomerulosclerosis,236405006,SNOMED
+36716199,Idiopathic membranous glomerulonephritis,722119002,SNOMED
+4128063,IgM nephropathy,236411009,SNOMED
+36716231,Infection-associated membranous nephropathy,722168002,SNOMED
+4059122,"Isolated proteinuria with specified morphological lesion, diffuse membranous glomerulonephritis",197720005,SNOMED
+36675121,LAMB2-related infantile-onset nephrotic syndrome,771447009,SNOMED
+37204491,Leigh syndrome with nephrotic syndrome,783157004,SNOMED
+252365,Membranous glomerulonephritis,77182004,SNOMED
+40395557,Membranous glomerulonephritis,197710000,SNOMED
+4125966,Membranous glomerulonephritis - stage I,236413007,SNOMED
+4126303,Membranous glomerulonephritis - stage II,236414001,SNOMED
+4126304,Membranous glomerulonephritis - stage III,236415000,SNOMED
+4030515,Membranous glomerulonephritis - stage IV,236416004,SNOMED
+4030516,Membranous glomerulonephritis stage V,236417008,SNOMED
+4260398,Minimal change disease,44785005,SNOMED
+36713436,Multi-drug resistant nephrotic syndrome,717760006,SNOMED
+195314,Nephrotic syndrome,52254009,SNOMED
+40317616,Nephrotic syndrome,155851004,SNOMED
+192364,Nephrotic syndrome associated with another disorder,197603000,SNOMED
+37017424,Nephrotic syndrome co-occurrent with human immunodeficiency virus infection,713695001,SNOMED
+4058967,Nephrotic syndrome in amyloidosis,197604006,SNOMED
+4027123,Nephrotic syndrome in diseases EC NOS,197609001,SNOMED
+4056348,Nephrotic syndrome in polyarteritis nodosa,197607004,SNOMED
+4058968,Nephrotic syndrome NOS,197611005,SNOMED
+4181202,Nephrotic syndrome secondary to systemic disease,363234001,SNOMED
+194405,Nephrotic syndrome with membranous glomerulonephritis,197590001,SNOMED
+199071,Nephrotic syndrome with minimal change glomerulonephritis,266549004,SNOMED
+40394719,Nephrotic syndrome with minimal change glomerulonephritis,197592009,SNOMED
+4056461,Nephrotic syndrome with other pathological kidney lesions,197610006,SNOMED
+36676681,"Nephrotic syndrome, deafness, pretibial epidermolysis bullosa syndrome",773647007,SNOMED
+4058841,"Nephrotic syndrome, diffuse membranous glomerulonephritis",197595006,SNOMED
+4058842,"Nephrotic syndrome, diffuse mesangial proliferative glomerulonephritis",197596007,SNOMED
+4058840,"Nephrotic syndrome, focal and segmental glomerular lesions",197594005,SNOMED
+4056346,"Nephrotic syndrome, minor glomerular abnormality",197593004,SNOMED
+37109670,Pierson syndrome,723449004,SNOMED
+37109992,Schimke immuno-osseous dysplasia,723995003,SNOMED
+37397147,Sporadic idiopathic steroid-resistant nephrotic syndrome,717191005,SNOMED
+42709948,Steroid resistant nephrotic syndrome of childhood,449820008,SNOMED
+40482087,Steroid sensitive nephrotic syndrome of childhood,445119005,SNOMED
+4125962,Steroid-dependent minimal change glomerulonephritis,236401002,SNOMED
+4125954,Steroid-dependent nephrotic syndrome,236382007,SNOMED
+4125961,Steroid-resistant minimal change glomerulonephritis,236400001,SNOMED
+4128055,Steroid-resistant nephrotic syndrome,236381000,SNOMED
+4125960,Steroid-sensitive minimal change glomerulonephritis,236399008,SNOMED
+4030509,Steroid-sensitive nephrotic syndrome,236380004,SNOMED
+4126122,Pulmonic stenosis and congenital nephrosis,236530006,SNOMED
+37119051,"Nephrosis, deafness, urinary tract, digital malformation syndrome",724092009,SNOMED
