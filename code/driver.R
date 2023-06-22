@@ -95,7 +95,7 @@ config_append('extra_packages', c('tidyr',
     pf_allvisits <- check_pf_visits(all_list)
     pf_opvisits <- check_pf_visits(op_list,
                                    visit_tbl = site_cdm_tbl('visit_occurrence') %>%
-                                     filter(visit_concept_id %in% c(9202L,2000000469L,581399L)))
+                                     filter(visit_concept_id %in% c(9202L,581399L)))
     pf_ipvisits <- check_pf_visits(ip_list,
                                    visit_tbl = site_cdm_tbl('visit_occurrence') %>%
                                      filter(visit_concept_id %in% c(9201L,2000000048L)))
