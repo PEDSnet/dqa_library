@@ -2,6 +2,8 @@
 
 This repository contains the code that is used to generate the raw output of the data quality analyses that are displayed on the PEDSnet Data Quality Dashboard. For each of the 8 checks, there is a `cohort_*.R` and `*_execute.R` file that make up the check. The `cohort` file contains the function, while the `execute` file contains the inputs used in the function. The functions are all executed in `driver.R`.
 
+For information about each individual execution of the 8 checks, please see `dqa_check_descriptions.xlsx`. This file has plain language descriptions of each check execution, organized based on the check type, the check domain, and the check application. This is similar to how the information in the REDCap DQA Issues form is formatted, so it should hopefully make it simple to connect a check in the form to its description in the file.
+
 ## Data Cycle Changes
 
 #### Files:
