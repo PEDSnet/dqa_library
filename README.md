@@ -2,7 +2,7 @@
 
 This repository contains the code that is used to generate the raw output of the data quality analyses that are displayed on the PEDSnet Data Quality Dashboard. For each of the 8 checks, there is a `cohort_*.R` and `*_execute.R` file that make up the check. The `cohort` file contains the function, while the `execute` file contains the inputs used in the function. The functions are all executed in `driver.R`.
 
-For information about each individual execution of the 8 checks, please see `dqa_check_descriptions.xlsx`. This file has plain language descriptions of each check execution, organized based on the check type, the check domain, and the check application. This is similar to how the information in the REDCap DQA Issues form is formatted, so it should hopefully make it simple to connect a check in the form to its description in the file.
+For information about each individual execution of the 8 checks, please see `dqa_check_descriptions.xlsx`. This file has plain language descriptions of each check execution, organized based on the check type, the check domain, and the check application. This is similar to how the information in the REDCap DQA Issues form is formatted, so it should hopefully simplify the process of connecting a check in the form to its description in the file.
 
 ## Data Cycle Changes
 
@@ -24,9 +24,9 @@ This function loops through a list of tables from the previous data cycle and co
 
 #### How the functions work:
 
-The Valueset Conformance function `check_vs.R` compares the values in the specified field against a standard valueset (found in the `specs` folder). The resulting table will have a list of every time the valueset was violated for each field.
+The Valueset Conformance function `check_vs` compares the values in the specified field against a standard valueset (found in the `specs` folder). The resulting table will have a list of every time the valueset was violated for each field.
 
-The Vocabulary Conformance function `check_vc.R` joins the specified field with the vocabulary table and checks that all values comply with a list of acceptable vocabularies. The resulting table will have a list of each unique occurrence of a vocabulary violation.
+The Vocabulary Conformance function `check_vc` joins the specified field with the vocabulary table and checks that all values comply with a list of acceptable vocabularies. The resulting table will have a list of each unique occurrence of a vocabulary violation.
 
 The list of fields this check examines, the names of the valueset files, and the lists of acceptable vocabularies used for each field are found in `vc_vs_execute.R`.
 
