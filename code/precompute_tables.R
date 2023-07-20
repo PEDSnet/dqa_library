@@ -1,8 +1,8 @@
 
-## Outpatient Labs
+# Outpatient Labs
 site_voml <- site_cdm_tbl('measurement_labs') %>%
   inner_join(select(site_cdm_tbl('visit_occurrence'),
-    visit_occurrence_id, visit_concept_id)) %>% 
+    visit_occurrence_id, visit_concept_id)) %>%
   filter(visit_concept_id == 9202L)
 
 output_tbl(site_voml, 'site_voml',
@@ -54,15 +54,3 @@ site_htnrx <- site_cdm_tbl('drug_exposure') %>%
 output_tbl(site_htnrx, 'site_htnrx',
            indexes = c('person_id', 'visit_occurrence_id'))
 
-
-## Remove Tables Function
-remove_precompute <- function() {
-  
-  db_remove_table(name = in_schema(config('results_schema'), 'site_voml_op_1510'))
-  db_remove_table(name = in_schema(config('results_schema'), 'site_vodi_op_1510'))
-  db_remove_table(name = in_schema(config('results_schema'), 'site_prvo_op_1510'))
-  db_remove_table(name = in_schema(config('results_schema'), 'site_vipdp_op_1510'))
-  db_remove_table(name = in_schema(config('results_schema'), 'site_ckddx_op_1510'))
-  db_remove_table(name = in_schema(config('results_schema'), 'site_htnrx_op_1510'))
-  
-}

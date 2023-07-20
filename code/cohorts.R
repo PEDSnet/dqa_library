@@ -10,5 +10,16 @@
 #' operations on cohorts into logical groups in different files.
 #'
 
+## Remove Tables Function
+remove_precompute <- function() {
+  
+  db_remove_table(name = in_schema(config('results_schema'), 'site_voml_pasc_109'))
+  db_remove_table(name = in_schema(config('results_schema'), 'site_vodi_pasc_109'))
+  db_remove_table(name = in_schema(config('results_schema'), 'site_prvo_pasc_109'))
+  db_remove_table(name = in_schema(config('results_schema'), 'site_vipdp_pasc_109'))
+  db_remove_table(name = in_schema(config('results_schema'), 'site_ckddx_pasc_109'))
+  db_remove_table(name = in_schema(config('results_schema'), 'site_htnrx_pasc_109'))
+  
+}
 
 
