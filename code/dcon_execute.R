@@ -37,8 +37,8 @@ conc_visits_list <-
                                                                                      c(2000000095L, 2000000096L,
                                                                                        2000000097L, 2000000101L,
                                                                                        2000000102L, 2000000103L)),
-                                   'dcon_op_visits_conds'),
-       'Nephrology_dx_specialty' = list()
+                                   'dcon_op_visits_conds')
+       #'Nephrology_dx_specialty' = list()
            )
   
   
