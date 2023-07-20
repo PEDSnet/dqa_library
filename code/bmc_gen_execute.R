@@ -2,16 +2,16 @@
 ## Precompute outpatient specialty tables
 
 op_prov_spec <- site_cdm_tbl('visit_occurrence') %>% 
-  filter(visit_concept_id %in% c(9202L)) %>%
+  filter(visit_concept_id %in% c(9202L, 581399L)) %>%
   inner_join(select(site_cdm_tbl('provider'), provider_id, specialty_concept_id))
 
 op_cs_spec <- site_cdm_tbl('visit_occurrence') %>% 
-  filter(visit_concept_id %in% c(9202L)) %>%
+  filter(visit_concept_id %in% c(9202L, 581399L)) %>%
   inner_join(select(site_cdm_tbl('care_site'), care_site_id, specialty_concept_id))
 
 op_spec <- select(site_cdm_tbl('visit_occurrence'), person_id, visit_concept_id,
                   provider_id, care_site_id) %>%
-  filter(visit_concept_id %in% c(9202L)) %>%
+  filter(visit_concept_id %in% c(9202L, 581399L)) %>%
   pivot_longer(cols = c(provider_id, care_site_id),
                names_to = 'domain_id',
                values_to = 'entity_id') %>%
