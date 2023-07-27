@@ -15,8 +15,8 @@
 
 conc_pts_list <- 
   list(
-    'pts_with_ckd_dx_and_htn_rx' = list(results_tbl('site_ckddx'),
-                                        results_tbl('site_htnrx'),
+    'pts_with_ckd_dx_and_htn_rx' = list(results_tbl(paste0(config('site'),'_ckddx')),
+                                        results_tbl(paste0(config('site'),'_htnrx')),
                                         'dcon_pts_ckd-dx_htn-rx')
   )
 

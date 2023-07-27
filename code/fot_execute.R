@@ -23,7 +23,7 @@ time_tbls_list = list(
   'fot_vip_ipcombined' = list(site_cdm_tbl('visit_occurrence') %>% filter(visit_concept_id == 2000000048L), 'ED to IP combined visits'),
   'fot_vob' = list(site_cdm_tbl('visit_occurrence') %>% filter(visit_concept_id == 2000000088L), 'Observation visits'),
   'fot_co' = list(site_cdm_tbl('condition_occurrence'), 'all conditions'),
-  'fot_prvo' = list(results_tbl('site_prvo'), 'outpatient procedures'),
+  'fot_prvo' = list(results_tbl(paste0(config('site'),'_prvo')), 'outpatient procedures'),
   'fot_adt_picu' = list(site_cdm_tbl('adt_occurrence') %>% filter(service_concept_id == 2000000078L), 'picu'),
   'fot_adt_nicu' = list(site_cdm_tbl('adt_occurrence') %>% filter(service_concept_id == 2000000080L), 'nicu'),
   'fot_adt_cicu' = list(site_cdm_tbl('adt_occurrence') %>% filter(service_concept_id == 2000000079L), 'cicu'),
@@ -64,11 +64,11 @@ time_tbls_list = list(
                                                                                     2000000100L,
                                                                                     2000000093L,
                                                                                     2000000094L)), 'Inpatient condition billing'),
-  'fot_voml' = list(results_tbl('site_voml'), 'outpatient labs (9202)'),
+  'fot_voml' = list(results_tbl(paste0(config('site'),'_voml')), 'outpatient labs (9202)'),
   
-  'fot_vodi' = list(results_tbl('site_vodi'), 'outpatient med administration'),
+  'fot_vodi' = list(results_tbl(paste0(config('site'),'_vodi')), 'outpatient med administration'),
   
-  'fot_vipdp' = list(results_tbl('site_vipdp'), 'inpatient prescriptions'),
+  'fot_vipdp' = list(results_tbl(paste0(config('site'),'_vipdp')), 'inpatient prescriptions'),
 
   'fot_ma_ht' = list(site_cdm_tbl('measurement_anthro') %>%
                        filter(measurement_concept_id == 3023540L), 'Height'),

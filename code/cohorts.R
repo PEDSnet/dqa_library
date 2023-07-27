@@ -13,12 +13,12 @@
 ## Remove Tables Function
 remove_precompute <- function() {
   
-  db_remove_table(name = in_schema(config('results_schema'), 'site_voml_pasc_109'))
-  db_remove_table(name = in_schema(config('results_schema'), 'site_vodi_pasc_109'))
-  db_remove_table(name = in_schema(config('results_schema'), 'site_prvo_pasc_109'))
-  db_remove_table(name = in_schema(config('results_schema'), 'site_vipdp_pasc_109'))
-  db_remove_table(name = in_schema(config('results_schema'), 'site_ckddx_pasc_109'))
-  db_remove_table(name = in_schema(config('results_schema'), 'site_htnrx_pasc_109'))
+  db_remove_table(name = in_schema(config('results_schema'), paste0(config('site'),'_voml_pasc_109')))
+  db_remove_table(name = in_schema(config('results_schema'), paste0(config('site'),'_vodi_pasc_109')))
+  db_remove_table(name = in_schema(config('results_schema'), paste0(config('site'),'_prvo_pasc_109')))
+  db_remove_table(name = in_schema(config('results_schema'), paste0(config('site'),'_vipdp_pasc_109')))
+  db_remove_table(name = in_schema(config('results_schema'), paste0(config('site'),'_ckddx_pasc_109')))
+  db_remove_table(name = in_schema(config('results_schema'), paste0(config('site'),'_htnrx_pasc_109')))
   
 }
 
