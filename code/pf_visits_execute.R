@@ -18,15 +18,15 @@ visit_payer <- (select(site_cdm_tbl('visit_payer'), visit_occurrence_id, visit_p
   inner_join(select(site_cdm_tbl('visit_occurrence'), person_id, visit_occurrence_id)) %>%
   select(person_id, visit_occurrence_id) 
 
-pv_spec <- select(site_cdm_tbl('provider'), provider_id, specialty_concept_id) %>%
-  inner_join(select(site_cdm_tbl('visit_occurrence'), person_id, visit_occurrence_id, 
-                    provider_id)) %>%
-  filter(!is.na(specialty_concept_id))
-
-cs_spec <- select(site_cdm_tbl('care_site'), care_site_id, specialty_concept_id) %>%
-  inner_join(select(site_cdm_tbl('visit_occurrence'), person_id, visit_occurrence_id, 
-                    care_site_id)) %>%
-  filter(!is.na(specialty_concept_id))
+# pv_spec <- select(site_cdm_tbl('provider'), provider_id, specialty_concept_id) %>%
+#   inner_join(select(site_cdm_tbl('visit_occurrence'), person_id, visit_occurrence_id, 
+#                     provider_id)) %>%
+#   filter(!is.na(specialty_concept_id))
+# 
+# cs_spec <- select(site_cdm_tbl('care_site'), care_site_id, specialty_concept_id) %>%
+#   inner_join(select(site_cdm_tbl('visit_occurrence'), person_id, visit_occurrence_id, 
+#                     care_site_id)) %>%
+#   filter(!is.na(specialty_concept_id))
 
 #' check element definitions for the `pf` check type
 #' 
@@ -52,8 +52,8 @@ all_list <-
     'all_visits_with_procs_drugs_labs' = list(procs_drugs_labs, 'pf_visits_prdrml'),
     'all_visits_with_payer' = list(visit_payer, 'pf_visits_vp'),
     'all_visits_with_immunizations' = list(site_cdm_tbl('immunization'), 'pf_visits_im'),
-    'all_visits_with_pv_spec' = list(pv_spec, 'pf_visits_pv_spec'),
-    'all_visits_with_cs_spec' = list(cs_spec, 'pf_visits_cs_spec')
+    # 'all_visits_with_pv_spec' = list(pv_spec, 'pf_visits_pv_spec'),
+    # 'all_visits_with_cs_spec' = list(cs_spec, 'pf_visits_cs_spec')
   )
 
 op_list <-
@@ -66,8 +66,8 @@ op_list <-
     'op_all_visits_with_procs_drugs_labs' = list(procs_drugs_labs, 'pf_opvisits_prdrml'),
     'op_visits_with_payer' = list(visit_payer, 'pf_opvisits_vp'),
     'op_visits_with_immunizations' = list(site_cdm_tbl('immunization'), 'pf_opvisits_im'),
-    'op_visits_with_pv_spec' = list(pv_spec, 'pf_opvisits_pv_spec'),
-    'op_visits_with_cs_spec' = list(cs_spec, 'pf_opvisits_cs_spec')
+    # 'op_visits_with_pv_spec' = list(pv_spec, 'pf_opvisits_pv_spec'),
+    # 'op_visits_with_cs_spec' = list(cs_spec, 'pf_opvisits_cs_spec')
   )
 
 ip_list <-
@@ -81,8 +81,8 @@ ip_list <-
     'ip_icu'=list(icu_transfer,'pf_ipvisits_icu'),
     'ip_visits_with_payer' = list(visit_payer, 'pf_ipvisits_vp'),
     'ip_visits_with_immunizations' = list(site_cdm_tbl('immunization'), 'pf_ipvisits_im'),
-    'ip_visits_with_pv_spec' = list(pv_spec, 'pf_ipvisits_pv_spec'),
-    'ip_visits_with_cs_spec' = list(cs_spec, 'pf_ipvisits_cs_spec')
+    # 'ip_visits_with_pv_spec' = list(pv_spec, 'pf_ipvisits_pv_spec'),
+    # 'ip_visits_with_cs_spec' = list(cs_spec, 'pf_ipvisits_cs_spec')
   )
 
 
@@ -96,6 +96,6 @@ ed_list <-
     'ed_all_visits_with_procs_drugs_labs' = list(procs_drugs_labs, 'pf_edvisits_prdrml'),
     'ed_visits_with_payer' = list(visit_payer, 'pf_edvisits_vp'),
     'ed_visits_with_immunizations' = list(site_cdm_tbl('immunization'), 'pf_edvisits_im'),
-    'ed_visits_with_pv_spec' = list(pv_spec, 'pf_edvisits_pv_spec'),
-    'ed_visits_with_cs_spec' = list(cs_spec, 'pf_edvisits_cs_spec')
+    # 'ed_visits_with_pv_spec' = list(pv_spec, 'pf_edvisits_pv_spec'),
+    # 'ed_visits_with_cs_spec' = list(cs_spec, 'pf_edvisits_cs_spec')
   )
