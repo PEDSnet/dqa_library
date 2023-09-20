@@ -1,8 +1,0 @@
-﻿check_type,check_name,check_category,check_description
-st_comp_facts,Completeness of Patient and Visit Records,AB1,Checks proportion of visits in the visit_occurrence table that are missing facts in other tables. Output includes proportion of visits as well as proportion of patients without visits in the fact table. 
-st_conf_concepts_unmapped,Concept Mapping Conformance,AA4,Checks proportion of a field or clinical fact that are unmapped. 
-st_conf_rxnorm,Drug RxNorm Conformance,AA3,Computes proportion of drugs mapped to every level of the RxNorm hierarchy.
-st_conf_visit_id,Visit Identifier Conformance,AA2,"Computes proportion of patient facts (e.g., procedures, labs, etc) without a visit identifier. "
-st_conf_vs,Valueset and Vocabulary Conformance,AA1,Computes proportion of violations of valuesets defined by our conventions or vocabulary violations set by OHDSI vocabulary and standard concepts.
-st_cons_dc,Data Cycle Consistency,AC1,Checks for changes between data cycles.
-st_cons_temp,Visit Temporality ,AC2,"Computes monthly counts of rows, visits, and patients for a given time span and clinical fact or table."
