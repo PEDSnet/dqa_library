@@ -17,6 +17,7 @@ op_spec <- select(site_cdm_tbl('visit_occurrence'), person_id, visit_concept_id,
                values_to = 'entity_id') %>%
   mutate(domain_id = case_when(domain_id == 'provider_id' ~ 'PROVIDER',
                                domain_id == 'care_site_id' ~ 'CARE_SITE')) %>%
+  mutate(entity_id = as.character(entity_id)) %>%
   inner_join(select(site_cdm_tbl('specialty'), domain_id, entity_id, 
                     specialty_concept_id))
 
