@@ -22,5 +22,13 @@ uc_by_year_reduce <- reduce(.x=uc_by_year,
 
 output_tbl_append(uc_reduce,
                   'uc_output')
+DBI::dbExecute(conn = config('db_src'), paste0("ALTER TABLE ", config('results_schema'), 
+                                               ".uc_output_op_1510 OWNER TO dcc_analytics;"))
+
 output_tbl_append(uc_by_year_reduce,
                   'uc_by_year')
+DBI::dbExecute(conn = config('db_src'), paste0("ALTER TABLE ", config('results_schema'), 
+                                               ".uc_by_year_op_1510 OWNER TO dcc_analytics;"))
+
+DBI::dbExecute(conn = config('db_src'), paste0("ALTER TABLE ", config('results_schema'), 
+                                               ".uc_grpd_op_1510 OWNER TO dcc_analytics;"))

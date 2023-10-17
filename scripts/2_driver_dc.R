@@ -24,5 +24,16 @@ dc_output_df <-
 
 output_tbl_append(dc_output_df,
                   'dc_output')
+DBI::dbExecute(conn = config('db_src'), paste0("ALTER TABLE ", config('results_schema'), 
+                                               ".dc_output_op_1510 OWNER TO dcc_analytics;"))
+
 output_tbl_append(dc_output_meta,
                   'dc_meta')
+DBI::dbExecute(conn = config('db_src'), paste0("ALTER TABLE ", config('results_schema'), 
+                                               ".dc_meta_op_1510 OWNER TO dcc_analytics;"))
+
+dc_mappings <- read_codeset('dc_mappings','cc')
+output_tbl(dc_mappings,
+           'dc_mappings')
+DBI::dbExecute(conn = config('db_src'), paste0("ALTER TABLE ", config('results_schema'), 
+                                               ".dc_mappings_op_1510 OWNER TO dcc_analytics;"))

@@ -19,3 +19,6 @@ mf_visitid_reduce <- reduce(.x=mf_visitid,
 
 output_tbl_append(mf_visitid_reduce,
                   'mf_visitid_output')
+
+DBI::dbExecute(conn = config('db_src'), paste0("ALTER TABLE ", config('results_schema'), 
+                                               ".mf_visitid_output_op_1510 OWNER TO dcc_analytics;"))

@@ -24,3 +24,5 @@ vc_vs_final <- vc_vs_joined %>% reduce(.f=dplyr::union)
 
 output_tbl_append(vc_vs_final,
                   'vc_vs_violations')
+DBI::dbExecute(conn = config('db_src'), paste0("ALTER TABLE ", config('results_schema'), 
+                                               ".vc_vs_violations_op_1510 OWNER TO dcc_analytics;"))

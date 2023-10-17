@@ -23,3 +23,12 @@ dcon_all <- dplyr::union(dcon_pt, dcon_visit)
 
 output_tbl_append(dcon_all,
                   'dcon_output')
+
+dcon_meta <- check_dcon_pts_meta(conc_tbls_meta = conc_metadata)
+output_tbl_append(dcon_meta,
+                  'dcon_meta')
+
+DBI::dbExecute(conn = config('db_src'), paste0("ALTER TABLE ", config('results_schema'), 
+                                               ".dcon_output_op_1510 OWNER TO dcc_analytics;"))
+DBI::dbExecute(conn = config('db_src'), paste0("ALTER TABLE ", config('results_schema'), 
+                                               ".dcon_meta_op_1510 OWNER TO dcc_analytics;"))

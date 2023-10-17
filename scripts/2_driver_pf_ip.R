@@ -22,3 +22,6 @@ pf_reduce <-
 
 output_tbl_append(pf_reduce,
                   'pf_output')
+
+DBI::dbExecute(conn = config('db_src'), paste0("ALTER TABLE ", config('results_schema'), 
+                                               ".pf_output_op_1510 OWNER TO dcc_analytics;"))
