@@ -46,7 +46,7 @@ check_vs <- function(valuesets,
       site_cdm_tbl(valuesets[[i]][[3]]) %>%
       anti_join(codeset_round,
                 by = join_cols) %>%
-      filter(! .data[[concept_id_fn]] %in% c(44814650L,0L)) %>%
+      filter(! .data[[concept_id_fn]] %in% c(44814650L,0L,44814653L,44814649L)) %>%
       group_by(!!! rlang::syms(concept_id_fn)) %>%
       summarise(total_viol_ct = n(),
                 total_viol_pt_ct = n_distinct(person_id)) %>%
