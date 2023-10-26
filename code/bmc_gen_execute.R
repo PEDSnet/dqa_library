@@ -75,6 +75,12 @@ fact_tbl_list <- list(
                    'specialty_concept_id',
                    'outpatient specialty (from specialty tbl)',
                    'bmc_vo_spec',
-                   'concept_name')
+                   'concept_name'),
+  
+  'adt_service' = list(site_cdm_tbl('adt_occurrence'),
+                       'service_concept_id',
+                       'ADT service_concept_id',
+                       'bmc_adt_service',
+                       'concept_name')
   
 )
