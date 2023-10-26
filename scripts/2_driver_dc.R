@@ -27,13 +27,22 @@ output_tbl_append(dc_output_df,
 DBI::dbExecute(conn = config('db_src'), paste0("ALTER TABLE ", config('results_schema'), 
                                                ".dc_output_op_1510 OWNER TO dcc_analytics;"))
 
+## DC Metadata
 output_tbl_append(dc_output_meta,
                   'dc_meta')
 DBI::dbExecute(conn = config('db_src'), paste0("ALTER TABLE ", config('results_schema'), 
                                                ".dc_meta_op_1510 OWNER TO dcc_analytics;"))
 
+## DC Mappings
 dc_mappings <- read_codeset('dc_mappings','cc')
 output_tbl(dc_mappings,
            'dc_mappings')
 DBI::dbExecute(conn = config('db_src'), paste0("ALTER TABLE ", config('results_schema'), 
                                                ".dc_mappings_op_1510 OWNER TO dcc_analytics;"))
+
+## Overall Metadata
+check_meta <- read_codeset('dqa_check_descriptions','ccccc')
+output_tbl(check_meta,
+           'dqa_check_metadata')
+DBI::dbExecute(conn = config('db_src'), paste0("ALTER TABLE ", config('results_schema'), 
+                                               ".dqa_check_metadata_op_1510 OWNER TO dcc_analytics;"))
