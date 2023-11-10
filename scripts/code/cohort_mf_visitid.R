@@ -24,6 +24,11 @@ check_mf_visitid <- function(check_visit_list,
   
   for(i in 1:length(check_visit_list)) {
     
+    total_rows <- 
+      check_visit_list[[i]][[1]] %>%
+      summarise(total_ct = n()) %>%
+      collect()
+    
     total_visit_ids <- 
       check_visit_list[[i]][[1]] %>%
       summarise(
@@ -91,8 +96,8 @@ check_mf_visitid <- function(check_visit_list,
           }
       visit_summaries_nas_all    
       
-      }  else {visit_summaries_nas_all <- visit_summaries_nas }
-      
+    }  else {visit_summaries_nas_all <- visit_summaries_nas }
+    
     visit_summaries_nas_all <- 
       visit_summaries_nas_all %>%
       pivot_wider(
@@ -102,6 +107,7 @@ check_mf_visitid <- function(check_visit_list,
     
     all_tbl <- tibble(
       measure = names(check_visit_list[i]),
+      total_ct = total_rows$total_ct,
       total_visits = total_visit_ids$total_visits,
       missing_visits_total = visit_summaries$missing_visits_total,
       missing_visits_distinct = visit_summaries$missing_visits_distinct,
@@ -110,11 +116,10 @@ check_mf_visitid <- function(check_visit_list,
     ) %>% distinct()
     
     tbl_visits[[i]] = all_tbl %>% add_meta(check_lib = string_tbl_name) %>%
-                      mutate(check_name=check_visit_list[[i]][[2]])
+      mutate(check_name=check_visit_list[[i]][[2]])
     
   }
   
   tbl_visits
   
 }
-
