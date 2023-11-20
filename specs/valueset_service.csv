@@ -1,4 +1,4 @@
-﻿concept_id,concept_name,domain_id,vocabulary_id,concept_code
+concept_id,concept_name,domain_id,vocabulary_id,concept_code
 2000000067,Critical Care,Service Type,PEDSnet,Critical Care
 2000000068,Intermediate care,Service Type,PEDSnet,Intermediate care
 2000000069,Acute care,Service Type,PEDSnet,Acute care
@@ -13,3 +13,4 @@
 2000000078,PICU,Service Type,PEDSnet,PICU
 2000000079,CICU,Service Type,PEDSnet,CICU
 2000000080,NICU,Service Type,PEDSnet,NICU
+44814649,Other,Observation,PCORnet,Generic-OT

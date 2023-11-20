@@ -1,0 +1,148 @@
+﻿check_type,check_name,check_domain,check_application,full_description
+Data Cycle Changes,dc_pd,Person,Demographics/Person,counts in the full person table in the previous and current data submissions
+Data Cycle Changes,dc_dr,Drug Exposure,All Drugs,counts in the full drug_exposure table in the previous and current data submissions
+Data Cycle Changes,dc_co,Condition Occurrence,All Conditions,counts in the full condition_occurrence table in the previous and current data submissions
+Data Cycle Changes,dc_adt,ADT Occurrence,All ADT,counts in the full adt_occurrence table in the previous and current data submissions
+Data Cycle Changes,dc_de,Device Exposure,All Device,counts in the full device_exposure table in the previous and current data submissions
+Data Cycle Changes,dc_im,Immunization,All Immunization,counts in the full immunization table in the previous and current data submissions
+Data Cycle Changes,dc_vi,Visit Occurrence,All Visits,counts in the full visit_occurrence table in the previous and current data submissions
+Data Cycle Changes,dc_mv,Measurement,Measurement Vitals,counts of vital values in the measurement table in the previous and current data submissions
+Data Cycle Changes,dc_ml,Measurement,Measurement Labs,counts of lab values in the measurement table in the previous and current data submissions
+Data Cycle Changes,dc_cop,Condition Occurrence,Outpatient Conditions: All,"counts of all outpatient conditions (condition_type_concept_id = 2000000095, 2000000096, 2000000097, 2000000101, 2000000102, or 2000000103) in the previous and current data submissions"
+Data Cycle Changes,dc_ci,Condition Occurrence,Inpatient Conditions: All,"counts of all inpatient conditions (condition_type_concept_id = 2000000092, 2000000093, 2000000094, 2000000098, 2000000099, or 2000000100) in the previous and current data submissions"
+Data Cycle Changes,dc_ced,Condition Occurrence,ED Conditions: All,"counts of all emergency department conditions (condition_type_concept_id = 2000001280, 2000001281, 2000001282, 2000001283, 2000001284, or 2000001285) in the previous and current data submissions"
+Data Cycle Changes,dc_cop_cc,Condition Occurrence,Outpatient Conditions: Billing,"counts of billed outpatient conditions (condition_type_concept_id = 2000000096, 2000000097, 2000000102, or 2000000103) in the previous and current data submissions"
+Data Cycle Changes,dc_cop_cb,Condition Occurrence,Outpatient Conditions: Order,counts of ordered outpatient conditions (condition_type_concept_id = 2000000095 or 2000000101) in the previous and current data submissions
+Data Cycle Changes,dc_ci_cc,Condition Occurrence,Inpatient Conditions: Order,counts of ordered inpatient conditions (condition_type_concept_id = 2000000092 or 2000000098) in the previous and current data submissions
+Data Cycle Changes,dc_ci_cb,Condition Occurrence,Inpatient Conditions: Billing,"counts of billed inpatient conditions (condition_type_concept_id = 2000000099, 2000000100, 2000000093, or 2000000094) in the previous and current data submissions"
+Data Cycle Changes,dc_adt_picu,ADT Occurrence,PICU,counts of PICU (service_concept_id = 2000000078) in the previous and current data submissions
+Data Cycle Changes,dc_adt_nicu,ADT Occurrence,NICU,counts of NICU (service_concept_id = 2000000080) in the previous and current data submissions
+Data Cycle Changes,dc_adt_cicu,ADT Occurrence,CICU,counts of CICU (service_concept_id = 2000000079) in the previous and current data submissions
+Data Cycle Changes,dc_vo_office,Visit Occurrence,Outpatient Visits: Office,counts of outpatient office visits (visit_concept_id = 9202) in the previous and current data submissions
+Data Cycle Changes,dc_vo_labs,Visit Occurrence,Outpatient Visits: Labs,counts of outpatient lab visits (visit_concept_id = 2000000469) in the previous and current data submissions
+Data Cycle Changes,dc_vo_th,Visit Occurrence,Outpatient Visits: Telehealth,counts of outpatient telehealth visits (visit_concept_id = 581399) in the previous and current data submissions
+Data Cycle Changes,dc_vo_oa,Visit Occurrence,Outpatient Visits: Other Ambulatory,counts of outpatient other ambulatory visits (visit_concept_id = 44814711) in the previous and current data submissions
+Data Cycle Changes,dc_vip,Visit Occurrence,Inpatient Visits,counts of inpatient visits (visit_concept_id = 9201) in the previous and current data submissions
+Data Cycle Changes,dc_vip_ipcombined,Visit Occurrence,Inpatient or ED to Inpatient Visits,counts of inpatient or emergency to inpatient visits (visit_concept_id = 2000000048) in the previous and current data submissions
+Data Cycle Changes,dc_vob,Visit Occurrence,Observation Visits,counts of observation visits (visit_concept_id = 2000000088) in the previous and current data submissions
+Data Cycle Changes,dc_dp,Drug Exposure,Prescription Drugs,counts of prescription drugs (drug_type_concept_id = 3800177) in the previous and current data submissions
+Data Cycle Changes,dc_di,Drug Exposure,Inpatient Administrations,counts of inpatient administrations (drug_type_concept_id = 38000180) in the previous and current data submissions
+Data Cycle Changes,dc_pr,Procedure Occurrence,All Procedures,counts in the full procedure_occurrence table in the previous and current data submissions
+Data Cycle Changes,dc_pb,Procedure Occurrence,Billed Procedures,counts of billed procedures (procedure_type_concept_id = 44786630 or 44786631) in the previous and current data submissions
+Data Cycle Changes,dc_po,Procedure Occurrence,Ordered Procedures,counts of ordered procedures (procedure_type_concept_id = 2000001494 or 38000275) in the previous and current data submissions
+Data Cycle Changes,dc_ma,Measurement,Measurement Anthro,counts of anthropometric values in the measurement table in the previous and current data submissions
+Data Cycle Changes,dc_co_ml_covid,Measurement,COVID-19 Diagnosed Pts with Labs,"counts of COVID-19 diagnoses with an accompanying COVID-19 lab in the previous and current data submissions (codesets: c19_dx, c19_viral_labs; found in specs folder of GitHub repository)"
+Data Cycle Changes,dc_cs,Care Site,Care Site,counts in the full care_site table in the previous and current data submissions
+Data Cycle Changes,dc_pv,Provider,Provider,counts in the full provider table in the previous and current data submissions
+Data Cycle Changes,dc_sp,Specialty,Specialty,counts in the full specialty table in the previous and current data submissions
+Vocabulary Conformance,vc_pr_cid,Procedure Occurrence,procedure_concept_id,"counts of concepts in procedure_concept_id that, when joined with the concept table, are not part of the following vocabularies: ICD10CM, CPT4, ICD9CM, ICD10, ICD9, ICD10PCS, ICD9Proc, HCPCS"
+Vocabulary Conformance,vc_co_scid,Condition Occurrence,condition_source_concept_id,"counts of concepts in condition_source_concept_id that, when joined with the concept table, are not part of the following vocabularies: ICD9, ICD10CM, ICD10, ICD10CM"
+Vocabulary Conformance,vc_im_dose,Immunization,imm_dose_unit_concept_id,"counts of concepts in imm_dose_unit_concept_id that, when joined with the concept table, are not part of the following vocabularies: UCUM"
+Vocabulary Conformance,vc_dt_cause_cid,Death,cause_concept_id,"counts of concepts in cause_concept_id that, when joined with the concept table, are not part of the following vocabularies: SNOMED, OMOP Extension"
+Vocabulary Conformance,vc_co_cid,Condition Occurrence,condition_concept_id,"counts of concepts in condition_concept_id that, when joined with the concept table, are not part of the following vocabularies: SNOMED, OMOP Extension"
+Vocabulary Conformance,vc_dr_cid,Drug Exposure,drug_concept_id,"counts of concepts in drug_concept_id that, when joined with the concept table, are not part of the following vocabularies: RxNorm, RxNorm Extension"
+Vocabulary Conformance,vc_im_cid,Immunization,immunization_concept_id,"counts of concepts in immunization_concept_id that, when joined with the concept table, are not part of the following vocabularies: CVX"
+Vocabulary Conformance,vc_dr_dose,Drug Exposure,dose_unit_concept_id,"counts of concepts in dose_unit_concept_id that, when joined with the concept table, are not part of the following vocabularies: UCUM"
+Value Set Conformance,vs_adt_cid,ADT Occurrence,service_concept_id,counts of concepts in service_concept_id that are not part of the list of concepts in valueset_service (found in the specs folder of the GitHub repository)
+Value Set Conformance,vs_adt_tcid,ADT Occurrence,adt_type_concept_id,counts of concepts in adt_type_concept_id that are not part of the list of concepts in valueset_adt_event_type (found in the specs folder of the GitHub repository)
+Value Set Conformance,vs_ob_cid,Observation,observation_concept_id,counts of concepts in observation_concept_id that are not part of the list of concepts in valueset_observation (found in the specs folder of the GitHub repository)
+Value Set Conformance,vs_im_route_cid,Immunization,imm_route_concept_id,counts of concepts in imm_route_concept_id that are not part of the list of concepts in valueset_imm_route (found in the specs folder of the GitHub repository)
+Value Set Conformance,vs_pd_race_cid,Person,race_concept_id,counts of concepts in race_concept_id that are not part of the list of concepts in valueset_race (found in the specs folder of the GitHub repository)
+Value Set Conformance,vs_pd_eth_cid,Person,ethnicity_concept_id,counts of concepts in ethnicity_concept_id that are not part of the list of concepts in valueset_ethnicity (found in the specs folder of the GitHub repository)
+Unmapped Concepts,uc_dr,Drug Exposure,All Drugs,"for the full drug_exposure table, counts of drug_concept_ids mapped to 44814650, 0, 44814653, or 44814649"
+Unmapped Concepts,uc_di,Drug Exposure,Inpatient Administrations,"for inpatient administrations (drug_type_concept_id = 38000180), counts of drug_concept_ids mapped to 44814650, 0, 44814653, or 44814649"
+Unmapped Concepts,uc_dp,Drug Exposure,Prescription Drugs,"for prescription drugs (drug_type_concept_id = 38000177), counts of drug_concept_ids mapped to 44814650, 0, 44814653, or 44814649"
+Unmapped Concepts,uc_du,Drug Exposure,Drug Dose Unit,"for the full drug_exposure table, counts of dose_unit_concept_ids mapped to 44814650, 0, 44814653, or 44814649"
+Unmapped Concepts,uc_drt,Drug Exposure,Drug Route,"for the full drug_exposure table, counts of route_concept_ids mapped to 44814650, 0, 44814653, or 44814649"
+Unmapped Concepts,uc_co,Condition Occurrence,All Conditions,"for the full condition_occurrence table, counts of condition_concept_ids mapped to 44814650, 0, 44814653, or 44814649"
+Unmapped Concepts,uc_ml,Measurement,Measurement Labs,"for lab values in the measurement table, counts of measurement_concept_ids mapped to 44814650, 0, 44814653, or 44814649"
+Unmapped Concepts,uc_mlu,Measurement,Lab Units,"for lab values in the measurement table, counts of unit_concept_ids mapped to 44814650, 0, 44814653, or 44814649"
+Unmapped Concepts,uc_im,Immunization,All Immunization,"for the full immunization table, counts of immunization_concept_ids mapped to 44814650, 0, 44814653, or 44814649"
+Unmapped Concepts,uc_imu,Immunization,Immunization Dose Unit,"for the full immunization table, counts of imm_dose_unit_concept_ids mapped to 44814650, 0, 44814653, or 44814649"
+Unmapped Concepts,uc_imrt,Immunization,Immunization Route,"for the full immmunization table, counts of imm_route_concept_ids mapped to 44814650, 0, 44814653, or 44814649"
+Unmapped Concepts,uc_pr,Procedure Occurrence,All Procedures,"for the full procedure table, counts of procedure_concept_ids mapped to 44814650, 0, 44814653, or 44814649"
+Unmapped Concepts,uc_po,Procedure Occurrence,Ordered Procedures,"for ordered procedures (procedure_type_concept_id = 2000001494 or 38000275), counts of procedure_concept_ids mapped to 44814650, 0, 44814653, or 44814649"
+Unmapped Concepts,uc_pb,Procedure Occurrence,Billed Procedures,"for billed procedures (procedure_type_concept_id = 44786630 or 44786631), counts of procedure_concept_ids mapped to 44814650, 0, 44814653, or 44814649"
+Missing Field: Visit ID,mf_visitid_co,Condition Occurrence,"Inpatient, Outpatient, and ED Conditions","for conditions excluding the problem list (condition_type_concept_id != 2000000089, 2000000090, and 2000000091), counts of visit_occurrence_ids that do not also exist in the visit_occurrence table"
+Missing Field: Visit ID,mf_visitid_dr,Drug Exposure,All Drugs,"for the full drug_exposure table, counts of visit_occurrence_ids that do not also exist in the visit_occurrence table"
+Missing Field: Visit ID,mf_visitid_dp,Drug Exposure,Prescription Drugs,"for prescription or inpatient drugs (drug_type_concept_id != 38000175), counts of visit_occurrence_ids that do not also exist in the visit_occurrence table"
+Missing Field: Visit ID,mf_visitid_pr,Procedure Occurrence,All Procedures,"for the full procedure table, counts of visit_occurrence_ids that do not also exist in the visit_occurrence table"
+Missing Field: Visit ID,mf_visitid_ml,Measurement,Measurement Labs,"for lab values in the measurement table, counts of visit_occurrence_ids that do not also exist in the visit_occurrence table"
+Missing Field: Visit ID,mf_visitid_co,Immunization,All Immunization,"for the full immunization table, counts of visit_occurrence_ids that do not also exist in the visit_occurrence table"
+Best Mapped Concepts,bmc_rxnorm_di,Drug Exposure,Inpatient Administrations,"for inpatient administrations (drug_type_concept_id = 38000180), counts of each RxNorm class to which concepts are mapped"
+Best Mapped Concepts,bmc_rxnorm_dp,Drug Exposure,Prescription Drugs,"for prescription drugs (drug_type_concept_id = 38000177), counts of each RxNorm class to which concepts are mapped"
+Best Mapped Concepts,bmc_race,Person,Race,counts of each concept_id represented in race_concept_id
+Best Mapped Concepts,bmc_ethnicity,Person,Ethnicity,counts of each concept_id represented in ethnicity_concept_id
+Best Mapped Concepts,bmc_pvvo_spec,Provider,Outpatient Provider Specialty,counts of each unique specialty_concept_id for outpatient providers (visit_concept_id = 9202 when inner joined to visit_occurrence)
+Best Mapped Concepts,bmc_csvo_spec,Care Site,Outpatient Care Site Specialty,counts of each unique specialty_concept_id for outpatient care sites (visit_concept_id = 9202 when inner joined to visit_occurrence)
+Best Mapped Concepts,bmc_vo_spec,Specialty,Outpatient Specialty,counts of each unique specialty_concept_id for outpatient specialties in the specialty table (visit_concept_id = 9202 when inner joined to visit_occurrence)
+Best Mapped Concepts,bmc_adt_service,ADT Occurrence,service_concept_id,counts of each concept_id represented in service_concept_id
+Person Facts/Records,pf_visits_pr,All Visits,All Procedures,counts of all visits with and without an associated procedure
+Person Facts/Records,pf_visits_co,All Visits,All Conditions,counts of all visits with and without an associated condition
+Person Facts/Records,pf_visits_dr,All Visits,All Drugs,counts of all visits with and without an associated drug
+Person Facts/Records,pf_visits_prdr,All Visits,Procedures and Drugs,counts of all visits with and without an associated procedure AND an associated drug
+Person Facts/Records,pf_visits_ml,All Visits,Measurement Labs,counts of all visits with and without an associated lab value
+Person Facts/Records,pf_visits_prdrml,All Visits,"Procedures, Drugs, and Labs",counts of all visits with and without an associated procedure AND an associated drug AND an associated lab value
+Person Facts/Records,pf_visits_vp,All Visits,Visit Payer,counts of all visits with and without an associated record in visit_payer
+Person Facts/Records,pf_visits_im,All Visits,All Immunization,counts of all visits with and without an associated immunization
+Person Facts/Records,pf_ipvisits_pr,Inpatient Visits,All Procedures,counts of inpatient visits (visit_concept_id = 9201 or 2000000048) with and without an associated procedure
+Person Facts/Records,pf_ipvisits_co,Inpatient Visits,All Conditions,counts of inpatient visits (visit_concept_id = 9201 or 2000000048) with and without an associated condition
+Person Facts/Records,pf_ipvisits_dr,Inpatient Visits,All Drugs,counts of inpatient visits (visit_concept_id = 9201 or 2000000048) with and without an associated drug
+Person Facts/Records,pf_ipvisits_prdr,Inpatient Visits,Procedures and Drugs,counts of inpatient visits (visit_concept_id = 9201 or 2000000048) with and without an associated procedure AND an associated drug
+Person Facts/Records,pf_ipvisits_ml,Inpatient Visits,Measurement Labs,counts of inpatient visits (visit_concept_id = 9201 or 2000000048) with and without an associated lab value
+Person Facts/Records,pf_ipvisits_prdrml,Inpatient Visits,"Procedures, Drugs, and Labs",counts of inpatient visits (visit_concept_id = 9201 or 2000000048) with and without an associated procedure AND an associated drug AND an associated lab value
+Person Facts/Records,pf_ipvisits_vp,Inpatient Visits,Visit Payer,counts of inpatient visits (visit_concept_id = 9201 or 2000000048) with and without an associated record in visit_payer
+Person Facts/Records,pf_ipvisits_im,Inpatient Visits,All Immunization,counts of inpatient visits (visit_concept_id = 9201 or 2000000048) with and without an associated immunization
+Person Facts/Records,pf_ipvisits_icu,Inpatient Visits,ICU,"counts of inpatient visits (visit_concept_id = 9201 or 2000000048) with and without an associated ICU transfer (service_concept_id = 2000000079, 2000000080, or 2000000078)"
+Person Facts/Records,pf_opvisits_pr,Outpatient Visits,All Procedures,counts of outpatient visits (visit_concept_id = 9202 or 581399) with and without an associated procedure
+Person Facts/Records,pf_opvisits_co,Outpatient Visits,All Conditions,counts of outpatient visits (visit_concept_id = 9202 or 581399) with and without an associated condition
+Person Facts/Records,pf_opvisits_dr,Outpatient Visits,All Drugs,counts of outpatient visits (visit_concept_id = 9202 or 581399) with and without an associated drug
+Person Facts/Records,pf_opvisits_prdr,Outpatient Visits,Procedures and Drugs,counts of outpatient visits (visit_concept_id = 9202 or 581399) with and without an associated procedure AND an associated drug
+Person Facts/Records,pf_opvisits_ml,Outpatient Visits,Measurement Labs,counts of outpatient visits (visit_concept_id = 9202 or 581399) with and without an associated lab value
+Person Facts/Records,pf_opvisits_prdrml,Outpatient Visits,"Procedures, Drugs, and Labs",counts of outpatient visits (visit_concept_id = 9202 or 581399) with and without an associated procedure AND an associated drug AND an associated lab value
+Person Facts/Records,pf_opvisits_vp,Outpatient Visits,Visit Payer,counts of outpatient visits (visit_concept_id = 9202 or 581399) with and without an associated record in visit_payer
+Person Facts/Records,pf_opvisits_im,Outpatient Visits,All Immunization,counts of outpatient visits (visit_concept_id = 9202 or 581399) with and without an associated immunization
+Person Facts/Records,pf_edvisits_pr,ED Visits,All Procedures,counts of ED visits (visit_concept_id = 9203 or 2000000048) with and without an associated procedure
+Person Facts/Records,pf_edvisits_co,ED Visits,All Conditions,counts of ED visits (visit_concept_id = 9203 or 2000000048) with and without an associated condition
+Person Facts/Records,pf_edvisits_dr,ED Visits,All Drugs,counts of ED visits (visit_concept_id = 9203 or 2000000048) with and without an associated drug
+Person Facts/Records,pf_edvisits_prdr,ED Visits,Procedures and Drugs,counts of ED visits (visit_concept_id = 9203 or 2000000048) with and without an associated procedure AND an associated drug
+Person Facts/Records,pf_edvisits_ml,ED Visits,Measurement Labs,counts of ED visits (visit_concept_id = 9203 or 2000000048) with and without an associated lab value
+Person Facts/Records,pf_edvisits_prdrml,ED Visits,"Procedures, Drugs, and Labs",counts of ED visits (visit_concept_id = 9203 or 2000000048) with and without an associated procedure AND an associated drug AND an associated lab value
+Person Facts/Records,pf_edvisits_vp,ED Visits,Visit Payer,counts of ED visits (visit_concept_id = 9203 or 2000000048) with and without an associated record in visit_payer
+Person Facts/Records,pf_edvisits_im,ED Visits,All Immunization,counts of ED visits (visit_concept_id = 9203 or 2000000048) with and without an associated immunization
+Facts Over Time,fot_im,Immunization,All Immunization,counts in the full immunization table in each month from 2009-01-01 to the month of the current data submission
+Facts Over Time,fot_im_covid19,Immunization,COVID-19 Immunization,counts of COVID-19 immunizations (codeset: c19_immunizations; found in specs folder of GitHub repository) in each month from 2009-01-01 to the month of the current data submission
+Facts Over Time,fot_pr_appendectomy,Procedure Occurrence,Appendectomy Procedures,counts of appendectomy procedures (codeset: appendectomy; found in the specs folder of the GitHub repository) in each month from 2009-01-01 to the month of the current data submission
+Facts Over Time,fot_vi,Visit Occurrence,All Visits,counts in the full visit_occurrence table in each month from 2009-01-01 to the month of the current data submission
+Facts Over Time,fot_vo_office,Visit Occurrence,Outpatient Visits: Office,counts of outpatient office visits (visit_concept_id = 9202) in each month from 2009-01-01 to the month of the current data submission
+Facts Over Time,fot_vo_labs,Visit Occurrence,Outpatient Visits: Labs,counts of outpatient lab visits (visit_concept_id = 2000000469) in each month from 2009-01-01 to the month of the current data submission
+Facts Over Time,fot_vo_th,Visit Occurrence,Outpatient Visits: Telehealth,counts of outpatient telehealth visits (visit_concept_id = 581399) in each month from 2009-01-01 to the month of the current data submission
+Facts Over Time,fot_vo_oa,Visit Occurrence,Outpatient Visits: Other Ambulatory,counts of outpatient other ambulatory visits (visit_concept_id = 44814711) in each month from 2009-01-01 to the month of the current data submission
+Facts Over Time,fot_vip,Visit Occurrence,Inpatient Visits,counts of inpatient visits (visit_concept_id = 9201) in each month from 2009-01-01 to the month of the current data submission
+Facts Over Time,fot_vip_ipcombined,Visit Occurrence,Inpatient or ED to Inpatient Visits,counts of inpatient or emergency to inpatient visits (visit_concept_id = 2000000048) in each month from 2009-01-01 to the month of the current data submission
+Facts Over Time,fot_vob,Visit Occurrence,Observation Visits,counts of observation visits (visit_concept_id = 2000000088) in each month from 2009-01-01 to the month of the current data submission
+Facts Over Time,fot_prvo,Procedure Occurrence,Outpatient Procedures,counts of outpatient procedures (visit_concept_id = 9202 when inner joined to visit_occurrence) in each month from 2009-01-01 to the month of the current data submission 
+Facts Over Time,fot_adt_picu,ADT Occurrence,PICU,counts of PICU (service_concept_id = 2000000078) in each month from 2009-01-01 to the month of the current data submission
+Facts Over Time,fot_adt_nicu,ADT Occurrence,NICU,counts of NICU (service_concept_id = 2000000080) in each month from 2009-01-01 to the month of the current data submission
+Facts Over Time,fot_adt_cicu,ADT Occurrence,CICU,counts of CICU (service_concept_id = 2000000079) in each month from 2009-01-01 to the month of the current data submission
+Facts Over Time,fot_dp,Drug Exposure,Prescription Drugs,counts of prescription drugs (drug_type_concept_id = 3800177) in each month from 2009-01-01 to the month of the current data submission
+Facts Over Time,fot_ip,Drug Exposure,Inpatient Administrations,counts of inpatient administrations (drug_type_concept_id = 38000180) in each month from 2009-01-01 to the month of the current data submission
+Facts Over Time,fot_co,Condition Occurrence,All Conditions,counts of all conditions in each month from 2009-01-01 to the month of the current data submission
+Facts Over Time,fot_cop,Condition Occurrence,Outpatient Conditions: All,"counts of all outpatient conditions (condition_type_concept_id = 2000000095, 2000000096, 2000000097, 2000000101, 2000000102, or 2000000103) in each month from 2009-01-01 to the month of the current data submission"
+Facts Over Time,fot_ci,Condition Occurrence,Inpatient Conditions: All,"counts of all inpatient conditions (condition_type_concept_id = 2000000092, 2000000093, 2000000094, 2000000098, 2000000099, or 2000000100) in each month from 2009-01-01 to the month of the current data submission"
+Facts Over Time,fot_ced,Condition Occurrence,ED Conditions: All,"counts of all emergency department conditions (condition_type_concept_id = 2000001280, 2000001281, 2000001282, 2000001283, 2000001284, or 2000001285) in each month from 2009-01-01 to the month of the current data submission"
+Facts Over Time,fot_cop_cb,Condition Occurrence,Outpatient Conditions: Billing,"counts of billed outpatient conditions (condition_type_concept_id = 2000000096, 2000000097, 2000000102, or 2000000103) in each month from 2009-01-01 to the month of the current data submission"
+Facts Over Time,fot_cop_cc,Condition Occurrence,Outpatient Conditions: Order,counts of ordered outpatient conditions (condition_type_concept_id = 2000000095 or 2000000101) in each month from 2009-01-01 to the month of the current data submission
+Facts Over Time,fot_ci_cc,Condition Occurrence,Inpatient Conditions: Order,counts of ordered inpatient conditions (condition_type_concept_id = 2000000092 or 2000000098) in each month from 2009-01-01 to the month of the current data submission
+Facts Over Time,fot_ci_cb,Condition Occurrence,Inpatient Conditions: Billing,"counts of billed inpatient conditions (condition_type_concept_id = 2000000099, 2000000100, 2000000093, or 2000000094) in each month from 2009-01-01 to the month of the current data submission"
+Facts Over Time,fot_voml,Measurement,Outpatient Labs,counts of outpatient lab values (visit_concept_id = 9202 when inner joined to visit_occurrence) in each month from 2009-01-01 to the month of the current data submission
+Facts Over Time,fot_vodi,Drug Exposure,Outpatient Administrations,counts of outpatient administrations (drug_type_concept_id = 38000180 and visit_concept_id = 9202 when inner joined to visit_occurrence) in each month from 2009-01-01 to the month of the current data submission
+Facts Over Time,fot_vipdp,Drug Exposure,Inpatient Prescriptions,counts of inpatient prescriptions (drug_type_concept_id = 38000177 and visit_concept_id = 9201 or 2000000048 when inner joined to visit_occurrence) in each month from 2009-01-01 to the month of the current data submission
+Facts Over Time,fot_ma_ht,Measurement,Height,counts of heights (measurement_concept_id = 3023540) in each month from 2009-01-01 to the month of the current data submission
+Facts Over Time,fot_ma_wt,Measurement,Weight,counts of weights (measurement_concept_id = 3013762) in each month from 2009-01-01 to the month of the current data submission
+Facts Over Time,fot_mv_sbp,Measurement,Systolic Blood Pressure,"counts of systolic blood pressure values (measurement_concept_id = 3018586, 3035856, 3009395, or 3004249) in each month from 2009-01-01 to the month of the current data submission"
+Facts Over Time,fot_mv_dbp,Measurement,Diastolic Blood Pressure,"counts of diastolic blood pressure values (measurement_concept_id = 3034703, 3019962, 3013940, or 3012888) in each month from 2009-01-01 to the month of the current data submission"
+Domain Concordance,dcon_pts_ckd-dx_htn-rx,Condition Occurrence / Drug Exposure,CKD Diagnosis / Anti-hypertensive Drug Prescription,"counts of patients with a CKD diagnosis, patients with an anti-hypertensive drug prescription, and patients that fall into both cohorts (codesets: dx_ckd, rx_htn; found in the specs folder of the GitHub repository)"
+Domain Concordance,dcon_ip_visits_conds,Visit Occurrence / Condition Occurrence,Inpatient Visits / Inpatient Condition Headers,"counts of visits with visit_concept_id = 9201, visits with conditions with condition_type_concept_id = 2000000092, 2000000093, 2000000094, 2000000098, 2000000099, or 2000000100, and visits that fall into both groups "
+Domain Concordance,dcon_op_visits_conds,Visit Occurrence / Condition Occurrence,Outpatient Visits / Outpatient Condition Headers,"counts of visits with visit_concept_id = 9202, visits with conditions with condition_type_concept_id = 2000000095, 2000000096, 2000000097, 2000000101, 2000000102, or 2000000103, and visits that fall into both groups"
+Domain Concordance,dcon_ed_visits_conds,Visit Occurrence / Condition Occurrence,ED Visits / ED Condition Headers,"counts of visits with visit_concept_id = 9203, visits with conditions with condition_type_concept_id = 2000001280, 2000001281, 2000001282, 2000001283, 2000001284, or 2000001285, and visits that fall into both groups"

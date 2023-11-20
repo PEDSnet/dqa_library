@@ -24,6 +24,11 @@ check_mf_visitid <- function(check_visit_list,
   
   for(i in 1:length(check_visit_list)) {
     
+    total_rows <- 
+      check_visit_list[[i]][[1]] %>%
+      summarise(total_ct = n()) %>%
+      collect()
+    
     total_visit_ids <- 
       check_visit_list[[i]][[1]] %>%
       summarise(
@@ -102,6 +107,7 @@ check_mf_visitid <- function(check_visit_list,
     
     all_tbl <- tibble(
       measure = names(check_visit_list[i]),
+      total_ct = total_rows$total_ct,
       total_visits = total_visit_ids$total_visits,
       missing_visits_total = visit_summaries$missing_visits_total,
       missing_visits_distinct = visit_summaries$missing_visits_distinct,
