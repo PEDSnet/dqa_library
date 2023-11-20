@@ -1,4 +1,4 @@
-﻿lab_name,concept_id,concept_code,concept_name,vocabulary_id
+concept_group,concept_id,concept_code,concept_name,vocabulary_id
 urine_protein_qual,3029872,50561-0,Protein [Mass/volume] in Urine by Automated test strip,LOINC
 urine_protein_qual,3005897,5804-0,Protein [Mass/volume] in Urine by Test strip,LOINC
 urine_protein_qual,3019077,32209-9,Protein [Presence] in 24 hour Urine by Test strip,LOINC
