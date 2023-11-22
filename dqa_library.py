@@ -100,7 +100,7 @@ domain_concordance = BashOperator(
         bash_command = f'{cwd}scripts/run_r.sh {cwd}scripts/3_driver_dcon.R ',
         dag = dag)
 
-# Step 5 - DC, MF, UC, & BMC
+# Step 5 - DC, MF, UC, BMC, ECP
 data_cycle_changes = BashOperator(
 		    task_id = 'data_cycle_changes' ,
         bash_command = f'{cwd}scripts/run_r.sh {cwd}scripts/2_driver_dc.R ',
@@ -120,6 +120,11 @@ best_mapped_concepts = BashOperator(
 		    task_id = 'best_mapped_concepts' ,
         bash_command = f'{cwd}scripts/run_r.sh {cwd}scripts/3_driver_bmc.R ',
         dag = dag)
+        
+best_mapped_concepts = BashOperator(
+		    task_id = 'expected_concepts' ,
+        bash_command = f'{cwd}scripts/run_r.sh {cwd}scripts/3_driver_ecp.R ',
+        dag = dag)
 
 # Step 6 - Remove Precomputed Tables
 remove_precomp = BashOperator(
@@ -127,7 +132,7 @@ remove_precomp = BashOperator(
         bash_command = f'{cwd}scripts/run_r.sh {cwd}scripts/4_remove_precomp.R ',
         dag = dag)
 
-precompute_tables >> fot_1 >> person_facts_ed >> data_cycle_changes >> remove_precomp
+precompute_tables >> fot_1 >> expected_concepts >> person_facts_ed >> data_cycle_changes >> remove_precomp
 precompute_tables >> fot_2 >> person_facts_ip >> vocab_valueset_conf >> mf_visitid >> remove_precomp
 precompute_tables >> fot_3 >> person_facts_op >> domain_concordance >> unmapped_concepts >> remove_precomp
 precompute_tables >> fot_4 >> person_facts_all >> best_mapped_concepts >> remove_precomp
