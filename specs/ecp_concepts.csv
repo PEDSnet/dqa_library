@@ -190,39 +190,21 @@ platelets,3007461,26515-7,Platelets [#/volume] in Blood,LOINC
 platelets,37037425,LP393218-5,Platelets | Blood | Hematology and Cell counts,LOINC
 platelets,37058547,LP393224-3,Platelets | Plasma | Hematology and Cell counts,LOINC
 platelets,37071943,LP393219-3,Platelets | Blood capillary | Hematology and Cell counts,LOINC
-anc,3004809,26508-2,Band form neutrophils/100 leukocytes in Blood,LOINC
-anc,3035839,35332-6,Band form neutrophils/100 leukocytes in Blood by Automated count,LOINC
-anc,3007591,764-1,Band form neutrophils/100 leukocytes in Blood by Manual count,LOINC
-anc,43055363,71670-4,Band form neutrophils/Leukocytes [Pure number fraction] in Blood by Manual count,LOINC
-anc,37025186,LP286652-5,Neutrophils/100 cells,LOINC
-anc,37028517,LP286653-3,Neutrophils/100 leukocytes,LOINC
-anc,37049637,LP392722-7,Neutrophils/100 leukocytes | Blood | Hematology and Cell counts,LOINC
-anc,3018010,26511-6,Neutrophils/100 leukocytes in Blood,LOINC
-anc,3008342,770-8,Neutrophils/100 leukocytes in Blood by Automated count,LOINC
-anc,3027368,23761-0,Neutrophils/100 leukocytes in Blood by Manual count,LOINC
-anc,37058224,LP286643-4,Neutrophils.band form/100 cells,LOINC
-anc,37063550,LP286644-2,Neutrophils.band form/100 leukocytes,LOINC
-anc,37064774,LP392682-3,Neutrophils.band form/100 leukocytes | Blood | Hematology and Cell counts,LOINC
-anc,37074101,LP286645-9,Neutrophils.band form/leukocytes,LOINC
-anc,37046293,LP392688-0,Neutrophils.band form/leukocytes | Blood | Hematology and Cell counts,LOINC
-anc,37052811,LP286646-7,Neutrophils.hypersegmented/100 leukocytes,LOINC
-anc,37041653,LP392665-8,Neutrophils.hypersegmented/100 leukocytes | Blood | Hematology and Cell counts,LOINC
-anc,3009864,30450-1,Neutrophils.hypersegmented/100 leukocytes in Blood,LOINC
-anc,3025887,767-4,Neutrophils.hypersegmented/100 leukocytes in Blood by Manual count,LOINC
-anc,37076686,LP286647-5,Neutrophils.immature/100 leukocytes,LOINC
-anc,37030613,LP392704-5,Neutrophils.immature/100 leukocytes | Blood | Hematology and Cell counts,LOINC
-anc,3042527,53797-7,Neutrophils.immature/100 leukocytes in Blood,LOINC
-anc,37064170,LP286655-8,Neutrophils/leukocytes,LOINC
-anc,37076759,LP392714-4,Neutrophils/leukocytes | Blood | Hematology and Cell counts,LOINC
-anc,43055369,71676-1,Neutrophils/Leukocytes [Pure number fraction] in Blood by Automated count,LOINC
-anc,43055364,71671-2,Neutrophils/Leukocytes [Pure number fraction] in Blood by Manual count,LOINC
-anc,37036514,LP286649-1,Neutrophils.segmented/100 cells,LOINC
-anc,37030411,LP286650-9,Neutrophils.segmented/100 leukocytes,LOINC
-anc,37022434,LP392668-2,Neutrophils.segmented/100 leukocytes | Blood | Hematology and Cell counts,LOINC
-anc,37035815,LP286651-7,Neutrophils.segmented/leukocytes,LOINC
-anc,3017354,26505-8,Segmented neutrophils/100 leukocytes in Blood,LOINC
-anc,3012608,32200-8,Segmented neutrophils/100 leukocytes in Blood by Automated count,LOINC
-anc,3028108,769-0,Segmented neutrophils/100 leukocytes in Blood by Manual count,LOINC
+anc,3018199,26507-4,Band form neutrophils [#/volume] in Blood,LOINC
+anc,3001465,30229-9,Band form neutrophils [#/volume] in Blood by Automated count,LOINC
+anc,3008939,763-3,Band form neutrophils [#/volume] in Blood by Manual count,LOINC
+anc,40768821,66138-9,Band form neutrophils [#/volume] in Blood from Fetus by Manual count,LOINC
+anc,3012533,752-6,Deprecated Neutrophils [#/volume] in Blood by Automated count,LOINC
+anc,3000192,30449-3,Neutrophils.hypersegmented [#/volume] in Blood,LOINC
+anc,3005937,766-6,Neutrophils.hypersegmented [#/volume] in Blood by Manual count,LOINC
+anc,3017732,26499-4,Neutrophils [#/volume] in Blood,LOINC
+anc,3013650,751-8,Neutrophils [#/volume] in Blood by Automated count,LOINC
+anc,3017501,753-4,Neutrophils [#/volume] in Blood by Manual count,LOINC
+anc,40768822,66139-7,Neutrophils [#/volume] in Blood from Fetus by Manual count,LOINC
+anc,36203200,85369-7,Neutrophils [#/volume] in Control Blood by Flow cytometry (FC),LOINC
+anc,44787041,74398-9,Neutrophils [#/volume] in Cord blood,LOINC
+anc,3015586,30451-9,Segmented neutrophils [#/volume] in Blood,LOINC
+anc,3027270,768-2,Segmented neutrophils [#/volume] in Blood by Manual count,LOINC
 sodium,3001838,Sodium [Moles/volume] in Red Blood Cells,12907-2,LOINC
 sodium,3000285,Sodium [Moles/volume] in Blood,2947-0,LOINC
 sodium,3019550,Sodium [Moles/volume] in Serum or Plasma,2951-2,LOINC
