@@ -121,7 +121,7 @@ best_mapped_concepts = BashOperator(
         bash_command = f'{cwd}scripts/run_r.sh {cwd}scripts/3_driver_bmc.R ',
         dag = dag)
         
-best_mapped_concepts = BashOperator(
+expected_concepts = BashOperator(
 		    task_id = 'expected_concepts' ,
         bash_command = f'{cwd}scripts/run_r.sh {cwd}scripts/3_driver_ecp.R ',
         dag = dag)

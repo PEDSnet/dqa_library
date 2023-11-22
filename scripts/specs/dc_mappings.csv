@@ -1,0 +1,34 @@
+﻿Label,Description
+person,Full person table; includes all patients in the version of the database.
+drug_exposure,"Full drug exposure table; includes all drug administrations, inpatient orders, prescriptions, and dispensed medicatioins. Note that not all sites populate all of these drug types and the overall drug count does not account for this heterogeneity or indicate what type of drugs changed between data cycles."
+condition_occurrence,"Full condition occurrence table; includes all inpatient, outpatient, problem list, billing, and order entry combinations. Note that not all sites populate all of these condition types and the overall count does not account for this heterogeneity or indicate what type of condition changed between data cycles."
+adt_occurrence,"Full adt_occurrence table; includes all cicu, picu, and nicu transfers, admissions, and census at a minimum, as well as any other ADT type a site chooses to submit. "
+device_exposure,Full drug exposure table; includes all device exposures which are usually populated based on a study-specific need.
+immunization,"Full immunization table; includes all immunization types and administrations, as well as any reconciled or unreconciled records."
+visit_occurrence,"Full viist table; includes all visit types such as inpatient, outpatient, ED, telehealth, administrative, lab encounters."
+measurement_vitals,"Portion of the measurement table with vitals-only concepts; vitals that should be included in PEDSnet are diastolic and systolic blood pressure, invasive and non-invasive mean arterial pressure, oxygen saturation, respiratory rate, heart rate, and temperature."
+measurement_labs,Portion of the measurement table that includes all lab result information.
+condition_outpatient,All outpatient conditions in the condition_occurrence table; includes both orders and billing diagnoses.
+condition_inpatient,All inpatient conditions in the condition_occurrence table; includes both orders and billing diagnoses.
+condition_ed,"All emergency department conditions in the condition_occurrence table; some institutions classify their urgent care departments as ED, while others classify them as outpatient visits. The `place_of_service` field in the care_site table can help distinguish for a specific visit."
+condition_op_billing,Outpatient billing diagnoses as designated by condition_type_concept_id; includes both primary and secondary headers.
+condition_op_order,Outpatient order diagnoses as designated by condition_type_concept_id; includes both primary and secondary headers.
+condition_ip_order,Inpatient order diagnoses as designated by condition_type_concept_id; includes both primary and secondary headers.
+condition_ip_billing,Inpatient billing diagnoses as designated by condition_type_concept_id; includes both primary and secondary headers.
+adt_picu,"Portion of the adt_occurrence table that specifically tracks transfers, admissions, and census to the picu."
+adt_nicu,"Portion of the adt_occurrence table that specifically tracks transfers, admissions, and census to the nicu."
+adt_cicu,"Portion of the adt_occurrence table that specifically tracks transfers, admissions, and census to the cicu."
+visit_op_office,"Visits specific to outpatient office visits where a patient was evaluated by a clinician; excludes laboratory, telehealth, and radiology visits."
+visit_op_labs,Visits specific to outpatient laboratory or radiology visits.
+visit_op_telehealth,Visits specific to telehealth encounters.
+visit_op_oa,"Visits designated as ""other"" ambulatory; usually telephone or administrative encounters."
+visit_ip,Visits designated as inpatient visits.
+visit_edip,Visits designated as the combined ED to inpatient code. Note that the majority of institutions split ED and inpatient visits.
+visit_ov,Visits designated as observation visits by the institution; usually are extended ED or short inpatient stays.
+drug_rx,Drug rows designated as prescription drugs by drug_type_concept_id.
+drug_ip,Drug rows designated as inpatient administrations by drug_type_concept_id.
+procedures_billed,Procedures designated as billing diagnoses by procedure_type_concept_id. Note that not every institution may be submitting billed procedures.
+procedures_ordered,Procedures designated as ordered procedures by procedure_type_concept_id. Note that not every institution may be submitting ordered procedures.
+procedures,Full procedure table; includes both ordered and billed procedures and the overall procedure count does not account for this heterogeneity or indicate what type of procedures changed between data cycles.
+measurement_anthro,"Portion of the measurement table with anthropometrics-only concepts; anthropometrics that should be included in PEDSnet include height, weight, head circumference, and body surface area (BSA). The Data Coordinating Center (DCC) derives body mass index (BMI) and computes z-scores for heights, weights, and derived BMIs."
+covid19_dx_labs,Patients with covid-19 diagnoses who also have a viral lab confirming SARS-CoV-2. Note that this particular check application does not require that the diagnosis or lab occur within a particular time frame of each other.
