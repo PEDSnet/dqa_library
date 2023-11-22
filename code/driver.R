@@ -89,6 +89,13 @@ config_append('extra_packages', c('tidyr',
                                 .f=dplyr::union)
     output_tbl_append(bmc_gen_reduce,
                       'bmc_gen_output')
+    
+  message('Expected Concepts Present')
+    source(file.path(base_dir, 'code', 'ecp_execute.R'))
+    ecp <- check_ecp(ecp_codeset_list)
+    
+    output_tbl_append(ecp,
+                      'ecp_output')
 
   message('PF Visits (Patient Facts for Visits) Check')
     source(file.path(base_dir, 'code', 'pf_visits_execute.R'))

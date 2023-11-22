@@ -56,10 +56,13 @@ output_tbl(site_htnrx, paste0(config('site'), '_htnrx'),
 
 ## Procedures, Drugs, AND Labs (ECP)
 
-pdl_pts <- 
-  dplyr::inner_join(site_cdm_tbl('procedure_occurrence') %>% select(person_id),
-               site_cdm_tbl('drug_exposure') %>% select(person_id)) %>%
-  dplyr::inner_join(site_cdm_tbl('measurement_labs') %>% select(person_id))
+pcd <- site_cdm_tbl('procedure_occurrence') %>% select(person_id) %>% distinct()
+drg <- site_cdm_tbl('drug_exposure') %>% select(person_id) %>% distinct()
+ml <- site_cdm_tbl('measurement_labs') %>% select(person_id) %>% distinct()
+  
+pdl_pts <- pcd %>%
+  inner_join(drg) %>% 
+  inner_join(ml) %>% compute_new()
 
 output_tbl(pdl_pts, paste0(config('site'), '_pdl_pts'),
            indexes = c('person_id'))

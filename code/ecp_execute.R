@@ -38,12 +38,12 @@ ecp_codeset_list <- list(
   #                              load_codeset('ecp_concepts', 'ciccc') %>%
   #                                filter(concept_group == 'platelets'),
   #                              'ecp_platelet_count'),
-  # 
-  # 'anc_labs' = list(site_cdm_tbl('measurement_labs'),
-  #                   results_tbl(paste0(config('site'), '_pdl_pts')),
-  #                   'measurement_concept_id',
-  #                   load_codeset('ecp_concepts', 'ciccc') %>% filter(concept_group == 'anc'),
-  #                   'ecp_anc'),
+
+  'anc_labs' = list(site_cdm_tbl('measurement_labs'),
+                    results_tbl(paste0(config('site'), '_pdl_pts')),
+                    'measurement_concept_id',
+                    load_codeset('ecp_concepts', 'ciccc') %>% filter(concept_group == 'anc'),
+                    'ecp_anc'),
   
   'scr_labs' = list(site_cdm_tbl('measurement_labs'),
                     results_tbl(paste0(config('site'), '_pdl_pts')),

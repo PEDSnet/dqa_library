@@ -45,11 +45,9 @@ check_ecp <- function(ecp_list){
       summarise(concept_pt_ct = n_distinct(person_id)) %>%collect()
     
     final_tbl <- total_pts %>%
-      mutate(total_pop = total_pop$total_pop,
-             concept_pt_ct = fact_pts$concept_pt_ct,
+      mutate(concept_pt_ct = fact_pts$concept_pt_ct,
              concept_group = concept_group,
              prop_with_concept = as.numeric(concept_pt_ct/total_pt_ct),
-             prop_pop_w_concept = as.numeric(concept_pt_ct/total_pop),
              check_name = ecp_list[[i]][[5]]) %>%
       add_meta(check_lib = 'ecp') 
     
