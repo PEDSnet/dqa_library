@@ -171,25 +171,27 @@ cholesterol_all,3028437,2089-1,Cholesterol in LDL [Mass/volume] in Serum or Plas
 cholesterol_all,3007352,2091-7,Cholesterol in VLDL [Mass/volume] in Serum or Plasma,LOINC
 cholesterol_all,3027114,2093-3,Cholesterol [Mass/volume] in Serum or Plasma,LOINC
 cholesterol_all,3044491,43396-1,Cholesterol non HDL [Mass/volume] in Serum or Plasma,LOINC
-platelets,3010834,778-1,Platelets [#/volume] in Blood by Manual count,LOINC
-platelets,3031586,49497-1,Platelets [#/volume] in Blood by Estimate,LOINC
+platelets,40772688,LP16772-3,Platelet,LOINC
+platelets,36205024,LP256136-5,Platelet | Bld-Ser-Plas,LOINC
+platelets,4267147,61928009,Platelet count,SNOMED
+platelets,4310103,8574009,Platelet estimate,SNOMED
+platelets,40779159,LP14597-6,Platelets,LOINC
+platelets,36310193,LA19726-1,Platelets,LOINC
+platelets,40786570,LP41375-4,Platelets | Bld-Ser-Plas,LOINC
+platelets,44787167,LP181025-0,Platelets | Blood capillary,LOINC
+platelets,37071943,LP393219-3,Platelets | Blood capillary | Hematology and Cell counts,LOINC
+platelets,37037425,LP393218-5,Platelets | Blood | Hematology and Cell counts,LOINC
+platelets,40654106,LG32892-8,Platelets|Number Concentration (count/vol)|Moment in time|Blood,LOINC
+platelets,40654107,LG32923-1,Platelets|Number Concentration (count/vol)|Moment in time|Blood - cord,LOINC
+platelets,40654108,LG32776-3,Platelets|Number Concentration (count/vol)|Moment in time|Plasma,LOINC
+platelets,37058547,LP393224-3,Platelets | Plasma | Hematology and Cell counts,LOINC
+platelets,3007461,26515-7,Platelets [#/volume] in Blood,LOINC
 platelets,3024929,777-3,Platelets [#/volume] in Blood by Automated count,LOINC
+platelets,3031586,49497-1,Platelets [#/volume] in Blood by Estimate,LOINC
+platelets,3010834,778-1,Platelets [#/volume] in Blood by Manual count,LOINC
+platelets,44787107,74464-9,Platelets [#/volume] in Capillary blood by Manual count,LOINC
 platelets,3006297,26516-5,Platelets [#/volume] in Plasma,LOINC
 platelets,3016682,13056-7,Platelets [#/volume] in Plasma by Automated count,LOINC
-platelets,40654106,LG32892-8,Platelets|NCnc|Pt|Bld,LOINC
-platelets,40654107,LG32923-1,Platelets|NCnc|Pt|BldCo,LOINC
-platelets,40654108,LG32776-3,Platelets|NCnc|Pt|Plas,LOINC
-platelets,40786570,LP41375-4,Platelets | Bld-Ser-Plas,LOINC
-platelets,40772688,LP16772-3,Platelet,LOINC
-platelets,40779159,LP14597-6,Platelets,LOINC
-platelets,44787167,LP181025-0,Platelets | Blood capillary,LOINC
-platelets,44787107,74464-9,Platelets [#/volume] in Capillary blood by Manual count,LOINC
-platelets,36205024,LP256136-5,Platelet | Bld-Ser-Plas,LOINC
-platelets,36310193,LA19726-1,Platelets,LOINC
-platelets,3007461,26515-7,Platelets [#/volume] in Blood,LOINC
-platelets,37037425,LP393218-5,Platelets | Blood | Hematology and Cell counts,LOINC
-platelets,37058547,LP393224-3,Platelets | Plasma | Hematology and Cell counts,LOINC
-platelets,37071943,LP393219-3,Platelets | Blood capillary | Hematology and Cell counts,LOINC
 anc,3018199,26507-4,Band form neutrophils [#/volume] in Blood,LOINC
 anc,3001465,30229-9,Band form neutrophils [#/volume] in Blood by Automated count,LOINC
 anc,3008939,763-3,Band form neutrophils [#/volume] in Blood by Manual count,LOINC
@@ -212,3 +214,7 @@ sodium,3041473,Sodium [Moles/volume] in Venous blood,39791-9,LOINC
 sodium,3038702,Sodium [Moles/volume] in Capillary blood,39792-7,LOINC
 sodium,4097430,Sodium measurement,25197003,SNOMED
 sodium,4208938,"Sodium measurement, blood",312469006,SNOMED
+rapid_strep,3008350,Deprecated Streptococcus pyogenes Ag [Presence] in Throat by Immunoassay,6556-5,LOINC
+rapid_strep,3017906,Streptococcus pyogenes Ag [Presence] in Specimen by Immunoassay,6558-1,LOINC
+rapid_strep,3033319,Streptococcus pyogenes Ag [Presence] in Throat,18481-2,LOINC
+rapid_strep,21491660,Streptococcus pyogenes Ag [Presence] in Throat by Rapid immunoassay,78012-2,LOINC

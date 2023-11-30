@@ -42,12 +42,12 @@ ecp_codeset_list <- list(
                            load_codeset('ecp_concepts', 'ciccc') %>% filter(concept_group == 'hemoglobin'),
                            'ecp_hemoglobin'),
   
-  # 'platelet_labs' = list(site_cdm_tbl('measurement_labs'),
-  #                        pdl_pts,
-  #                              'measurement_concept_id',
-  #                              load_codeset('ecp_concepts', 'ciccc') %>%
-  #                                filter(concept_group == 'platelets'),
-  #                              'ecp_platelet_count'),
+  'platelet_labs' = list(site_cdm_tbl('measurement_labs'),
+                         pdl_pts,
+                               'measurement_concept_id',
+                               load_codeset('ecp_concepts', 'ciccc') %>%
+                                 filter(concept_group == 'platelets'),
+                               'ecp_platelet_count'),
 
   'anc_labs' = list(site_cdm_tbl('measurement_labs'),
                     pdl_pts,
@@ -79,7 +79,7 @@ ecp_codeset_list <- list(
                               'measurement_concept_id',
                               load_codeset('ecp_concepts', 'ciccc') %>% 
                                 filter(concept_group == 'urine_protein_qual'),
-                              'ecp_urine_protein_qual')
+                              'ecp_urine_protein_qual'),
   
   # 'cholesterol_labs' = list(site_cdm_tbl('measurement_labs'),
   #                           pdl_pts,
@@ -87,10 +87,10 @@ ecp_codeset_list <- list(
   #                           load_codeset('ecp_concepts', 'ciccc') %>% filter(concept_group == 'cholesterol_all'),
   #                           'ecp_cholesterol'),
   # 
-  # 'rapid_strep_labs' = list(site_cdm_tbl('measurement_labs'),
-  #                           pdl_pts,
-  #                           'measurement_concept_id',
-  #                           load_codeset('ecp_concepts', 'ciccc') %>% filter(concept_group == 'rapid_strep'),
-  #                           'ecp_rapid_strep')
+  'rapid_strep_labs' = list(site_cdm_tbl('measurement_labs'),
+                            pdl_pts,
+                            'measurement_concept_id',
+                            load_codeset('ecp_concepts', 'ciccc') %>% filter(concept_group == 'rapid_strep'),
+                            'ecp_rapid_strep')
   
 )
