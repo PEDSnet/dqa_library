@@ -53,7 +53,7 @@ vs_list <-
     'vs_ob_cid' = list('valueset_observation',
                          'observation_concept_id',
                          'observation'),
-    'vc_im_route_cid' = list('valueset_imm_route',
+    'vs_im_route_cid' = list('valueset_imm_route',
                           'imm_route_concept_id',
                           'immunization'),
     'vs_pd_race_cid' = list('valueset_race',

@@ -46,7 +46,7 @@ all_list <-
   list(
     'all_visits_with_procedures' = list(site_cdm_tbl('procedure_occurrence'), 'pf_visits_pr'),
     'all_visits_with_conditions' = list(site_cdm_tbl('condition_occurrence'), 'pf_visits_co'),
-    'all_visits_with_drugs' = list(site_cdm_tbl('drug_exposure'), 'pf_dr'),
+    'all_visits_with_drugs' = list(site_cdm_tbl('drug_exposure'), 'pf_visits_dr'),
     'all_visits_with_procs_drugs' = list(procs_drugs, 'pf_visits_prdr'),
     'all_lab_visits' = list(site_cdm_tbl('measurement_labs'), 'pf_visits_ml'),
     'all_visits_with_procs_drugs_labs' = list(procs_drugs_labs, 'pf_visits_prdrml'),

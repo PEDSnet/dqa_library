@@ -1,0 +1,16 @@
+"concept_id","concept_name","domain_id","vocabulary_id","concept_class_id","standard_concept","concept_code","valid_start_date","valid_end_date","invalid_reason"
+3018199,"Band form neutrophils [#/volume] in Blood","Measurement","LOINC","Lab Test","S","26507-4","1970-01-01","2099-12-31",NULL
+3001465,"Band form neutrophils [#/volume] in Blood by Automated count","Measurement","LOINC","Lab Test","S","30229-9","1970-01-01","2099-12-31",NULL
+3008939,"Band form neutrophils [#/volume] in Blood by Manual count","Measurement","LOINC","Lab Test","S","763-3","1970-01-01","2099-12-31",NULL
+40768821,"Band form neutrophils [#/volume] in Blood from Fetus by Manual count","Measurement","LOINC","Lab Test","S","66138-9","2011-06-01","2099-12-31",NULL
+3012533,"Deprecated Neutrophils [#/volume] in Blood by Automated count","Measurement","LOINC","Lab Test",NULL,"752-6","2015-03-10","2015-03-11","U"
+3000192,"Neutrophils.hypersegmented [#/volume] in Blood","Measurement","LOINC","Lab Test","S","30449-3","1970-01-01","2099-12-31",NULL
+3005937,"Neutrophils.hypersegmented [#/volume] in Blood by Manual count","Measurement","LOINC","Lab Test","S","766-6","1970-01-01","2099-12-31",NULL
+3017732,"Neutrophils [#/volume] in Blood","Measurement","LOINC","Lab Test","S","26499-4","1970-01-01","2099-12-31",NULL
+3013650,"Neutrophils [#/volume] in Blood by Automated count","Measurement","LOINC","Lab Test","S","751-8","1970-01-01","2099-12-31",NULL
+3017501,"Neutrophils [#/volume] in Blood by Manual count","Measurement","LOINC","Lab Test","S","753-4","1970-01-01","2099-12-31",NULL
+40768822,"Neutrophils [#/volume] in Blood from Fetus by Manual count","Measurement","LOINC","Lab Test","S","66139-7","2011-06-01","2099-12-31",NULL
+36203200,"Neutrophils [#/volume] in Control Blood by Flow cytometry (FC)","Measurement","LOINC","Lab Test","S","85369-7","2017-06-23","2099-12-31",NULL
+44787041,"Neutrophils [#/volume] in Cord blood","Measurement","LOINC","Lab Test","S","74398-9","2013-11-18","2099-12-31",NULL
+3015586,"Segmented neutrophils [#/volume] in Blood","Measurement","LOINC","Lab Test","S","30451-9","1970-01-01","2099-12-31",NULL
+3027270,"Segmented neutrophils [#/volume] in Blood by Manual count","Measurement","LOINC","Lab Test","S","768-2","1970-01-01","2099-12-31",NULL
