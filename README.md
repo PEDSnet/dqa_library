@@ -99,3 +99,15 @@ The cohorts used for each check can be found in [dcon_execute.R](code/dcon_execu
 #### How the function works:
 
 This function looks at several tables (found in [mf_visitid_execute.R](code/mf_visitid_execute.R)) to see if all the visit_occurrence_ids exist both in that table and the visit_occurrence table. 
+
+## Expected Concepts Present
+
+#### Files
+
+- [cohort_ecp.R](code/cohort_ecp.R)
+- [ecp_execute.R](code/ecp_execute.R)
+- [ecp_concepts.csv](specs/ecp_concepts.csv)
+
+#### How the function works:
+
+This function looks at a population of patients with evidence of a drug, procedure, AND lab and checks to see if these patients have evidence of the clinical concepts listed in [ecp_concepts.csv](specs/ecp_concepts.csv). Each concept_group in the CSV file represents a check application, with one row per code in the concept_group. Currently, this check is only being applied to lab values, but it can be applied to other domains as long as the user provides the correct CDM table in the [ecp_execute.R](code/ecp_execute.R) file.
