@@ -1,6 +1,6 @@
 # Vector of additional packages to load before executing the request
 config_append('extra_packages', c('tidyr',
-'lubridate','stringr'))
+'lubridate','stringr', 'gt', 'gtExtras', 'plotly', 'ggiraph'))
 
 
 #' Execute the request
@@ -53,8 +53,8 @@ config_append('extra_packages', c('tidyr',
     source(file.path(base_dir, 'code', 'vc_vs_execute.R'))
     vc <- check_vc(vocabvals=vc_list)
     vs <- check_vs(valuesets=vs_list)
-    vc_standard <- create_vc_vs_output(vc)
-    vs_standard <- create_vc_vs_output(vs)
+    vc_standard <- create_vc_vs_output(vc, string_tbl_name = 'vc')
+    vs_standard <- create_vc_vs_output(vs, string_tbl_name = 'vs')
     vc_vs_joined <- c(vc_standard,
                       vs_standard)
     vc_vs_final <- vc_vs_joined %>% reduce(.f=dplyr::union)

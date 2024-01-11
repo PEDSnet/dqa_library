@@ -136,12 +136,20 @@ create_vc_vs_output <- function(tbl_list,
         table_application = 'none',
         measurement_column = 'none',
         concepts = -999,
-        total_pt_ct = 0,
+        total_viol_ct = 0,
+        total_viol_pt_ct = 0,
         concept_name = 'No violations',
         vocabulary_id = 'PEDSnet',
-        check_name = string_tbl_name,
-        database_version = config('current_version')
+        check_type = string_tbl_name,
+        database_version = config('current_version'),
+        site = config('site'),
+        check_name = paste0(string_tbl_name, '_no_violation'),
+        total_denom_ct = 0,
+        total_pt_ct = 0 
       )
+    
+    meta_tbl[[1]] <- final
+    
   }  else {
     
     for(i in 1:length(tbl_list)) {
@@ -157,8 +165,6 @@ create_vc_vs_output <- function(tbl_list,
         relocate(c(measurement_column,concepts), .before = total_viol_ct) %>%
         #mutate(table_application = names(tbl_list[i])) %>%
         relocate(table_application, .before = measurement_column)
-      
-      
       
       meta_tbl[[i]] <- final
     }
