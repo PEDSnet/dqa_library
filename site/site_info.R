@@ -40,12 +40,12 @@
 #' @md
 config('db_src', {
   require(srcr);
-  srcr('argos_pbd_v45')
+  srcr('argos_pedsnet_current')
 })
 
 config('db_src_prev', {
   require(srcr);
-  srcr('argos_v44')
+  srcr('argos_pedsnet_prev')
 
 })
 
@@ -54,7 +54,7 @@ config('db_src_prev', {
 #' @details
 #' If `NA`, no schema qualifier is added.
 #' @md
-config('cdm_schema', 'chop_pedsnet')
+config('cdm_schema', paste0(config('site'), '_pedsnet'))
 
 config('cdm_schema_prev','dcc_pedsnet')
 

@@ -119,25 +119,29 @@ config('retain_intermediates', NA)
 #' during processing of the request.
 #' If it is `NA`, the default value from site_info.R is used.
 #' @md
-config('results_schema', 'dqa_rox_dev')
+config('results_schema', 'dqa_rox')
 
 
-config('previous_version','v46')
-config('current_version','v47_dev')
+config('previous_version','v51')
+config('current_version','v52')
 
 config('versions_filter',TRUE)
 config('versions_filter_col', 'site')
 
-config('site', 'chop')
-config('site_filter', 'chop')
-config('site_filter_previous', 'chop')
+config('site', 'stanford')
+config('site_filter', 'stanford')
+config('site_filter_previous', 'stanford')
+
+num_mnths <- (interval(mdy(01012009), today()) %/% months(1)) + 1
 
 time_span_list_output <-
-  as.character(seq(as.Date('2009-02-01'), length = 167, by='months')-1)
+  as.character(seq(as.Date('2009-02-01'), length = num_mnths, by='months')-1)
 time_span <- c(time_span_list_output)
 
+num_yrs <- (interval(mdy(01012009), today()) %/% years(1)) + 1
+
 time_span_yr_output <-
-  as.character(seq(as.Date('2010-01-01'), length = 15, by='years')-1)
+  as.character(seq(as.Date('2010-01-01'), length = num_yrs, by='years')-1)
 time_span_yr <- c(time_span_yr_output)
 
 
