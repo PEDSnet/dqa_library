@@ -102,20 +102,20 @@ check_dc <- function(prev_v_tbls,
                 total_pt_ct=n_distinct(person_id)) %>%
       collect() %>% mutate(database_version=current_v)
     
-    }else if(any(str_detect(names(prev_v_tbls[[i]]),'specialty_concept_id'))){
+    }else{
       
       message(paste0('Computing ',names(prev_v_tbls[i])))
       
       this_round_prev <- 
         prev_v_tbls[[i]] %>%
         summarise(total_ct=n(),
-                  total_pt_ct=n_distinct(specialty_concept_id)) %>%
+                  total_pt_ct=0) %>%
         collect() %>% mutate(database_version=prev_v)
       
       this_round_current <- 
         current_v_tbls[[i]] %>%
         summarise(total_ct=n(),
-                  total_pt_ct=n_distinct(specialty_concept_id)) %>%
+                  total_pt_ct=0) %>%
         collect() %>% mutate(database_version=current_v)
     }
     
