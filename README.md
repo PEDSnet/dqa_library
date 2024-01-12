@@ -13,7 +13,7 @@ For information about each individual execution of the 8 checks, please see [dqa
 
 #### How the function works:
 
-This function loops through a list of tables from the previous data cycle and compares the count of rows and patients to the same table in the current data cycle. There are 3 tables (care_site specialty, provider specialty, and specialty) that do not have a person_id field, so specialty_concept_id is used instead to count the number of distinct specialties in place of the patient count. The complete list of tables can be found in [dc_execute.R](code/dc_execute.R).
+This function loops through a list of tables from the previous data cycle and compares the count of rows and patients to the same table in the current data cycle. For any table without a person_id field, only row count is computed while patient count is defaulted to 0.
 
 ## Vocabulary/Valueset Conformance
 
