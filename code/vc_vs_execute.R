@@ -31,7 +31,7 @@ vc_list <-
     'vc_co_cid' = list(c('SNOMED','OMOP Extension'),
                                   'condition_concept_id',
                                   'condition_occurrence'),
-    'vc_dr_cid' = list(c('RxNorm', 'RxNorm Extension'),
+    'vc_dr_cid' = list(c('RxNorm', 'RxNorm Extension', 'NDC'),
                            'drug_concept_id',
                            'drug_exposure'),
     'vc_im_cid' = list(c('CVX'),
