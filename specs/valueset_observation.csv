@@ -1,4 +1,4 @@
-﻿concept_id,concept_name,domain_id,vocabulary_id,concept_code
+concept_id,concept_name,domain_id,vocabulary_id,concept_code
 756083,Suspected exposure to Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2),Observation,OMOP Extension,OMOP4873962
 3040464,Hospital discharge DRG [Interpretation],Observation,LOINC,38999-9
 4005823,Tobacco user,Observation,SNOMED,110483000
@@ -53,3 +53,4 @@
 3043462,"Thoughts that you would be better off dead, or of hurting yourself in some way in last 2 weeks [Reported.PHQ]",Observation,LOINC,44260-8
 40758879,Patient Health Questionnaire 2 item (PHQ-2) total score [Reported],Observation,LOINC,55758-7
 3042932,Patient Health Questionnaire 9 item (PHQ-9) total score [Reported],Observation,LOINC,44261-6
+2000001490,Pediatric Ulcerative Colitis Activity Index (PUCAI),Observation,Observation,PEDSnet,PEDSnet Generated
