@@ -16,7 +16,7 @@
 
 vc_list <- 
   list(
-    'vc_pr_cid' = list(c('ICD10CM','CPT4','ICD9CM','ICD10','ICD9','ICD10PCS','ICD9Proc','HCPCS'),
+    'vc_pr_cid' = list(c('ICD10CM','CPT4','ICD9CM','ICD10','ICD9','ICD10PCS','ICD9Proc','HCPCS', 'SNOMED'),
                                   'procedure_concept_id',
                                   'procedure_occurrence'),
     'vc_co_cscid' = list(c('ICD9','ICD9CM','ICD10','ICD10CM'),
@@ -39,7 +39,10 @@ vc_list <-
                           'immunization'),
     'vc_dr_dose' = list(c('UCUM'),
                            'dose_unit_concept_id',
-                           'drug_exposure')
+                           'drug_exposure'),
+    'vc_pr_pscid' = list(c('ICD10CM','CPT4','ICD9CM','ICD10','ICD9','ICD10PCS','ICD9Proc','HCPCS'),
+                         'procedure_source_concept_id',
+                         'procedure_occurrence')
   )
 
 vs_list <- 

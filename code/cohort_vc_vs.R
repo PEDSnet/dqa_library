@@ -42,25 +42,25 @@ check_vs <- function(valuesets,
                 total_pt_ct=n_distinct(person_id)) %>% collect_new() %>%
       add_meta(check_lib = string_tbl_name)
     
-    illegal_values <- 
-      site_cdm_tbl(valuesets[[i]][[3]]) %>%
-      anti_join(codeset_round,
-                by = join_cols) %>%
-      filter(! .data[[concept_id_fn]] %in% c(44814650L,0L,44814653L,44814649L)) %>%
-      group_by(!!! rlang::syms(concept_id_fn)) %>%
-      summarise(total_viol_ct = n(),
-                total_viol_pt_ct = n_distinct(person_id)) %>%
-      ungroup() %>%
-      inner_join(select(
-        vocabulary_tbl('concept'),
-        concept_id, concept_name, vocabulary_id
-      ), by = join_cols) %>% collect_new() %>%
-      add_meta(check_lib = string_tbl_name) %>%
-      mutate(check_name = names(valuesets[i]),
-             table_application = valuesets[[i]][[3]]) %>%
-      left_join(total_rows)
-      
-    
+      illegal_values <- 
+        site_cdm_tbl(valuesets[[i]][[3]]) %>%
+        anti_join(codeset_round,
+                  by = join_cols) %>%
+        filter(! .data[[concept_id_fn]] %in% c(44814650L,0L,44814653L,44814649L)) %>%
+        group_by(!!! rlang::syms(concept_id_fn)) %>%
+        summarise(total_viol_ct = n(),
+                  total_viol_pt_ct = n_distinct(person_id)) %>%
+        ungroup() %>%
+        inner_join(select(
+          vocabulary_tbl('concept'),
+          concept_id, concept_name, vocabulary_id
+        ), by = join_cols) %>% collect_new() %>%
+        add_meta(check_lib = string_tbl_name) %>%
+        mutate(check_name = names(valuesets[i]),
+               table_application = valuesets[[i]][[3]],
+               accepted_value = FALSE) %>%
+        left_join(total_rows)
+
     check_valueset[[names(valuesets[i])]] <- illegal_values
     
   }
@@ -92,24 +92,59 @@ check_vc <- function(vocabvals,
     input_list <- list()
     values <- c(vocabvals[[i]][[1]])
     
-    valid_concepts <- vocabulary_tbl('concept') %>%
-      filter(vocabulary_id %in% values) 
+    # valid_concepts <- vocabulary_tbl('concept') %>%
+    #   filter(vocabulary_id %in% values) 
+    # 
+    # input_list[[names(vocabvals[i])]] <- list(values,
+    #                                           vocabvals[[i]][[2]],
+    #                                           vocabvals[[i]][[3]])
     
-    input_list[[names(vocabvals[i])]] <- list(valid_concepts,
-                                              vocabvals[[i]][[2]],
-                                              vocabvals[[i]][[3]])
-    
-    this_round <- check_vs(valuesets = input_list,
-                           from_specs = FALSE,
-                           string_tbl_name = string_tbl_name)
-    
-    if(length(this_round) > 0) {
-      vocab_illegals[[paste0(names(this_round[1]))]] <- this_round[[1]]
-      } else {vocab_illegals[[paste0(names(this_round[1]))]] <- NA}
-    
-    
-    
-  }
+    # this_round <- check_vs(valuesets = input_list,
+    #                        from_specs = FALSE,
+    #                        string_tbl_name = string_tbl_name)
+      
+    # codeset_round <- load_codeset(valuesets[[i]][[1]], col_types = 'icccc')
+      
+    concept_id_fn <- vocabvals[[i]][[2]]
+      
+      
+    join_cols <- set_names('concept_id', paste0(concept_id_fn))
+      
+    total_rows <- 
+      site_cdm_tbl(vocabvals[[i]][[3]]) %>%
+      summarise(total_denom_ct=n(),
+                total_pt_ct=n_distinct(person_id)) %>% collect_new() %>%
+      add_meta(check_lib = string_tbl_name)
+      
+    illegal_values <- 
+      site_cdm_tbl(vocabvals[[i]][[3]]) %>%
+      filter(! .data[[concept_id_fn]] %in% c(44814650L,0L,44814653L,44814649L)) %>%
+      inner_join(select(
+        vocabulary_tbl('concept'),
+        concept_id, concept_name, vocabulary_id
+      ), by = join_cols) %>% 
+      group_by(vocabulary_id) %>%
+      summarise(total_viol_ct = n(),
+                total_viol_pt_ct = n_distinct(person_id)) %>%
+      ungroup() %>%
+      collect_new() %>%
+      add_meta(check_lib = string_tbl_name) %>%
+      mutate(check_name = names(vocabvals[i]),
+             table_application = vocabvals[[i]][[3]],
+             accepted_value = ifelse(vocabulary_id %in% values, TRUE, FALSE),
+             concept_name = paste0('Vocabulary Identifier - ', vocabulary_id),
+             temp = 0) %>%
+      relocate(temp) %>%
+      rename_with(~concept_id_fn, temp) %>%
+      left_join(total_rows)
+      
+      vocab_illegals[[names(vocabvals[i])]] <- illegal_values
+      
+      # if(length(this_round) > 0) {
+      #   vocab_illegals[[paste0(names(this_round[1]))]] <- this_round[[1]]
+      # } else {vocab_illegals[[paste0(names(this_round[1]))]] <- NA}
+      
+    }
   
   vocab_illegals
   
@@ -145,7 +180,8 @@ create_vc_vs_output <- function(tbl_list,
         site = config('site'),
         check_name = paste0(string_tbl_name, '_no_violation'),
         total_denom_ct = 0,
-        total_pt_ct = 0 
+        total_pt_ct = 0,
+        accepted_value = TRUE
       )
     
     meta_tbl[[1]] <- final
@@ -227,4 +263,3 @@ compute_metadata_conf_vs <- function(valuesets,
   metavs
   
 }
-
