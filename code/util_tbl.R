@@ -367,28 +367,28 @@ compute_new <- function(tblx,
                                       collapse = ""),
                         temporary = ! config('retain_intermediates'),
                         ...) {
-    if (!inherits(name, c('ident_q', 'dbplyr_schema')) && length(name) == 1) {
-      name <- gsub('\\s+','_', name, perl = TRUE)
-      name <- intermed_name(name, temporary)
-    }
-    con <- dbi_con(tblx)
-    if (db_exists_table(con, name)) db_remove_table(con, name)
-    if (config('db_trace')) {
-      show_query(tblx)
-      explain(tblx)
-      message(' -> ',
-              ifelse(packageVersion('dbplyr') < '2.0.0',
-                     dbplyr::as.sql(name),
-                     dbplyr::as.sql(name, con)))
-      start <- Sys.time()
-      message(start)
-    }
-    rslt <- dplyr::compute(tblx, name = name, temporary = temporary, ...)
-    if (config('db_trace')) {
-      end  <- Sys.time()
-      message(end, ' ==> ', format(end - start))
-    }
-    rslt
+  if (!inherits(name, c('ident_q', 'dbplyr_schema')) && length(name) == 1) {
+    name <- gsub('\\s+','_', name, perl = TRUE)
+    name <- intermed_name(name, temporary)
+  }
+  con <- dbi_con(tblx)
+  if (db_exists_table(con, name)) db_remove_table(con, name)
+  if (config('db_trace')) {
+    show_query(tblx)
+    explain(tblx)
+    message(' -> ',
+            base::ifelse(packageVersion('dbplyr') < '2.0.0',
+                         dbplyr::as.sql(name),
+                         dbplyr::as.sql(name, con)))
+    start <- Sys.time()
+    message(start)
+  }
+  rslt <- dplyr::compute(tblx, name = name, temporary = temporary, ...)
+  if (config('db_trace')) {
+    end  <- Sys.time()
+    message(end, ' ==> ', format(end - start))
+  }
+  rslt
 }
 
 
@@ -558,7 +558,7 @@ output_tbl <- function(data, name = NA, local = FALSE,
                            results_tag = results_tag, local_tag = local)
     if (any(class(data)  == 'tbl_sql') &&
         identical(dbi_con(data), dbi_con(db))) {
-      rslt <- compute_new(data, rname, temporary = FALSE, db = db, ...)
+      rslt <- compute_new(data, rname, temporary = FALSE, ...)
     }
     else {
       rslt <- copy_to_new(db, collect_new(data), rname,

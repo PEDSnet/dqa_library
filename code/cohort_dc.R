@@ -86,7 +86,7 @@ check_dc <- function(prev_v_tbls,
   
   for(i in 1:length(prev_v_tbls)) {
     
-    if(any(str_detect(names(prev_v_tbls[[i]]),'person_id'))){
+    if(any(str_detect(colnames(prev_v_tbls[[i]]),'person_id'))){
       
     message(paste0('Computing ',names(prev_v_tbls[i])))
       

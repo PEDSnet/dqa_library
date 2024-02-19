@@ -50,8 +50,8 @@
                           args = list(.by_group = .by_group)
                         )
                       }, ns = 'dbplyr')
-  } else if (packageVersion('dbplyr') >= '2.2.0') {
-    # Fix bug in 2.2.0 that calls unname() indisciminately and wipes out schema
+  } else if (packageVersion('dbplyr')[1, 1:2] == '2.2') {
+    # Fix bug in 2.2.x that calls unname() indisciminately and wipes out schema
     assignInNamespace('compute.tbl_sql',
                         function(x, name = dbplyr:::unique_table_name(),
                                  temporary = TRUE, unique_indexes = list(),
