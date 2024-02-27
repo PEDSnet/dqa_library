@@ -1,6 +1,5 @@
 # Vector of additional packages to load before executing the request
-config_append('extra_packages', c('tidyr',
-'lubridate','stringr', 'gt', 'gtExtras', 'plotly', 'ggiraph'))
+config_append('extra_packages', c('tidyr','lubridate','stringr', 'dplyr'))
 
 
 #' Execute the request
@@ -109,11 +108,15 @@ config_append('extra_packages', c('tidyr',
     pf_edvisits <- check_pf_visits(ed_list,
                                    visit_tbl = site_cdm_tbl('visit_occurrence') %>%
                                     filter(visit_concept_id %in% c(9203L,2000000048L)))
+    pf_long_ip <- check_pf_visits(long_ip_list,
+                                  visit_tbl = paste0(config('site'), '_iptwo'))
+    
     pf_combined <-
       c(pf_allvisits,
         pf_opvisits,
         pf_ipvisits,
-        pf_edvisits)
+        pf_edvisits,
+        pf_long_ip)
 
     pf_combined_reduce <-
       reduce(.x=pf_combined,

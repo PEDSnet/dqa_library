@@ -54,14 +54,12 @@ site_htnrx <- site_cdm_tbl('drug_exposure') %>%
 output_tbl(site_htnrx, paste0(config('site'), '_htnrx'),
            indexes = c('person_id', 'visit_occurrence_id'))
 
-## Procedures, Drugs, AND Labs (ECP)
+## Inpatient > 2 days
 
-# pcd <- site_cdm_tbl('procedure_occurrence') %>% select(person_id) %>% distinct()
-# drg <- site_cdm_tbl('drug_exposure') %>% select(person_id) %>% distinct()
-# ml <- site_cdm_tbl('measurement_labs') %>% select(person_id) %>% distinct()
-#   
-# pdl_pts <- pcd %>%
-#   inner_join(drg) %>% 
-#   inner_join(ml) %>% collect()
-# 
-# output_tbl(pdl_pts, paste0(config('site'), '_pdl_pts'), indexes = c('person_id'))
+site_iptwo <- site_cdm_tbl('visit_occurrence') %>%
+  filter(visit_concept_id %in% c(9201L, 2000000048L)) %>%
+  mutate(los = as.numeric(visit_end_date - visit_start_date)) %>%
+  filter(los > 2)
+
+output_tbl(site_iptwo, paste0(config('site'), '_iptwo'),
+           indexes = c('person_id', 'visit_occurrence_id'))

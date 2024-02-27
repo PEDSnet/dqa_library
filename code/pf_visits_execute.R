@@ -99,3 +99,18 @@ ed_list <-
     # 'ed_visits_with_pv_spec' = list(pv_spec, 'pf_edvisits_pv_spec'),
     # 'ed_visits_with_cs_spec' = list(cs_spec, 'pf_edvisits_cs_spec')
   )
+
+long_ip_list <- 
+  list(
+    'long_ip_visits_with_procedures' = list(site_cdm_tbl('procedure_occurrence'), 'pf_visits_pr'),
+    'long_ip_visits_with_conditions' = list(site_cdm_tbl('condition_occurrence'), 'pf_visits_co'),
+    'long_ip_visits_with_drugs' = list(site_cdm_tbl('drug_exposure'), 'pf_visits_dr'),
+    'long_ip_visits_with_procs_drugs' = list(procs_drugs, 'pf_visits_prdr'),
+    'long_ip_lab_visits' = list(site_cdm_tbl('measurement_labs'), 'pf_visits_ml'),
+    'long_ip_visits_with_procs_drugs_labs' = list(procs_drugs_labs, 'pf_visits_prdrml'),
+    'long_ip_icu'=list(icu_transfer,'pf_ipvisits_icu'),
+    'long_ip_visits_with_payer' = list(visit_payer, 'pf_visits_vp'),
+    'long_ip_visits_with_immunizations' = list(site_cdm_tbl('immunization'), 'pf_visits_im')
+    # 'all_visits_with_pv_spec' = list(pv_spec, 'pf_visits_pv_spec'),
+    # 'all_visits_with_cs_spec' = list(cs_spec, 'pf_visits_cs_spec')
+  )
