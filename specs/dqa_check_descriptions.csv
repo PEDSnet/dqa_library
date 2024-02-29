@@ -95,6 +95,15 @@ Person Facts/Records,pf_ipvisits_prdrml,Inpatient Visits,"Procedures, Drugs, and
 Person Facts/Records,pf_ipvisits_vp,Inpatient Visits,Visit Payer,counts of inpatient visits (visit_concept_id = 9201 or 2000000048) with and without an associated record in visit_payer
 Person Facts/Records,pf_ipvisits_im,Inpatient Visits,All Immunization,counts of inpatient visits (visit_concept_id = 9201 or 2000000048) with and without an associated immunization
 Person Facts/Records,pf_ipvisits_icu,Inpatient Visits,ICU,"counts of inpatient visits (visit_concept_id = 9201 or 2000000048) with and without an associated ICU transfer (service_concept_id = 2000000079, 2000000080, or 2000000078)"
+Person Facts/Records,pf_lipvisits_pr,Long Inpatient Visits,All Procedures,counts of inpatient visits (visit_concept_id = 9201 or 2000000048) longer than 2 days with and without an associated procedure
+Person Facts/Records,pf_lipvisits_co,Long Inpatient Visits,All Conditions,counts of inpatient visits (visit_concept_id = 9201 or 2000000048) longer than 2 days with and without an associated condition
+Person Facts/Records,pf_lipvisits_dr,Long Inpatient Visits,All Drugs,counts of inpatient visits (visit_concept_id = 9201 or 2000000048) longer than 2 days with and without an associated drug
+Person Facts/Records,pf_lipvisits_prdr,Long Inpatient Visits,Procedures and Drugs,counts of inpatient visits (visit_concept_id = 9201 or 2000000048) longer than 2 days with and without an associated procedure AND an associated drug
+Person Facts/Records,pf_lipvisits_ml,Long Inpatient Visits,Measurement Labs,counts of inpatient visits (visit_concept_id = 9201 or 2000000048) longer than 2 days with and without an associated lab value
+Person Facts/Records,pf_lipvisits_prdrml,Long Inpatient Visits,"Procedures, Drugs, and Labs",counts of inpatient visits (visit_concept_id = 9201 or 2000000048) longer than 2 days with and without an associated procedure AND an associated drug AND an associated lab value
+Person Facts/Records,pf_lipvisits_vp,Long Inpatient Visits,Visit Payer,counts of inpatient visits (visit_concept_id = 9201 or 2000000048) longer than 2 days with and without an associated record in visit_payer
+Person Facts/Records,pf_lipvisits_im,Long Inpatient Visits,All Immunization,counts of inpatient visits (visit_concept_id = 9201 or 2000000048) longer than 2 days with and without an associated immunization
+Person Facts/Records,pf_lipvisits_icu,Long Inpatient Visits,ICU,"counts of inpatient visits (visit_concept_id = 9201 or 2000000048) longer than 2 days with and without an associated ICU transfer (service_concept_id = 2000000079, 2000000080, or 2000000078)"
 Person Facts/Records,pf_opvisits_pr,Outpatient Visits,All Procedures,counts of outpatient visits (visit_concept_id = 9202 or 581399) with and without an associated procedure
 Person Facts/Records,pf_opvisits_co,Outpatient Visits,All Conditions,counts of outpatient visits (visit_concept_id = 9202 or 581399) with and without an associated condition
 Person Facts/Records,pf_opvisits_dr,Outpatient Visits,All Drugs,counts of outpatient visits (visit_concept_id = 9202 or 581399) with and without an associated drug
