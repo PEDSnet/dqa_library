@@ -32,6 +32,9 @@ uc_args_list <-
 
      'conditions' = list(site_cdm_tbl('condition_occurrence'),
                          'condition_concept_id', 'uc_co', 'condition_source_value'),
+     
+     'condition source' = list(site_cdm_tbl('condition_occurrence'),
+                               'condition_source_concept_id', 'uc_co_scid', 'condition_source_value'),
     
      'all labs' = list(site_cdm_tbl('measurement_labs'),
                        'measurement_concept_id', 'uc_ml', 'measurement_source_value'),

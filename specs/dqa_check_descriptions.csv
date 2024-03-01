@@ -56,6 +56,7 @@ Unmapped Concepts,uc_dp,Drug Exposure,Prescription Drugs,"for prescription drugs
 Unmapped Concepts,uc_du,Drug Exposure,Drug Dose Unit,"for the full drug_exposure table, counts of dose_unit_concept_ids mapped to 44814650, 0, 44814653, or 44814649"
 Unmapped Concepts,uc_drt,Drug Exposure,Drug Route,"for the full drug_exposure table, counts of route_concept_ids mapped to 44814650, 0, 44814653, or 44814649"
 Unmapped Concepts,uc_co,Condition Occurrence,All Conditions,"for the full condition_occurrence table, counts of condition_concept_ids mapped to 44814650, 0, 44814653, or 44814649"
+Unmapped Concepts,uc_co_scid,Condition Occurrence,Condition Sources,"for the full condition_occurrence table, counts of condition_source_concept_ids mapped to 44814650, 0, 44814653, or 44814649"
 Unmapped Concepts,uc_ml,Measurement,Measurement Labs,"for lab values in the measurement table, counts of measurement_concept_ids mapped to 44814650, 0, 44814653, or 44814649"
 Unmapped Concepts,uc_mlu,Measurement,Lab Units,"for lab values in the measurement table, counts of unit_concept_ids mapped to 44814650, 0, 44814653, or 44814649"
 Unmapped Concepts,uc_im,Immunization,All Immunization,"for the full immunization table, counts of immunization_concept_ids mapped to 44814650, 0, 44814653, or 44814649"
