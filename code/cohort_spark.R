@@ -20,6 +20,33 @@ vocabulary_tbl_spark <- function(name,
   
 }
 
+#' @param name The name of the table
+#' @param db The database connection; you will rarely need to specify this.
+#' @param results_tag The request tag to add to the table name (see [intermed_name()]).
+#' @param local_tag The local tag to add to the table name (see [intermed_name()]).
+#'
+#' @return A [dplyr::tbl()]] pointing to the table
+#' @seealso [intermed_name()], for more information on how the table
+#'   specification is determined.
+#' @md
+results_tbl_spark <- function(name, 
+                        conn = config('db_src'),
+                        db = config('db'),
+                        results_tag =  TRUE) {
+
+  if(results_tag){
+    name <- paste0(name, config('results_tag'))
+  }
+  
+  path_build <- paste0('hdfs:////data/', db, '/', 
+                       config('results_schema'), '/', name)
+  
+  tbl <- spark_read_parquet(sc = db,
+                            name = name,
+                            path = path_build,
+                            memory = FALSE)
+}
+
 #' Add site to the cdm_tbl
 #' 
 #' @param name the name of the table, as a string
@@ -31,7 +58,7 @@ vocabulary_tbl_spark <- function(name,
 #' @return the cdm_tbl name with site as a grouper
 #' 
 
-cdm_tbl_spark <- function(name,
+site_cdm_tbl <- function(name,
                          conn = config('db_src'),
                          db = config('db'),
                          site = TRUE) {
@@ -69,7 +96,7 @@ cdm_tbl_spark <- function(name,
 #' 
 #' @return the cdm_tbl_previous name with site as a grouper
 #' 
-cdm_tbl_prev_spark <- function(name,
+site_cdm_tbl_prev <- function(name,
                          conn = config('db_src'),
                          db = config('db_prev'),
                          site = TRUE) {
@@ -139,19 +166,19 @@ output_tbl_spark <- function(data,
   
   if(append){
     
-    tbl <- spark_write_parquet(x = name,
-                               path = path_build,
-                               mode = 'append',
-                               partition_by = indexes,
-                               ...)
+    tbl <- spark_write_csv(x = name,
+                           path = path_build,
+                           mode = 'append',
+                           partition_by = indexes,
+                           ...)
     
   }else{
     
-    tbl <- spark_write_parquet(x = name,
-                               path = path_build,
-                               mode = 'overwrite',
-                               partition_by = indexes,
-                               ...)
+    tbl <- spark_write_csv(x = name,
+                           path = path_build,
+                           mode = 'overwrite',
+                           partition_by = indexes,
+                           ...)
     
   }
   
