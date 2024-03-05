@@ -119,7 +119,7 @@ config('retain_intermediates', NA)
 #' during processing of the request.
 #' If it is `NA`, the default value from site_info.R is used.
 #' @md
-config('results_schema', 'dqa_rox')
+config('results_schema', 'dqa_spark_test')
 
 
 config('previous_version','v51')
@@ -128,14 +128,16 @@ config('current_version','v52')
 config('versions_filter',TRUE)
 config('versions_filter_col', 'site')
 
-config('site', 'stanford')
-config('site_filter', 'stanford')
-config('site_filter_previous', 'stanford')
+config('site', 'texas')
+config('site_filter', 'texas')
+config('site_filter_previous', 'texas')
+
+library('lubridate')
 
 num_mnths <- (interval(mdy(01012009), today()) %/% months(1)) + 1
 
 time_span_list_output <-
-  as.character(seq(as.Date('2009-02-01'), length = num_mnths, by='months')-1)
+  as.character(seq(as.Date('2009-01-01'), length = num_mnths, by='months')-1)
 time_span <- c(time_span_list_output)
 
 num_yrs <- (interval(mdy(01012009), today()) %/% years(1)) + 1
@@ -158,7 +160,7 @@ time_span_yr <- c(time_span_yr_output)
 #' more readable result.  Keep the tag short, given Oracle limits on
 #' table name length.
 #' @md
-config('results_name_tag', '_op_1510')
+config('results_name_tag', '')
 config('local_name_tag', '_op_1292')
 
 #' Execution mode
