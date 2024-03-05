@@ -1,4 +1,32 @@
 
+## Outpatient Labs
+site_voml <- site_cdm_tbl('measurement_labs') %>%
+  inner_join(select(site_cdm_tbl('visit_occurrence'),
+                    visit_occurrence_id, visit_concept_id)) %>%
+  filter(visit_concept_id == 9202L)
+
+## Outpatient Med Admin
+site_vodi <- site_cdm_tbl('drug_exposure') %>%
+  filter(drug_type_concept_id == 38000180L) %>%
+  inner_join(select(site_cdm_tbl('visit_occurrence'),
+                    visit_occurrence_id, visit_concept_id)) %>% 
+  filter(visit_concept_id == 9202L)
+
+## Inpatient Prescriptions
+site_vipdp <- site_cdm_tbl('drug_exposure') %>%
+  filter(drug_type_concept_id == 38000177L) %>%
+  inner_join(select(site_cdm_tbl('visit_occurrence'),
+                    visit_occurrence_id, visit_concept_id)) %>% 
+  filter(visit_concept_id %in% c(9201L, 2000000048L))
+
+## Outpatient Procedures
+site_prvo <- site_cdm_tbl('procedure_occurrence') %>%
+  inner_join(select(site_cdm_tbl('visit_occurrence'),
+                    visit_occurrence_id, visit_concept_id)) %>% 
+  filter(visit_concept_id == 9202L)
+
+
+
 #' list element definitions for `fot` check type
 #' 
 #' List of lists
@@ -10,10 +38,10 @@
 
 time_tbls_list = list(
   'fot_im' = list(site_cdm_tbl('immunization'), 'all immunizations'),
-  'fot_im_covid19' = list(site_cdm_tbl('immunization') %>% inner_join(load_codeset('c19_immunizations'),
+  'fot_im_covid19' = list(site_cdm_tbl('immunization') %>% inner_join(load_codeset_spark('c19_immunizations'),
                                                                       by=c('immunization_concept_id'='concept_id')), 'covid19 immunizations'),
-  'fot_pr_appendectomy' = list(site_cdm_tbl('procedure_occurrence') %>% inner_join(load_codeset('appendectomy'),
-                                                                                   by=c('procedure_concept_id'='concept_id')), 'appendectomy procedures'),
+  #'fot_pr_appendectomy' = list(site_cdm_tbl('procedure_occurrence') %>% inner_join(load_codeset('appendectomy'),
+                                                                                   #by=c('procedure_concept_id'='concept_id')), 'appendectomy procedures'),
   'fot_vi' = list(site_cdm_tbl('visit_occurrence'), 'all visits'),
   'fot_vo_office' = list(site_cdm_tbl('visit_occurrence') %>% filter(visit_concept_id == 9202L), 'outpatient visits'),
   'fot_vo_labs' = list(site_cdm_tbl('visit_occurrence') %>% filter(visit_concept_id == 2000000469L), 'outpatient lab visits'),
@@ -23,7 +51,8 @@ time_tbls_list = list(
   'fot_vip_ipcombined' = list(site_cdm_tbl('visit_occurrence') %>% filter(visit_concept_id == 2000000048L), 'ED to IP combined visits'),
   'fot_vob' = list(site_cdm_tbl('visit_occurrence') %>% filter(visit_concept_id == 2000000088L), 'Observation visits'),
   'fot_co' = list(site_cdm_tbl('condition_occurrence'), 'all conditions'),
-  'fot_prvo' = list(results_tbl(paste0(config('site'),'_prvo')), 'outpatient procedures'),
+  #'fot_prvo' = list(results_tbl(paste0(config('site'),'_prvo')), 'outpatient procedures'),
+  'fot_prvo' = list(site_prvo, 'outpatient procedures'),
   'fot_adt_picu' = list(site_cdm_tbl('adt_occurrence') %>% filter(service_concept_id == 2000000078L), 'picu'),
   'fot_adt_nicu' = list(site_cdm_tbl('adt_occurrence') %>% filter(service_concept_id == 2000000080L), 'nicu'),
   'fot_adt_cicu' = list(site_cdm_tbl('adt_occurrence') %>% filter(service_concept_id == 2000000079L), 'cicu'),
@@ -64,11 +93,15 @@ time_tbls_list = list(
                                                                                     2000000100L,
                                                                                     2000000093L,
                                                                                     2000000094L)), 'Inpatient condition billing'),
-  'fot_voml' = list(results_tbl(paste0(config('site'),'_voml')), 'outpatient labs (9202)'),
+  #'fot_voml' = list(results_tbl(paste0(config('site'),'_voml')), 'outpatient labs (9202)'),
+  'fot_voml' = list(site_voml, 'outpatient labs (9202)'),
   
-  'fot_vodi' = list(results_tbl(paste0(config('site'),'_vodi')), 'outpatient med administration'),
+  #'fot_vodi' = list(results_tbl(paste0(config('site'),'_vodi')), 'outpatient med administration'),
+  'fot_vodi' = list(site_vodi, 'outpatient med administration'),
   
-  'fot_vipdp' = list(results_tbl(paste0(config('site'),'_vipdp')), 'inpatient prescriptions'),
+  
+  #'fot_vipdp' = list(results_tbl(paste0(config('site'),'_vipdp')), 'inpatient prescriptions'),
+  'fot_vipdp' = list(site_vipdp, 'inpatient prescriptions'),
 
   'fot_ma_ht' = list(site_cdm_tbl('measurement_anthro') %>%
                        filter(measurement_concept_id == 3023540L), 'Height'),

@@ -1,19 +1,19 @@
 
 
 c19_codes_dx_prev <- 
-  read_codeset('c19_dx','icccc') %>%
-  copy_to_new(dest=config('db_src_prev'),
-              df=.,
-              name='c19_dx',
-              temporary=TRUE,
-              indexes=list('concept_id'))
+  load_codeset_spark('c19_dx','icccc') #%>%
+  # copy_to_new(dest=config('db_src_prev'),
+  #             df=.,
+  #             name='c19_dx',
+  #             temporary=TRUE,
+  #             indexes=list('concept_id'))
 
 c19_codes_labs_prev <- 
-  read_codeset('c19_viral_labs') %>%
-  copy_to_new(dest=config('db_src_prev'),
-              df=.,
-              temporary=TRUE,
-              indexes=list('concept_id'))
+  load_codeset_spark('c19_viral_labs') #%>%
+  # copy_to_new(dest=config('db_src_prev'),
+  #             df=.,
+  #             temporary=TRUE,
+  #             indexes=list('concept_id'))
 
 c19_dx_lab_prev <- 
   site_cdm_tbl_prev('condition_occurrence') %>%
@@ -24,20 +24,20 @@ c19_dx_lab_prev <-
              by='person_id') %>%
   inner_join(c19_codes_labs_prev,
              by=c('measurement_concept_id'='concept_id')) %>%
-  distinct(person_id) %>% compute_new(temporary=TRUE,
-                                      indexes=list('person_id'))
+  distinct(person_id) #%>% compute_new(temporary=TRUE,
+                                      #indexes=list('person_id'))
 
 c19_dx_lab_current <- 
   site_cdm_tbl('condition_occurrence') %>%
-  inner_join(load_codeset('c19_dx','icccc'),
+  inner_join(c19_codes_dx_prev,
              by=c('condition_concept_id'='concept_id')) %>%
   select(person_id) %>%
   inner_join(site_cdm_tbl('measurement_labs'),
              by='person_id') %>%
-  inner_join(load_codeset('c19_viral_labs'),
+  inner_join(c19_codes_labs_prev,
              by=c('measurement_concept_id'='concept_id')) %>%
-  distinct(person_id) %>% compute_new(temporary=TRUE,
-                                      indexes=list('person_id'))
+  distinct(person_id) #%>% compute_new(temporary=TRUE,
+                                      #indexes=list('person_id'))
 
 #' `dc_args_prev`
 #' list element definition for the `dc` check: PREVIOUS cycle

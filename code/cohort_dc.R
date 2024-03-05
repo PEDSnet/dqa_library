@@ -78,8 +78,9 @@ compute_dc_meta_tbl <- function(meta_tbls,
 check_dc <- function(prev_v_tbls,
                      current_v_tbls,
                      meta_tbls,
-                     prev_v=config('previous_version'),
-                     current_v=config('current_version'),
+                     prev_v,
+                     current_v,
+                     site_nm,
                      check_string='dc') {
   
   cts <- list()
@@ -94,13 +95,15 @@ check_dc <- function(prev_v_tbls,
       prev_v_tbls[[i]] %>%
       summarise(total_ct=n(),
                 total_pt_ct=n_distinct(person_id)) %>%
-      collect() %>% mutate(database_version=prev_v)
+      #collect() %>% 
+      mutate(database_version=prev_v)
     
     this_round_current <- 
       current_v_tbls[[i]] %>%
       summarise(total_ct=n(),
                 total_pt_ct=n_distinct(person_id)) %>%
-      collect() %>% mutate(database_version=current_v)
+      #collect() %>% 
+      mutate(database_version=current_v)
     
     }else{
       
@@ -110,13 +113,15 @@ check_dc <- function(prev_v_tbls,
         prev_v_tbls[[i]] %>%
         summarise(total_ct=n(),
                   total_pt_ct=0) %>%
-        collect() %>% mutate(database_version=prev_v)
+        #collect() %>% 
+        mutate(database_version=prev_v)
       
       this_round_current <- 
         current_v_tbls[[i]] %>%
         summarise(total_ct=n(),
                   total_pt_ct=0) %>%
-        collect() %>% mutate(database_version=current_v)
+        #collect() %>% 
+        mutate(database_version=current_v)
     }
     
     
@@ -125,13 +130,14 @@ check_dc <- function(prev_v_tbls,
                    this_round_current)
     
     t=names(prev_v_tbls[i])
+    q=meta_tbls[[t]][[2]]
     
     cts[[names(prev_v_tbls[i])]] <- 
       this_round  %>% 
-      mutate(site = config('site')) %>%
+      mutate(site = site_nm) %>%
      # add_meta(check_lib=check_string) %>%
-      mutate(domain=names(prev_v_tbls[i])) %>%
-      mutate(check_name=paste0(check_string,'_',meta_tbls[[t]][[2]])) %>%
+      mutate(domain=t) %>%
+      mutate(check_name=paste0(check_string,'_',q)) %>%
      # mutate(table_name = check_name_full) %>%
       relocate(site, .before=total_ct)  %>% mutate(check_type=check_string)
     
