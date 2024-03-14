@@ -7,13 +7,13 @@
 #' @return A [dplyr::tbl()]] pointing to the table
 #' @md
 vocabulary_tbl_spark <- function(name, 
-                                 conn = config('db_src'),
+                                 conn = config('db_src_spark'),
                                  db = config('db')){
   
   path_build <- paste0('hdfs:////data/', db, '/', 
                        config('vocabulary_schema'), '/', name)
   
-  tbl <- spark_read_parquet(sc = db,
+  tbl <- spark_read_parquet(sc = conn,
                             name = name,
                             path = path_build,
                             memory = FALSE)
@@ -30,7 +30,7 @@ vocabulary_tbl_spark <- function(name,
 #'   specification is determined.
 #' @md
 results_tbl_spark <- function(name, 
-                        conn = config('db_src'),
+                        conn = config('db_src_spark'),
                         db = config('db'),
                         results_tag =  TRUE) {
 
@@ -41,7 +41,7 @@ results_tbl_spark <- function(name,
   path_build <- paste0('hdfs:////data/', db, '/', 
                        config('results_schema'), '/', name)
   
-  tbl <- spark_read_parquet(sc = db,
+  tbl <- spark_read_parquet(sc = conn,
                             name = name,
                             path = path_build,
                             memory = FALSE)
@@ -58,8 +58,8 @@ results_tbl_spark <- function(name,
 #' @return the cdm_tbl name with site as a grouper
 #' 
 
-site_cdm_tbl <- function(name,
-                         conn = config('db_src'),
+cdm_tbl_spark <- function(name,
+                         conn = config('db_src_spark'),
                          db = config('db'),
                          site = TRUE) {
   
@@ -96,8 +96,8 @@ site_cdm_tbl <- function(name,
 #' 
 #' @return the cdm_tbl_previous name with site as a grouper
 #' 
-site_cdm_tbl_prev <- function(name,
-                         conn = config('db_src'),
+cdm_tbl_prev_spark <- function(name,
+                         conn = config('db_src_spark'),
                          db = config('db_prev'),
                          site = TRUE) {
   
@@ -143,7 +143,7 @@ output_tbl_spark <- function(data,
                        local = FALSE,
                        file = ifelse(config('execution_mode') !=
                                        'development', TRUE, FALSE),
-                       conn = config('db_src'),
+                       conn = config('db_src_spark'),
                        db = config('db'),
                        results_tag = TRUE,
                        indexes = NULL,
@@ -224,7 +224,7 @@ load_codeset_spark <- function(name,
                          table_name = name,
                          indexes = list('concept_id'),
                          full_path = FALSE,
-                         conn = config('db_src')) {
+                         conn = config('db_src_spark')) {
   
   if (config('cache_enabled')) {
     if (is.null(config('_codesets'))) config('_codesets', list())

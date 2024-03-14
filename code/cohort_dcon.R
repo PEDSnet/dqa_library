@@ -210,7 +210,7 @@ check_dcon<- function(conc_tbls,
       
       final_cts <- cohort_list[[i]] %>% 
         summarise(value=n_distinct(col_nm)) %>% 
-        #collect() %>% 
+        collect() %>% 
         mutate(cohort = string_nm)
       
       cohort_list_cts[[i]] <- final_cts
@@ -226,7 +226,7 @@ check_dcon<- function(conc_tbls,
       #mutate(yr=9999) %>% 
       add_meta(check_lib = check_string) %>%
       mutate(check_name=nm) %>%
-      mutate(check_desc=d) %>% collect()
+      mutate(check_desc=d) #%>% collect()
     
     final[[k]] <- final_tbls
     

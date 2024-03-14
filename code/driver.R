@@ -50,20 +50,11 @@ config_append('extra_packages', c('tidyr','lubridate','stringr', 'dplyr', 'spark
     dc_output_df <-
       reduce(.x=dc_output_new,
              .f=dplyr::union)
-    
-    output_tbl_spark(dc_output_df,
-                     'dc_output',
-                     append = TRUE)
-    
-    ## need a copy_to for this or need to rework meta_tbl function*
-    output_tbl_spark(dplyr::copy_to(dest = config('db_src'), dc_output_meta),
-                     'dc_meta',
-                     append = TRUE)
 
-    # output_tbl_append(dc_output_df,
-    #                 'dc_output')
-    # output_tbl_append(dc_output_meta,
-    #                 'dc_meta')
+    output_tbl_append(dc_output_df,
+                    'dc_output')
+    output_tbl_append(dc_output_meta,
+                    'dc_meta')
 
   message('VC (Vocabulary Conformance) and VS (Valueset Conformance) Check')
     source(file.path(base_dir, 'code', 'vc_vs_execute.R'))
@@ -126,13 +117,8 @@ config_append('extra_packages', c('tidyr','lubridate','stringr', 'dplyr', 'spark
                                    visit_tbl = site_cdm_tbl('visit_occurrence') %>%
                                     filter(visit_concept_id %in% c(9203L,2000000048L)))
     
-    site_iptwo <- site_cdm_tbl('visit_occurrence') %>%
-      filter(visit_concept_id %in% c(9201L, 2000000048L)) %>%
-      mutate(los = datediff(visit_end_date, visit_start_date)) %>%
-      filter(los > 2)
-    
     pf_long_ip <- check_pf_visits(long_ip_list,
-                                  visit_tbl = site_iptwo)
+                                  visit_tbl = results_tbl(paste0(config('site'), '_iptwo')))
     
     pf_combined <-
       c(pf_allvisits,
@@ -144,29 +130,19 @@ config_append('extra_packages', c('tidyr','lubridate','stringr', 'dplyr', 'spark
     pf_combined_reduce <-
       reduce(.x=pf_combined,
              .f=dplyr::union)
-    
-    output_tbl_spark(dplyr::copy_to(dest = config('db_src'), pf_combined_reduce),
-                     'pf_output',
-                     append = TRUE)
 
-    # output_tbl_append(pf_combined_reduce,
-    #                   'pf_output')
+    output_tbl_append(pf_combined_reduce,
+                      'pf_output')
 
   message('FOT (Facts Over Time) Check')
     source(file.path(base_dir, 'code', 'fot_execute.R'))
-    # fot_all <- check_fot(time_tbls = time_tbls_list,
-    #                      visits_only = FALSE)
-    fot_all <- check_fot_spark(time_tbls = time_tbls_list,
-                               visits_only = FALSE)
+    fot_all <- check_fot(time_tbls = time_tbls_list,
+                         visits_only = FALSE)
     fot_all_reduce <- reduce(.x=fot_all,
                              .f=dplyr::union)
     
-    output_tbl_spark(dplyr::copy_to(dest = config('db_src'), fot_all_reduce),
-                     'fot_output',
-                     append = TRUE)
-    
-    # output_tbl_append(fot_all_reduce,
-    #                   'fot_output')
+    output_tbl_append(fot_all_reduce,
+                      'fot_output')
     
   message('Domain Concordance Check')
     source(file.path(base_dir, 'code', 'dcon_execute.R'))
@@ -180,13 +156,9 @@ config_append('extra_packages', c('tidyr','lubridate','stringr', 'dplyr', 'spark
                              check_string = 'dcon_visits') %>%
       reduce(dplyr::union)
     dcon_all <- dplyr::union(dcon_pt, dcon_visit)
-    
-    output_tbl_spark(dplyr::copy_to(dest = config('db_src'), dcon_all),
-                     'dcon_output',
-                     append = TRUE)
-    
-    # output_tbl_append(dcon_all,
-    #                   'dcon_output')
+
+    output_tbl_append(dcon_all,
+                      'dcon_output')
     
   # message('Domain Concordance Over Time')
   #   dcon_pt_yr <- check_dcon_overtime(conc_tbls = conc_pts_list,

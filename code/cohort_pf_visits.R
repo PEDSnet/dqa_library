@@ -43,7 +43,7 @@ check_pf_visits <- function(fact_tbls,
     summarise(
       total_visits = n(),
       total_pts = n_distinct(person_id)
-    ) %>% ungroup() #%>% collect()
+    ) %>% ungroup() %>% collect()
 
 
   all_tbls <- list()
@@ -74,7 +74,7 @@ check_pf_visits <- function(fact_tbls,
       summarise(
         no_fact_visits = n(),
         no_fact_pts = n_distinct(person_id)
-      ) %>% ungroup() #%>% collect()
+      ) %>% ungroup() %>% collect()
 
     missed_pts <-
       visit_tbl %>% select(person_id) %>%
@@ -86,7 +86,7 @@ check_pf_visits <- function(fact_tbls,
       ) %>%
       summarise(
         no_fact_pts = n_distinct(person_id)
-      ) %>% ungroup() #%>% collect()
+      ) %>% ungroup() %>% collect()
 
     # total_ct <-
     #  missed %>%
@@ -101,10 +101,8 @@ check_pf_visits <- function(fact_tbls,
 
     cts_combined <-
       visit_tbl_all_name %>%
-      #missed_visits %>%
       left_join(missed_visits) %>%
       left_join(missed_pts) %>%
-      #left_join(visit_tbl_all_name) %>%
       mutate(
         no_fact_visits_prop = round(
           no_fact_visits / total_visits, 2
@@ -120,7 +118,7 @@ check_pf_visits <- function(fact_tbls,
         fact_pts = total_pts - no_fact_pts,
         fact_visits_prop = round(1.00 - no_fact_visits_prop, 2),
         fact_pts_prop = round(1.00 - no_fact_pts_prop, 2)
-      ) %>% mutate(check_name=chk_nm) %>% collect()
+      ) %>% mutate(check_name=chk_nm) #%>% collect()
 
     # if(all(is.na(all_tbls))) all_tbls <- tbl_comp else all_tbls <- dplyr::union(all_tbls, tbl_comp) %>%
     #  compute_new(indexes = list('visit_occurrence_id'),

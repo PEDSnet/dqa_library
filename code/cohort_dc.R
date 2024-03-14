@@ -95,14 +95,14 @@ check_dc <- function(prev_v_tbls,
       prev_v_tbls[[i]] %>%
       summarise(total_ct=n(),
                 total_pt_ct=n_distinct(person_id)) %>%
-      #collect() %>% 
+      collect() %>% 
       mutate(database_version=prev_v)
     
     this_round_current <- 
       current_v_tbls[[i]] %>%
       summarise(total_ct=n(),
                 total_pt_ct=n_distinct(person_id)) %>%
-      #collect() %>% 
+      collect() %>% 
       mutate(database_version=current_v)
     
     }else{
@@ -113,14 +113,14 @@ check_dc <- function(prev_v_tbls,
         prev_v_tbls[[i]] %>%
         summarise(total_ct=n(),
                   total_pt_ct=0) %>%
-        #collect() %>% 
+        collect() %>% 
         mutate(database_version=prev_v)
       
       this_round_current <- 
         current_v_tbls[[i]] %>%
         summarise(total_ct=n(),
                   total_pt_ct=0) %>%
-        #collect() %>% 
+        collect() %>% 
         mutate(database_version=current_v)
     }
     

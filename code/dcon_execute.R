@@ -15,10 +15,8 @@
 
 conc_pts_list <-
   list(
-    'pts_with_ckd_dx_and_htn_rx' = list(site_ckddx <- site_cdm_tbl('condition_occurrence') %>% 
-                                          inner_join(load_codeset_spark('dx_ckd','iccccc'), by=c('condition_concept_id'='concept_id')),
-                                        site_htnrx <- site_cdm_tbl('drug_exposure') %>% 
-                                          inner_join(load_codeset_spark('rx_htn'), by=c('drug_concept_id'='concept_id')),
+    'pts_with_ckd_dx_and_htn_rx' = list(results_tbl(paste0(config('site'),'_ckddx')),
+                                        results_tbl(paste0(config('site'),'_htnrx')),
                                         'dcon_pts_ckd-dx_htn-rx')
   )
 
