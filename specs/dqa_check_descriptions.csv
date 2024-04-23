@@ -58,7 +58,7 @@ Unmapped Concepts,uc_drt,Drug Exposure,Drug Route,"for the full drug_exposure ta
 Unmapped Concepts,uc_co,Condition Occurrence,All Conditions,"for the full condition_occurrence table, counts of condition_concept_ids mapped to 44814650, 0, 44814653, or 44814649"
 Unmapped Concepts,uc_co_scid,Condition Occurrence,Condition Sources,"for the full condition_occurrence table, counts of condition_source_concept_ids mapped to 44814650, 0, 44814653, or 44814649"
 Unmapped Concepts,uc_ml,Measurement,Measurement Labs,"for lab values in the measurement table, counts of measurement_concept_ids mapped to 44814650, 0, 44814653, or 44814649"
-Unmapped Concepts,uc_mlu,Measurement,Lab Units,"for lab values in the measurement table, counts of unit_concept_ids mapped to 44814650, 0, 44814653, or 44814649"
+Unmapped Concepts,uc_mlu,Measurement,Lab Units,"for QUANTITATIVE lab values (labs where value_as_number is not NULL or 9999) in the measurement table, counts of unit_concept_ids mapped to 44814650, 0, 44814653, or 44814649"
 Unmapped Concepts,uc_im,Immunization,All Immunization,"for the full immunization table, counts of immunization_concept_ids mapped to 44814650, 0, 44814653, or 44814649"
 Unmapped Concepts,uc_imu,Immunization,Immunization Dose Unit,"for the full immunization table, counts of imm_dose_unit_concept_ids mapped to 44814650, 0, 44814653, or 44814649"
 Unmapped Concepts,uc_imrt,Immunization,Immunization Route,"for the full immmunization table, counts of imm_route_concept_ids mapped to 44814650, 0, 44814653, or 44814649"
