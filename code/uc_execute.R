@@ -39,7 +39,8 @@ uc_args_list <-
      'all labs' = list(site_cdm_tbl('measurement_labs'),
                        'measurement_concept_id', 'uc_ml', 'measurement_source_value'),
     
-     'lab units' = list(site_cdm_tbl('measurement_labs'),
+     'lab units' = list(site_cdm_tbl('measurement_labs') %>% filter(value_as_number != 9999,
+                                                                    !is.na(value_as_number)),
                              'unit_concept_id', 'uc_mlu', 'unit_source_value'),
     
      'immunizations' = list(site_cdm_tbl('immunization'),
