@@ -9,17 +9,17 @@ op_cs_spec <- site_cdm_tbl('visit_occurrence') %>%
   filter(visit_concept_id %in% c(9202L, 581399L)) %>%
   inner_join(select(site_cdm_tbl('care_site'), care_site_id, specialty_concept_id))
 
-op_spec <- select(site_cdm_tbl('visit_occurrence'), person_id, visit_concept_id,
-                  provider_id, care_site_id) %>%
-  filter(visit_concept_id %in% c(9202L, 581399L)) %>%
-  pivot_longer(cols = c(provider_id, care_site_id),
-               names_to = 'domain_id',
-               values_to = 'entity_id') %>%
-  mutate(domain_id = case_when(domain_id == 'provider_id' ~ 'PROVIDER',
-                               domain_id == 'care_site_id' ~ 'CARE_SITE')) %>%
-  mutate(entity_id = as.character(entity_id)) %>%
-  inner_join(select(site_cdm_tbl('specialty'), domain_id, entity_id, 
-                    specialty_concept_id))
+# op_spec <- select(site_cdm_tbl('visit_occurrence'), person_id, visit_concept_id,
+#                   provider_id, care_site_id) %>%
+#   filter(visit_concept_id %in% c(9202L, 581399L)) %>%
+#   pivot_longer(cols = c(provider_id, care_site_id),
+#                names_to = 'domain_id',
+#                values_to = 'entity_id') %>%
+#   mutate(domain_id = case_when(domain_id == 'provider_id' ~ 'PROVIDER',
+#                                domain_id == 'care_site_id' ~ 'CARE_SITE')) %>%
+#   mutate(entity_id = as.character(entity_id)) %>%
+#   inner_join(select(site_cdm_tbl('specialty'), domain_id, entity_id, 
+#                     specialty_concept_id))
 
 #' 
 #' `fact_tbl_list` - a list of arguments that feed into the `check_bmc_gen` function
@@ -71,11 +71,11 @@ fact_tbl_list <- list(
                       'bmc_csvo_spec',
                       'concept_name'),
   
-  'op_spec' = list(op_spec,
-                   'specialty_concept_id',
-                   'outpatient specialty (from specialty tbl)',
-                   'bmc_vo_spec',
-                   'concept_name'),
+  # 'op_spec' = list(op_spec,
+  #                  'specialty_concept_id',
+  #                  'outpatient specialty (from specialty tbl)',
+  #                  'bmc_vo_spec',
+  #                  'concept_name'),
   
   'adt_service' = list(site_cdm_tbl('adt_occurrence'),
                        'service_concept_id',
