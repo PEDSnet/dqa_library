@@ -41,7 +41,7 @@ check_ecp <- function(ecp_list){
     join_cols <- set_names('concept_id', ecp_list[[i]][[3]])
     
     fact_pts <- ecp_list[[i]][[1]] %>%
-      inner_join(ecp_list[[i]][[2]]) %>%
+      #inner_join(ecp_list[[i]][[2]]) %>%
       inner_join(ecp_list[[i]][[4]], by = join_cols) %>%
       summarise(concept_pt_ct = n_distinct(person_id)) %>%collect()
     
