@@ -185,19 +185,45 @@ check_dcon<- function(conc_tbls,
   
   for(k in 1:length(conc_tbls)) {
     
-    cohort_1 <- conc_tbls[[k]][[1]]
-    cohort_2 <- conc_tbls[[k]][[2]]
+    c1_date <- colnames(conc_tbls[[k]][[1]]) %>% str_subset(pattern = 'date')
+    c2_date <- colnames(conc_tbls[[k]][[2]]) %>% str_subset(pattern = 'date')
     
+    cohort_1 <- conc_tbls[[k]][[1]] %>% mutate(date1 = !!sym(c1_date))
+    cohort_2 <- conc_tbls[[k]][[2]] %>% mutate(date2 = !!sym(c2_date))
     
     if(check_string=='dcon_visits'){
       col_nm <- sym('visit_occurrence_id')
     } else{col_nm <- sym('person_id')}
     
-    combined <- 
-      cohort_1 %>% select(all_of(col_nm)) %>% 
-      inner_join(
-        select(cohort_2, all_of(col_nm))
-      )
+    if(conc_tbls[[4]] == 'acute' && check_string != 'dcon_visits'){
+      
+      combined <- 
+        cohort_1 %>% select(site, all_of(col_nm), date1) %>% 
+        inner_join(
+          select(cohort_2, site, all_of(col_nm), date2)
+        ) %>%
+        mutate(date_diff = abs((date1 - date2))) %>%
+        filter(date_diff <= 90)
+      
+    }else if(conc_tbls[[4]] == 'chronic' && check_string != 'dcon_visits'){
+      
+      combined <- 
+        cohort_1 %>% select(site, all_of(col_nm), date1) %>% 
+        inner_join(
+          select(cohort_2, site, all_of(col_nm), date2)
+        ) %>%
+        mutate(date_diff = abs((date1 - date2)/365.25)) %>%
+        filter(date_diff <= 2)
+      
+    }else{
+      
+      combined <- 
+        cohort_1 %>% select(all_of(col_nm)) %>% 
+        inner_join(
+          select(cohort_2, all_of(col_nm))
+        )
+      
+    }
     
     cohort_list <- list('cohort_1' = cohort_1,
                         'cohort_2' = cohort_2,
@@ -225,8 +251,8 @@ check_dcon<- function(conc_tbls,
              .f=dplyr::union) %>% 
       #mutate(yr=9999) %>% 
       add_meta(check_lib = check_string) %>%
-      mutate(check_name=nm) %>%
-      mutate(check_desc=d) #%>% collect()
+      mutate(check_name=nm,
+             check_desc=d) %>% collect()
     
     final[[k]] <- final_tbls
     
