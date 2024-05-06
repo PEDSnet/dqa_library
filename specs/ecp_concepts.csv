@@ -207,19 +207,19 @@ anc,36203200,85369-7,Neutrophils [#/volume] in Control Blood by Flow cytometry (
 anc,44787041,74398-9,Neutrophils [#/volume] in Cord blood,LOINC
 anc,3015586,30451-9,Segmented neutrophils [#/volume] in Blood,LOINC
 anc,3027270,768-2,Segmented neutrophils [#/volume] in Blood by Manual count,LOINC
-sodium,3001838,Sodium [Moles/volume] in Red Blood Cells,12907-2,LOINC
-sodium,3000285,Sodium [Moles/volume] in Blood,2947-0,LOINC
-sodium,3019550,Sodium [Moles/volume] in Serum or Plasma,2951-2,LOINC
-sodium,3041473,Sodium [Moles/volume] in Venous blood,39791-9,LOINC
-sodium,3038702,Sodium [Moles/volume] in Capillary blood,39792-7,LOINC
-sodium,4097430,Sodium measurement,25197003,SNOMED
-sodium,4208938,"Sodium measurement, blood",312469006,SNOMED
-rapid_strep,3008350,Deprecated Streptococcus pyogenes Ag [Presence] in Throat by Immunoassay,6556-5,LOINC
-rapid_strep,3017906,Streptococcus pyogenes Ag [Presence] in Specimen by Immunoassay,6558-1,LOINC
-rapid_strep,3033319,Streptococcus pyogenes Ag [Presence] in Throat,18481-2,LOINC
-rapid_strep,21491660,Streptococcus pyogenes Ag [Presence] in Throat by Rapid immunoassay,78012-2,LOINC
-rapid_strep,3032732,Streptococcus pyogenes DNA [Identifier] in Specimen by NAA with probe detection,49610-9,LOINC
-rapid_strep,40763543,Streptococcus pyogenes DNA [Presence] in Throat by NAA with probe detection,60489-2,LOINC
-rapid_strep,43055233,Streptococcus pyogenes exotoxin B speB gene [Presence] in Specimen by NAA with probe detection,72268-6,LOINC
-rapid_strep,3009769,Streptococcus pyogenes rRNA [Presence] in Specimen by Probe,5036-9,LOINC
-rapid_strep,40771489,Streptococcus pyogenes rRNA [Presence] in Throat by Probe,68954-7,LOINC
+sodium,3001838,12907-2,Sodium [Moles/volume] in Red Blood Cells,LOINC
+sodium,3000285,2947-0,Sodium [Moles/volume] in Blood,LOINC
+sodium,3019550,2951-2,Sodium [Moles/volume] in Serum or Plasma,LOINC
+sodium,3041473,39791-9,Sodium [Moles/volume] in Venous blood,LOINC
+sodium,3038702,39792-7,Sodium [Moles/volume] in Capillary blood,LOINC
+sodium,4097430,25197003,Sodium measurement,SNOMED
+sodium,4208938,312469006,"Sodium measurement, blood",SNOMED
+rapid_strep,3008350,6556-5,Deprecated Streptococcus pyogenes Ag [Presence] in Throat by Immunoassay,LOINC
+rapid_strep,3017906,6558-1,Streptococcus pyogenes Ag [Presence] in Specimen by Immunoassay,LOINC
+rapid_strep,3033319,18481-2,Streptococcus pyogenes Ag [Presence] in Throat,LOINC
+rapid_strep,21491660,78012-2,Streptococcus pyogenes Ag [Presence] in Throat by Rapid immunoassay,LOINC
+rapid_strep,3032732,49610-9,Streptococcus pyogenes DNA [Identifier] in Specimen by NAA with probe detection,LOINC
+rapid_strep,40763543,60489-2,Streptococcus pyogenes DNA [Presence] in Throat by NAA with probe detection,LOINC
+rapid_strep,43055233,72268-6,Streptococcus pyogenes exotoxin B speB gene [Presence] in Specimen by NAA with probe detection,LOINC
+rapid_strep,3009769,5036-9,Streptococcus pyogenes rRNA [Presence] in Specimen by Probe,LOINC
+rapid_strep,40771489,68954-7,Streptococcus pyogenes rRNA [Presence] in Throat by Probe,LOINC
