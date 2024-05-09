@@ -1,0 +1,36 @@
+concept_id,concept_code,concept_name,vocabulary_id
+45756764,OMOP4821978,Complex General Surgical Oncology,ABMS
+45756811,OMOP4822028,Pediatric Hematology-Oncology,ABMS
+44777803,370,Medical oncology,HES Specialty
+44777807,503,Gynaecological oncology,HES Specialty
+44777804,800,Clinical oncology (previously known as Radiotherapy),HES Specialty
+38003873,207RH0003X,"Allopathic & Osteopathic Physicians, Internal Medicine, Hematology & Oncology",NUCC
+44777773,260,Paediatric Medical Oncology,HES Specialty
+38003750,163WP0218X,Registered Pediatric Oncology Nurse,NUCC
+38003767,163WX0200X,Registered Oncology Nurse,NUCC
+38003906,207VX0201X,"Allopathic & Osteopathic Physicians, Obstetrics & Gynecology, Gynecologic Oncology",NUCC
+38004502,83,Hematology / Oncology,Medicare Specialty
+38004507,90,Medical Oncology,Medicare Specialty
+38004508,91,Surgical Oncology,Medicare Specialty
+38004509,92,Radiation Oncology,Medicare Specialty
+38004513,98,Gynecology / Oncology,Medicare Specialty
+38003818,1835X0200X,Oncology Pharmacist,NUCC
+38003886,207RX0202X,"Allopathic & Osteopathic Physicians, Internal Medicine, Medical Oncology",NUCC
+38003953,2080P0207X,"Allopathic & Osteopathic Physicians, Pediatrics, Pediatric Hematology-Oncology",NUCC
+38004422,364SX0200X,Oncology Nurse,NUCC
+38004004,2085R0001X,"Allopathic & Osteopathic Physicians, Radiology, Radiation Oncology",NUCC
+38004018,2086X0206X,"Allopathic & Osteopathic Physicians, Surgery, Surgical Oncology",NUCC
+38004423,364SX0204X,Pediatric Oncology Nurse,NUCC
+3194873,309336000,Paediatric oncologist,Nebraska Lexicon
+3192766,224552008,Oncology nurse,Nebraska Lexicon
+3198429,309295000,Clinical oncologist,Nebraska Lexicon
+3192237,763292005,Radiation oncologist,Nebraska Lexicon
+3196766,310512001,Medical oncologist,Nebraska Lexicon
+3198899,3430008,Radio-oncologist,Nebraska Lexicon
+3193898,309415001,Oncology dietitian,Nebraska Lexicon
+4076491,224552008,Oncology nurse,SNOMED
+4206449,309336000,Pediatric oncologist,SNOMED
+4206439,309295000,Clinical oncologist,SNOMED
+4205226,309415001,Oncology dietitian,SNOMED
+35621987,763292005,Radiation oncologist,SNOMED
+4151173,310512001,Medical oncologist,SNOMED

@@ -1,0 +1,389 @@
+concept_id,concept_code,concept_name,vocabulary_id
+608278,1157158001,Acute myeloid leukemia with t(9;11)(p22;q23); MLLT3-MLL,SNOMED
+1567677,C90.1,Plasma cell leukemia,ICD10CM
+1567680,C91,Lymphoid leukemia,ICD10CM
+1567681,C91.0,Acute lymphoblastic leukemia [ALL],ICD10CM
+1567682,C91.1,Chronic lymphocytic leukemia of B-cell type,ICD10CM
+1567683,C91.3,Prolymphocytic leukemia of B-cell type,ICD10CM
+1567684,C91.4,Hairy cell leukemia,ICD10CM
+1567685,C91.5,Adult T-cell lymphoma/leukemia (HTLV-1-associated),ICD10CM
+1567686,C91.6,Prolymphocytic leukemia of T-cell type,ICD10CM
+1567687,C91.Z,Other lymphoid leukemia,ICD10CM
+1567688,C91.9,"Lymphoid leukemia, unspecified",ICD10CM
+1567689,C92,Myeloid leukemia,ICD10CM
+1567690,C92.0,Acute myeloblastic leukemia,ICD10CM
+1567691,C92.1,"Chronic myeloid leukemia, BCR/ABL-positive",ICD10CM
+1567692,C92.2,"Atypical chronic myeloid leukemia, BCR/ABL-negative",ICD10CM
+1567694,C92.4,Acute promyelocytic leukemia,ICD10CM
+1567695,C92.5,Acute myelomonocytic leukemia,ICD10CM
+1567696,C92.6,Acute myeloid leukemia with 11q23-abnormality,ICD10CM
+1567697,C92.Z,Other myeloid leukemia,ICD10CM
+1567698,C92.9,"Myeloid leukemia, unspecified",ICD10CM
+1567699,C93,Monocytic leukemia,ICD10CM
+1567700,C93.0,Acute monoblastic/monocytic leukemia,ICD10CM
+1567701,C93.1,Chronic myelomonocytic leukemia,ICD10CM
+1567702,C93.3,Juvenile myelomonocytic leukemia,ICD10CM
+1567703,C93.Z,Other monocytic leukemia,ICD10CM
+1567704,C93.9,"Monocytic leukemia, unspecified",ICD10CM
+1567705,C94,Other leukemias of specified cell type,ICD10CM
+1567706,C94.0,Acute erythroid leukemia,ICD10CM
+1567707,C94.2,Acute megakaryoblastic leukemia,ICD10CM
+1567708,C94.3,Mast cell leukemia,ICD10CM
+1567710,C94.8,Other specified leukemias,ICD10CM
+1567711,C95,Leukemia of unspecified cell type,ICD10CM
+1567712,C95.0,Acute leukemia of unspecified cell type,ICD10CM
+1567713,C95.1,Chronic leukemia of unspecified cell type,ICD10CM
+1567714,C95.9,"Leukemia, unspecified",ICD10CM
+4028711,128818009,Acute biphenotypic leukemia,SNOMED
+4028712,128819001,T-cell large granular lymphocytic leukemia,SNOMED
+4028713,128828000,"Acute myeloid leukemia, t(8;21) (q22;q22)",SNOMED
+4028859,128922003,Plasma cell leukemia,SNOMED
+4028862,128933000,Chronic leukemia (category),SNOMED
+4028863,128935007,Lymphoid leukemia (category),SNOMED
+4029175,128821006,"Prolymphocytic leukemia, T-cell type",SNOMED
+4029176,128825002,"Chronic myelogenous leukemia, BCR/ABL positive",SNOMED
+4029177,128827005,Acute myeloid leukemia with myelodysplasia-related changes,SNOMED
+4029178,128832006,Juvenile myelomonocytic leukemia,SNOMED
+4029206,128934006,Myeloid leukemia (category),SNOMED
+4029661,128820007,"Prolymphocytic leukemia, B-cell type",SNOMED
+4029662,128823009,Precursor B-cell lymphoblastic leukemia,SNOMED
+4029663,128829008,"Acute myeloid leukemia, 11q23 abnormalities",SNOMED
+4029664,128833001,Aggressive NK-cell leukemia,SNOMED
+4029665,128834007,Chronic neutrophilic leukemia,SNOMED
+4029800,128923008,Prolymphocytic leukemia,SNOMED
+4030260,128822004,Precursor cell lymphoblastic leukemia,SNOMED
+4030261,128824003,Precursor T-cell lymphoblastic leukemia,SNOMED
+4030262,128826001,"Atypical chronic myeloid leukemia, BCR/ABL negative",SNOMED
+4030263,128830003,Therapy-related acute myeloid leukemia and myelodysplastic syndrome,SNOMED
+4030264,128831004,Chronic myelomonocytic leukemia,SNOMED
+4030287,128924002,Mast cell leukemia,SNOMED
+4030289,128931003,Leukemia (category),SNOMED
+4030290,128932005,Acute leukemia (category),SNOMED
+4031360,14317002,"Acute myeloid leukemia, M6 type",SNOMED
+4073533,17788007,"Acute myeloid leukemia, no ICD-O subtype",SNOMED
+4080746,24072005,Acute leukemia,SNOMED
+4095898,190055003,Eosinophilic leukemia,SNOMED
+4103718,28950004,Acute promyelocytic leukemia,SNOMED
+4138686,32280000,Lymphoid leukemia,SNOMED
+4143821,426955004,Philadelphia chromosome-positive acute lymphoblastic leukemia,SNOMED
+4149110,30962008,Acute myelomonocytic leukemia,SNOMED
+4180093,51092000,Chronic lymphocytic leukemia,SNOMED
+4180418,52220008,Acute megakaryoblastic leukemia,SNOMED
+4182216,54087003,Hairy cell leukemia,SNOMED
+4184848,413443009,Acute myeloid leukemia,SNOMED
+4186899,413840004,Chronic lymphoid leukemia - category,SNOMED
+4188972,413841000,Chronic myeloid leukemia - category,SNOMED
+4189936,413440007,Acute lymphoblastic leukemia - category,SNOMED
+4264447,397341000,Acute myeloid leukemia with multilineage dysplasia following a myelodysplastic syndrome or myelodysplastic syndrome/myeloproliferative disorder,SNOMED
+4264448,397347001,Precursor B-lymphoblastic leukemia/lymphoblastic lymphoma,SNOMED
+4265011,397340004,Acute myeloid leukemia with recurrent genetic abnormality,SNOMED
+4265012,397344008,"Therapy-related acute myeloid leukemia and myelodysplastic syndrome, topoisomerase type II inhibitor-related type",SNOMED
+4265150,397400006,Burkitt lymphoma/leukemia,SNOMED
+4272001,63364005,Chronic myeloid leukemia,SNOMED
+4287472,397343002,"Therapy-related acute myeloid leukemia and myelodysplastic syndrome, alkylating agent-related type",SNOMED
+4287473,397345009,Acute leukemia of ambiguous lineage,SNOMED
+4288090,397342007,Acute myeloid leukemia with multilineage dysplasia without antecedent myelodysplastic syndrome,SNOMED
+4288091,397348006,Precursor T cell lymphoblastic leukemia/lymphoblastic lymphoma,SNOMED
+4289318,69077002,Acute basophilic leukemia,SNOMED
+4295361,37810007,Myeloid leukemia,SNOMED
+4300174,77430005,Adult T-cell leukemia/lymphoma,SNOMED
+4304051,103691009,Acute myeloid leukemia with maturation,SNOMED
+4304199,103689001,"Acute myeloid leukemia, minimal differentiation",SNOMED
+4304355,103688009,Acute myeloid leukemia with abnormal marrow eosinophils,SNOMED
+4304356,103690005,Acute myeloid leukemia without maturation,SNOMED
+4314535,87163000,Leukemia,SNOMED
+4319135,22197008,Burkitt cell leukemia,SNOMED
+4319285,22331004,Acute monocytic leukemia,SNOMED
+35206431,C91.20,"Subacute lymphocytic leukemia, not in remission",ICD10CM
+35206432,C91.21,"Subacute lymphocytic leukemia, in remission",ICD10CM
+35206433,C91.70,"Other lymphoid leukemia, not in remission",ICD10CM
+35206434,C91.71,"Other lymphoid leukemia, in remission",ICD10CM
+35206435,C92.70,"Other myeloid leukemia, not in remission",ICD10CM
+35206436,C92.71,"Other myeloid leukemia, in remission",ICD10CM
+35206437,C93.20,"Subacute monocytic leukemia, not in remission",ICD10CM
+35206438,C93.21,"Subacute monocytic leukemia, in remission",ICD10CM
+35206439,C93.70,"Other monocytic leukemia, not in remission",ICD10CM
+35206440,C93.71,"Other monocytic leukemia, in remission",ICD10CM
+35206445,C94.70,"Other specified leukemias, not in remission",ICD10CM
+35206446,C94.71,"Other specified leukemias, in remission",ICD10CM
+35206447,C95.20,"Subacute leukemia of unspecified cell type, not in remission",ICD10CM
+35206448,C95.21,"Subacute leukemia of unspecified cell type, in remission",ICD10CM
+35206449,C95.70,"Other leukemia of unspecified cell type, not in remission",ICD10CM
+35206450,C95.71,"Other leukemia of unspecified cell type, in remission",ICD10CM
+37110871,725391003,Acute myeloid leukemia with t(8;16)(p11;p13) translocation,SNOMED
+37204375,783017000,Acute myeloid leukemia with BCR-ABL1,SNOMED
+37204557,783263001,Acute myeloid leukemia with mutated RUNX1,SNOMED
+37204838,783744003,B-lymphoblastic leukemia lymphoma BCR-ABL1-like,SNOMED
+37206196,785825000,B lymphoblastic leukemia lymphoma with iAMP21,SNOMED
+37312067,788740009,Acute myeloid leukemia with biallelic mutation of CEBPA (CCAAT enhancer binding protein alpha) gene,SNOMED
+40488861,446688004,Leukemic infiltration,SNOMED
+42535969,734524001,Acute myeloid leukemia with FMS-like tyrosine kinase-3 mutation,SNOMED
+42616301,D47.5,Chronic eosinophilic leukaemia [hypereosinophilic syndrome],ICD10
+42872918,450913003,Mixed phenotype acute leukemia,SNOMED
+42872919,450914009,Mixed phenotype acute leukemia with t(9;22)(q34;q11.2); BCR-ABL1,SNOMED
+42872920,450915005,Mixed phenotype acute leukemia with t(v;11q23); MLL rearranged,SNOMED
+42872921,450916006,Mixed phenotype acute leukemia B/myeloid,SNOMED
+42872922,450917002,Mixed phenotype acute leukemia T/myeloid,SNOMED
+42872925,450920005,B lymphoblastic leukemia / lymphoma - category,SNOMED
+42872933,450928003,Acute myeloid leukemia with t(6;9)(p23;q34); DEK-NUP214,SNOMED
+42872934,450929006,Acute myeloid leukemia with inv(3)(q21q26.2) or t(3;3)(q21;q26.2); RPN1-EVI1,SNOMED
+42872940,450935006,Myeloid leukemia associated with Down Syndrome,SNOMED
+42872942,450937003,Acute myeloid leukemia (megakaryoblastic) with t(1;22)(p13;q13); RBM15-MKL1,SNOMED
+42872954,450949002,"B lymphoblastic leukemia lymphoma, no ICD-O subtype",SNOMED
+42872955,450950002,B lymphoblastic leukemia lymphoma with t(9;22)(q34;q11.2); BCR-ABL1,SNOMED
+42872956,450951003,B lymphoblastic leukemia lymphoma with t(v;11q23); MLL rearranged,SNOMED
+42872957,450952005,B lymphoblastic leukemia lymphoma with t(12;21)(p13;q22); TEL-AML1 (ETV6-RUNX1),SNOMED
+42872958,450953000,B lymphoblastic leukemia lymphoma with hyperdiploidy,SNOMED
+42872959,450954006,B lymphoblastic leukemia lymphoma with hypodiploidy (Hypodiploid ALL),SNOMED
+42872960,450955007,B lymphoblastic leukemia lymphoma with t(5;14)(q31;q32); IL3-IGH,SNOMED
+42872961,450956008,B lymphoblastic leukemia lymphoma with t(1;19)(q23;p13.3); E2A-PBX1 (TCF3-PBX1),SNOMED
+44819460,202.43,"Leukemic reticuloendotheliosis, intra-abdominal lymph nodes",ICD9CM
+44819461,202.46,"Leukemic reticuloendotheliosis, intrapelvic lymph nodes",ICD9CM
+44819465,205.1,"Myeloid leukemia, chronic",ICD9CM
+44819466,207.0,Acute erythremia and erythroleukemia,ICD9CM
+44819467,207.21,"Megakaryocytic leukemia, in remission",ICD9CM
+44819468,207.22,"Megakaryocytic leukemia, in relapse",ICD9CM
+44819469,207.8,Other specified leukemia,ICD9CM
+44819470,208.0,"Leukemia of unspecified cell type, acute",ICD9CM
+44819471,208.1,"Leukemia of unspecified cell type, chronic",ICD9CM
+44819472,208.91,"Unspecified leukemia, in remission",ICD9CM
+44820641,203.12,"Plasma cell leukemia, in relapse",ICD9CM
+44820642,204.9,Unspecified lymphoid leukemia,ICD9CM
+44820643,204.90,"Unspecified lymphoid leukemia, without mention of having achieved remission",ICD9CM
+44820644,204.92,"Unspecified lymphoid leukemia, in relapse",ICD9CM
+44820645,205.0,"Myeloid leukemia, acute",ICD9CM
+44820646,205.20,"Subacute myeloid leukemia, without mention of having achieved remission",ICD9CM
+44820647,206.2,"Monocytic leukemia, subacute",ICD9CM
+44821756,203.1,Plasma cell leukemia,ICD9CM
+44821757,203.10,"Plasma cell leukemia, without mention of having achieved remission",ICD9CM
+44821758,204,Lymphoid leukemia,ICD9CM
+44821759,204.0,"Lymphoid leukemia, acute",ICD9CM
+44821760,204.01,"Acute lymphoid leukemia, in remission",ICD9CM
+44821761,204.12,"Chronic lymphoid leukemia, in relapse",ICD9CM
+44821762,205.81,"Other myeloid leukemia, in remission",ICD9CM
+44821763,205.82,"Other myeloid leukemia, in relapse",ICD9CM
+44822903,202.40,"Leukemic reticuloendotheliosis, unspecified site, extranodal and solid organ sites",ICD9CM
+44822904,202.45,"Leukemic reticuloendotheliosis, lymph nodes of inguinal region and lower limb",ICD9CM
+44822907,204.02,"Acute lymphoid leukemia, in relapse",ICD9CM
+44822908,204.20,"Subacute lymphoid leukemia, without mention of having achieved remission",ICD9CM
+44822909,205.8,Other myeloid leukemia,ICD9CM
+44822910,205.80,"Other myeloid leukemia, without mention of having achieved remission",ICD9CM
+44822911,206.81,"Other monocytic leukemia, in remission",ICD9CM
+44822912,206.90,"Unspecified monocytic leukemia, without mention of having achieved remission",ICD9CM
+44822913,208.21,"Subacute leukemia of unspecified cell type, in remission",ICD9CM
+44824053,204.8,Other lymphoid leukemia,ICD9CM
+44824054,206.0,"Monocytic leukemia, acute",ICD9CM
+44824055,208.2,"Leukemia of unspecified cell type, subacute",ICD9CM
+44825230,203.11,"Plasma cell leukemia, in remission",ICD9CM
+44825231,204.11,"Chronic lymphoid leukemia, in remission",ICD9CM
+44825232,205,Myeloid leukemia,ICD9CM
+44825233,206.20,"Subacute monocytic leukemia, without mention of having achieved remission",ICD9CM
+44825234,206.80,"Other monocytic leukemia, without mention of having achieved remission",ICD9CM
+44825235,206.91,"Unspecified monocytic leukemia, in remission",ICD9CM
+44825236,207.00,"Acute erythremia and erythroleukemia, without mention of having achieved remission",ICD9CM
+44826426,202.44,"Leukemic reticuloendotheliosis, lymph nodes of axilla and upper arm",ICD9CM
+44826430,205.00,"Acute myeloid leukemia, without mention of having achieved remission",ICD9CM
+44826432,205.90,"Unspecified myeloid leukemia, without mention of having achieved remission",ICD9CM
+44826433,206.1,"Monocytic leukemia, chronic",ICD9CM
+44826434,206.22,"Subacute monocytic leukemia, in relapse",ICD9CM
+44826436,208.80,"Other leukemia of unspecified cell type, without mention of having achieved remission",ICD9CM
+44827584,205.12,"Chronic myeloid leukemia, in relapse",ICD9CM
+44827585,205.22,"Subacute myeloid leukemia, in relapse",ICD9CM
+44827586,207,Other specified leukemia,ICD9CM
+44827588,208.9,Unspecified leukemia,ICD9CM
+44828754,202.47,"Leukemic reticuloendotheliosis, spleen",ICD9CM
+44828757,205.01,"Acute myeloid leukemia, in remission",ICD9CM
+44828758,205.02,"Acute myeloid leukemia, in relapse",ICD9CM
+44828760,208.10,"Chronic leukemia of unspecified cell type, without mention of having achieved remission",ICD9CM
+44828761,208.82,"Other leukemia of unspecified cell type, in relapse",ICD9CM
+44829841,202.42,"Leukemic reticuloendotheliosis, intrathoracic lymph nodes",ICD9CM
+44829844,204.00,"Acute lymphoid leukemia, without mention of having achieved remission",ICD9CM
+44829847,205.91,"Unspecified myeloid leukemia, in remission",ICD9CM
+44829848,206.8,Other monocytic leukemia,ICD9CM
+44829849,208,Leukemia of unspecified cell type,ICD9CM
+44829850,208.20,"Subacute leukemia of unspecified cell type, without mention of having achieved remission",ICD9CM
+44829851,208.8,Other leukemia of unspecified cell type,ICD9CM
+44829852,208.90,"Unspecified leukemia, without mention of having achieved remission",ICD9CM
+44831013,204.1,"Lymphoid leukemia, chronic",ICD9CM
+44831014,204.22,"Subacute lymphoid leukemia, in relapse",ICD9CM
+44831015,204.80,"Other lymphoid leukemia, without mention of having achieved remission",ICD9CM
+44831016,204.91,"Unspecified lymphoid leukemia, in remission",ICD9CM
+44831017,206,Monocytic leukemia,ICD9CM
+44831018,206.92,"Unspecified monocytic leukemia, in relapse",ICD9CM
+44831019,207.80,"Other specified leukemia, without mention of having achieved remission",ICD9CM
+44832151,202.41,"Leukemic reticuloendotheliosis, lymph nodes of head, face, and neck",ICD9CM
+44832152,202.48,"Leukemic reticuloendotheliosis, lymph nodes of multiple sites",ICD9CM
+44832155,204.81,"Other lymphoid leukemia, in remission",ICD9CM
+44832156,205.10,"Chronic myeloid leukemia, without mention of having achieved remission",ICD9CM
+44832157,205.11,"Chronic myeloid leukemia, in remission",ICD9CM
+44832158,205.21,"Subacute myeloid leukemia,in remission",ICD9CM
+44832159,205.92,"Unspecified myeloid leukemia, in relapse",ICD9CM
+44832160,206.01,"Acute monocytic leukemia,in remission",ICD9CM
+44832161,206.11,"Chronic monocytic leukemia, in remission",ICD9CM
+44832162,206.21,"Subacute monocytic leukemia, in remission",ICD9CM
+44832163,206.9,Unspecified monocytic leukemia,ICD9CM
+44832164,207.02,"Acute erythremia and erythroleukemia, in relapse",ICD9CM
+44832165,207.81,"Other specified leukemia, in remission",ICD9CM
+44833336,204.2,"Lymphoid leukemia, subacute",ICD9CM
+44833337,204.21,"Subacute lymphoid leukemia, in remission",ICD9CM
+44833338,204.82,"Other lymphoid leukemia, in relapse",ICD9CM
+44833339,206.00,"Acute monocytic leukemia, without mention of having achieved remission",ICD9CM
+44833340,206.82,"Other monocytic leukemia, in relapse",ICD9CM
+44833341,207.01,"Acute erythremia and erythroleukemia, in remission",ICD9CM
+44833342,207.2,Megakaryocytic leukemia,ICD9CM
+44833343,207.82,"Other specified leukemia, in relapse",ICD9CM
+44833344,208.02,"Acute leukemia of unspecified cell type, in relapse",ICD9CM
+44833345,208.12,"Chronic leukemia of unspecified cell type, in relapse",ICD9CM
+44834519,204.10,"Chronic lymphoid leukemia, without mention of having achieved remission",ICD9CM
+44834520,205.2,"Myeloid leukemia, subacute",ICD9CM
+44834521,206.10,"Chronic monocytic leukemia, without mention of having achieved remission",ICD9CM
+44834522,208.81,"Other leukemia of unspecified cell type, in remission",ICD9CM
+44835705,202.4,Leukemic reticuloendotheliosis,ICD9CM
+44835713,205.9,Unspecified myeloid leukemia,ICD9CM
+44835714,207.20,"Megakaryocytic leukemia, without mention of having achieved remission",ICD9CM
+44835715,208.00,"Acute leukemia of unspecified cell type, without mention of having achieved remission",ICD9CM
+44835716,208.11,"Chronic leukemia of unspecified cell type, in remission",ICD9CM
+44835717,208.22,"Subacute leukemia of unspecified cell type, in relapse",ICD9CM
+44835718,208.92,"Unspecified leukemia, in relapse",ICD9CM
+44836872,206.02,"Acute monocytic leukemia, in relapse",ICD9CM
+44836873,206.12,"Chronic monocytic leukemia, in relapse",ICD9CM
+44836875,208.01,"Acute leukemia of unspecified cell type, in remission",ICD9CM
+45532958,C91.30,Prolymphocytic leukemia of B-cell type not having achieved remission,ICD10CM
+45532959,C92.02,"Acute myeloblastic leukemia, in relapse",ICD10CM
+45532961,C92.40,"Acute promyelocytic leukemia, not having achieved remission",ICD10CM
+45532962,C92.62,Acute myeloid leukemia with 11q23-abnormality in relapse,ICD10CM
+45532963,C92.A2,"Acute myeloid leukemia with multilineage dysplasia, in relapse",ICD10CM
+45532964,C94.32,"Mast cell leukemia, in relapse",ICD10CM
+45532965,C95.12,"Chronic leukemia of unspecified cell type, in relapse",ICD10CM
+45537873,C91.0,Acute lymphoblastic leukaemia [ALL],ICD10
+45537874,C91.60,Prolymphocytic leukemia of T-cell type not having achieved remission,ICD10CM
+45537875,C91.A1,"Mature B-cell leukemia Burkitt-type, in remission",ICD10CM
+45537877,C92.Z0,Other myeloid leukemia not having achieved remission,ICD10CM
+45537878,C93.02,"Acute monoblastic/monocytic leukemia, in relapse",ICD10CM
+45537879,C94.3,Mast cell leukaemia,ICD10
+45542661,C91.3,Prolymphocytic leukaemia of B-cell type,ICD10
+45542662,C91.41,"Hairy cell leukemia, in remission",ICD10CM
+45542663,C91.9,"Lymphoid leukaemia, unspecified",ICD10
+45542664,C91.Z1,"Other lymphoid leukemia, in remission",ICD10CM
+45542665,C92.Z1,"Other myeloid leukemia, in remission",ICD10CM
+45542666,C93.92,"Monocytic leukemia, unspecified in relapse",ICD10CM
+45542667,C94.2,Acute megakaryoblastic leukaemia,ICD10
+45542668,C94.80,Other specified leukemias not having achieved remission,ICD10CM
+45542669,C95.10,Chronic leukemia of unspecified cell type not having achieved remission,ICD10CM
+45547552,C91.91,"Lymphoid leukemia, unspecified, in remission",ICD10CM
+45547553,C91.A2,"Mature B-cell leukemia Burkitt-type, in relapse",ICD10CM
+45547554,C92.00,"Acute myeloblastic leukemia, not having achieved remission",ICD10CM
+45547555,C92.12,"Chronic myeloid leukemia, BCR/ABL-positive, in relapse",ICD10CM
+45547556,C92.22,"Atypical chronic myeloid leukemia, BCR/ABL-negative, in relapse",ICD10CM
+45547557,C92.41,"Acute promyelocytic leukemia, in remission",ICD10CM
+45547558,C93,Monocytic leukaemia,ICD10
+45547559,C93.30,"Juvenile myelomonocytic leukemia, not having achieved remission",ICD10CM
+45547560,C94.22,"Acute megakaryoblastic leukemia, in relapse",ICD10CM
+45552310,C90.1,Plasma cell leukaemia,ICD10
+45552311,C91.32,"Prolymphocytic leukemia of B-cell type, in relapse",ICD10CM
+45552312,C91.5,Adult T-cell lymphoma/leukaemia [HTLV-1-associated],ICD10
+45552313,C91.51,"Adult T-cell lymphoma/leukemia (HTLV-1-associated), in remission",ICD10CM
+45552315,C93.31,"Juvenile myelomonocytic leukemia, in remission",ICD10CM
+45552317,C95.02,"Acute leukemia of unspecified cell type, in relapse",ICD10CM
+45557038,C90.10,Plasma cell leukemia not having achieved remission,ICD10CM
+45557039,C91.00,Acute lymphoblastic leukemia not having achieved remission,ICD10CM
+45557040,C91.01,"Acute lymphoblastic leukemia, in remission",ICD10CM
+45557041,C91.4,Hairy-cell leukaemia,ICD10
+45557042,C92.5,Acute myelomonocytic leukaemia,ICD10
+45557043,C92.50,"Acute myelomonocytic leukemia, not having achieved remission",ICD10CM
+45557044,C92.8,Acute myeloid leukaemia with multilineage dysplasia,ICD10
+45557045,C92.A0,"Acute myeloid leukemia with multilineage dysplasia, not having achieved remission",ICD10CM
+45557046,C93.10,Chronic myelomonocytic leukemia not having achieved remission,ICD10CM
+45557047,C93.32,"Juvenile myelomonocytic leukemia, in relapse",ICD10CM
+45557048,C95,Leukaemia of unspecified cell type,ICD10
+45561871,C91.11,Chronic lymphocytic leukemia of B-cell type in remission,ICD10CM
+45561872,C91.42,"Hairy cell leukemia, in relapse",ICD10CM
+45561873,C91.50,Adult T-cell lymphoma/leukemia (HTLV-1-associated) not having achieved remission,ICD10CM
+45561874,C91.7,Other lymphoid leukaemia,ICD10
+45561875,C92.20,"Atypical chronic myeloid leukemia, BCR/ABL-negative, not having achieved remission",ICD10CM
+45561876,C92.52,"Acute myelomonocytic leukemia, in relapse",ICD10CM
+45561877,C92.60,Acute myeloid leukemia with 11q23-abnormality not having achieved remission,ICD10CM
+45561878,C92.9,"Myeloid leukaemia, unspecified",ICD10
+45561879,C92.90,"Myeloid leukemia, unspecified, not having achieved remission",ICD10CM
+45561880,C93.0,Acute monoblastic/monocytic leukaemia,ICD10
+45561881,C93.91,"Monocytic leukemia, unspecified in remission",ICD10CM
+45561882,C95.1,Chronic leukaemia of unspecified cell type,ICD10
+45566647,C91.02,"Acute lymphoblastic leukemia, in relapse",ICD10CM
+45566648,C91.A,Mature B-cell leukemia Burkitt-type,ICD10CM
+45566649,C93.11,"Chronic myelomonocytic leukemia, in remission",ICD10CM
+45566650,C94.02,"Acute erythroid leukemia, in relapse",ICD10CM
+45566651,C94.81,"Other specified leukemias, in remission",ICD10CM
+45571568,C91.10,Chronic lymphocytic leukemia of B-cell type not having achieved remission,ICD10CM
+45571569,C91.31,"Prolymphocytic leukemia of B-cell type, in remission",ICD10CM
+45571570,C92,Myeloid leukaemia,ICD10
+45571571,C92.2,"Atypical chronic myeloid leukaemia, BCR/ABL- negative",ICD10
+45571572,C92.4,Acute promyelocytic leukaemia [PML],ICD10
+45571573,C92.92,"Myeloid leukemia, unspecified in relapse",ICD10CM
+45571574,C93.01,"Acute monoblastic/monocytic leukemia, in remission",ICD10CM
+45571575,C93.Z1,"Other monocytic leukemia, in remission",ICD10CM
+45571576,C94.0,Acute erythroid leukaemia,ICD10
+45571577,C94.01,"Acute erythroid leukemia, in remission",ICD10CM
+45571578,C94.21,"Acute megakaryoblastic leukemia, in remission",ICD10CM
+45571579,C95.00,Acute leukemia of unspecified cell type not having achieved remission,ICD10CM
+45576366,C91.Z2,"Other lymphoid leukemia, in relapse",ICD10CM
+45576367,C92.1,"Chronic myeloid leukaemia [CML], BCR/ABL-positive",ICD10
+45576368,C92.10,"Chronic myeloid leukemia, BCR/ABL-positive, not having achieved remission",ICD10CM
+45576369,C92.91,"Myeloid leukemia, unspecified in remission",ICD10CM
+45576370,C93.9,"Monocytic leukaemia, unspecified",ICD10
+45576371,C95.92,"Leukemia, unspecified, in relapse",ICD10CM
+45581253,C91.12,Chronic lymphocytic leukemia of B-cell type in relapse,ICD10CM
+45581254,C91.6,Prolymphocytic leukaemia of T-cell type,ICD10
+45581255,C92.01,"Acute myeloblastic leukemia, in remission",ICD10CM
+45581256,C92.6,Acute myeloid leukaemia with 11q23-abnormality,ICD10
+45581257,C93.00,"Acute monoblastic/monocytic leukemia, not having achieved remission",ICD10CM
+45581258,C93.7,Other monocytic leukaemia,ICD10
+45581259,C93.Z2,"Other monocytic leukemia, in relapse",ICD10CM
+45581261,C95.11,"Chronic leukemia of unspecified cell type, in remission",ICD10CM
+45581262,C95.7,Other leukaemia of unspecified cell type,ICD10
+45586062,C91,Lymphoid leukaemia,ICD10
+45586063,C91.52,"Adult T-cell lymphoma/leukemia (HTLV-1-associated), in relapse",ICD10CM
+45586064,C91.61,"Prolymphocytic leukemia of T-cell type, in remission",ICD10CM
+45586065,C91.92,"Lymphoid leukemia, unspecified, in relapse",ICD10CM
+45586066,C92.21,"Atypical chronic myeloid leukemia, BCR/ABL-negative, in remission",ICD10CM
+45586067,C92.61,Acute myeloid leukemia with 11q23-abnormality in remission,ICD10CM
+45586068,C92.A1,"Acute myeloid leukemia with multilineage dysplasia, in remission",ICD10CM
+45586069,C92.Z2,"Other myeloid leukemia, in relapse",ICD10CM
+45586070,C94.20,Acute megakaryoblastic leukemia not having achieved remission,ICD10CM
+45586072,C94.82,"Other specified leukemias, in relapse",ICD10CM
+45586073,C95.9,"Leukaemia, unspecified",ICD10
+45590964,C91.40,Hairy cell leukemia not having achieved remission,ICD10CM
+45590965,C91.A0,Mature B-cell leukemia Burkitt-type not having achieved remission,ICD10CM
+45590966,C94.00,"Acute erythroid leukemia, not having achieved remission",ICD10CM
+45590967,C95.01,"Acute leukemia of unspecified cell type, in remission",ICD10CM
+45590968,C95.90,"Leukemia, unspecified not having achieved remission",ICD10CM
+45595716,C90.11,Plasma cell leukemia in remission,ICD10CM
+45595717,C90.12,Plasma cell leukemia in relapse,ICD10CM
+45595718,C91.62,"Prolymphocytic leukemia of T-cell type, in relapse",ICD10CM
+45595719,C91.90,"Lymphoid leukemia, unspecified not having achieved remission",ICD10CM
+45595720,C91.Z0,Other lymphoid leukemia not having achieved remission,ICD10CM
+45595721,C92.11,"Chronic myeloid leukemia, BCR/ABL-positive, in remission",ICD10CM
+45595723,C92.51,"Acute myelomonocytic leukemia, in remission",ICD10CM
+45595725,C94.7,Other specified leukaemias,ICD10
+45595726,C95.91,"Leukemia, unspecified, in remission",ICD10CM
+45600564,C91.1,Chronic lymphocytic leukaemia of B-cell type,ICD10
+45600565,C92.0,Acute myeloblastic leukaemia [AML],ICD10
+45600566,C92.7,Other myeloid leukaemia,ICD10
+45600567,C93.12,"Chronic myelomonocytic leukemia, in relapse",ICD10CM
+45600568,C93.3,Juvenile myelomonocytic leukaemia,ICD10
+45600569,C93.90,"Monocytic leukemia, unspecified, not having achieved remission",ICD10CM
+45600570,C94.31,"Mast cell leukemia, in remission",ICD10CM
+45600572,C95.0,Acute leukaemia of unspecified cell type,ICD10
+45605331,C92.42,"Acute promyelocytic leukemia, in relapse",ICD10CM
+45605332,C92.A,Acute myeloid leukemia with multilineage dysplasia,ICD10CM
+45605333,C93.1,Chronic myelomonocytic leukaemia,ICD10
+45605334,C93.Z0,"Other monocytic leukemia, not having achieved remission",ICD10CM
+45605335,C94.30,Mast cell leukemia not having achieved remission,ICD10CM
+45755329,C95.2,Subacute leukemia of unspecified cell type,ICD10
+45755348,C91.2,Subacute lymphocytic leukemia,ICD10
+45755349,C91.8,Mature B-cell leukaemia Burkitt-type,ICD10
+45755350,C93.2,Subacute monocytic leukemia,ICD10
+45755351,C94,Other leukaemias of specified cell type,ICD10
+45766615,703818007,Acute monoblastic and monocytic leukemia,SNOMED
+45766616,703820005,Acute myeloid leukemia with mutated NPM1,SNOMED
+45766617,703821009,T lymphoblastic leukemia/lymphoma,SNOMED
+45771384,703819004,Acute myeloid leukemia with mutation of CEBPA (CCAAT enhancer binding protein alpha) gene,SNOMED

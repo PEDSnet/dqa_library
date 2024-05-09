@@ -1,0 +1,96 @@
+concept_id,concept_code,concept_name,vocabulary_id
+36715571,721283000,Acidosis due to type 1 diabetes mellitus,SNOMED
+45769891,87471000119106,Ankle ulcer due to type 1 diabetes mellitus,SNOMED
+37016767,712882000,Autonomic neuropathy due to type 1 diabetes mellitus,SNOMED
+45763585,60991000119100,Blindness due to type 1 diabetes mellitus,SNOMED
+4128019,290002008,Brittle type 1 diabetes mellitus,SNOMED
+4225656,421920002,Cataract due to diabetes mellitus type 1,SNOMED
+45773688,96441000119101,Chronic kidney disease due to type 1 diabetes mellitus,SNOMED
+45773576,90721000119101,Chronic kidney disease stage 1 due to type 1 diabetes mellitus,SNOMED
+45769901,90731000119103,Chronic kidney disease stage 2 due to type 1 diabetes mellitus,SNOMED
+45771075,90741000119107,Chronic kidney disease stage 3 due to type 1 diabetes mellitus,SNOMED
+45769902,90751000119109,Chronic kidney disease stage 4 due to type 1 diabetes mellitus,SNOMED
+45769903,90761000119106,Chronic kidney disease stage 5 due to type 1 diabetes mellitus,SNOMED
+45769837,72141000119104,Chronic ulcer of skin due to type 1 diabetes mellitus,SNOMED
+765650,82561000119101,Cranial nerve palsy due to diabetes mellitus type 1,SNOMED
+45757674,31321000119102,Diabetes mellitus type 1 without retinopathy,SNOMED
+45769832,72021000119109,Dermopathy due to type 1 diabetes mellitus,SNOMED
+373999,421165007,Diabetic oculopathy associated with type 1 diabetes mellitus,SNOMED
+43530657,1561000119105,Diabetic peripheral neuropathy associated with type 1 diabetes mellitus,SNOMED
+45757074,104951000119106,Vitreous hemorrhage due to type 1 diabetes mellitus,SNOMED
+4324885,429094000,Dietary education for type 1 diabetes mellitus,SNOMED
+435216,420868002,Disorder due to type 1 diabetes mellitus,SNOMED
+42538169,739681000,Disorder of eye due to type 1 diabetes mellitus,SNOMED
+42535539,368521000119107,Disorder of nerve co-occurrent and due to type 1 diabetes mellitus,SNOMED
+37016353,368551000119104,Dyslipidemia due to type 1 diabetes mellitus,SNOMED
+45769904,90771000119100,End stage renal disease on dialysis due to type 1 diabetes mellitus,SNOMED
+43531565,691000119103,Erectile dysfunction due to type 1 diabetes mellitus,SNOMED
+4221344,420486006,Exudative maculopathy due to type 1 diabetes mellitus,SNOMED
+45757507,164881000119109,Ulcer of foot due to type 1 diabetes mellitus,SNOMED
+45769892,87491000119107,Ulcer of forefoot due to type 1 diabetes mellitus,SNOMED
+4223303,420825003,Gangrene due to type 1 diabetes mellitus,SNOMED
+37017429,713702000,Gastroparesis due to type 1 diabetes mellitus,SNOMED
+765533,60981000119103,Glaucoma due to diabetes mellitus type 1,SNOMED
+45771068,87481000119109,Heel AND/OR midfoot ulcer due to type 1 diabetes mellitus,SNOMED
+43021174,472970003,History of diabetes mellitus type 1,SNOMED
+37016348,367991000119101,Hyperglycemia due to type 1 diabetes mellitus,SNOMED
+45757432,137941000119106,Hyperlipidemia due to type 1 diabetes mellitus,SNOMED
+443592,428896009,Hyperosmolality due to uncontrolled type 1 diabetes mellitus,SNOMED
+45757393,128001000119105,Hypertension concurrent and due to end stage renal disease on dialysis due to type 1 diabetes mellitus,SNOMED
+45771067,71701000119105,Hypertension in chronic kidney disease due to type 1 diabetes mellitus,SNOMED
+45769876,84371000119108,Hypoglycemia due to type 1 diabetes mellitus,SNOMED
+4228112,421437000,Hypoglycemic coma due to type 1 diabetes mellitus,SNOMED
+45757362,120711000119108,Hypoglycemic unawareness due to type 1 diabetes mellitus,SNOMED
+4047906,23045005,Insulin dependent diabetes mellitus type 1A,SNOMED
+4102018,28032008,Insulin dependent diabetes mellitus type 1B,SNOMED
+439770,420270002,Ketoacidosis due to type 1 diabetes mellitus,SNOMED
+4224254,421075007,Ketoacidotic coma due to type 1 diabetes mellitus,SNOMED
+4143857,427571000,Lumbosacral radiculoplexus neuropathy due to type 1 diabetes mellitus,SNOMED
+45757535,18521000119106,Microalbuminuria due to type 1 diabetes mellitus,SNOMED
+37016179,138881000119106,Mild nonproliferative retinopathy due to type 1 diabetes mellitus,SNOMED
+43530660,1571000119104,Mixed hyperlipidemia due to type 1 diabetes mellitus,SNOMED
+37016180,138891000119109,Moderate nonproliferative retinopathy due to type 1 diabetes mellitus,SNOMED
+4225055,420918009,Mononeuropathy due to type 1 diabetes mellitus,SNOMED
+4224709,422228004,Multiple complications due to type 1 diabetes mellitus,SNOMED
+45769829,71721000119101,Nephrotic syndrome due to type 1 diabetes mellitus,SNOMED
+377821,421468001,Disorder of nervous system due to type 1 diabetes mellitus,SNOMED
+45769830,71771000119100,Neuropathic arthropathy due to type 1 diabetes mellitus,SNOMED
+45768456,706891008,Neuropathy due to unstable diabetes mellitus type 1,SNOMED
+45763583,60961000119107,Nonproliferative diabetic retinopathy due to type 1 diabetes mellitus,SNOMED
+45769834,72041000119103,Osteomyelitis due to type 1 diabetes mellitus,SNOMED
+36713094,31211000119101,Peripheral angiopathy due to type 1 diabetes mellitus,SNOMED
+318712,421365002,Peripheral circulatory disorder due to type 1 diabetes mellitus,SNOMED
+37018566,71791000119104,Peripheral neuropathy due to type 1 diabetes mellitus,SNOMED
+4222687,421305000,Persistent microalbuminuria due to type 1 diabetes mellitus,SNOMED
+4222553,420514000,Persistent proteinuria due to type 1 diabetes mellitus,SNOMED
+37017431,713705003,Polyneuropathy due to type 1 diabetes mellitus,SNOMED
+4063042,199229001,Pre-existing type 1 diabetes mellitus,SNOMED
+43531008,609564002,Pre-existing type 1 diabetes mellitus in pregnancy,SNOMED
+43531009,609566000,Pregnancy and type 1 diabetes mellitus,SNOMED
+45763584,60971000119101,Proliferative retinopathy due to type 1 diabetes mellitus,SNOMED
+45757604,243421000119104,Proteinuria due to type 1 diabetes mellitus,SNOMED
+200687,421893009,Renal disorder due to type 1 diabetes mellitus,SNOMED
+45757266,109171000119104,Retinal edema due to type 1 diabetes mellitus,SNOMED
+45757073,104941000119109,Ischemia of retina due to type 1 diabetes mellitus,SNOMED
+45770986,706894000,Retinopathy due to unstable diabetes mellitus type 1,SNOMED
+4227210,420789003,Retinopathy due to type 1 diabetes mellitus,SNOMED
+45771533,82581000119105,Rubeosis iridis due to type 1 diabetes mellitus,SNOMED
+45773567,102781000119107,Sensory neuropathy due to type 1 diabetes mellitus,SNOMED
+45769833,72031000119107,Severe malnutrition due to type 1 diabetes mellitus,SNOMED
+765373,138901000119108,Severe nonproliferative retinopathy due to diabetes mellitus type 1,SNOMED
+46269764,10656231000119100,Skin ulcer of toe due to diabetes mellitus type 1,SNOMED
+4143689,426907004,Small vessel disease due to type 1 diabetes mellitus,SNOMED
+45769873,82571000119107,Traction detachment of retina due to type 1 diabetes mellitus,SNOMED
+201254,46635009,Type 1 diabetes mellitus,SNOMED
+4099215,190372001,Type 1 diabetes mellitus maturity onset,SNOMED
+40484648,444073006,Type 1 diabetes mellitus uncontrolled,SNOMED
+40484649,444074000,Type 1 diabetes mellitus well controlled,SNOMED
+4152858,314893005,Type 1 diabetes mellitus with arthropathy,SNOMED
+4096668,190369008,Type 1 diabetes mellitus with gangrene,SNOMED
+201531,190330002,Hyperosmolar coma due to type 1 diabetes mellitus,SNOMED
+4151281,314771006,Type 1 diabetes mellitus with hypoglycemic coma,SNOMED
+4295011,401110002,Type 1 diabetes mellitus with persistent microalbuminuria,SNOMED
+4099214,190368000,Type 1 diabetes mellitus with ulcer,SNOMED
+443412,313435000,Type 1 diabetes mellitus without complication,SNOMED
+45766051,703137001,Type I diabetes mellitus in remission,SNOMED
+45770902,110141000119100,Ulcer of lower limb due to type 1 diabetes mellitus,SNOMED

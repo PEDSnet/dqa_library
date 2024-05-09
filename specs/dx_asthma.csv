@@ -1,81 +1,353 @@
-﻿concept_id,concept_name,concept_code,vocabulary_id
-317009,Asthma,195967001,SNOMED
-37109103,Oral steroid-dependent asthma,1.6585E+16,SNOMED
-4155469,Moderate asthma,370219009,SNOMED
-42539549,Uncomplicated allergic asthma,735588005,SNOMED
-44810117,Chronic asthma with fixed airflow obstruction,8.66881E+14,SNOMED
-45769441,Acute exacerbation of allergic asthma,708093000,SNOMED
-46269784,Moderate persistent allergic asthma,1.06764E+16,SNOMED
-4051466,Childhood asthma,233678006,SNOMED
-45769438,Status asthmaticus,708090002,SNOMED
-42536649,Uncomplicated non-allergic asthma,735589002,SNOMED
-4142738,Moderate persistent asthma,427295004,SNOMED
-4022592,Millers asthma',11641008,SNOMED
-46274062,Asthma-chronic obstructive pulmonary disease overlap syndrome,1.06928E+16,SNOMED
-256448,Chronic asthmatic bronchitis,195949008,SNOMED
-4312524,Substance induced asthma,424199006,SNOMED
-45768910,Uncomplicated asthma,707444001,SNOMED
-45769352,Acute severe exacerbation of mild persistent asthma,707981009,SNOMED
-45772073,Asthma in mother complicating childbirth,1.07421E+16,SNOMED
-45768963,Uncomplicated mild persistent asthma,707511009,SNOMED
-4125022,Acute asthma,304527002,SNOMED
-4244339,Drug-induced asthma,93432008,SNOMED
-4232595,Platinum asthma,404804003,SNOMED
-37108581,Severe uncontrolled persistent asthma,1.06758E+16,SNOMED
-4155470,Occasional asthma,370220003,SNOMED
-4250128,Aspirin-induced asthma,407674008,SNOMED
-4143474,Bakers asthma',34015007,SNOMED
-45769351,Acute severe exacerbation of moderate persistent asthma,707980005,SNOMED
-46270029,Mild persistent asthma co-occurrent with allergic rhinitis,1.25011E+14,SNOMED
-252658,Intrinsic asthma without status asthmaticus,12428000,SNOMED
-4075237,Brittle asthma,225057002,SNOMED
-4245292,Weavers cough',59786004,SNOMED
-46273635,Steroid dependent asthma,2.36E+15,SNOMED
-42535716,Asthma in pregnancy,7.2301E+13,SNOMED
-4080516,Printers asthma',18041002,SNOMED
-4119298,Late onset asthma,233679003,SNOMED
-4057952,Meat-wrappers asthma',19849005,SNOMED
-4145497,Intrinsic asthma,266361008,SNOMED
-4138760,Exacerbation of intermittent asthma,425969006,SNOMED
-46274124,Acute severe exacerbation of mild persistent allergic asthma,1.06759E+16,SNOMED
-46269771,Acute severe exacerbation of severe persistent asthma co-occurrent with allergic rhinitis,1.06756E+16,SNOMED
-4212099,Occupational asthma,57607007,SNOMED
-45768965,Uncomplicated severe persistent asthma,707513007,SNOMED
-46269777,Acute severe exacerbation of mild persistent allergic asthma co-occurrent with allergic rhinitis,1.0676E+16,SNOMED
-46269767,Acute severe exacerbation of asthma co-occurrent with allergic rhinitis,1.06747E+16,SNOMED
-46269770,Severe persistent allergic asthma,1.06754E+16,SNOMED
-4309833,Non-IgE mediated allergic asthma,423889005,SNOMED
-45769350,Acute severe exacerbation of severe persistent asthma,707979007,SNOMED
-46273452,Acute exacerbation of asthma co-occurrent with allergic rhinitis,9.9031E+13,SNOMED
-4225554,Isocyanate induced asthma,404808000,SNOMED
-45771045,Acute exacerbation of asthma,708038006,SNOMED
-46269802,Chronic obstructive asthma co-occurrent with acute exacerbation of asthma,1.06927E+16,SNOMED
-42538744,Exacerbation of allergic asthma,762521001,SNOMED
-46273487,Acute exacerbation of moderate persistent asthma,1.35171E+14,SNOMED
-46270322,Intermittent asthma uncontrolled,1.741E+12,SNOMED
-764949,"Persistent asthma, well controlled",9.01E+11,SNOMED
-4145356,Severe persistent asthma,426656000,SNOMED
-257581,Exacerbation of asthma,281239006,SNOMED
-37108580,Severe controlled persistent asthma,1.06754E+16,SNOMED
-4155468,Mild asthma,370218001,SNOMED
-42690582,Moderate acute exacerbation of asthma,1.06481E+15,SNOMED
-46269801,Aspirin exacerbated respiratory disease,1.06927E+16,SNOMED
-4311814,Byssinosis,85761009,SNOMED
-4120261,Sulfite-induced asthma,233688007,SNOMED
-46270030,Intermittent asthma co-occurrent with allergic rhinitis,1.25021E+14,SNOMED
-4152913,Severe asthma,370221004,SNOMED
-312950,IgE-mediated allergic asthma,424643009,SNOMED
-4143828,Mild persistent asthma,426979002,SNOMED
-313236,Cough variant asthma,409663006,SNOMED
-46270082,Acute exacerbation of mild persistent asthma,1.35181E+14,SNOMED
-761844,Inhaled steroid-dependent asthma,1.60553E+16,SNOMED
-4191479,Allergic asthma,389145006,SNOMED
-46270028,Severe persistent asthma co-occurrent with allergic rhinitis,1.24991E+14,SNOMED
-4147509,Allergic-infective asthma,30352005,SNOMED
-45766727,Allergic asthma due to Dermatophagoides pteronyssinus,703953004,SNOMED
-40481763,Acute exacerbation of chronic asthmatic bronchitis,442025000,SNOMED
-45768912,Exacerbation of severe persistent asthma,707447008,SNOMED
-764677,Persistent asthma,5.281E+12,SNOMED
-42536207,Life threatening acute exacerbation of asthma,734904007,SNOMED
-46273462,Acute severe exacerbation of moderate persistent allergic asthma,1.06764E+16,SNOMED
-4245676,Chemical-induced asthma,9280700,SNOMED
+concept_id,concept_code,concept_name,vocabulary_id,pcornet_vocabulary_id,cc_decimal_removal
+252341,91340006,Extrinsic asthma with status asthmaticus,SNOMED,SM,FALSE
+252658,12428000,Intrinsic asthma without status asthmaticus,SNOMED,SM,FALSE
+252942,233691007,Asthmatic pulmonary eosinophilia,SNOMED,SM,FALSE
+254980,233685005,Intrinsic asthma with asthma attack,SNOMED,SM,FALSE
+256448,195949008,Chronic asthmatic bronchitis,SNOMED,SM,FALSE
+256716,57546000,Asthma with status asthmaticus,SNOMED,SM,FALSE
+257581,281239006,Exacerbation of asthma,SNOMED,SM,FALSE
+257583,37981002,Allergic bronchopulmonary aspergillosis,SNOMED,SM,FALSE
+259055,233681001,Extrinsic asthma with asthma attack,SNOMED,SM,FALSE
+261048,59327009,Intrinsic asthma with status asthmaticus,SNOMED,SM,FALSE
+312950,424643009,IgE-mediated allergic asthma,SNOMED,SM,FALSE
+313236,409663006,Cough variant asthma,SNOMED,SM,FALSE
+317009,195967001,Asthma,SNOMED,SM,FALSE
+443801,31387002,Exercise-induced asthma,SNOMED,SM,FALSE
+725355,J82.83,Eosinophilic asthma,ICD10CM,10,FALSE
+725355,J8283,Eosinophilic asthma,ICD10CM,10,TRUE
+761844,16055311000119107,Inhaled steroid-dependent asthma,SNOMED,SM,FALSE
+764677,5281000124103,Persistent asthma,SNOMED,SM,FALSE
+764949,901000119100,"Persistent asthma, well controlled",SNOMED,SM,FALSE
+1569488,J45,Asthma,ICD10CM,10,FALSE
+1569489,J45.9,Other and unspecified asthma,ICD10CM,10,FALSE
+1569489,J459,Other and unspecified asthma,ICD10CM,10,TRUE
+1569490,J45.90,Unspecified asthma,ICD10CM,10,FALSE
+1569490,J4590,Unspecified asthma,ICD10CM,10,TRUE
+1569491,J45.99,Other asthma,ICD10CM,10,FALSE
+1569491,J4599,Other asthma,ICD10CM,10,TRUE
+3523365,164481000000103,Asthma resolved,SNOMED,SM,FALSE
+3523380,164991000000109,Asthma resolved,SNOMED,SM,FALSE
+3523398,165621000000103,Brittle asthma,SNOMED,SM,FALSE
+3523762,186071000000103,Occupational asthma,SNOMED,SM,FALSE
+3523763,186081000000101,Work aggravated asthma,SNOMED,SM,FALSE
+3523900,189511000000105,Occupational asthma,SNOMED,SM,FALSE
+3523901,189521000000104,Work aggravated asthma,SNOMED,SM,FALSE
+3534450,589241000000104,Asthma unspecified,SNOMED,SM,FALSE
+3538741,653751000000109,Asthma attack NOS,SNOMED,SM,FALSE
+3546068,866891000000104,Chronic asthma with fixed airflow obstruction,SNOMED,SM,FALSE
+3547213,944961000000107,Asthma-chronic obstructive pulmonary disease overlap syndrome,SNOMED,SM,FALSE
+3547214,944971000000100,Asthma-chronic obstructive pulmonary disease overlap syndrome,SNOMED,SM,FALSE
+3548003,1064771000000103,Acute severe exacerbation of asthma,SNOMED,SM,FALSE
+3551307,95111000000105,Aspirin-induced asthma,SNOMED,SM,FALSE
+3551579,99981000000103,Aspirin-induced asthma,SNOMED,SM,FALSE
+3557638,579691000000102,Intrinsic asthma NOS,SNOMED,SM,FALSE
+3557675,589231000000108,Extrinsic asthma NOS,SNOMED,SM,FALSE
+3558277,707361000000103,Allergic bronchopulmonary aspergillosis,SNOMED,SM,FALSE
+3563334,593601000000101,Pneumopathy due to inhalation of other dust,SNOMED,SM,FALSE
+3571714,111991000000106,Brittle asthma,SNOMED,SM,FALSE
+3573162,593201000000103,Pneumopathy due to inhalation of other dust NOS,SNOMED,SM,FALSE
+3573386,644281000000107,Allergic asthma NEC,SNOMED,SM,FALSE
+3573628,689421000000104,Status asthmaticus NOS,SNOMED,SM,FALSE
+3584392,689431000000102,Asthma NOS,SNOMED,SM,FALSE
+3661412,829976001,Thunderstorm asthma,SNOMED,SM,FALSE
+4015947,170632009,Asthma causing night waking,SNOMED,SM,FALSE
+4015951,170655007,Asthma restricts exercise,SNOMED,SM,FALSE
+4017188,170642006,Asthma severity,SNOMED,SM,FALSE
+4017189,170647000,Asthma prophylactic medication used,SNOMED,SM,FALSE
+4017191,170656008,Asthma sometimes restricts exercise,SNOMED,SM,FALSE
+4017192,170657004,Asthma severely restricts exercise,SNOMED,SM,FALSE
+4017293,170658009,Asthma never restricts exercise,SNOMED,SM,FALSE
+4022592,11641008,Millers' asthma,SNOMED,SM,FALSE
+4036799,162660004,Asthma resolved,SNOMED,SM,FALSE
+4051466,233678006,Childhood asthma,SNOMED,SM,FALSE
+4057863,18197001,Asthmatoid wheeze,SNOMED,SM,FALSE
+4057952,19849005,Meat-wrappers' asthma,SNOMED,SM,FALSE
+4075237,225057002,Brittle asthma,SNOMED,SM,FALSE
+4080516,18041002,Printers' asthma,SNOMED,SM,FALSE
+4110051,195977004,Mixed asthma,SNOMED,SM,FALSE
+4110177,196013003,Pneumopathy due to inhalation of other dust,SNOMED,SM,FALSE
+4110642,196015005,Pneumopathy due to inhalation of other dust NOS,SNOMED,SM,FALSE
+4112669,195976008,Intrinsic asthma NOS,SNOMED,SM,FALSE
+4112670,195979001,Asthma unspecified,SNOMED,SM,FALSE
+4112831,195972005,Extrinsic asthma NOS,SNOMED,SM,FALSE
+4119298,233679003,Late onset asthma,SNOMED,SM,FALSE
+4119299,233682008,Allergic asthma NEC,SNOMED,SM,FALSE
+4119300,233687002,Colophony asthma,SNOMED,SM,FALSE
+4120260,233686006,Aspirin-sensitive asthma with nasal polyps,SNOMED,SM,FALSE
+4120261,233688007,Sulfite-induced asthma,SNOMED,SM,FALSE
+4123253,233683003,Hay fever with asthma,SNOMED,SM,FALSE
+4123254,233690008,Factitious asthma,SNOMED,SM,FALSE
+4125022,304527002,Acute asthma,SNOMED,SM,FALSE
+4138760,425969006,Exacerbation of intermittent asthma,SNOMED,SM,FALSE
+4141621,266364000,Asthma attack,SNOMED,SM,FALSE
+4141622,266365004,Asthma NOS,SNOMED,SM,FALSE
+4141978,427603009,Intermittent asthma,SNOMED,SM,FALSE
+4142738,427295004,Moderate persistent asthma,SNOMED,SM,FALSE
+4143474,34015007,Bakers' asthma,SNOMED,SM,FALSE
+4143828,426979002,Mild persistent asthma,SNOMED,SM,FALSE
+4144104,266363006,Status asthmaticus NOS,SNOMED,SM,FALSE
+4144757,427354000,Exacerbation of persistent asthma,SNOMED,SM,FALSE
+4145356,426656000,Severe persistent asthma,SNOMED,SM,FALSE
+4145497,266361008,Intrinsic asthma,SNOMED,SM,FALSE
+4146581,427679007,Mild intermittent asthma,SNOMED,SM,FALSE
+4147509,30352005,Allergic-infective asthma,SNOMED,SM,FALSE
+4152913,370221004,Severe asthma,SNOMED,SM,FALSE
+4155468,370218001,Mild asthma,SNOMED,SM,FALSE
+4155469,370219009,Moderate asthma,SNOMED,SM,FALSE
+4155470,370220003,Occasional asthma,SNOMED,SM,FALSE
+4170623,274105009,Asthma attack NOS,SNOMED,SM,FALSE
+4170900,41997000,Asthmatic pulmonary alveolitis,SNOMED,SM,FALSE
+4191479,389145006,Allergic asthma,SNOMED,SM,FALSE
+4194289,312453004,Asthma - currently active,SNOMED,SM,FALSE
+4206340,55570000,Asthma without status asthmaticus,SNOMED,SM,FALSE
+4207479,312454005,Asthma - currently dormant,SNOMED,SM,FALSE
+4211530,56968009,Asthma caused by wood dust,SNOMED,SM,FALSE
+4212099,57607007,Occupational asthma,SNOMED,SM,FALSE
+4215802,71892000,Cardiac asthma,SNOMED,SM,FALSE
+4217558,41553006,Detergent asthma,SNOMED,SM,FALSE
+4225553,404806001,Cheese-makers' asthma,SNOMED,SM,FALSE
+4225554,404808000,Isocyanate induced asthma,SNOMED,SM,FALSE
+4232595,404804003,Platinum asthma,SNOMED,SM,FALSE
+4233784,405944004,Asthmatic bronchitis,SNOMED,SM,FALSE
+4244339,93432008,Drug-induced asthma,SNOMED,SM,FALSE
+4245292,59786004,Weavers' cough,SNOMED,SM,FALSE
+4245676,92807009,Chemical-induced asthma,SNOMED,SM,FALSE
+4250128,407674008,Aspirin-induced asthma,SNOMED,SM,FALSE
+4271333,63088003,Allergic asthma without status asthmaticus,SNOMED,SM,FALSE
+4279553,367542003,Eosinophilic asthma,SNOMED,SM,FALSE
+4283362,67415000,Hay asthma,SNOMED,SM,FALSE
+4301938,418395004,Tea-makers' asthma,SNOMED,SM,FALSE
+4308356,390798007,Asthma finding,SNOMED,SM,FALSE
+4309833,423889005,Non-IgE mediated allergic asthma,SNOMED,SM,FALSE
+4312524,424199006,Substance induced asthma,SNOMED,SM,FALSE
+35609846,1086701000000102,Life threatening acute exacerbation of allergic asthma,SNOMED,SM,FALSE
+35609847,1086711000000100,Life threatening acute exacerbation of intrinsic asthma,SNOMED,SM,FALSE
+36684328,782513000,Acute severe exacerbation of allergic asthma,SNOMED,SM,FALSE
+36684335,782520007,Exacerbation of allergic asthma due to infection,SNOMED,SM,FALSE
+37108580,10675391000119101,Severe controlled persistent asthma,SNOMED,SM,FALSE
+37108581,10675751000119107,Severe uncontrolled persistent asthma,SNOMED,SM,FALSE
+37109103,16584951000119101,Oral steroid-dependent asthma,SNOMED,SM,FALSE
+37116845,733858005,Acute severe refractory exacerbation of asthma,SNOMED,SM,FALSE
+37206717,786836003,Near fatal asthma,SNOMED,SM,FALSE
+37208352,1103911000000103,Severe asthma with fungal sensitisation,SNOMED,SM,FALSE
+37310241,10674991000119104,Intermittent allergic asthma,SNOMED,SM,FALSE
+40303860,139202009,Exercise-induced asthma,SNOMED,SM,FALSE
+40307543,147884006,Asthma severity,SNOMED,SM,FALSE
+40307544,147885007,Asthma prophylactic medication used,SNOMED,SM,FALSE
+40307553,147893007,Asthma restricts exercise,SNOMED,SM,FALSE
+40307554,147894001,Asthma never restricts exercise,SNOMED,SM,FALSE
+40307556,147896004,Asthma - currently dormant,SNOMED,SM,FALSE
+40307557,147897008,Asthma - currently active,SNOMED,SM,FALSE
+40316543,155574008,Asthma,SNOMED,SM,FALSE
+40316544,155575009,Extrinsic asthma - atopy (& pollen),SNOMED,SM,FALSE
+40316545,155576005,Asthma: [intrinsic] or [late onset],SNOMED,SM,FALSE
+40316546,155577001,Status asthmaticus,SNOMED,SM,FALSE
+40316547,155578006,Asthma attack (& NOS),SNOMED,SM,FALSE
+40316548,155579003,Asthma: [NOS] or [attack],SNOMED,SM,FALSE
+40336554,16862005,Extrinsic asthma,SNOMED,SM,FALSE
+40337129,170643001,Occasional asthma,SNOMED,SM,FALSE
+40337130,170644007,Mild asthma,SNOMED,SM,FALSE
+40337131,170645008,Moderate asthma,SNOMED,SM,FALSE
+40337132,170646009,Severe asthma,SNOMED,SM,FALSE
+40337152,170664002,Asthma - currently dormant,SNOMED,SM,FALSE
+40337153,170665001,Asthma - currently active,SNOMED,SM,FALSE
+40345716,266358007,Allergic atopic asthma,SNOMED,SM,FALSE
+40345717,266359004,Extrinsic asthma without status asthmaticus,SNOMED,SM,FALSE
+40345719,266360009,Extrinsic asthma with status asthmaticus,SNOMED,SM,FALSE
+40345721,266362001,Intrinsic asthma with status asthmaticus,SNOMED,SM,FALSE
+40345758,266396008,Extrinsic asthma - atopy (& pollen),SNOMED,SM,FALSE
+40345759,266397004,Asthma: [intrinsic] or [late onset],SNOMED,SM,FALSE
+40345760,266398009,Asthma: [NOS] or [attack],SNOMED,SM,FALSE
+40362681,278517007,Asthmatic bronchitis,SNOMED,SM,FALSE
+40381380,187687003,Asthma (disorder),SNOMED,SM,FALSE
+40389375,1945002,Allergic asthma with stated cause,SNOMED,SM,FALSE
+40395537,195936003,Bronchitis: [unspecified (& chest infection)] or [recurrent wheezy],SNOMED,SM,FALSE
+40395540,195939005,Asthmatic bronchitis,SNOMED,SM,FALSE
+40395874,195968006,Asthma: [extrinsic - atopic] or [allergic] or [pollen] or [childhood] or [with hay fever],SNOMED,SM,FALSE
+40395876,195970002,(Hay fever with asthma) or (extrinsic asthma without status asthmaticus),SNOMED,SM,FALSE
+40395878,195971003,Extrinsic asthma with: [asthma attack] or [status asthmaticus],SNOMED,SM,FALSE
+40395880,195973000,(Intrinsic asthma) or (late onset asthma),SNOMED,SM,FALSE
+40395881,195974006,Intrinsic asthma without status asthmaticus,SNOMED,SM,FALSE
+40395882,195975007,Intrinsic asthma with: [asthma attack] or [status asthmaticus],SNOMED,SM,FALSE
+40395885,195978009,Exacerbation of asthma,SNOMED,SM,FALSE
+40395887,195980003,(Severe asthma attack) or (status asthmaticus NOS),SNOMED,SM,FALSE
+40395889,195981004,Asthma attack (& NOS),SNOMED,SM,FALSE
+40395890,195982006,Late onset asthma,SNOMED,SM,FALSE
+40395891,195983001,(Asthma: [exercise induced] or [allergic NEC] or [NOS]) or (allergic bronchitis NEC),SNOMED,SM,FALSE
+40410639,21341004,Asthma,SNOMED,SM,FALSE
+40436408,233680000,Allergic asthma,SNOMED,SM,FALSE
+40436413,233684009,Allergic non-atopic asthma,SNOMED,SM,FALSE
+40481763,442025000,Acute exacerbation of chronic asthmatic bronchitis,SNOMED,SM,FALSE
+40483397,445427006,Seasonal asthma,SNOMED,SM,FALSE
+40544275,36979006,Status asthmaticus,SNOMED,SM,FALSE
+40546234,367110001,Exacerbation of asthma,SNOMED,SM,FALSE
+40561687,389146007,Extrinsic asthma,SNOMED,SM,FALSE
+40595784,416601004,Work aggravated asthma,SNOMED,SM,FALSE
+40628141,73849000,Cheese-washers' lung,SNOMED,SM,FALSE
+40640771,8312004,Intrinsic asthma,SNOMED,SM,FALSE
+42535716,72301000119103,Asthma in pregnancy,SNOMED,SM,FALSE
+42536207,734904007,Life threatening acute exacerbation of asthma,SNOMED,SM,FALSE
+42536208,734905008,Moderate acute exacerbation of asthma,SNOMED,SM,FALSE
+42536648,735587000,Acute severe exacerbation of asthma co-occurrent and due to allergic asthma,SNOMED,SM,FALSE
+42536649,735589002,Uncomplicated non-allergic asthma,SNOMED,SM,FALSE
+42538744,762521001,Exacerbation of allergic asthma,SNOMED,SM,FALSE
+42539549,735588005,Uncomplicated allergic asthma,SNOMED,SM,FALSE
+42690582,1064811000000103,Moderate acute exacerbation of asthma,SNOMED,SM,FALSE
+42690663,1064821000000109,Life threatening acute exacerbation of asthma,SNOMED,SM,FALSE
+43530693,1751000119100,Acute exacerbation of chronic obstructive airways disease with asthma,SNOMED,SM,FALSE
+43530700,1761000119103,Chronic obstructive airway disease with asthma,SNOMED,SM,FALSE
+43530745,401000119107,Asthma with irreversible airway obstruction,SNOMED,SM,FALSE
+44789217,202571000000105,Nocturnal asthma,SNOMED,SM,FALSE
+44810117,866881000000101,Chronic asthma with fixed airflow obstruction,SNOMED,SM,FALSE
+44820889,493.21,Chronic obstructive asthma with status asthmaticus,ICD9CM,09,FALSE
+44820889,49321,Chronic obstructive asthma with status asthmaticus,ICD9CM,09,TRUE
+44821987,493,Asthma,ICD9CM,09,FALSE
+44821988,493.90,"Asthma, unspecified type, unspecified",ICD9CM,09,FALSE
+44821988,49390,"Asthma, unspecified type, unspecified",ICD9CM,09,TRUE
+44823144,493.92,"Asthma, unspecified type, with (acute) exacerbation",ICD9CM,09,FALSE
+44823144,49392,"Asthma, unspecified type, with (acute) exacerbation",ICD9CM,09,TRUE
+44824287,493.00,"Extrinsic asthma, unspecified",ICD9CM,09,FALSE
+44824287,49300,"Extrinsic asthma, unspecified",ICD9CM,09,TRUE
+44824288,493.01,Extrinsic asthma with status asthmaticus,ICD9CM,09,FALSE
+44824288,49301,Extrinsic asthma with status asthmaticus,ICD9CM,09,TRUE
+44824289,493.10,"Intrinsic asthma, unspecified",ICD9CM,09,FALSE
+44824289,49310,"Intrinsic asthma, unspecified",ICD9CM,09,TRUE
+44826679,493.9,"Asthma, unspecified",ICD9CM,09,FALSE
+44826679,4939,"Asthma, unspecified",ICD9CM,09,TRUE
+44829012,493.2,Chronic obstructive asthma,ICD9CM,09,FALSE
+44829012,4932,Chronic obstructive asthma,ICD9CM,09,TRUE
+44830115,493.8,Other forms of asthma,ICD9CM,09,FALSE
+44830115,4938,Other forms of asthma,ICD9CM,09,TRUE
+44831278,493.02,Extrinsic asthma with (acute) exacerbation,ICD9CM,09,FALSE
+44831278,49302,Extrinsic asthma with (acute) exacerbation,ICD9CM,09,TRUE
+44831279,493.1,Intrinsic asthma,ICD9CM,09,FALSE
+44831279,4931,Intrinsic asthma,ICD9CM,09,TRUE
+44831280,493.20,"Chronic obstructive asthma, unspecified",ICD9CM,09,FALSE
+44831280,49320,"Chronic obstructive asthma, unspecified",ICD9CM,09,TRUE
+44831284,518.6,Allergic bronchopulmonary aspergillosis,ICD9CM,09,FALSE
+44831284,5186,Allergic bronchopulmonary aspergillosis,ICD9CM,09,TRUE
+44832423,493.0,Extrinsic asthma,ICD9CM,09,FALSE
+44832423,4930,Extrinsic asthma,ICD9CM,09,TRUE
+44832424,493.91,"Asthma, unspecified type, with status asthmaticus",ICD9CM,09,FALSE
+44832424,49391,"Asthma, unspecified type, with status asthmaticus",ICD9CM,09,TRUE
+44833611,493.82,Cough variant asthma,ICD9CM,09,FALSE
+44833611,49382,Cough variant asthma,ICD9CM,09,TRUE
+44834769,493.11,Intrinsic asthma with status asthmaticus,ICD9CM,09,FALSE
+44834769,49311,Intrinsic asthma with status asthmaticus,ICD9CM,09,TRUE
+44837135,493.12,Intrinsic asthma with (acute) exacerbation,ICD9CM,09,FALSE
+44837135,49312,Intrinsic asthma with (acute) exacerbation,ICD9CM,09,TRUE
+44837136,493.22,Chronic obstructive asthma with (acute) exacerbation,ICD9CM,09,FALSE
+44837136,49322,Chronic obstructive asthma with (acute) exacerbation,ICD9CM,09,TRUE
+45543269,J45.41,Moderate persistent asthma with (acute) exacerbation,ICD10CM,10,FALSE
+45543269,J4541,Moderate persistent asthma with (acute) exacerbation,ICD10CM,10,TRUE
+45543270,J45.902,Unspecified asthma with status asthmaticus,ICD10CM,10,FALSE
+45543270,J45902,Unspecified asthma with status asthmaticus,ICD10CM,10,TRUE
+45548116,J45.20,"Mild intermittent asthma, uncomplicated",ICD10CM,10,FALSE
+45548116,J4520,"Mild intermittent asthma, uncomplicated",ICD10CM,10,TRUE
+45548117,J45.31,Mild persistent asthma with (acute) exacerbation,ICD10CM,10,FALSE
+45548117,J4531,Mild persistent asthma with (acute) exacerbation,ICD10CM,10,TRUE
+45548118,J45.8,Mixed asthma,ICD10,10,FALSE
+45548118,J458,Mixed asthma,ICD10,10,TRUE
+45557624,J45.0,Predominantly allergic asthma,ICD10,10,FALSE
+45557624,J450,Predominantly allergic asthma,ICD10,10,TRUE
+45557625,J45.1,Nonallergic asthma,ICD10,10,FALSE
+45557625,J451,Nonallergic asthma,ICD10,10,TRUE
+45557626,J45.42,Moderate persistent asthma with status asthmaticus,ICD10CM,10,FALSE
+45557626,J4542,Moderate persistent asthma with status asthmaticus,ICD10CM,10,TRUE
+45561757,B44.81,Allergic bronchopulmonary aspergillosis,ICD10CM,10,FALSE
+45561757,B4481,Allergic bronchopulmonary aspergillosis,ICD10CM,10,TRUE
+45562456,J45.9,"Asthma, unspecified",ICD10,10,FALSE
+45562456,J459,"Asthma, unspecified",ICD10,10,TRUE
+45562457,J45.909,"Unspecified asthma, uncomplicated",ICD10CM,10,FALSE
+45562457,J45909,"Unspecified asthma, uncomplicated",ICD10CM,10,TRUE
+45567265,J45.50,"Severe persistent asthma, uncomplicated",ICD10CM,10,FALSE
+45567265,J4550,"Severe persistent asthma, uncomplicated",ICD10CM,10,TRUE
+45567266,J45.51,Severe persistent asthma with (acute) exacerbation,ICD10CM,10,FALSE
+45567266,J4551,Severe persistent asthma with (acute) exacerbation,ICD10CM,10,TRUE
+45572168,J45.2,Mild intermittent asthma,ICD10CM,10,FALSE
+45572168,J452,Mild intermittent asthma,ICD10CM,10,TRUE
+45572169,J45.21,Mild intermittent asthma with (acute) exacerbation,ICD10CM,10,FALSE
+45572169,J4521,Mild intermittent asthma with (acute) exacerbation,ICD10CM,10,TRUE
+45572170,J45.22,Mild intermittent asthma with status asthmaticus,ICD10CM,10,FALSE
+45572170,J4522,Mild intermittent asthma with status asthmaticus,ICD10CM,10,TRUE
+45572171,J45.998,Other asthma,ICD10CM,10,FALSE
+45572171,J45998,Other asthma,ICD10CM,10,TRUE
+45576951,J45.30,"Mild persistent asthma, uncomplicated",ICD10CM,10,FALSE
+45576951,J4530,"Mild persistent asthma, uncomplicated",ICD10CM,10,TRUE
+45576952,J45.32,Mild persistent asthma with status asthmaticus,ICD10CM,10,FALSE
+45576952,J4532,Mild persistent asthma with status asthmaticus,ICD10CM,10,TRUE
+45581859,J45.3,Mild persistent asthma,ICD10CM,10,FALSE
+45581859,J453,Mild persistent asthma,ICD10CM,10,TRUE
+45581860,J45.52,Severe persistent asthma with status asthmaticus,ICD10CM,10,FALSE
+45581860,J4552,Severe persistent asthma with status asthmaticus,ICD10CM,10,TRUE
+45586675,J45.991,Cough variant asthma,ICD10CM,10,FALSE
+45586675,J45991,Cough variant asthma,ICD10CM,10,TRUE
+45591558,J45.4,Moderate persistent asthma,ICD10CM,10,FALSE
+45591558,J454,Moderate persistent asthma,ICD10CM,10,TRUE
+45591559,J45.5,Severe persistent asthma,ICD10CM,10,FALSE
+45591559,J455,Severe persistent asthma,ICD10CM,10,TRUE
+45591560,J46,Status asthmaticus,ICD10,10,FALSE
+45596282,J45,Asthma,ICD10,10,FALSE
+45601133,J45.40,"Moderate persistent asthma, uncomplicated",ICD10CM,10,FALSE
+45601133,J4540,"Moderate persistent asthma, uncomplicated",ICD10CM,10,TRUE
+45601134,J45.901,Unspecified asthma with (acute) exacerbation,ICD10CM,10,FALSE
+45601134,J45901,Unspecified asthma with (acute) exacerbation,ICD10CM,10,TRUE
+45757063,103781000119103,Allergic bronchopulmonary mycosis,SNOMED,SM,FALSE
+45766727,703953004,Allergic asthma due to Dermatophagoides pteronyssinus,SNOMED,SM,FALSE
+45766728,703954005,Allergic asthma due to Dermatophagoides farinae,SNOMED,SM,FALSE
+45768910,707444001,Uncomplicated asthma,SNOMED,SM,FALSE
+45768911,707445000,Exacerbation of mild persistent asthma,SNOMED,SM,FALSE
+45768912,707447008,Exacerbation of severe persistent asthma,SNOMED,SM,FALSE
+45768963,707511009,Uncomplicated mild persistent asthma,SNOMED,SM,FALSE
+45768964,707512002,Uncomplicated moderate persistent asthma,SNOMED,SM,FALSE
+45768965,707513007,Uncomplicated severe persistent asthma,SNOMED,SM,FALSE
+45769350,707979007,Acute severe exacerbation of severe persistent asthma,SNOMED,SM,FALSE
+45769351,707980005,Acute severe exacerbation of moderate persistent asthma,SNOMED,SM,FALSE
+45769352,707981009,Acute severe exacerbation of mild persistent asthma,SNOMED,SM,FALSE
+45769438,708090002,Acute severe exacerbation of asthma,SNOMED,SM,FALSE
+45769441,708093000,Acute exacerbation of allergic asthma,SNOMED,SM,FALSE
+45769442,708095007,Acute severe exacerbation of immunoglobin E-mediated allergic asthma,SNOMED,SM,FALSE
+45769443,708096008,Acute severe exacerbation of intrinsic asthma,SNOMED,SM,FALSE
+45771045,708038006,Acute exacerbation of asthma,SNOMED,SM,FALSE
+45772073,10742121000119104,Asthma in mother complicating childbirth,SNOMED,SM,FALSE
+45772937,707446004,Exacerbation of moderate persistent asthma,SNOMED,SM,FALSE
+45773005,708094006,Acute exacerbation of intrinsic asthma,SNOMED,SM,FALSE
+46269767,10674711000119105,Acute severe exacerbation of asthma co-occurrent with allergic rhinitis,SNOMED,SM,FALSE
+46269770,10675431000119106,Severe persistent allergic asthma,SNOMED,SM,FALSE
+46269771,10675551000119104,Acute severe exacerbation of severe persistent asthma co-occurrent with allergic rhinitis,SNOMED,SM,FALSE
+46269772,10675591000119109,Severe persistent allergic asthma controlled,SNOMED,SM,FALSE
+46269773,10675631000119109,Severe persistent asthma controlled co-occurrent with allergic rhinitis,SNOMED,SM,FALSE
+46269774,10675671000119107,Severe persistent allergic asthma uncontrolled,SNOMED,SM,FALSE
+46269775,10675711000119106,Severe persistent asthma uncontrolled co-occurrent with allergic rhinitis,SNOMED,SM,FALSE
+46269776,10675871000119106,Mild persistent allergic asthma,SNOMED,SM,FALSE
+46269777,10675991000119100,Acute severe exacerbation of mild persistent allergic asthma co-occurrent with allergic rhinitis,SNOMED,SM,FALSE
+46269778,10676071000119109,Mild persistent asthma controlled,SNOMED,SM,FALSE
+46269779,10676111000119102,Mild persistent asthma controlled co-occurrent with allergic rhinitis,SNOMED,SM,FALSE
+46269780,10676151000119101,Mild persistent allergic asthma uncontrolled,SNOMED,SM,FALSE
+46269781,10676191000119106,Mild persistent asthma uncontrolled,SNOMED,SM,FALSE
+46269782,10676231000119102,Mild persistent asthma uncontrolled co-occurrent with allergic rhinitis,SNOMED,SM,FALSE
+46269783,10676351000119103,Moderate persistent asthma controlled,SNOMED,SM,FALSE
+46269784,10676391000119108,Moderate persistent allergic asthma,SNOMED,SM,FALSE
+46269785,10676511000119109,Acute severe exacerbation of moderate persistent asthma co-occurrent with allergic rhinitis,SNOMED,SM,FALSE
+46269786,10676551000119105,Moderate persistent allergic asthma controlled,SNOMED,SM,FALSE
+46269787,10676591000119100,Moderate persistent controlled asthma co-occurrent with allergic rhinitis,SNOMED,SM,FALSE
+46269788,10676631000119100,Moderate persistent allergic asthma uncontrolled,SNOMED,SM,FALSE
+46269789,10676671000119102,Moderate persistent asthma uncontrolled co-occurrent with allergic rhinitis,SNOMED,SM,FALSE
+46269790,10676711000119103,Moderate persistent asthma uncontrolled,SNOMED,SM,FALSE
+46269801,10692681000119108,Aspirin exacerbated respiratory disease,SNOMED,SM,FALSE
+46269802,10692721000119102,Chronic obstructive asthma co-occurrent with acute exacerbation of asthma,SNOMED,SM,FALSE
+46270028,124991000119109,Severe persistent asthma co-occurrent with allergic rhinitis,SNOMED,SM,FALSE
+46270029,125011000119100,Mild persistent asthma co-occurrent with allergic rhinitis,SNOMED,SM,FALSE
+46270030,125021000119107,Intermittent asthma co-occurrent with allergic rhinitis,SNOMED,SM,FALSE
+46270082,135181000119109,Acute exacerbation of mild persistent asthma,SNOMED,SM,FALSE
+46270322,1741000119102,Intermittent asthma uncontrolled,SNOMED,SM,FALSE
+46270573,641000119106,Intermittent asthma well controlled,SNOMED,SM,FALSE
+46273452,99031000119107,Acute exacerbation of asthma co-occurrent with allergic rhinitis,SNOMED,SM,FALSE
+46273454,125001000119103,Moderate persistent asthma co-occurrent with allergic rhinitis,SNOMED,SM,FALSE
+46273462,10676431000119103,Acute severe exacerbation of moderate persistent allergic asthma,SNOMED,SM,FALSE
+46273487,135171000119106,Acute exacerbation of moderate persistent asthma,SNOMED,SM,FALSE
+46273635,2360001000004109,Steroid dependent asthma,SNOMED,SM,FALSE
+46274059,10675471000119109,Acute severe exacerbation of severe persistent allergic asthma,SNOMED,SM,FALSE
+46274060,10676031000119106,Mild persistent allergic asthma controlled,SNOMED,SM,FALSE
+46274062,10692761000119107,Asthma-chronic obstructive pulmonary disease overlap syndrome,SNOMED,SM,FALSE
+46274124,10675911000119109,Acute severe exacerbation of mild persistent allergic asthma,SNOMED,SM,FALSE
