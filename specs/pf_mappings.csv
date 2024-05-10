@@ -1,6 +1,6 @@
 Label,Description
 Labels with `all_` prefix,All visit types included
-Labels with `op_` prefix,"Only outpatient visit types included. These are defined as clinician outpatient visits, lab and radiology visits, as well telehealth visits. Visit_concept_id's include 9202, 2000000469 ,581399."
+Labels with `op_` prefix,"Only outpatient visit types included. These are defined as clinician outpatient visits, lab and radiology visits, as well telehealth visits. Visit_concept_id's include 9202, 581399."
 Labels with `ip_` prefix,Only inpatient visit types included. These are defined as inpatient visits and combined ED to inpatient visits. Visit concept_id's include 9201 and 2000000048.
 Labels with `long_ip_` prefix,Only inpatient visits greater than 2 days included. These are defined as inpatient visits and combined ED to inpatient visits with a visit_start_date and visit_end_date greater than 2 days apart. Visit concept_id's include 9201 and 2000000048.
 Labels with `ed_` prefix,Only emergency department visit types included. These are defined as ED visit types and combined ED to inpatient visits. Visit concept_id's include 9203 and 2000000048.
