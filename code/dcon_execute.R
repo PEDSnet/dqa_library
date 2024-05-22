@@ -30,14 +30,14 @@ conc_pts_list <-
                                   'acute'),
     'leukemia_dx_onco_spec' = list(site_cdm_tbl('condition_occurrence') %>% select(site, person_id, condition_concept_id, condition_start_date) %>%
                                      inner_join(load_codeset('dx_leukemia_comb'), by = c('condition_concept_id' = 'concept_id')),
-                                   site_cdm_tbl('visit_occurrence') %>% inner_join(site_cdm_tbl('provider'), by = 'provider_id') %>%
+                                   site_cdm_tbl('visit_occurrence') %>% inner_join(site_cdm_tbl('provider'), by = c('site', 'provider_id')) %>%
                                      select(site, person_id, provider_id, specialty_concept_id, visit_start_date) %>%
                                      inner_join(load_codeset('oncology_edit'), by = c('specialty_concept_id' = 'concept_id')),
                                    'dcon_leukemia_dx_onco_spec',
                                    'acute'),
     'nephsyn_dx_neph_spec' = list(site_cdm_tbl('condition_occurrence') %>% select(site, person_id, condition_concept_id, condition_start_date) %>%
                                     inner_join(load_codeset('dx_nephrotic_syndrome'), by = c('condition_concept_id' = 'concept_id')),
-                                  site_cdm_tbl('visit_occurrence') %>% inner_join(site_cdm_tbl('provider'), by = 'provider_id') %>%
+                                  site_cdm_tbl('visit_occurrence') %>% inner_join(site_cdm_tbl('provider'), by = c('site', 'provider_id')) %>%
                                     select(site, person_id, provider_id, specialty_concept_id, visit_start_date) %>%
                                     inner_join(load_codeset('nephrology'), by = c('specialty_concept_id' = 'concept_id')),
                                   'dcon_nephsyn_dx_neph_spec',
