@@ -185,8 +185,8 @@ check_dcon<- function(conc_tbls,
   
   for(k in 1:length(conc_tbls)) {
     
-    c1_date <- colnames(conc_tbls[[k]][[1]]) %>% str_subset(pattern = 'date')
-    c2_date <- colnames(conc_tbls[[k]][[2]]) %>% str_subset(pattern = 'date')
+    c1_date <- colnames(conc_tbls[[k]][[1]]) %>% str_subset(pattern = 'date') %>% first() #%>% pull()
+    c2_date <- colnames(conc_tbls[[k]][[2]]) %>% str_subset(pattern = 'date') %>% first() #%>% pull()
     
     cohort_1 <- conc_tbls[[k]][[1]] %>% mutate(date1 = !!sym(c1_date))
     cohort_2 <- conc_tbls[[k]][[2]] %>% mutate(date2 = !!sym(c2_date))
@@ -195,7 +195,7 @@ check_dcon<- function(conc_tbls,
       col_nm <- sym('visit_occurrence_id')
     } else{col_nm <- sym('person_id')}
     
-    if(conc_tbls[[4]] == 'acute' && check_string != 'dcon_visits'){
+    if(conc_tbls[[k]][[4]] == 'acute' && check_string != 'dcon_visits'){
       
       combined <- 
         cohort_1 %>% select(site, all_of(col_nm), date1) %>% 
@@ -205,7 +205,7 @@ check_dcon<- function(conc_tbls,
         mutate(date_diff = abs((date1 - date2))) %>%
         filter(date_diff <= 90)
       
-    }else if(conc_tbls[[4]] == 'chronic' && check_string != 'dcon_visits'){
+    }else if(conc_tbls[[k]][[4]] == 'chronic' && check_string != 'dcon_visits'){
       
       combined <- 
         cohort_1 %>% select(site, all_of(col_nm), date1) %>% 

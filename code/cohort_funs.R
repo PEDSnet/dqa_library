@@ -28,7 +28,7 @@ results_tbl <- function(name, db = config('db_src'),
 #' @return the cdm_tbl name with site as a grouper
 #' 
 
-site_cdm_tbl_old <- function(name,
+site_cdm_tbl <- function(name,
                        site_filter = config('site_filter'),
                        ...) {
   
@@ -53,7 +53,7 @@ site_cdm_tbl_old <- function(name,
 #' 
 #' @return the cdm_tbl_previous name with site as a grouper
 #' 
-site_cdm_tbl_prev_old <- function(name,
+site_cdm_tbl_prev <- function(name,
                               site_filter = config('site_filter_previous'),
                               ...) {
   

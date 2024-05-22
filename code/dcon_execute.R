@@ -57,31 +57,40 @@ conc_pts_list <-
   )
 
 conc_visits_list <-
-  list('ED_visits_ED_conds' = list(site_cdm_tbl('visit_occurrence') %>% filter(visit_concept_id==9203L),
+  list('ED_visits_ED_conds' = list(site_cdm_tbl('visit_occurrence') %>% filter(visit_concept_id==9203L) %>%
+                                     select(site, person_id, visit_occurrence_id, visit_start_date),
                                    site_cdm_tbl('condition_occurrence') %>% filter(
-                                         condition_type_concept_id %in% c(2000001280L,2000001281L,2000001282L,
-                                                                          2000001283L,2000001284L,2000001285L)
-                                       ), 'dcon_ed_visits_conds'),
-       'IP_visits_IP_conds' = list(site_cdm_tbl('visit_occurrence') %>% filter(visit_concept_id %in% c(9201)),
+                                     condition_type_concept_id %in% c(2000001280L,2000001281L,2000001282L,
+                                                                      2000001283L,2000001284L,2000001285L)) %>%
+                                     select(site, person_id, visit_occurrence_id, condition_concept_id, condition_start_date), 
+                                   'dcon_ed_visits_conds',
+                                   'visit'),
+       'IP_visits_IP_conds' = list(site_cdm_tbl('visit_occurrence') %>% filter(visit_concept_id %in% c(9201)) %>%
+                                     select(site, person_id, visit_occurrence_id, visit_start_date),
                                    site_cdm_tbl('condition_occurrence') %>% filter(condition_type_concept_id %in%
-                                                                                         c(2000000092L,2000000093L,
-                                                                                           2000000094L,2000000098L,
-                                                                                           2000000099L,2000000100L)),
-                                       'dcon_ip_visits_conds'),
-       'OP_visits_op_conds' = list(site_cdm_tbl('visit_occurrence') %>% filter(visit_concept_id %in% c(9202L)),
+                                                                                     c(2000000092L,2000000093L,
+                                                                                       2000000094L,2000000098L,
+                                                                                       2000000099L,2000000100L)) %>%
+                                     select(site, person_id, visit_occurrence_id, condition_concept_id, condition_start_date),
+                                   'dcon_ip_visits_conds',
+                                   'visit'),
+       'OP_visits_op_conds' = list(site_cdm_tbl('visit_occurrence') %>% filter(visit_concept_id %in% c(9202L)) %>%
+                                     select(site, person_id, visit_occurrence_id, visit_start_date),
                                    site_cdm_tbl('condition_occurrence') %>% filter(condition_type_concept_id %in% 
                                                                                      c(2000000095L, 2000000096L,
                                                                                        2000000097L, 2000000101L,
-                                                                                       2000000102L, 2000000103L)),
-                                   'dcon_op_visits_conds')
-           )
-  
-  
-  
+                                                                                       2000000102L, 2000000103L)) %>%
+                                     select(site, person_id, visit_occurrence_id, condition_concept_id, condition_start_date),
+                                   'dcon_op_visits_conds',
+                                   'visit')
+  )
+
+
+
 conc_metadata <- 
   list(
     'dcon_pts_ckd-dx_htn-rx' = list('cohort_1' = 'Patients with CKD diagnosis code',
-                                        'cohort_2' = 'Patients with anti-hypertensive medication'),
+                                    'cohort_2' = 'Patients with anti-hypertensive medication'),
     'dcon_ed_visits_conds' = list('cohort_1' = 'ED visit type',
                                   'cohort_2' = 'ED condition headers'),
     'dcon_ip_visits_conds' = list('cohort_1' = 'Inpatient visit type',
