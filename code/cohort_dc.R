@@ -75,7 +75,7 @@ compute_dc_meta_tbl <- function(meta_tbls,
 #' 
 #' 
 
-check_dc <- function(prev_v_tbls,
+check_dc <- function(prev_v_results,
                      current_v_tbls,
                      meta_tbls,
                      prev_v,
@@ -85,18 +85,20 @@ check_dc <- function(prev_v_tbls,
   
   cts <- list()
   
-  for(i in 1:length(prev_v_tbls)) {
+  for(i in 1:length(current_v_tbls)) {
     
-    if(any(str_detect(colnames(prev_v_tbls[[i]]),'person_id'))){
+    t=names(current_v_tbls[i])
+    
+    if(any(str_detect(colnames(current_v_tbls[[i]]),'person_id'))){
       
-    message(paste0('Computing ',names(prev_v_tbls[i])))
+    message(paste0('Computing ',names(current_v_tbls[i])))
       
     this_round_prev <- 
-      prev_v_tbls[[i]] %>%
-      summarise(total_ct=n(),
-                total_pt_ct=n_distinct(person_id)) %>%
-      collect() %>% 
-      mutate(database_version=prev_v)
+      prev_v_results %>%
+      filter(site == site_nm,
+             database_version == prev_v,
+             domain == t) %>%
+      collect()
     
     this_round_current <- 
       current_v_tbls[[i]] %>%
@@ -107,14 +109,14 @@ check_dc <- function(prev_v_tbls,
     
     }else{
       
-      message(paste0('Computing ',names(prev_v_tbls[i])))
+      message(paste0('Computing ',names(current_v_tbls[i])))
       
       this_round_prev <- 
-        prev_v_tbls[[i]] %>%
-        summarise(total_ct=n(),
-                  total_pt_ct=0) %>%
-        collect() %>% 
-        mutate(database_version=prev_v)
+        prev_v_results %>%
+        filter(site == site_nm,
+               database_version == prev_v,
+               domain == t) %>%
+        collect()
       
       this_round_current <- 
         current_v_tbls[[i]] %>%
@@ -125,21 +127,19 @@ check_dc <- function(prev_v_tbls,
     }
     
     
-    this_round <- 
-      dplyr::union(this_round_prev,
-                   this_round_current)
-    
-    t=names(prev_v_tbls[i])
+    this_round <- this_round_current
+  
     q=meta_tbls[[t]][[2]]
     
-    cts[[names(prev_v_tbls[i])]] <- 
+    cts[[names(current_v_tbls[i])]] <- 
       this_round  %>% 
       mutate(site = site_nm) %>%
      # add_meta(check_lib=check_string) %>%
       mutate(domain=t) %>%
       mutate(check_name=paste0(check_string,'_',q)) %>%
      # mutate(table_name = check_name_full) %>%
-      relocate(site, .before=total_ct)  %>% mutate(check_type=check_string)
+      relocate(site, .before=total_ct)  %>% mutate(check_type=check_string) %>%
+      union(this_round_prev)
     
     cts
     

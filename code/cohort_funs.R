@@ -17,6 +17,25 @@ results_tbl <- function(name, db = config('db_src'),
             'results_schema', db)
 }
 
+
+#' Connect to an existing CDM data table from previous cycle
+#'
+#' @param name The name of the table
+#' @param db The database connection; you will rarely need to specify this. 
+#' Defaults to `config('db_src_prev')`
+#'
+#' @return A [dplyr::tbl()]] pointing to the table
+#' @md
+
+results_tbl_prev <- function(name, db = config('db_src_prev'),
+                        results_tag =  TRUE, local_tag = FALSE) {
+  .qual_tbl(intermed_name(name, temporary = FALSE,
+                          results_tag = results_tag,
+                          local_tag = local_tag,
+                          schema = 'results_schema_prev'),
+            'results_schema_prev', db)
+}
+
 #' Add site to the cdm_tbl
 #' 
 #' @param name the name of the table, as a string

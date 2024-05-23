@@ -37,7 +37,7 @@ config_append('extra_packages', c('tidyr','lubridate','stringr', 'dplyr', 'spark
 
   message('DC (Data Cycle) Check')
     source(file.path(base_dir, 'code', 'dc_execute.R'))
-    dc_output <- check_dc(prev_v_tbls = dc_args_prev,
+    dc_output <- check_dc(prev_v_results = results_tbl_prev('dc_output'),
                           current_v_tbls = dc_args_current,
                           meta_tbls = dc_args_meta,
                           prev_v = prev,
