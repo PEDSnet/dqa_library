@@ -10,7 +10,7 @@
 
 time_tbls_list = list(
   'fot_im' = list(site_cdm_tbl('immunization'), 'all immunizations'),
-  'fot_im_covid19' = list(site_cdm_tbl('immunization') %>% inner_join(load_codeset_spark('c19_immunizations'),
+  'fot_im_covid19' = list(site_cdm_tbl('immunization') %>% inner_join(load_codeset('c19_immunizations'),
                                                                       by=c('immunization_concept_id'='concept_id')), 'covid19 immunizations'),
   #'fot_pr_appendectomy' = list(site_cdm_tbl('procedure_occurrence') %>% inner_join(load_codeset('appendectomy'),
                                                                                    #by=c('procedure_concept_id'='concept_id')), 'appendectomy procedures'),
