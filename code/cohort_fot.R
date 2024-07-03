@@ -40,7 +40,7 @@ check_fot <- function(time_tbls,
     
     message(paste0('Starting ',i))
     
-    total_cts <- time_tbls_list[[k]][[1]] %>%
+    total_cts <- time_tbls_list[[i]][[1]] %>%
       group_by(site) %>%
       summarise(total_pt = n_distinct(person_id),
                 total_visit = n_distinct(visit_occurrence_id),
