@@ -141,7 +141,15 @@ config_append('extra_packages', c('tidyr','lubridate','stringr', 'dplyr'))
     fot_all_reduce <- reduce(.x=fot_all,
                              .f=dplyr::union)
     
-    output_tbl_append(fot_all_reduce,
+    fot_visit_denom <- fot_all_reduce %>% filter(check_name == 'fot_vi') %>%
+      select(site, month_end, row_cts, row_visits, row_pts) %>%
+      rename('total_pt' = row_pts,
+             'total_visit' = row_visits,
+             'total_row' = row_cts)
+    
+    fot_w_denom <- fot_all_reduce %>% left_join(fot_visit_denom)
+    
+    output_tbl_append(fot_w_denom,
                       'fot_output')
     
   message('Domain Concordance Check')

@@ -40,12 +40,12 @@ check_fot <- function(time_tbls,
     
     message(paste0('Starting ',i))
     
-    total_cts <- time_tbls_list[[i]][[1]] %>%
-      group_by(site) %>%
-      summarise(total_pt = n_distinct(person_id),
-                total_visit = n_distinct(visit_occurrence_id),
-                total_row = n()) %>%
-      collect()
+    # total_cts <- time_tbls_list[[i]][[1]] %>%
+    #   group_by(site) %>%
+    #   summarise(total_pt = n_distinct(person_id),
+    #             total_visit = n_distinct(visit_occurrence_id),
+    #             total_row = n()) %>%
+    #   collect()
     
     temp_results <- list()
     
@@ -130,8 +130,8 @@ check_fot <- function(time_tbls,
       
     }
     
-    final_results[[paste0(check_string, '_', n)]] = reduce(.x=temp_results, .f=union) %>% 
-      left_join(total_cts)
+    final_results[[paste0(check_string, '_', n)]] = reduce(.x=temp_results, .f=union) #%>% 
+      #left_join(total_cts)
     
   }
   
