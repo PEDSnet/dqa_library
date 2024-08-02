@@ -54,14 +54,37 @@ check_vs <- function(valuesets,
         inner_join(select(
           vocabulary_tbl('concept'),
           concept_id, concept_name, vocabulary_id
-        ), by = join_cols) %>% collect_new() %>%
-        add_meta(check_lib = string_tbl_name) %>%
-        mutate(check_name = names(valuesets[i]),
-               table_application = valuesets[[i]][[3]],
-               accepted_value = FALSE) %>%
-        left_join(total_rows)
+        ), by = join_cols) %>% collect_new() 
+      
+      
+      if(nrow(illegal_values) > 0){
+      
+        illegal_final <- illegal_values %>%
+          add_meta(check_lib = string_tbl_name) %>%
+          mutate(check_name = names(valuesets[i]),
+                 table_application = valuesets[[i]][[3]],
+                 accepted_value = FALSE) %>%
+          left_join(total_rows)
+      
+      }else{
+        
+        illegal_final <- total_rows %>%
+          add_meta(check_lib = string_tbl_name) %>%
+          mutate(check_name = names(valuesets[i]),
+                 table_application = valuesets[[i]][[3]],
+                 accepted_value = TRUE,
+                 measurement_column = -999,
+                 total_viol_ct = 0,
+                 total_viol_pt_ct = 0,
+                 concept_name = 'No violations',
+                 vocabulary_id = 'PEDSnet',
+                 accepted_value = TRUE) %>%
+          relocate(measurement_column) %>%
+          rename_with(~valuesets[[i]][[2]], measurement_column) 
+        
+      }
 
-    check_valueset[[names(valuesets[i])]] <- illegal_values
+    check_valueset[[names(valuesets[i])]] <- illegal_final
     
   }
   
@@ -160,16 +183,19 @@ check_vc <- function(vocabvals,
 #' 
 
 create_vc_vs_output <- function(tbl_list,
-                             string_tbl_name='vc') {
+                                vs_list,
+                                string_tbl_name='vc') {
   
   meta_tbl <- list()
   
   if(length(tbl_list) == 0L) {
     
+    for(i in 1:length(vs_list)){
+    
     final <- 
       tibble(
-        table_application = 'none',
-        measurement_column = 'none',
+        table_application = vs_list[[i]][[3]],
+        measurement_column = vs_list[[i]][[2]],
         concepts = -999,
         total_viol_ct = 0,
         total_viol_pt_ct = 0,
@@ -178,13 +204,15 @@ create_vc_vs_output <- function(tbl_list,
         check_type = string_tbl_name,
         database_version = config('current_version'),
         site = config('site'),
-        check_name = paste0(string_tbl_name, '_no_violation'),
+        check_name = names(vs_list[i]),
         total_denom_ct = 0,
         total_pt_ct = 0,
         accepted_value = TRUE
       )
     
-    meta_tbl[[1]] <- final
+    meta_tbl[[i]] <- final
+    
+    }
     
   }  else {
     
@@ -206,8 +234,6 @@ create_vc_vs_output <- function(tbl_list,
     }
     
   }
-  
- 
   
   meta_tbl
 }
