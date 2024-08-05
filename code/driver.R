@@ -62,11 +62,18 @@ config_append('extra_packages', c('tidyr','lubridate','stringr', 'dplyr'))
     vs <- check_vs(valuesets=vs_list)
     vc_standard <- create_vc_vs_output(vc, vs_list, string_tbl_name = 'vc')
     vs_standard <- create_vc_vs_output(vs, vs_list, string_tbl_name = 'vs')
-    vc_vs_joined <- c(vc_standard,
-                      vs_standard)
-    vc_vs_final <- vc_vs_joined %>% reduce(.f=dplyr::union)
-    output_tbl_append(vc_vs_final,
-                      'vc_vs_violations')
+    
+    vc_reduce <- vc_standard %>% reduce(.f = dplyr::union)
+    output_tbl_append(vc_reduce, 'vc_output')
+    
+    vs_reduce <- vs_standard %>% reduce(.f = dplyr::union)
+    output_tbl_append(vs_reduce, 'vs_output')
+    
+    # vc_vs_joined <- c(vc_standard,
+    #                   vs_standard)
+    # vc_vs_final <- vc_vs_joined %>% reduce(.f=dplyr::union)
+    # output_tbl_append(vc_vs_final,
+    #                   'vc_vs_violations')
 
   message('UC (Unmapped Concepts) Check')
     source(file.path(base_dir, 'code', 'uc_execute.R'))
