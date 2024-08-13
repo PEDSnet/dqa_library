@@ -1,0 +1,72 @@
+concept_id,concept_name,concept_code,vocabulary_id
+4266367,Influenza,6142004,SNOMED
+36714388,Influenza caused by seasonal influenza virus,719590007,SNOMED
+256723,Pneumonia and influenza,195878008,SNOMED
+46273463,Upper respiratory tract infection due to Influenza,10685111000119102,SNOMED
+320752,Influenza with non-respiratory manifestation,61700007,SNOMED
+40483537,Influenza due to Influenza A virus,442438000,SNOMED
+36676238,Pneumonia caused by Influenza A virus,772839003,SNOMED
+46270491,Upper respiratory tract infection due to Influenza A,3.28531E+14,SNOMED
+4112824,Influenza with gastrointestinal tract involvement,195929004,SNOMED
+4252885,Influenza with encephalopathy,74644004,SNOMED
+4299935,Myocarditis due to influenza virus,78046005,SNOMED
+46269706,Otitis media due to influenza,10624951000119108,SNOMED
+35207930,Influenza due to certain identified influenza viruses,J09,ICD10CM
+45581844,Influenza due to unidentified influenza virus with encephalopathy,J11.81,ICD10CM
+45591544,Influenza due to identified novel H1N1 influenza virus with myocarditis,J09.191,ICD10CM
+45596276,Influenza due to identified novel influenza A virus with pneumonia,J09.X1,ICD10CM
+45755451,"Influenza, virus not identified",J11,ICD10
+45755449,Influenza due to identified zoonotic or pandemic influenza virus,J09,ICD10
+45548104,Influenza due to identified novel H1N1 influenza virus with otitis media,J09.192,ICD10CM
+45581843,"Influenza with other manifestations, virus not identified",J11.8,ICD10
+45576944,Influenza due to identified novel H1N1 influenza virus with other specified type of pneumonia,J09.118,ICD10CM
+1569459,Influenza due to other identified influenza virus,J10,ICD10CM
+920134,Influenza due to identified novel H1N1 influenza virus with respiratory manifestations,J09.11,ICD10CM
+45552878,Influenza due to identified novel H1N1 influenza virus with encephalopathy,J09.190,ICD10CM
+45601118,Influenza due to identified novel influenza A virus with gastrointestinal manifestations,J09.X3,ICD10CM
+45548103,Influenza due to identified novel H1N1 influenza virus with identified novel H1N1 influenza pneumonia,J09.110,ICD10CM
+45601119,"Influenza with pneumonia, seasonal influenza virus identified",J10.0,ICD10
+45562440,Influenza due to identified novel influenza A virus with other respiratory manifestations,J09.X2,ICD10CM
+45572159,"Influenza with other manifestations, seasonal influenza virus identified",J10.8,ICD10
+1569462,Influenza due to unidentified influenza virus,J11,ICD10CM
+45533544,"Influenza with pneumonia, virus not identified",J11.0,ICD10
+45543254,Influenza due to other identified influenza virus with the same other identified influenza virus pneumonia,J10.01,ICD10CM
+45591543,Influenza due to identified avian influenza virus with myocarditis,J09.091,ICD10CM
+45591542,Influenza due to identified avian influenza virus with unspecified type of pneumonia,J09.019,ICD10CM
+45605882,Influenza due to identified novel H1N1 influenza virus with unspecified type of pneumonia,J09.119,ICD10CM
+45591545,Influenza due to other identified influenza virus with other specified pneumonia,J10.08,ICD10CM
+45601120,"Influenza with other respiratory manifestations, seasonal influenza virus identified",J10.1,ICD10
+45596275,Influenza due to identified avian influenza virus with gastrointestinal manifestations,J09.03,ICD10CM
+45548101,Influenza due to identified avian influenza virus with other respiratory manifestations,J09.02,ICD10CM
+920133,Influenza due to identified avian influenza virus with respiratory manifestations,J09.01,ICD10CM
+45591546,Influenza due to other identified influenza virus with myocarditis,J10.82,ICD10CM
+35207931,Influenza due to other identified influenza virus with other respiratory manifestations,J10.1,ICD10CM
+45586658,Influenza due to identified avian influenza virus with otitis media,J09.092,ICD10CM
+45538475,Influenza due to unidentified influenza virus with otitis media,J11.83,ICD10CM
+45591541,Influenza due to identified avian influenza virus with other specified type of pneumonia,J09.018,ICD10CM
+45601117,Influenza due to identified avian influenza virus with other manifestations,J09.098,ICD10CM
+45557617,"Influenza with other respiratory manifestations, virus not identified",J11.1,ICD10
+1569461,Influenza due to other identified influenza virus with other manifestations,J10.8,ICD10CM
+1569458,Influenza due to identified novel influenza A virus,J09.X,ICD10CM
+45557616,Influenza due to identified novel H1N1 influenza virus with other manifestations,J09.198,ICD10CM
+45581842,Influenza due to unidentified influenza virus with specified pneumonia,J11.08,ICD10CM
+45755450,Influenza due to identified seasonal influenza virus,J10,ICD10
+45576945,Influenza due to other identified influenza virus with gastrointestinal manifestations,J10.2,ICD10CM
+45581845,Influenza due to unidentified influenza virus with other manifestations,J11.89,ICD10CM
+45567259,Influenza due to other identified influenza virus with unspecified type of pneumonia,J10.00,ICD10CM
+1569460,Influenza due to other identified influenza virus with pneumonia,J10.0,ICD10CM
+45562438,Influenza due to identified novel H1N1 influenza virus with other respiratory manifestations,J09.12,ICD10CM
+1569464,Influenza due to unidentified influenza virus with other manifestations,J11.8,ICD10CM
+45586659,Influenza due to other identified influenza virus with encephalopathy,J10.81,ICD10CM
+45581841,Influenza due to identified novel influenza A virus with other manifestations,J09.X9,ICD10CM
+45586661,Influenza due to unidentified influenza virus with unspecified type of pneumonia,J11.00,ICD10CM
+45562439,Influenza due to identified novel H1N1 influenza virus with gastrointestinal manifestations,J09.13,ICD10CM
+1569463,Influenza due to unidentified influenza virus with pneumonia,J11.0,ICD10CM
+40475104,Influenza and pneumonia,J09-J18,ICD10
+45605881,Influenza due to identified avian influenza virus with identified avian influenza pneumonia,J09.010,ICD10CM
+8689,Influenza due to unidentified influenza virus with other respiratory manifestations,J11.1,ICD10CM
+45543255,Influenza due to unidentified influenza virus with myocarditis,J11.82,ICD10CM
+45601121,Influenza due to other identified influenza virus with otitis media,J10.83,ICD10CM
+45548102,Influenza due to identified avian influenza virus with encephalopathy,J09.090,ICD10CM
+45586660,Influenza due to other identified influenza virus with other manifestations,J10.89,ICD10CM
+45572160,Influenza due to unidentified influenza virus with gastrointestinal manifestations,J11.2,ICD10CM

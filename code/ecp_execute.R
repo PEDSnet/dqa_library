@@ -91,6 +91,18 @@ ecp_codeset_list <- list(
                             pdl_pts,
                             'measurement_concept_id',
                             load_codeset('ecp_concepts', 'ciccc') %>% filter(concept_group == 'rapid_strep'),
-                            'ecp_rapid_strep')
+                            'ecp_rapid_strep'),
+  
+  'flu_labs' = list(site_cdm_tbl('measurement_labs'),
+                    pdl_pts,
+                    'measurement_concept_id',
+                    load_codeset('ecp_concepts', 'ciccc') %>% filter(concept_group == 'influenza'),
+                    'ecp_flu'),
+  
+  'rsv_labs' = list(site_cdm_tbl('measurement_labs'),
+                    pdl_pts,
+                    'measurement_concept_id',
+                    load_codeset('ecp_concepts', 'ciccc') %>% filter(concept_group == 'rsv'),
+                    'ecp_rsv')
   
 )

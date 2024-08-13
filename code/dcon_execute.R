@@ -53,7 +53,19 @@ conc_pts_list <-
                                cdm_tbl('drug_exposure') %>% select(site, person_id, drug_concept_id, drug_exposure_start_date) %>%
                                  inner_join(load_codeset('insulin'), by = c('drug_concept_id' = 'concept_id')),
                                'dcon_t1d_dx_insulin_rx',
-                               'acute')
+                               'acute'),
+    'flu_dx_flu_lab' = list(site_cdm_tbl('condition_occurrence') %>% select(site, person_id, condition_concept_id, condition_start_date) %>%
+                              inner_join(load_codeset('dx_influenza'), by = c('condition_concept_id' = 'concept_id')),
+                            site_cdm_tbl('measurement_labs') %>% select(site, person_id, measurement_concept_id, measurement_date) %>%
+                              inner_join(load_codeset('lab_influenza'), by = c('measurement_concept_id' = 'concept_id')),
+                            'dcon_flu_dx_flu_lab',
+                            'acute'),
+    'rsv_dx_rsv_lab' = list(site_cdm_tbl('condition_occurrence') %>% select(site, person_id, condition_concept_id, condition_start_date) %>%
+                              inner_join(load_codeset('dx_rsv'), by = c('condition_concept_id' = 'concept_id')),
+                            site_cdm_tbl('measurement_labs') %>% select(site, person_id, measurement_concept_id, measurement_date) %>%
+                              inner_join(load_codeset('lab_rsv'), by = c('measurement_concept_id' = 'concept_id')),
+                            'dcon_rsv_dx_rsv_lab',
+                            'acute')
   )
 
 conc_visits_list <-

@@ -223,3 +223,290 @@ rapid_strep,40763543,60489-2,Streptococcus pyogenes DNA [Presence] in Throat by 
 rapid_strep,43055233,72268-6,Streptococcus pyogenes exotoxin B speB gene [Presence] in Specimen by NAA with probe detection,LOINC
 rapid_strep,3009769,5036-9,Streptococcus pyogenes rRNA [Presence] in Specimen by Probe,LOINC
 rapid_strep,40771489,68954-7,Streptococcus pyogenes rRNA [Presence] in Throat by Probe,LOINC
+rsv,3000108,30076-4,Respiratory syncytial virus B RNA [Presence] in Specimen by NAA with probe detection,LOINC
+rsv,36308813,LA25845-1,Respiratory syncytial virus B,LOINC
+rsv,3000783,30148-1,Respiratory syncytial virus Ab [Presence] in Serum --2nd specimen,LOINC
+rsv,37020688,92881-2,Human metapneumovirus and Respiratory syncytial virus RNA panel - Upper respiratory specimen by NAA with probe detection,LOINC
+rsv,1990610,LP429528-5,Respiratory syncytial virus | Cornea or Conjunctiva | Microbiology,LOINC
+rsv,36660154,94636-8,Bovine respiratory syncytial virus RNA [Cycle Threshold #] in Specimen by NAA with probe detection,LOINC
+rsv,3008947,24224-8,Respiratory syncytial virus Ab [Titer] in Serum by Complement fixation --1st specimen,LOINC
+rsv,1175200,90331-0,PRRSV IgA+IgM/Positive control in Specimen by Immunoassay,LOINC
+rsv,40655717,LG34088-1,Respiratory syncytial virus A RNA|Presence or Threshold|Any Respiratory specimen,LOINC
+rsv,37073267,LP378943-7,Respiratory syncytial virus B RNA | Cornea or Conjunctiva | Microbiology,LOINC
+rsv,3018189,24299-0,Respiratory syncytial virus Ab [Titer] in Serum --2nd specimen,LOINC
+rsv,3005156,30075-6,Respiratory syncytial virus A RNA [Presence] in Specimen by NAA with probe detection,LOINC
+rsv,44786952,74309-6,PRRSV ORF5 gene sequence homology to Ingelvac MLV in Isolate by Sequencing,LOINC
+rsv,3005699,23370-0,PRRSV Ag [Presence] in Tissue by Immune stain,LOINC
+rsv,37045531,LP378933-8,Respiratory syncytial virus IgG | Serum | Microbiology,LOINC
+rsv,37038007,LP379526-9,PRRSV ORF5 gene sequence homology to Ingelvac MLV | Isolate | Microbiology,LOINC
+rsv,37072352,LP378955-1,Respiratory syncytial virus RNA | Isolate | Microbiology,LOINC
+rsv,1003126,LP417139-5,Human metapneumovirus and Respiratory syncytial virus RNA panel | Upper respiratory specimen | Microbiology Panels,LOINC
+rsv,37065683,LP378947-8,Respiratory syncytial virus B RNA | XXX | Microbiology,LOINC
+rsv,37048818,LP378935-3,Respiratory syncytial virus IgM | Serum | Microbiology,LOINC
+rsv,37077631,LP379522-8,PRRSV ORF5 gene RNA pattern | Isolate | Microbiology,LOINC
+rsv,37050644,LP378928-8,Respiratory syncytial virus A 5' UTR RNA | Nasopharynx | Microbiology,LOINC
+rsv,37041209,LP379519-4,PRRSV European strain RNA | XXX | Microbiology,LOINC
+rsv,3050429,49037-5,Respiratory syncytial virus IgG and IgM panel [Units/volume] - Serum,LOINC
+rsv,3046856,33045-6,Respiratory syncytial virus Ag [Presence] in Nose,LOINC
+rsv,44786948,74305-4,PRRSV Ag [Presence] in Specimen by Immunofluorescence,LOINC
+rsv,3008586,22467-5,Respiratory syncytial virus IgM Ab [Titer] in Serum,LOINC
+rsv,1618186,LP427705-1,Bovine respiratory syncytial virus RNA | XXX | Microbiology,LOINC
+rsv,37061458,LP379523-6,PRRSV ORF5 gene sequence | Isolate | Microbiology,LOINC
+rsv,37067337,LP378957-7,Respiratory syncytial virus RNA | Respiratory specimen | Microbiology,LOINC
+rsv,3017198,31751-1,Bovine respiratory syncytial virus Ag [Presence] in Lung,LOINC
+rsv,37038184,LP378958-5,Respiratory syncytial virus RNA | Lower respiratory specimen | Microbiology,LOINC
+rsv,44786953,74310-4,PRRSV strain identified in Isolate by Sequencing,LOINC
+rsv,37020439,91785-6,Respiratory syncytial virus [Presence] in Upper respiratory specimen by Organism specific culture,LOINC
+rsv,40655718,LG34028-7,Respiratory syncytial virus Ag|Presence or Threshold|Any Respiratory specimen,LOINC
+rsv,36308789,LA26163-8,Respiratory syncytial virus subtype B,LOINC
+rsv,36303588,88595-4,Respiratory syncytial virus A RNA [Presence] in Lower respiratory specimen by NAA with probe detection,LOINC
+rsv,40655720,LG34071-7,Respiratory syncytial virus RNA|Presence or Threshold|Any Respiratory specimen,LOINC
+rsv,36203425,85586-6,PRRSV European and North American strains IgG panel - Serum by Immunofluorescence,LOINC
+rsv,1175755,90333-6,PRRSV IgM Ab/Positive control in Specimen by Immunoassay,LOINC
+rsv,3039914,52975-0,Respiratory syncytial virus Ab [Units/volume] in Serum by Complement fixation,LOINC
+rsv,37046341,LP379513-7,PRRSV antigen | Tissue and Smears | Microbiology,LOINC
+rsv,37024043,LP379244-9,Bovine respiratory syncytial virus Ag | Lung | Microbiology,LOINC
+rsv,3044254,40988-8,Respiratory syncytial virus RNA [Presence] in Specimen by NAA with probe detection,LOINC
+rsv,37053418,LP378921-3,Respiratory syncytial virus | Nose | Microbiology,LOINC
+rsv,36660638,95155-8,PRRSV ORF5 gene sequence homology to Prevacent in Isolate by Sequencing,LOINC
+rsv,21493385,80598-6,Respiratory syncytial virus B F gene [Presence] in Nasopharynx by NAA with probe detection,LOINC
+rsv,3016656,9573-7,Respiratory syncytial virus IgG Ab [Titer] in Serum by Immunofluorescence,LOINC
+rsv,37061672,LP379507-9,PRRSV antibody | Serum | Microbiology,LOINC
+rsv,40655719,LG34089-9,Respiratory syncytial virus B RNA|Presence or Threshold|Any Respiratory specimen,LOINC
+rsv,37063324,LP379245-6,Bovine respiratory syncytial virus Ag | XXX | Microbiology,LOINC
+rsv,37032085,LP379516-0,PRRSV virus RNA | Semen | Microbiology,LOINC
+rsv,36203381,85542-9,PRRSV Ingelvac ATP strain ORF5 gene [Cycle Threshold #] in Specimen by NAA with probe detection,LOINC
+rsv,37065137,LP378960-1,Respiratory syncytial virus RNA | XXX | Microbiology,LOINC
+rsv,3007925,15496-3,PRRSV Ab [Presence] in Serum by Immunofluorescence,LOINC
+rsv,36304133,88597-0,Respiratory syncytial virus B RNA [Presence] in Lower respiratory specimen by NAA with probe detection,LOINC
+rsv,37076683,LP378959-3,Respiratory syncytial virus RNA | Upper respiratory specimen | Microbiology,LOINC
+rsv,37040977,LP379509-5,PRRSV European strain neutralizing antibody | Serum | Microbiology,LOINC
+rsv,37066720,LP379527-7,PRRSV ORF5 gene sequence homology to Lelystad | Isolate | Microbiology,LOINC
+rsv,37080298,LG50859-4,Respiratory syncytial virus|Presence or Threshold|Any Respiratory specimen,LOINC
+rsv,37057736,LP378946-0,Respiratory syncytial virus B RNA | Upper respiratory specimen | Microbiology,LOINC
+rsv,37020635,92142-9,Influenza virus A RNA [Presence] in Respiratory specimen by NAA with probe detection,LOINC
+rsv,37069803,LP378937-9,Respiratory syncytial virus Ag | Nose | Microbiology,LOINC
+rsv,37055228,LP378956-9,Respiratory syncytial virus RNA | Nasopharynx | Microbiology,LOINC
+rsv,36305321,88202-7,Respiratory syncytial virus B RNA [Presence] in Cornea or Conjunctiva by NAA with probe detection,LOINC
+rsv,44786949,74306-2,PRRSV ORF5 gene sequence homology to Fostera in Isolate by Sequencing,LOINC
+rsv,37019752,91794-8,Respiratory syncytial virus B RNA [Presence] in Upper respiratory specimen by NAA with probe detection,LOINC
+rsv,36303916,88204-3,Respiratory syncytial virus A RNA [Presence] in Cornea or Conjunctiva by NAA with probe detection,LOINC
+rsv,36660210,94638-4,Bovine respiratory syncytial virus neutralizing antibody [Titer] in Serum by Neutralization test,LOINC
+rsv,36661285,LP419164-1,PRRSV ORF5 gene sequence homology to Prime Pac | Isolate | Microbiology,LOINC
+rsv,3028422,23367-6,PRRSV Ab [Presence] in Serum by Complement fixation,LOINC
+rsv,3005305,30147-3,Respiratory syncytial virus Ab [Presence] in Serum --1st specimen,LOINC
+rsv,21493384,80597-8,Respiratory syncytial virus A 5' UTR RNA [Presence] in Nasopharynx by NAA with probe detection,LOINC
+rsv,3003681,22451-9,PRRSV Ab [Presence] in Serum,LOINC
+rsv,46234983,77023-0,Respiratory syncytial virus B RNA [Presence] in Nasopharynx by NAA with probe detection,LOINC
+rsv,3041059,40989-6,Respiratory syncytial virus IgG Ab [Presence] in Serum by Immunoassay,LOINC
+rsv,44786957,74314-6,PRRSV ORF5 gene RNA pattern [Identifier] in Isolate by RFLP,LOINC
+rsv,36033658,96763-8,SARS-CoV-2 (COVID-19) E gene [Presence] in Respiratory specimen by NAA with probe detection,LOINC
+rsv,37035610,LP379518-6,PRRSV European strain ORF5 gene | XXX | Microbiology,LOINC
+rsv,37020057,91809-4,Human metapneumovirus RNA [Presence] in Upper respiratory specimen by NAA with probe detection,LOINC
+rsv,36311097,LA19239-5,Respiratory syncytial virus,LOINC
+rsv,37027286,LP379529-3,PRRSV Ingelvac MLV strain ORF5 gene | XXX | Microbiology,LOINC
+rsv,46235767,76088-4,Respiratory syncytial virus RNA [Presence] in Bronchoalveolar lavage by NAA with probe detection,LOINC
+rsv,3024061,23368-4,PRRSV neutralizing antibody [Presence] in Serum by Neutralization test,LOINC
+rsv,43534059,72885-7,Respiratory syncytial virus Ag [Presence] in Nasopharynx by Rapid immunoassay,LOINC
+rsv,44786951,74308-8,PRRSV ORF5 gene sequence homology to Ingelvac ATP in Isolate by Sequencing,LOINC
+rsv,3027102,23371-8,PRRSV RNA [Presence] in Semen by NAA with probe detection,LOINC
+rsv,37037114,LP379512-9,PRRSV North American strain IgG | Serum | Microbiology,LOINC
+rsv,36304900,88528-5,Respiratory syncytial virus RNA [Presence] in Cornea or Conjunctiva by NAA with probe detection,LOINC
+rsv,36203320,85476-0,Influenza virus A and B and Respiratory syncytial virus RNA panel - Upper respiratory specimen by NAA with probe detection,LOINC
+rsv,36309353,LA25844-4,Respiratory syncytial virus A,LOINC
+rsv,37077457,LP378932-0,Respiratory syncytial virus IgG | Cerebral spinal fluid | Microbiology,LOINC
+rsv,3015490,24225-5,Respiratory syncytial virus Ab [Titer] in Serum by Complement fixation --2nd specimen,LOINC
+rsv,37028002,LP380091-1,Respiratory syncytial virus IgG and IgM panel | Serum | Microbiology Panels,LOINC
+rsv,3000122,17520-8,Respiratory syncytial virus identified in Specimen by Organism specific culture,LOINC
+rsv,36031861,95941-1,Influenza virus A and B and SARS-CoV-2 (COVID-19) and Respiratory syncytial virus RNA panel - Respiratory specimen by NAA with probe detection,LOINC
+rsv,3020426,5876-8,Respiratory syncytial virus Ag [Presence] in Specimen by Immunoassay,LOINC
+rsv,37069324,LP379520-2,PRRSV North American strain RNA | XXX | Microbiology,LOINC
+rsv,3030958,33382-3,Respiratory syncytial virus Ab [Titer] in Cerebral spinal fluid,LOINC
+rsv,3035560,31572-1,PRRSV Ab [Units/volume] in Serum,LOINC
+rsv,36203321,85477-8,Influenza virus A RNA [Presence] in Upper respiratory specimen by NAA with probe detection,LOINC
+rsv,37036298,LP378923-9,Respiratory syncytial virus A RNA | Cornea or Conjunctiva | Microbiology,LOINC
+rsv,44786961,74318-7,PRRSV North American strain RNA [Cycle Threshold #] in Specimen by NAA with probe detection,LOINC
+rsv,36304818,88527-7,Respiratory syncytial virus [Presence] in Cornea or Conjunctiva by Organism specific culture,LOINC
+rsv,1176171,91133-9,Respiratory syncytial virus RNA [Presence] in Lower respiratory specimen by NAA with probe detection,LOINC
+rsv,3009489,20943-7,Bovine respiratory syncytial virus Ag [Presence] in Lung by Immune stain,LOINC
+rsv,3022004,23772-7,PRRSV Ab [Titer] in Serum by Immunofluorescence,LOINC
+rsv,3035651,5294-4,Respiratory syncytial virus Ab [Titer] in Serum by Complement fixation,LOINC
+rsv,36203372,85528-8,PRRSV European strain IgG Ab [Titer] in Serum by Immunofluorescence,LOINC
+rsv,36203389,85550-2,PRRSV North American strain neutralizing antibody [Presence] in Serum by Neutralization test,LOINC
+rsv,3041203,41012-6,Respiratory syncytial virus IgG Ab [Presence] in Serum,LOINC
+rsv,44786947,74304-7,PRRSV neutralizing antibody [Titer] in Serum by Neutralization test,LOINC
+rsv,40758230,55100-2,Respiratory syncytial virus [Presence] in Specimen by Organism specific culture,LOINC
+rsv,1991150,LP431869-9,Bovine respiratory syncytial virus Ab.Neut | Serum | Microbiology,LOINC
+rsv,3027791,32040-8,Respiratory syncytial virus Ag [Presence] in Nose by Immunofluorescence,LOINC
+rsv,1002997,LP417138-7,Human metapneumovirus and Respiratory syncytial virus RNA panel | Lower respiratory specimen | Microbiology Panels,LOINC
+rsv,37040690,LP378961-9,Respiratory syncytial virus genotype | XXX | Microbiology,LOINC
+rsv,40771500,68966-1,Respiratory syncytial virus Ag [Presence] in Nasopharynx by Immunoassay,LOINC
+rsv,37075573,LP379521-0,PRRSV ORF5 gene RNA | XXX | Microbiology,LOINC
+rsv,3019907,5875-0,Respiratory syncytial virus Ag [Presence] in Throat by Immunofluorescence,LOINC
+rsv,36660160,94613-7,Bovine respiratory syncytial virus Ag [Presence] in Tissue by Immune stain,LOINC
+rsv,37049298,LP378930-4,Respiratory syncytial virus Ab | Serum | Microbiology,LOINC
+rsv,3037590,17518-2,Respiratory syncytial virus IgG Ab [Titer] in Serum,LOINC
+rsv,3017654,24298-2,Respiratory syncytial virus Ab [Titer] in Serum --1st specimen,LOINC
+rsv,37019510,91795-5,Respiratory syncytial virus A RNA [Presence] in Upper respiratory specimen by NAA with probe detection,LOINC
+rsv,37049981,LP378941-1,Respiratory syncytial virus Ag | Tissue and Smears | Microbiology,LOINC
+rsv,36203322,85478-6,Influenza virus B RNA [Presence] in Upper respiratory specimen by NAA with probe detection,LOINC
+rsv,37052612,LP378954-4,Respiratory syncytial virus RNA | Cornea or Conjunctiva | Microbiology,LOINC
+rsv,3029436,33390-6,Respiratory syncytial virus Ab [Presence] in Serum,LOINC
+rsv,36203382,85543-7,PRRSV IgG Ab/Positive control in Saliva (oral fluid) by Immunoassay,LOINC
+rsv,36203369,85525-4,PRRSV North American strain IgG Ab [Titer] in Serum by Immunofluorescence,LOINC
+rsv,36660216,95154-1,PRRSV ORF5 gene sequence homology to Prime Pac in Isolate by Sequencing,LOINC
+rsv,37071857,LP378925-4,Respiratory syncytial virus A RNA | Lower respiratory specimen | Microbiology,LOINC
+rsv,1990972,LP429530-1,Respiratory syncytial virus | Upper respiratory specimen | Microbiology,LOINC
+rsv,3023609,5874-3,Respiratory syncytial virus Ag [Presence] in Throat by Immunoassay,LOINC
+rsv,36203384,85545-2,PRRSV North American strain RNA [Presence] in Specimen by NAA with probe detection,LOINC
+rsv,37074959,LP378931-2,Respiratory syncytial virus IgA | Serum | Microbiology,LOINC
+rsv,36203390,85551-0,PRRSV European and North American strains neutralizing antibody panel - Serum by Neutralization test,LOINC
+rsv,36203383,85544-5,PRRSV Ab/Positive control in Serum or Plasma by Immunoassay,LOINC
+rsv,706163,94500-6,SARS-CoV-2 (COVID-19) RNA [Presence] in Respiratory specimen by NAA with probe detection,LOINC
+rsv,37072192,LP378942-9,Respiratory syncytial virus Ag | XXX | Microbiology,LOINC
+rsv,3024195,7992-1,Respiratory syncytial virus IgM Ab [Units/volume] in Serum,LOINC
+rsv,3016643,9574-5,Respiratory syncytial virus IgM Ab [Titer] in Serum by Immunofluorescence,LOINC
+rsv,37078306,LP378939-5,Respiratory syncytial virus Ag | Lower respiratory specimen | Microbiology,LOINC
+rsv,37068281,LP379525-1,PRRSV ORF5 gene sequence homology to Ingelvac ATP | Isolate | Microbiology,LOINC
+rsv,36203388,85549-4,PRRSV European strain neutralizing antibody [Presence] in Serum by Neutralization test,LOINC
+rsv,37061788,LP378948-6,Respiratory syncytial virus B F gene | Nasopharynx | Microbiology,LOINC
+rsv,37073662,LP378924-7,Respiratory syncytial virus A RNA | Nasopharynx | Microbiology,LOINC
+rsv,36203418,85579-1,PRRSV European strain ORF5 gene [Presence] in Specimen by NAA with probe detection,LOINC
+rsv,3035868,5295-1,Respiratory syncytial virus Ab [Titer] in Serum by Immunofluorescence,LOINC
+rsv,40763326,60271-4,Respiratory syncytial virus RNA [Presence] in Isolate by NAA with probe detection,LOINC
+rsv,3038128,17519-0,Respiratory syncytial virus IgM Ab [Titer] in Cerebral spinal fluid,LOINC
+rsv,37060341,LP378945-2,Respiratory syncytial virus B RNA | Lower respiratory specimen | Microbiology,LOINC
+rsv,46234982,77022-2,Respiratory syncytial virus A RNA [Presence] in Nasopharynx by NAA with probe detection,LOINC
+rsv,36660944,LP419163-3,PRRSV ORF5 gene sequence homology to Prevacent | Isolate | Microbiology,LOINC
+rsv,37039250,LP378944-5,Respiratory syncytial virus B RNA | Nasopharynx | Microbiology,LOINC
+rsv,37042123,LP379528-5,PRRSV Ingelvac ATP strain ORF5 gene | XXX | Microbiology,LOINC
+rsv,36661355,LP418063-6,Bovine respiratory syncytial virus Ag | Tissue and Smears | Microbiology,LOINC
+rsv,36659983,94618-6,Bovine respiratory syncytial virus [Presence] in Specimen by Organism specific culture,LOINC
+rsv,36203323,85479-4,Respiratory syncytial virus RNA [Presence] in Upper respiratory specimen by NAA with probe detection,LOINC
+rsv,3027410,7990-5,Respiratory syncytial virus Ab [Units/volume] in Serum,LOINC
+rsv,37049319,LP378952-8,Respiratory syncytial virus identified | XXX | Microbiology,LOINC
+rsv,3014709,20944-5,Bovine respiratory syncytial virus Ag [Presence] in Lung by Immunoassay,LOINC
+rsv,44786950,74307-0,PRRSV ORF5 gene sequence homology to Lelystad in Isolate by Sequencing,LOINC
+rsv,36203374,85530-4,PRRSV European strain IgG Ab [Presence] in Serum by Immunofluorescence,LOINC
+rsv,21493342,82176-9,Respiratory syncytial virus RNA [Presence] in Nasopharynx by NAA with non-probe detection,LOINC
+rsv,3015057,22466-7,Respiratory syncytial virus Ab [Titer] in Serum,LOINC
+rsv,46236091,77390-3,Respiratory syncytial virus Ag [Presence] in Nasopharynx by Immunofluorescence,LOINC
+rsv,3043924,40987-0,Respiratory syncytial virus RNA [Identifier] in Specimen by NAA with probe detection,LOINC
+rsv,44786955,74312-0,PRRSV [Presence] in Specimen by Organism specific culture,LOINC
+rsv,3019081,17517-4,Respiratory syncytial virus IgG Ab [Titer] in Cerebral spinal fluid,LOINC
+rsv,3032555,42976-1,PRRSV Ab [Titer] in Serum,LOINC
+rsv,44786960,74317-9,PRRSV European strain RNA [Cycle Threshold #] in Specimen by NAA with probe detection,LOINC
+rsv,36203387,85548-6,PRRSV European strain neutralizing antibody [Titer] in Serum by Neutralization test,LOINC
+rsv,37021152,92131-2,Respiratory syncytial virus RNA [Presence] in Respiratory specimen by NAA with probe detection,LOINC
+rsv,706161,94533-7,SARS-CoV-2 (COVID-19) N gene [Presence] in Respiratory specimen by NAA with probe detection,LOINC
+rsv,37034904,LP378922-1,Respiratory syncytial virus | XXX | Microbiology,LOINC
+rsv,36203373,85529-6,PRRSV North American strain IgG Ab [Presence] in Serum by Immunofluorescence,LOINC
+rsv,37020812,92880-4,Human metapneumovirus and Respiratory syncytial virus RNA panel - Lower respiratory specimen by NAA with probe detection,LOINC
+rsv,44786956,74313-8,PRRSV Ab/Positive control in Specimen by Immunoassay,LOINC
+rsv,37065517,LP378927-0,Respiratory syncytial virus A RNA | XXX | Microbiology,LOINC
+rsv,1176113,89651-4,Human metapneumovirus RNA [Presence] in Lower respiratory specimen by NAA with probe detection,LOINC
+rsv,36203385,85546-0,PRRSV European strain RNA [Presence] in Specimen by NAA with probe detection,LOINC
+rsv,36304759,88909-7,Respiratory syncytial virus Ag [Presence] in Lower respiratory specimen by Immunofluorescence,LOINC
+rsv,3005444,5877-6,Respiratory syncytial virus Ag [Presence] in Specimen by Immunofluorescence,LOINC
+rsv,36310037,LA26162-0,Respiratory syncytial virus subtype A,LOINC
+rsv,3013027,31583-8,Respiratory syncytial virus IgG Ab [Units/volume] in Cerebral spinal fluid,LOINC
+rsv,36203386,85547-8,PRRSV North American strain neutralizing antibody [Titer] in Serum by Neutralization test,LOINC
+rsv,36203380,85541-1,PRRSV Ingelvac MLV strain ORF5 gene [Cycle Threshold #] in Specimen by NAA with probe detection,LOINC
+rsv,3028491,7991-3,Respiratory syncytial virus IgG Ab [Units/volume] in Serum,LOINC
+rsv,46235794,76089-2,Respiratory syncytial virus RNA [Presence] in Nasopharynx by NAA with probe detection,LOINC
+rsv,36204454,85539-5,PRRSV North American strain RNA [#/volume] (viral load) in Specimen by NAA with probe detection,LOINC
+rsv,37026428,LP379524-4,PRRSV ORF5 gene sequence homology to Fostera | Isolate | Microbiology,LOINC
+rsv,44786954,74311-2,PRRSV ORF5 gene sequence [Nucleotide sequence] in Isolate by Sequencing,LOINC
+rsv,44786958,74315-3,PRRSV RNA [#/volume] (viral load) in Specimen by NAA with probe detection,LOINC
+rsv,37027803,LP380022-6,Influenza virus A and B and Respiratory syncytial virus RNA panel | Upper respiratory specimen | Microbiology Panels,LOINC
+rsv,3009146,20945-2,Bovine respiratory syncytial virus Ag [Presence] in Lung by Immunofluorescence,LOINC
+rsv,3032425,50329-2,Respiratory syncytial virus Ag [Presence] in Tissue by Immune stain,LOINC
+rsv,42868420,69929-8,Respiratory syncytial virus IgA Ab [Presence] in Serum by Immunoassay,LOINC
+rsv,37019563,91782-3,Respiratory syncytial virus [Presence] in Lower respiratory specimen by Organism specific culture,LOINC
+rsv,37072836,LP378936-1,Respiratory syncytial virus Ag | Bronchoalveolar lavage | Microbiology,LOINC
+rsv,3013744,23679-4,Bovine respiratory syncytial virus Ag [Presence] in Specimen,LOINC
+rsv,37021252,92141-1,Influenza virus B RNA [Presence] in Respiratory specimen by NAA with probe detection,LOINC
+rsv,1990782,LP429529-3,Respiratory syncytial virus | Lower respiratory specimen | Microbiology,LOINC
+rsv,1175202,90332-8,PRRSV IgA Ab/Positive control in Specimen by Immunoassay,LOINC
+rsv,37044758,LP378934-6,Respiratory syncytial virus IgM | Cerebral spinal fluid | Microbiology,LOINC
+rsv,37057820,LP378929-6,Respiratory syncytial virus Ab | Cerebral spinal fluid | Microbiology,LOINC
+rsv,44786959,74316-1,PRRSV ORF5 gene RNA [Presence] in Specimen by NAA with probe detection,LOINC
+rsv,37043072,LP379514-5,PRRSV antigen | XXX | Microbiology,LOINC
+rsv,3001684,31950-9,Respiratory syncytial virus Ag [Presence] in Specimen,LOINC
+rsv,37073530,LP379510-3,PRRSV North American strain neutralizing antibody | Serum | Microbiology,LOINC
+rsv,3004824,15495-5,PRRSV Ab [Presence] in Serum by Immunoassay,LOINC
+rsv,37070573,LP379515-2,PRRSV whole genome | Isolate | Microbiology,LOINC
+rsv,3024599,23369-2,PRRSV Ag [Presence] in Specimen by Immune stain,LOINC
+rsv,36204455,85540-3,PRRSV European strain RNA [#/volume] (viral load) in Specimen by NAA with probe detection,LOINC
+rsv,3001226,14129-1,Respiratory syncytial virus [Presence] in Nose by Organism specific culture,LOINC
+rsv,42868451,69962-9,Respiratory syncytial virus IgM Ab [Presence] in Serum by Immunoassay,LOINC
+rsv,37054904,LP379511-1,PRRSV European strain.IgG | Serum | Microbiology,LOINC
+rsv,46236090,77389-5,Respiratory syncytial virus Ag [Presence] in Bronchoalveolar lavage by Immunofluorescence,LOINC
+rsv,37019493,92957-0,Respiratory syncytial virus RNA [Presence] in Lower respiratory specimen by NAA with non-probe detection,LOINC
+rsv,37077587,LP378940-3,Respiratory syncytial virus Ag | Throat | Microbiology,LOINC
+rsv,37070518,LP378938-7,Respiratory syncytial virus Ag | Nasopharynx | Microbiology,LOINC
+rsv,37030868,LP379530-1,PRRSV strain identified | Isolate | Microbiology,LOINC
+rsv,36203375,85531-2,PRRSV whole genome [Nucleotide sequence] in Isolate by Sequencing,LOINC
+rsv,3021508,31949-1,Respiratory syncytial virus Ag [Presence] in Throat,LOINC
+rsv,37075457,LP378953-6,Respiratory syncytial virus RNA | Bronchoalveolar lavage | Microbiology,LOINC
+rsv,37062904,LP379517-8,PRRSV virus RNA | XXX | Microbiology,LOINC
+rsv,37060387,LP378926-2,Respiratory syncytial virus A RNA | Upper respiratory specimen | Microbiology,LOINC
+rsv,36661227,LP418062-8,Bovine respiratory syncytial virus | XXX | Microbiology,LOINC
+influenza,3029905,50711-1,Influenza virus A polymerase RNA [Identifier] in Isolate by Sequencing,LOINC
+influenza,3029994,50706-1,Influenza virus A polymerase A RNA [Presence] in Isolate by Sequencing,LOINC
+influenza,3030205,50708-7,Influenza virus A polymerase B2 RNA [Presence] in Isolate by Sequencing,LOINC
+influenza,3030291,50707-9,Influenza virus A polymerase B1 cDNA [Presence] in Isolate by Sequencing,LOINC
+influenza,3039888,53251-5,Influenza virus B RNA [#/volume] (viral load) in Specimen by NAA with probe detection,LOINC
+influenza,3042219,53250-7,Influenza virus A RNA [#/volume] (viral load) in Specimen by NAA with probe detection,LOINC
+influenza,3044170,44265-7,Influenza virus A H6 RNA [Units/volume] (viral load) in Specimen by NAA with probe detection,LOINC
+influenza,3046387,44266-5,Influenza virus A H7 RNA [Units/volume] (viral load) in Specimen by NAA with probe detection,LOINC
+influenza,3046850,44263-2,Influenza virus A RNA [Units/volume] (viral load) in Specimen by NAA with probe detection,LOINC
+influenza,3046999,44264-0,Influenza virus A H5 RNA [Units/volume] (viral load) in Specimen by NAA with probe detection,LOINC
+influenza,21492987,80381-7,Influenza virus A and B Ag panel - Upper respiratory specimen by Rapid immunoassay,LOINC
+influenza,21492988,80382-5,Influenza virus A Ag [Presence] in Upper respiratory specimen by Rapid immunoassay,LOINC
+influenza,21492989,80383-3,Influenza virus B Ag [Presence] in Upper respiratory specimen by Rapid immunoassay,LOINC
+influenza,36204612,LP65712-9,Influenza virus A polymerase | Isolate,LOINC
+influenza,36205250,LP65708-7,Influenza virus A polymerase A | Isolate,LOINC
+influenza,36208701,LP65710-3,Influenza virus A polymerase B2 | Isolate,LOINC
+influenza,36676235,772835009,Detection of Influenza A virus using PCR - polymerase chain reaction technique,SNOMED
+influenza,37037474,LP378486-7,Influenza virus A polymerase B1 cDNA | Isolate | Microbiology,LOINC
+influenza,37045231,LP378487-5,Influenza virus A polymerase B2 RNA | Isolate | Microbiology,LOINC
+influenza,37052392,LP378488-3,Influenza virus A polymerase RNA | Isolate | Microbiology,LOINC
+influenza,37059233,LP378485-9,Influenza virus A polymerase A RNA | Isolate | Microbiology,LOINC
+influenza,40483307,445346006,Detection of avian influenza A using polymerase chain reaction technique,SNOMED
+influenza,40483371,445403009,Detection of Influenza A virus subtype H1N1 using polymerase chain reaction technique,SNOMED
+influenza,40759145,56024-3,Influenza virus A N1 RNA [Units/volume] (viral load) in Specimen by NAA with probe detection,LOINC
+influenza,40772278,LP113797-7,Influenza virus A polymerase RNA | Isolate,LOINC
+influenza,40784865,LP65709-5,Influenza virus A polymerase B1 | Isolate,LOINC
+influenza,40795425,LP113795-1,Influenza virus A polymerase A RNA | Isolate,LOINC
+influenza,40795426,LP113796-9,Influenza virus A polymerase B2 RNA | Isolate,LOINC
+influenza,43054990,72356-9,Influenza virus A and B Ag [Identifier] in Specimen by Rapid immunoassay,LOINC
+influenza,43054997,72366-8,Influenza virus A and B Ag [Identifier] in Nose by Rapid immunoassay,LOINC
+influenza,43054998,72367-6,Influenza virus A+B Ag [Presence] in Nose by Rapid immunoassay,LOINC
+influenza,44805771,8.18951E+14,Influenza A virus antiviral resistance measurement by ribonucleic acid analysis,SNOMED
+influenza,46236737,77027-1,Influenza virus A H3 RNA [Presence] in Nasopharynx by NAA with probe detection,LOINC
+influenza,3044938,34487-9,Influenza virus A RNA [Presence] in Specimen by NAA with probe detection,LOINC
+influenza,46235756,76077-7,Influenza virus A RNA [Presence] in Bronchoalveolar lavage by NAA with probe detection,LOINC
+influenza,3032731,49524-2,Influenza virus A H3 RNA [Presence] in Specimen by NAA with probe detection,LOINC
+influenza,3038288,40982-1,Influenza virus B RNA [Presence] in Specimen by NAA with probe detection,LOINC
+influenza,37020635,92142-9,Influenza virus A RNA [Presence] in Respiratory system specimen by NAA with probe detection,LOINC
+influenza,37021252,92141-1,Influenza virus B RNA [Presence] in Respiratory system specimen by NAA with probe detection,LOINC
+influenza,46235757,76078-5,Influenza virus A RNA [Presence] in Nasopharynx by NAA with probe detection,LOINC
+influenza,3003740,31864-2,Influenza virus B Ag [Presence] in Specimen,LOINC
+influenza,46235759,76080-1,Influenza virus B RNA [Presence] in Nasopharynx by NAA with probe detection,LOINC
+influenza,21493335,82169-4,Influenza virus A H3 RNA [Presence] in Nasopharynx by NAA with non-probe detection,LOINC
+influenza,21493336,82170-2,Influenza virus B RNA [Presence] in Nasopharynx by NAA with non-probe detection,LOINC
+influenza,3026784,5860-2,Influenza virus A Ag [Presence] in Throat by Immunoassay,LOINC
+influenza,21493332,82166-0,Influenza virus A RNA [Presence] in Nasopharynx by NAA with non-probe detection,LOINC
+influenza,3043362,46083-2,Influenza virus B Ag [Presence] in Nasopharynx by Immunoassay,LOINC
+influenza,36660307,94394-4,Influenza virus A H3 RNA [Presence] in Lower respiratory specimen by NAA with probe detection,LOINC
+influenza,3011688,5866-9,Influenza virus B Ag [Presence] in Specimen by Immunoassay,LOINC
+influenza,3024940,5864-4,Influenza virus B Ag [Presence] in Throat by Immunoassay,LOINC
+influenza,21493334,82168-6,Influenza virus A H1 2009 pandemic RNA [Presence] in Nasopharynx by NAA with non-probe detection,LOINC
+influenza,40758594,55465-9,Influenza virus A H1 2009 pandemic RNA [Presence] in Specimen by NAA with probe detection,LOINC
+influenza,3030120,49521-8,Influenza virus A H1 RNA [Presence] in Specimen by NAA with probe detection,LOINC
+influenza,3046524,46082-4,Influenza virus A Ag [Presence] in Nasopharynx by Immunoassay,LOINC
+influenza,40765199,62462-7,Influenza virus A+B RNA [Presence] in Specimen by NAA with probe detection,LOINC
+influenza,37021392,92808-5,Influenza virus A H3 RNA [Presence] in Upper respiratory specimen by NAA with probe detection,LOINC
+influenza,3028459,5862-8,Influenza virus A Ag [Presence] in Specimen by Immunoassay,LOINC
+influenza,46236738,77028-9,Influenza virus A H1 2009 pandemic RNA [Presence] in Nasopharynx by NAA with probe detection,LOINC

@@ -42,7 +42,10 @@ vc_list <-
                            'drug_exposure'),
     'vc_pr_pscid' = list(c('ICD10CM','CPT4','ICD9CM','ICD10','ICD9','ICD10PCS','ICD9Proc','HCPCS'),
                          'procedure_source_concept_id',
-                         'procedure_occurrence')
+                         'procedure_occurrence'),
+    'vc_ml_mcid' = list(c('LOINC'),
+                        'measurement_concept_id',
+                        'measurement_labs')
   )
 
 vs_list <- 
