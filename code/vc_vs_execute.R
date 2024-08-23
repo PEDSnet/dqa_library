@@ -43,7 +43,7 @@ vc_list <-
     'vc_pr_pscid' = list(c('ICD10CM','CPT4','ICD9CM','ICD10','ICD9','ICD10PCS','ICD9Proc','HCPCS'),
                          'procedure_source_concept_id',
                          'procedure_occurrence'),
-    'vc_ml_mcid' = list(c('LOINC'),
+    'vc_ml_cid' = list(c('LOINC'),
                         'measurement_concept_id',
                         'measurement_labs')
   )
