@@ -54,18 +54,34 @@ conc_pts_list <-
                                  inner_join(load_codeset('insulin'), by = c('drug_concept_id' = 'concept_id')),
                                'dcon_t1d_dx_insulin_rx',
                                'acute'),
-    'flu_dx_flu_lab' = list(site_cdm_tbl('condition_occurrence') %>% select(site, person_id, condition_concept_id, condition_start_date) %>%
+    'flu_dx_flu_neg_lab' = list(site_cdm_tbl('condition_occurrence') %>% select(site, person_id, condition_concept_id, condition_start_date) %>%
                               inner_join(load_codeset('dx_influenza'), by = c('condition_concept_id' = 'concept_id')),
                             site_cdm_tbl('measurement_labs') %>% select(site, person_id, measurement_concept_id, measurement_date) %>%
-                              inner_join(load_codeset('lab_influenza'), by = c('measurement_concept_id' = 'concept_id')),
-                            'dcon_flu_dx_flu_lab',
+                              inner_join(load_codeset('lab_influenza'), by = c('measurement_concept_id' = 'concept_id')) %>%
+                              filter(value_as_concept_id %in% c(9189L,9190L,45878583L,45884153L)),
+                            'dcon_flu_dx_flu_neg_lab',
                             'acute'),
-    'rsv_dx_rsv_lab' = list(site_cdm_tbl('condition_occurrence') %>% select(site, person_id, condition_concept_id, condition_start_date) %>%
+    'flu_dx_flu_pos_lab' = list(site_cdm_tbl('condition_occurrence') %>% select(site, person_id, condition_concept_id, condition_start_date) %>%
+                                  inner_join(load_codeset('dx_influenza'), by = c('condition_concept_id' = 'concept_id')),
+                                site_cdm_tbl('measurement_labs') %>% select(site, person_id, measurement_concept_id, measurement_date) %>%
+                                  inner_join(load_codeset('lab_influenza'), by = c('measurement_concept_id' = 'concept_id')) %>%
+                                  filter(value_as_concept_id %in% c(9191L,4126681L,45884084L,45878745L,4328749L,45876384L,45881666L)),
+                                'dcon_flu_dx_flu_pos_lab',
+                                'acute'),
+    'rsv_dx_rsv_neg_lab' = list(site_cdm_tbl('condition_occurrence') %>% select(site, person_id, condition_concept_id, condition_start_date) %>%
                               inner_join(load_codeset('dx_rsv'), by = c('condition_concept_id' = 'concept_id')),
                             site_cdm_tbl('measurement_labs') %>% select(site, person_id, measurement_concept_id, measurement_date) %>%
-                              inner_join(load_codeset('lab_rsv'), by = c('measurement_concept_id' = 'concept_id')),
-                            'dcon_rsv_dx_rsv_lab',
-                            'acute')
+                              inner_join(load_codeset('lab_rsv'), by = c('measurement_concept_id' = 'concept_id')) %>%
+                              filter(value_as_concept_id %in% c(9189L,9190L,45878583L,45884153L)),
+                            'dcon_rsv_dx_rsv_neg_lab',
+                            'acute'),
+    'rsv_dx_rsv_pos_lab' = list(site_cdm_tbl('condition_occurrence') %>% select(site, person_id, condition_concept_id, condition_start_date) %>%
+                                  inner_join(load_codeset('dx_rsv'), by = c('condition_concept_id' = 'concept_id')),
+                                site_cdm_tbl('measurement_labs') %>% select(site, person_id, measurement_concept_id, measurement_date) %>%
+                                  inner_join(load_codeset('lab_rsv'), by = c('measurement_concept_id' = 'concept_id')) %>%
+                                  filter(value_as_concept_id %in% c(9191L,4126681L,45884084L,45878745L,4328749L,45876384L,45881666L)),
+                                'dcon_rsv_dx_rsv_pos_lab',
+                                'acute')
   )
 
 conc_visits_list <-
@@ -118,5 +134,14 @@ conc_metadata <-
     'dcon_frac_dx_img_px' = list('cohort_1' = 'Patients with a fracture diagnosis code',
                                  'cohort_2' = 'Patients with an imaging procedure code'),
     'dcon_t1d_dx_insulin_rx' = list('cohort_1' = 'Patients with a Type 1 diabetes diagnosis code',
-                                    'cohort_2' = 'Patients with an insulin medication')
+                                    'cohort_2' = 'Patients with an insulin medication'),
+    'dcon_flu_dx_flu_pos_lab' = list('cohort_1' = 'Patients with a flu diagnosis code',
+                                     'cohort_2' = 'Patients with a positive flu lab test'),
+    'dcon_flu_dx_flu_neg_lab' = list('cohort_1' = 'Patients with a flu diagnosis code',
+                                     'cohort_2' = 'Patients with a negative flu lab test'),
+    'dcon_rsv_dx_rsv_pos_lab' = list('cohort_1' = 'Patients with a RSV diagnosis code',
+                                     'cohort_2' = 'Patients with a positive RSV lab test'),
+    'dcon_rsv_dx_rsv_neg_lab' = list('cohort_1' = 'Patients with a RSV diagnosis code',
+                                     'cohort_2' = 'Patients with a negative RSV lab test')
+    
   )

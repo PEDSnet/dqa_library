@@ -510,3 +510,9 @@ influenza,40765199,62462-7,Influenza virus A+B RNA [Presence] in Specimen by NAA
 influenza,37021392,92808-5,Influenza virus A H3 RNA [Presence] in Upper respiratory specimen by NAA with probe detection,LOINC
 influenza,3028459,5862-8,Influenza virus A Ag [Presence] in Specimen by Immunoassay,LOINC
 influenza,46236738,77028-9,Influenza virus A H1 2009 pandemic RNA [Presence] in Nasopharynx by NAA with probe detection,LOINC
+height,3023540,3137-7,Body height Measured,LOINC
+weight,3013762,3141-9,Body weight Measured,LOINC
+head_circumference,3001537,8287-5,Head Occipital-frontal circumference by Tape measure,LOINC
+smoking_tobacco,4005823,110483000,Tobacco user,SNOMED
+smoking_tobacco,4219336,39953003,Tobacco,SNOMED
+smoking_tobacco,4275495,365981007,Tobacco smoking behavior - finding,SNOMED

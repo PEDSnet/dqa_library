@@ -86,7 +86,7 @@ ecp_codeset_list <- list(
   #                           'measurement_concept_id',
   #                           load_codeset('ecp_concepts', 'ciccc') %>% filter(concept_group == 'cholesterol_all'),
   #                           'ecp_cholesterol'),
-  # 
+   
   'rapid_strep_labs' = list(site_cdm_tbl('measurement_labs'),
                             pdl_pts,
                             'measurement_concept_id',
@@ -103,6 +103,34 @@ ecp_codeset_list <- list(
                     pdl_pts,
                     'measurement_concept_id',
                     load_codeset('ecp_concepts', 'ciccc') %>% filter(concept_group == 'rsv'),
-                    'ecp_rsv')
+                    'ecp_rsv'),
+  
+  'head_circumference' = list(site_cdm_tbl('measurement_anthro'),
+                              pdl_pts,
+                              'measurement_concept_id',
+                              load_codeset('ecp_concepts', 'ciccc') %>% 
+                                filter(concept_group == 'head_circumferece'),
+                              'ecp_head_circumference'),
+  
+  'smoking_tobacco' = list(site_cdm_tbl('observation'),
+                           pdl_pts,
+                           'observation_concept_id',
+                           load_codeset('ecp_concepts', 'ciccc') %>% 
+                             filter(concept_group == 'smoking_tobacco'),
+                           'ecp_smoking_tobacco'),
+  
+  'height' = list(site_cdm_tbl('measurement_anthro'),
+                  pdl_pts,
+                  'measurement_concept_id',
+                  load_codeset('ecp_concepts', 'ciccc') %>% 
+                    filter(concept_group == 'height'),
+                  'ecp_height'),
+  
+  'weight' = list(site_cdm_tbl('measurement_anthro'),
+                  pdl_pts,
+                  'measurement_concept_id',
+                  load_codeset('ecp_concepts', 'ciccc') %>% 
+                    filter(concept_group == 'weight'),
+                  'ecp_weight')
   
 )
