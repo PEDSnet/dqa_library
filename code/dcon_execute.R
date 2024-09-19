@@ -56,28 +56,32 @@ conc_pts_list <-
                                'acute'),
     'flu_dx_flu_neg_lab' = list(site_cdm_tbl('condition_occurrence') %>% select(site, person_id, condition_concept_id, condition_start_date) %>%
                               inner_join(load_codeset('dx_influenza'), by = c('condition_concept_id' = 'concept_id')),
-                            site_cdm_tbl('measurement_labs') %>% select(site, person_id, measurement_concept_id, measurement_date) %>%
+                            site_cdm_tbl('measurement_labs') %>% select(site, person_id, measurement_concept_id, measurement_date,
+                                                                        value_as_concept_id) %>%
                               inner_join(load_codeset('lab_influenza'), by = c('measurement_concept_id' = 'concept_id')) %>%
                               filter(value_as_concept_id %in% c(9189L,9190L,45878583L,45884153L)),
                             'dcon_flu_dx_flu_neg_lab',
                             'acute'),
     'flu_dx_flu_pos_lab' = list(site_cdm_tbl('condition_occurrence') %>% select(site, person_id, condition_concept_id, condition_start_date) %>%
                                   inner_join(load_codeset('dx_influenza'), by = c('condition_concept_id' = 'concept_id')),
-                                site_cdm_tbl('measurement_labs') %>% select(site, person_id, measurement_concept_id, measurement_date) %>%
+                                site_cdm_tbl('measurement_labs') %>% select(site, person_id, measurement_concept_id, measurement_date,
+                                                                            value_as_concept_id) %>%
                                   inner_join(load_codeset('lab_influenza'), by = c('measurement_concept_id' = 'concept_id')) %>%
                                   filter(value_as_concept_id %in% c(9191L,4126681L,45884084L,45878745L,4328749L,45876384L,45881666L)),
                                 'dcon_flu_dx_flu_pos_lab',
                                 'acute'),
     'rsv_dx_rsv_neg_lab' = list(site_cdm_tbl('condition_occurrence') %>% select(site, person_id, condition_concept_id, condition_start_date) %>%
                               inner_join(load_codeset('dx_rsv'), by = c('condition_concept_id' = 'concept_id')),
-                            site_cdm_tbl('measurement_labs') %>% select(site, person_id, measurement_concept_id, measurement_date) %>%
+                            site_cdm_tbl('measurement_labs') %>% select(site, person_id, measurement_concept_id, measurement_date,
+                                                                        value_as_concept_id) %>%
                               inner_join(load_codeset('lab_rsv'), by = c('measurement_concept_id' = 'concept_id')) %>%
                               filter(value_as_concept_id %in% c(9189L,9190L,45878583L,45884153L)),
                             'dcon_rsv_dx_rsv_neg_lab',
                             'acute'),
     'rsv_dx_rsv_pos_lab' = list(site_cdm_tbl('condition_occurrence') %>% select(site, person_id, condition_concept_id, condition_start_date) %>%
                                   inner_join(load_codeset('dx_rsv'), by = c('condition_concept_id' = 'concept_id')),
-                                site_cdm_tbl('measurement_labs') %>% select(site, person_id, measurement_concept_id, measurement_date) %>%
+                                site_cdm_tbl('measurement_labs') %>% select(site, person_id, measurement_concept_id, measurement_date,
+                                                                            value_as_concept_id) %>%
                                   inner_join(load_codeset('lab_rsv'), by = c('measurement_concept_id' = 'concept_id')) %>%
                                   filter(value_as_concept_id %in% c(9191L,4126681L,45884084L,45878745L,4328749L,45876384L,45881666L)),
                                 'dcon_rsv_dx_rsv_pos_lab',
