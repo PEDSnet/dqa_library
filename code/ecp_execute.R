@@ -109,7 +109,7 @@ ecp_codeset_list <- list(
                               pdl_pts,
                               'measurement_concept_id',
                               load_codeset('ecp_concepts', 'ciccc') %>% 
-                                filter(concept_group == 'head_circumferece'),
+                                filter(concept_group == 'head_circumference'),
                               'ecp_head_circumference'),
   
   'smoking_tobacco' = list(site_cdm_tbl('observation'),
