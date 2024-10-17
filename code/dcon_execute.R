@@ -14,6 +14,12 @@
 #' The order of first and second element must match the description order
 #' 
 
+neph_spec_prep <- find_specialty(visits = site_cdm_tbl('visit_occurrence'),
+                                 specialty_conceptset = load_codeset('nephrology'))
+
+onco_spec_prep <- find_specialty(visits = cdm_tbl('visit_occurrence'),
+                                 specialty_conceptset = load_codeset('oncology'))
+
 conc_pts_list <-
   list(
     'pts_with_ckd_dx_and_htn_rx' = list(results_tbl(paste0(config('site'),'_ckddx')),
@@ -30,16 +36,12 @@ conc_pts_list <-
                                   'acute'),
     'leukemia_dx_onco_spec' = list(site_cdm_tbl('condition_occurrence') %>% select(site, person_id, condition_concept_id, condition_start_date) %>%
                                      inner_join(load_codeset('dx_leukemia_lymphoma'), by = c('condition_concept_id' = 'concept_id')),
-                                   site_cdm_tbl('visit_occurrence') %>% inner_join(site_cdm_tbl('provider'), by = c('site', 'provider_id')) %>%
-                                     select(site, person_id, provider_id, specialty_concept_id, visit_start_date) %>%
-                                     inner_join(load_codeset('oncology'), by = c('specialty_concept_id' = 'concept_id')),
+                                   onco_spec_prep,
                                    'dcon_leukemia_dx_onco_spec',
                                    'acute'),
     'nephsyn_dx_neph_spec' = list(site_cdm_tbl('condition_occurrence') %>% select(site, person_id, condition_concept_id, condition_start_date) %>%
                                     inner_join(load_codeset('dx_nephrotic_syndrome'), by = c('condition_concept_id' = 'concept_id')),
-                                  site_cdm_tbl('visit_occurrence') %>% inner_join(site_cdm_tbl('provider'), by = c('site', 'provider_id')) %>%
-                                    select(site, person_id, provider_id, specialty_concept_id, visit_start_date) %>%
-                                    inner_join(load_codeset('nephrology'), by = c('specialty_concept_id' = 'concept_id')),
+                                  neph_spec_prep,
                                   'dcon_nephsyn_dx_neph_spec',
                                   'chronic'),
     'frac_dx_img_px' = list(cdm_tbl('condition_occurrence') %>% select(site, person_id, condition_concept_id, condition_start_date) %>%
@@ -61,7 +63,7 @@ conc_pts_list <-
                               inner_join(load_codeset('lab_influenza'), by = c('measurement_concept_id' = 'concept_id')) %>%
                               filter(value_as_concept_id %in% c(9189L,9190L,45878583L,45884153L)),
                             'dcon_flu_dx_flu_neg_lab',
-                            'acute'),
+                            'super acute'),
     'flu_dx_flu_pos_lab' = list(site_cdm_tbl('condition_occurrence') %>% select(site, person_id, condition_concept_id, condition_start_date) %>%
                                   inner_join(load_codeset('dx_influenza'), by = c('condition_concept_id' = 'concept_id')),
                                 site_cdm_tbl('measurement_labs') %>% select(site, person_id, measurement_concept_id, measurement_date,
@@ -69,7 +71,7 @@ conc_pts_list <-
                                   inner_join(load_codeset('lab_influenza'), by = c('measurement_concept_id' = 'concept_id')) %>%
                                   filter(value_as_concept_id %in% c(9191L,4126681L,45884084L,45878745L,4328749L,45876384L,45881666L)),
                                 'dcon_flu_dx_flu_pos_lab',
-                                'acute'),
+                                'super acute'),
     'rsv_dx_rsv_neg_lab' = list(site_cdm_tbl('condition_occurrence') %>% select(site, person_id, condition_concept_id, condition_start_date) %>%
                               inner_join(load_codeset('dx_rsv'), by = c('condition_concept_id' = 'concept_id')),
                             site_cdm_tbl('measurement_labs') %>% select(site, person_id, measurement_concept_id, measurement_date,
@@ -77,7 +79,7 @@ conc_pts_list <-
                               inner_join(load_codeset('lab_rsv'), by = c('measurement_concept_id' = 'concept_id')) %>%
                               filter(value_as_concept_id %in% c(9189L,9190L,45878583L,45884153L)),
                             'dcon_rsv_dx_rsv_neg_lab',
-                            'acute'),
+                            'super acute'),
     'rsv_dx_rsv_pos_lab' = list(site_cdm_tbl('condition_occurrence') %>% select(site, person_id, condition_concept_id, condition_start_date) %>%
                                   inner_join(load_codeset('dx_rsv'), by = c('condition_concept_id' = 'concept_id')),
                                 site_cdm_tbl('measurement_labs') %>% select(site, person_id, measurement_concept_id, measurement_date,
@@ -85,7 +87,7 @@ conc_pts_list <-
                                   inner_join(load_codeset('lab_rsv'), by = c('measurement_concept_id' = 'concept_id')) %>%
                                   filter(value_as_concept_id %in% c(9191L,4126681L,45884084L,45878745L,4328749L,45876384L,45881666L)),
                                 'dcon_rsv_dx_rsv_pos_lab',
-                                'acute')
+                                'super acute')
   )
 
 conc_visits_list <-

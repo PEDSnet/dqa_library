@@ -215,6 +215,16 @@ check_dcon<- function(conc_tbls,
         mutate(date_diff = abs((date1 - date2)/365.25)) %>%
         filter(date_diff <= 2)
       
+    }else if(conc_tbls[[k]][[4]] == 'super acute' & check_string != 'dcon_visits'){
+      
+      combined <- 
+        cohort_1 %>% select(site, all_of(col_nm), date1) %>% 
+        inner_join(
+          select(cohort_2, site, all_of(col_nm), date2)
+        ) %>%
+        mutate(date_diff = abs((date1 - date2))) %>%
+        filter(date_diff <= 14)
+      
     }else{
       
       combined <- 
@@ -343,4 +353,33 @@ check_dcon_overtime <- function(conc_tbls,
   
 }
 
-
+#' Identify specialties for relevant couplets
+#'
+#' @param visits CDM visit occurrence table
+#' @param specialty_conceptset concept set with relevant specialties
+#'
+#' @return table of visits with their associated specialties, prioritizing provider
+#'         specialty and using care site specialty where provider specialty is not available
+#'         or not informative
+#' 
+find_specialty <- function(visits,
+                           specialty_conceptset) {
+  prov_informative <- cdm_tbl('provider') %>% 
+    inner_join(specialty_conceptset, by = c('specialty_concept_id' = 'concept_id')) %>% 
+    select(provider_id, prov_specialty = specialty_concept_id)
+  cs_informative <- cdm_tbl('care_site') %>% 
+    inner_join(specialty_conceptset, by = c('specialty_concept_id' = 'concept_id')) %>%
+    select(care_site_id, cs_specialty = specialty_concept_id)
+  
+  visits %>% 
+    left_join(prov_informative, by = 'provider_id') %>% 
+    left_join(cs_informative, by = 'care_site_id') %>% 
+    filter(!is.na(prov_specialty) | !is.na(cs_specialty)) %>%
+    mutate(visit_specialty_concept_id =
+             case_when(prov_specialty != 38004477L ~ prov_specialty,
+                       cs_specialty != 38004477L ~ cs_specialty,
+                       prov_specialty == 38004477L ~ 38004477L,
+                       cs_specialty == 38004477L ~ 38004477L,
+                       TRUE ~ 0L)) %>% 
+    select(-prov_specialty, -cs_specialty)
+}
