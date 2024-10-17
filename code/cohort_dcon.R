@@ -260,7 +260,7 @@ check_dcon<- function(conc_tbls,
       reduce(.x=cohort_list_cts,
              .f=dplyr::union) %>% 
       #mutate(yr=9999) %>% 
-      add_meta(check_lib = check_string) %>%
+      add_meta(check_lib = 'dcon') %>%
       mutate(check_name=nm,
              check_desc=d) %>% collect()
     
