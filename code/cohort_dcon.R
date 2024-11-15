@@ -195,7 +195,9 @@ check_dcon<- function(conc_tbls,
       col_nm <- sym('visit_occurrence_id')
     } else{col_nm <- sym('person_id')}
     
-    if(conc_tbls[[k]][[4]] == 'acute' && check_string != 'dcon_visits'){
+    if(check_string != 'dcon_visits'){
+      
+      days_diff_integer <- conc_tbls[[k]][[4]]
       
       combined <- 
         cohort_1 %>% select(site, all_of(col_nm), date1) %>% 
@@ -203,27 +205,7 @@ check_dcon<- function(conc_tbls,
           select(cohort_2, site, all_of(col_nm), date2)
         ) %>%
         mutate(date_diff = abs((date1 - date2))) %>%
-        filter(date_diff <= 90)
-      
-    }else if(conc_tbls[[k]][[4]] == 'chronic' && check_string != 'dcon_visits'){
-      
-      combined <- 
-        cohort_1 %>% select(site, all_of(col_nm), date1) %>% 
-        inner_join(
-          select(cohort_2, site, all_of(col_nm), date2)
-        ) %>%
-        mutate(date_diff = abs((date1 - date2)/365.25)) %>%
-        filter(date_diff <= 2)
-      
-    }else if(conc_tbls[[k]][[4]] == 'super acute' & check_string != 'dcon_visits'){
-      
-      combined <- 
-        cohort_1 %>% select(site, all_of(col_nm), date1) %>% 
-        inner_join(
-          select(cohort_2, site, all_of(col_nm), date2)
-        ) %>%
-        mutate(date_diff = abs((date1 - date2))) %>%
-        filter(date_diff <= 14)
+        filter(date_diff <= days_diff_integer)
       
     }else{
       
