@@ -60,7 +60,7 @@ config_rm('_codesets')
 load_codeset <- function(name,
                          col_types = 'iccc',
                          table_name = name,
-                         indexes = list('concept_id'),
+                         indexes = NULL, #list('concept_id'),
                          full_path = FALSE,
                          db = config('db_src')) {
 

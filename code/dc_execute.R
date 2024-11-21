@@ -36,8 +36,7 @@ c19_dx_lab_current <-
              by='person_id') %>%
   inner_join(load_codeset('c19_viral_labs'),
              by=c('measurement_concept_id'='concept_id')) %>%
-  distinct(person_id) %>% compute_new(temporary=TRUE,
-                                      indexes=list('person_id'))
+  distinct(person_id) # %>% compute_new(temporary=TRUE, indexes=list('person_id'))
 
 #' `dc_args_prev`
 #' list element definition for the `dc` check: PREVIOUS cycle

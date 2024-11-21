@@ -1,5 +1,7 @@
 # Vector of additional packages to load before executing the request
-config_append('extra_packages', c('tidyr','lubridate','stringr', 'dplyr'))
+
+# devtools::install_github('https://github.com/willshen99/RPresto')
+config_append('extra_packages', c('tidyr','lubridate','stringr', 'dplyr', 'RPresto'))
 
 
 #' Execute the request
@@ -77,7 +79,7 @@ config_append('extra_packages', c('tidyr','lubridate','stringr', 'dplyr'))
 
   message('UC (Unmapped Concepts) Check')
     source(file.path(base_dir, 'code', 'uc_execute.R'))
-    uc <- check_uc(concept_list=uc_args_list)
+    uc <- check_uc(concept_list=uc_args_list, produce_mapped_list = FALSE)
     uc_by_year <- check_uc_by_year(uc_args_list)
     uc_reduce <- reduce(.x=uc,
                         .f=dplyr::union)
