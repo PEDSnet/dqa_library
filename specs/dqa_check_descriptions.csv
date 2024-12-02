@@ -78,8 +78,9 @@ Best Mapped Concepts,bmc_race,Person,Race,counts of each concept_id represented 
 Best Mapped Concepts,bmc_ethnicity,Person,Ethnicity,counts of each concept_id represented in ethnicity_concept_id
 Best Mapped Concepts,bmc_pvvo_spec,Provider,Outpatient Provider Specialty,counts of each unique specialty_concept_id for outpatient providers (visit_concept_id = 9202 when inner joined to visit_occurrence)
 Best Mapped Concepts,bmc_csvo_spec,Care Site,Outpatient Care Site Specialty,counts of each unique specialty_concept_id for outpatient care sites (visit_concept_id = 9202 when inner joined to visit_occurrence)
-Best Mapped Concepts,bmc_vo_spec,Specialty,Outpatient Specialty,counts of each unique specialty_concept_id for outpatient specialties in the specialty table (visit_concept_id = 9202 when inner joined to visit_occurrence)
 Best Mapped Concepts,bmc_adt_service,ADT Occurrence,service_concept_id,counts of each concept_id represented in service_concept_id
+Best Mapped Concepts,bmc_fips_tract,Location FIPS,Census Tract Geocode,"counts of each distinct length of a census tract level geocode, removing NULL values and invalid characters (ideally is 11 digits)"
+Best Mapped Concepts,bmc_fips_block_group,Location FIPS,Census Block Group Geocode,"counts of each distinct length of a census tract level geocode, removing NULL values and invalid characters (ideally is 12 digits)"
 Person Facts/Records,pf_visits_pr,All Visits,All Procedures,counts of all visits with and without an associated procedure
 Person Facts/Records,pf_visits_co,All Visits,All Conditions,counts of all visits with and without an associated condition
 Person Facts/Records,pf_visits_dr,All Visits,All Drugs,counts of all visits with and without an associated drug
@@ -133,7 +134,7 @@ Facts Over Time,fot_vo_oa,Visit Occurrence,Outpatient Visits: Other Ambulatory,c
 Facts Over Time,fot_vip,Visit Occurrence,Inpatient Visits,counts of inpatient visits (visit_concept_id = 9201) in each month from 2009-01-01 to the month of the current data submission
 Facts Over Time,fot_vip_ipcombined,Visit Occurrence,Inpatient or ED to Inpatient Visits,counts of inpatient or emergency to inpatient visits (visit_concept_id = 2000000048) in each month from 2009-01-01 to the month of the current data submission
 Facts Over Time,fot_vob,Visit Occurrence,Observation Visits,counts of observation visits (visit_concept_id = 2000000088) in each month from 2009-01-01 to the month of the current data submission
-Facts Over Time,fot_prvo,Procedure Occurrence,Outpatient Procedures,counts of outpatient procedures (visit_concept_id = 9202 when inner joined to visit_occurrence) in each month from 2009-01-01 to the month of the current data submission 
+Facts Over Time,fot_prvo,Procedure Occurrence,Outpatient Procedures,counts of outpatient procedures (visit_concept_id = 9202 when inner joined to visit_occurrence) in each month from 2009-01-01 to the month of the current data submission 
 Facts Over Time,fot_adt_picu,ADT Occurrence,PICU,counts of PICU (service_concept_id = 2000000078) in each month from 2009-01-01 to the month of the current data submission
 Facts Over Time,fot_adt_nicu,ADT Occurrence,NICU,counts of NICU (service_concept_id = 2000000080) in each month from 2009-01-01 to the month of the current data submission
 Facts Over Time,fot_adt_cicu,ADT Occurrence,CICU,counts of CICU (service_concept_id = 2000000079) in each month from 2009-01-01 to the month of the current data submission
@@ -181,3 +182,7 @@ Expected Concepts Present,ecp_height,Measurement,Height,"counts the proportion o
 Expected Concepts Present,ecp_weight,Measurement,Weight,"counts the proportion of patients who have evidence of a drug, procedure, AND lab who also have a weight value (ecp_concepts.csv where concept_group = weight; found in the specs folder of the GitHub repository)"
 Expected Concepts Present,ecp_head_circumference,Measurement,Head Circumference,"counts the proportion of patients who have evidence of a drug, procedure, AND lab who also have a head circumference value (ecp_concepts.csv where concept_group = head_circumference; found in the specs folder of the GitHub repository)"
 Expected Concepts Present,ecp_smoking_tobacco,Observation,Smoking/Tobacco,"counts the proportion of patients who have evidence of a drug, procedure, AND lab who also have smoking/tobacco observations (ecp_concepts.csv where concept_group = smoking_tobacco; found in the specs folder of the GitHub repository)"
+Expected Concepts Present,ecp_tract_2010,Location FIPS,Census Tract Geocode (2010),"counts the proportion of ALL patients have a valid, 11-digit tract level geocode for the 2010 census year associated with their current location (location_id in the person table)"
+Expected Concepts Present,ecp_tract_2020,Location FIPS,Census Tract Geocode (2020),"counts the proportion of ALL patients have a valid, 11-digit tract level geocode for the 2020 census year associated with their current location (location_id in the person table)"
+Expected Concepts Present,ecp_block_group_2010,Location FIPS,Census Block Group Geocode (2010),"counts the proportion of ALL patients have a valid, 12-digit block group level geocode for the 2010 census year associated with their current location (location_id in the person table)"
+Expected Concepts Present,ecp_block_group_2020,Location FIPS,Census Block Group Geocode (2020),"counts the proportion of ALL patients have a valid, 12-digit block group level geocode for the 2020 census year associated with their current location (location_id in the person table)"
