@@ -136,7 +136,8 @@ check_vc <- function(vocabvals,
     total_rows <- 
       site_cdm_tbl(vocabvals[[i]][[3]]) %>%
       summarise(total_denom_ct=n(),
-                total_pt_ct=n_distinct(person_id)) %>% collect_new() %>%
+                total_pt_ct=n_distinct(person_id),
+                total_concept_ct=n_distinct(!!sym(concept_id_fn))) %>% collect_new() %>%
       add_meta(check_lib = string_tbl_name)
       
     illegal_values <- 
@@ -148,7 +149,8 @@ check_vc <- function(vocabvals,
       ), by = join_cols) %>% 
       group_by(vocabulary_id) %>%
       summarise(total_viol_ct = n(),
-                total_viol_pt_ct = n_distinct(person_id)) %>%
+                total_viol_pt_ct = n_distinct(person_id),
+                total_viol_concept_ct = n_distinct(!!sym(concept_id_fn))) %>%
       ungroup() %>%
       collect_new() %>%
       add_meta(check_lib = string_tbl_name) %>%
