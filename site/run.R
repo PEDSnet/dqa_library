@@ -45,7 +45,7 @@
 #' If you always rely on running the package with the working directory set to
 #' the package directory, you can skip this, at the cost of portability.
 #' @md
-req_basename <- 'dqa_library'
+req_basename <- 'Desktop/data_quality/dqa_library'
 
 
 #' Please don't edit: path to the top-level directory of this request package
@@ -109,7 +109,7 @@ config('site_info', file.path(base_dir, 'site', 'site_info.R'))
 #' This Boolean value can be used to override the `default_retain_intermediates`
 #' setting from site_info.R.  If it is NA, the default is not overridden.
 #' @md
-config('retain_intermediates', NA)
+config('retain_intermediates', FALSE)
 
 
 
@@ -119,18 +119,19 @@ config('retain_intermediates', NA)
 #' during processing of the request.
 #' If it is `NA`, the default value from site_info.R is used.
 #' @md
-config('results_schema', 'dqa_spark_test')
+config('results_schema', 'dqa_rox_dev')
+config('results_schema_prev', 'dqa_rox')
 
 
-config('previous_version','v51')
-config('current_version','v52')
+config('previous_version','v56')
+config('current_version','v55')
 
 config('versions_filter',TRUE)
 config('versions_filter_col', 'site')
 
-config('site', 'texas')
-config('site_filter', 'texas')
-config('site_filter_previous', 'texas')
+config('site', 'colorado')
+config('site_filter', 'colorado')
+config('site_filter_previous', 'colorado')
 
 library('lubridate')
 

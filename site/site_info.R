@@ -38,14 +38,23 @@
 #'     * `Sys.setenv(ORA_SDTZ=Sys.timezone())`
 #'
 #' @md
+
+# httr::set_config(
+#   httr::config(
+#     httpauth=1,
+#     userpwd='wieandk:password',
+#     ssl_verifypeer=0
+#   )
+# )
+
 config('db_src', {
   require(srcr);
-  srcr('argos_pedsnet_current')
+  srcr('Desktop/configs/argos_pbd02_v56.json')
 })
 
 config('db_src_prev', {
   require(srcr);
-  srcr('argos_pedsnet_prev')
+  srcr('Desktop/configs/argos_db07_v52')
 
 })
 
@@ -56,7 +65,7 @@ config('db_src_prev', {
 #' @md
 config('cdm_schema', paste0(config('site'), '_pedsnet'))
 
-config('cdm_schema_prev','dcc_pedsnet')
+# config('cdm_schema','pedsnet_dcc_v53')
 
 #' Name of the schema, if any, to be prepended to vocabulary tables.
 #'
