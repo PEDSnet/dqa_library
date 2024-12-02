@@ -8,6 +8,9 @@ pdl_pts <- pcd %>%
   inner_join(drg) %>% 
   inner_join(ml) %>% compute_new()
 
+geocode_tbls <- prep_geocodes()
+geocode_tract <- copy_to_new(df = geocode_tbls$tract_level)
+geocode_cbg <- copy_to_new(df = geocode_tbls$block_group_level)
 
 #' List of inputs for check_ecp
 #'
@@ -131,6 +134,38 @@ ecp_codeset_list <- list(
                   'measurement_concept_id',
                   load_codeset('ecp_concepts', 'ciccc') %>% 
                     filter(concept_group == 'weight'),
-                  'ecp_weight')
+                  'ecp_weight'),
+  
+  'tract_2010' = list(geocode_tract %>%
+                        filter(ndigit_fips == 11 & geocode_year == 2010),
+                      site_cdm_tbl('person') %>% select(site, person_id),
+                      'geocode_year',
+                      load_codeset('ecp_concepts', 'ciccc') %>% 
+                        filter(concept_group == '2010_tract'),
+                      'ecp_tract_2010'),
+  
+  'tract_2020' = list(geocode_tract %>%
+                        filter(ndigit_fips == 11 & geocode_year == 2020),
+                      site_cdm_tbl('person') %>% select(site, person_id),
+                      'geocode_year',
+                      load_codeset('ecp_concepts', 'ciccc') %>% 
+                        filter(concept_group == '2020_tract'),
+                      'ecp_tract_2020'),
+  
+  'block_group_2010' = list(geocode_cbg %>%
+                              filter(ndigit_fips == 12 & geocode_year == 2010),
+                            site_cdm_tbl('person') %>% select(site, person_id),
+                            'geocode_year',
+                            load_codeset('ecp_concepts', 'ciccc') %>% 
+                              filter(concept_group == '2010_cbg'),
+                            'ecp_block_group_2010'),
+  
+  'block_group_2020' = list(geocode_cbg %>%
+                              filter(ndigit_fips == 12 & geocode_year == 2020),
+                            site_cdm_tbl('person') %>% select(site, person_id),
+                            'geocode_year',
+                            load_codeset('ecp_concepts', 'ciccc') %>% 
+                              filter(concept_group == '2020_cbg'),
+                            'ecp_block_group_2020')
   
 )

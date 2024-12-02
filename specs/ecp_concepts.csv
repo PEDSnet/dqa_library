@@ -516,3 +516,7 @@ head_circumference,3001537,8287-5,Head Occipital-frontal circumference by Tape m
 smoking_tobacco,4005823,110483000,Tobacco user,SNOMED
 smoking_tobacco,4219336,39953003,Tobacco,SNOMED
 smoking_tobacco,4275495,365981007,Tobacco smoking behavior - finding,SNOMED
+2010_tract,2010,2010,Year of 2010,
+2010_cbg,2010,2010,Year of 2010,
+2020_tract,2020,2020,Year of 2020,
+2020_cbg,2020,2020,Year of 2020,

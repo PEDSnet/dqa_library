@@ -50,10 +50,15 @@ check_bmc_gen <- function(fact_tbl_list_args,
     
     fact_tbl_name <- paste0(names(fact_tbl_list_args[i]))
     
-    xwalk <-
-      find_concept_names(fact_tbl = fact_tbl_list_args[[i]][[1]],
-                         fact_concept_id = fact_tbl_list_args[[i]][[2]],
-                         concept_field = fact_tbl_list_args[[i]][[5]])
+    if(grepl('fips_', names(fact_tbl_list_args[i]))){
+      xwalk <- fact_tbl_list_args[[i]][[1]] %>%
+        rename(concept_type=!!sym(fact_tbl_list_args[[i]][[2]]))
+    }else{
+      xwalk <-
+        find_concept_names(fact_tbl = fact_tbl_list_args[[i]][[1]],
+                           fact_concept_id = fact_tbl_list_args[[i]][[2]],
+                           concept_field = fact_tbl_list_args[[i]][[5]])
+    }
     
     total_cts <- 
       xwalk %>% 

@@ -9,6 +9,8 @@ op_cs_spec <- site_cdm_tbl('visit_occurrence') %>%
   filter(visit_concept_id %in% c(9202L, 581399L)) %>%
   inner_join(select(site_cdm_tbl('care_site'), care_site_id, specialty_concept_id))
 
+geocode_tbls <- prep_geocodes()
+
 # op_spec <- select(site_cdm_tbl('visit_occurrence'), person_id, visit_concept_id,
 #                   provider_id, care_site_id) %>%
 #   filter(visit_concept_id %in% c(9202L, 581399L)) %>%
@@ -81,6 +83,18 @@ fact_tbl_list <- list(
                        'service_concept_id',
                        'ADT service_concept_id',
                        'bmc_adt_service',
-                       'concept_name')
+                       'concept_name'),
+  
+  'fips_tract' = list(geocode_tbls$tract_level, 
+                     'ndigit_fips',
+                     'FIPS Census Tract',
+                     'bmc_fips_tract',
+                     'ndigit_fips'),
+  
+  'fips_block_group' = list(geocode_tbls$block_group_level, 
+                            'ndigit_fips',
+                            'FIPS Block Group',
+                            'bmc_fips_block_group',
+                            'ndigit_fips')
   
 )
