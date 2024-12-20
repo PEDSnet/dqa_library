@@ -11,6 +11,7 @@ pdl_pts <- pcd %>%
 geocode_tbls <- prep_geocodes()
 geocode_tract <- copy_to_new(df = geocode_tbls$tract_level)
 geocode_cbg <- copy_to_new(df = geocode_tbls$block_group_level)
+geocode_lohis <- copy_to_new(df = geocode_tbls$lohis_geocoding)
 
 #' List of inputs for check_ecp
 #'
@@ -166,6 +167,22 @@ ecp_codeset_list <- list(
                             'geocode_year',
                             load_codeset('ecp_concepts', 'ciccc') %>% 
                               filter(concept_group == '2020_cbg'),
-                            'ecp_block_group_2020')
+                            'ecp_block_group_2020'),
+  
+  'twoplus_lohis_2010' = list(geocode_lohis %>%
+                                filter(geocode_year == 2010, ngeo_lohis > 1),
+                              site_cdm_tbl('person') %>% select(site, person_id),
+                              'geocode_year',
+                              load_codeset('ecp_concepts', 'ciccc') %>% 
+                                filter(concept_group == '2010_lohis'),
+                              'ecp_twoplus_lohis_2010'),
+  
+  'twoplus_lohis_2020' = list(geocode_lohis %>%
+                                filter(geocode_year == 2020, ngeo_lohis > 1),
+                              site_cdm_tbl('person') %>% select(site, person_id),
+                              'geocode_year',
+                              load_codeset('ecp_concepts', 'ciccc') %>% 
+                                filter(concept_group == '2020_lohis'),
+                              'ecp_twoplus_lohis_2020')
   
 )

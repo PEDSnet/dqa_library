@@ -75,6 +75,7 @@ check_bmc_gen <- function(fact_tbl_list_args,
       summarise(concept_rows=n(),
                 concept_pts=n_distinct(person_id)) %>% 
       rename('concept' = !!sym(concept_grpd)) %>%
+      mutate(concept = as.character(concept)) %>%
       collect_new()
     
     if(length(concept_grpd) > 1) {
