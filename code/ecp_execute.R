@@ -5,13 +5,28 @@ drg <- site_cdm_tbl('drug_exposure') %>% select(person_id) %>% distinct()
 ml <- site_cdm_tbl('measurement_labs') %>% select(person_id) %>% distinct()
 
 pdl_pts <- pcd %>%
-  inner_join(drg) %>% 
+  inner_join(drg) %>%
   inner_join(ml) %>% compute_new()
 
-geocode_tbls <- prep_geocodes()
+valid_ftf_dx <- cdm_tbl('visit_occurrence') %>%
+  select(site, person_id, visit_occurrence_id, visit_concept_id) %>%
+  filter(visit_concept_id %in% c(9201, 9202, 9203, 581399, 2000000048)) %>%
+  inner_join(select(cdm_tbl('condition_occurrence'), site, person_id, 
+                    visit_occurrence_id)) %>%
+  select(site, person_id) %>%
+  compute_new()
+
+valid_demo <- cdm_tbl('person') %>%
+  inner_join(valid_ftf_dx) %>%
+  filter(!is.na(birth_date) & 
+           !gender_concept_id %in% c(44814650, 44814653, 44814649)) %>%
+  distinct(site, person_id, location_id) %>% compute_new()
+
+geocode_tbls <- prep_geocodes(person_tbl = valid_demo)
 geocode_tract <- copy_to_new(df = geocode_tbls$tract_level)
 geocode_cbg <- copy_to_new(df = geocode_tbls$block_group_level)
-geocode_lohis <- copy_to_new(df = geocode_tbls$lohis_geocoding)
+geocode_lohis_tract <- copy_to_new(df = geocode_tbls$lohis_tract)
+geocode_lohis_bg <- copy_to_new(df = geocode_tbls$lohis_bg)
 
 #' List of inputs for check_ecp
 #'
@@ -45,7 +60,7 @@ ecp_codeset_list <- list(
                            'measurement_concept_id',
                            load_codeset('ecp_concepts', 'ciccc') %>% filter(concept_group == 'hemoglobin'),
                            'ecp_hemoglobin'),
-  
+
   'platelet_labs' = list(site_cdm_tbl('measurement_labs'),
                          pdl_pts,
                                'measurement_concept_id',
@@ -58,88 +73,88 @@ ecp_codeset_list <- list(
                     'measurement_concept_id',
                     load_codeset('ecp_concepts', 'ciccc') %>% filter(concept_group == 'anc'),
                     'ecp_anc'),
-  
+
   'scr_labs' = list(site_cdm_tbl('measurement_labs'),
                     pdl_pts,
                     'measurement_concept_id',
                     load_codeset('ecp_concepts', 'ciccc') %>% filter(concept_group == 'creatinine_serum'),
                     'ecp_scr'),
-  
+
   'sodium_labs' = list(site_cdm_tbl('measurement_labs'),
                        pdl_pts,
                        'measurement_concept_id',
                        load_codeset('ecp_concepts', 'ciccc') %>% filter(concept_group == 'sodium'),
                        'ecp_sodium'),
-  
+
   'alanine_transaminase_labs' = list(site_cdm_tbl('measurement_labs'),
                                      pdl_pts,
                                      'measurement_concept_id',
-                                     load_codeset('ecp_concepts', 'ciccc') %>% 
+                                     load_codeset('ecp_concepts', 'ciccc') %>%
                                        filter(concept_group == 'alanine_transaminase'),
                                      'ecp_alanine_transaminase'),
-  
+
   'urine_protein_qual_labs' = list(site_cdm_tbl('measurement_labs'),
                                    pdl_pts,
                               'measurement_concept_id',
-                              load_codeset('ecp_concepts', 'ciccc') %>% 
+                              load_codeset('ecp_concepts', 'ciccc') %>%
                                 filter(concept_group == 'urine_protein_qual'),
                               'ecp_urine_protein_qual'),
-  
+
   # 'cholesterol_labs' = list(site_cdm_tbl('measurement_labs'),
   #                           pdl_pts,
   #                           'measurement_concept_id',
   #                           load_codeset('ecp_concepts', 'ciccc') %>% filter(concept_group == 'cholesterol_all'),
   #                           'ecp_cholesterol'),
-   
+
   'rapid_strep_labs' = list(site_cdm_tbl('measurement_labs'),
                             pdl_pts,
                             'measurement_concept_id',
                             load_codeset('ecp_concepts', 'ciccc') %>% filter(concept_group == 'rapid_strep'),
                             'ecp_rapid_strep'),
-  
+
   'flu_labs' = list(site_cdm_tbl('measurement_labs'),
                     pdl_pts,
                     'measurement_concept_id',
                     load_codeset('ecp_concepts', 'ciccc') %>% filter(concept_group == 'influenza'),
                     'ecp_flu'),
-  
+
   'rsv_labs' = list(site_cdm_tbl('measurement_labs'),
                     pdl_pts,
                     'measurement_concept_id',
                     load_codeset('ecp_concepts', 'ciccc') %>% filter(concept_group == 'rsv'),
                     'ecp_rsv'),
-  
+
   'head_circumference' = list(site_cdm_tbl('measurement_anthro'),
                               pdl_pts,
                               'measurement_concept_id',
-                              load_codeset('ecp_concepts', 'ciccc') %>% 
+                              load_codeset('ecp_concepts', 'ciccc') %>%
                                 filter(concept_group == 'head_circumference'),
                               'ecp_head_circumference'),
-  
+
   'smoking_tobacco' = list(site_cdm_tbl('observation'),
                            pdl_pts,
                            'observation_concept_id',
-                           load_codeset('ecp_concepts', 'ciccc') %>% 
+                           load_codeset('ecp_concepts', 'ciccc') %>%
                              filter(concept_group == 'smoking_tobacco'),
                            'ecp_smoking_tobacco'),
-  
+
   'height' = list(site_cdm_tbl('measurement_anthro'),
                   pdl_pts,
                   'measurement_concept_id',
-                  load_codeset('ecp_concepts', 'ciccc') %>% 
+                  load_codeset('ecp_concepts', 'ciccc') %>%
                     filter(concept_group == 'height'),
                   'ecp_height'),
-  
+
   'weight' = list(site_cdm_tbl('measurement_anthro'),
                   pdl_pts,
                   'measurement_concept_id',
-                  load_codeset('ecp_concepts', 'ciccc') %>% 
+                  load_codeset('ecp_concepts', 'ciccc') %>%
                     filter(concept_group == 'weight'),
                   'ecp_weight'),
   
   'tract_2010' = list(geocode_tract %>%
                         filter(ndigit_fips == 11 & geocode_year == 2010),
-                      site_cdm_tbl('person') %>% select(site, person_id),
+                      valid_demo %>% select(-location_id),
                       'geocode_year',
                       load_codeset('ecp_concepts', 'ciccc') %>% 
                         filter(concept_group == '2010_tract'),
@@ -147,7 +162,7 @@ ecp_codeset_list <- list(
   
   'tract_2020' = list(geocode_tract %>%
                         filter(ndigit_fips == 11 & geocode_year == 2020),
-                      site_cdm_tbl('person') %>% select(site, person_id),
+                      valid_demo %>% select(-location_id),
                       'geocode_year',
                       load_codeset('ecp_concepts', 'ciccc') %>% 
                         filter(concept_group == '2020_tract'),
@@ -155,7 +170,7 @@ ecp_codeset_list <- list(
   
   'block_group_2010' = list(geocode_cbg %>%
                               filter(ndigit_fips == 12 & geocode_year == 2010),
-                            site_cdm_tbl('person') %>% select(site, person_id),
+                            valid_demo %>% select(-location_id),
                             'geocode_year',
                             load_codeset('ecp_concepts', 'ciccc') %>% 
                               filter(concept_group == '2010_cbg'),
@@ -163,26 +178,42 @@ ecp_codeset_list <- list(
   
   'block_group_2020' = list(geocode_cbg %>%
                               filter(ndigit_fips == 12 & geocode_year == 2020),
-                            site_cdm_tbl('person') %>% select(site, person_id),
+                            valid_demo %>% select(-location_id),
                             'geocode_year',
                             load_codeset('ecp_concepts', 'ciccc') %>% 
                               filter(concept_group == '2020_cbg'),
                             'ecp_block_group_2020'),
   
-  'twoplus_lohis_2010' = list(geocode_lohis %>%
+  'twoplus_lohis_tract_2010' = list(geocode_lohis_tract %>%
                                 filter(geocode_year == 2010, ngeo_lohis > 1),
-                              site_cdm_tbl('person') %>% select(site, person_id),
+                              valid_demo %>% select(-location_id),
                               'geocode_year',
                               load_codeset('ecp_concepts', 'ciccc') %>% 
-                                filter(concept_group == '2010_lohis'),
-                              'ecp_twoplus_lohis_2010'),
+                                filter(concept_group == '2010_lohis_tract'),
+                              'ecp_twoplus_lohis_tract_2010'),
   
-  'twoplus_lohis_2020' = list(geocode_lohis %>%
+  'twoplus_lohis_cbg_2010' = list(geocode_lohis_bg %>%
+                                      filter(geocode_year == 2010, ngeo_lohis > 1),
+                                    valid_demo %>% select(-location_id),
+                                    'geocode_year',
+                                    load_codeset('ecp_concepts', 'ciccc') %>% 
+                                      filter(concept_group == '2010_lohis_cbg'),
+                                    'ecp_twoplus_lohis_cbg_2010'),
+  
+  'twoplus_lohis_tract_2020' = list(geocode_lohis_tract %>%
                                 filter(geocode_year == 2020, ngeo_lohis > 1),
-                              site_cdm_tbl('person') %>% select(site, person_id),
+                              valid_demo %>% select(-location_id),
                               'geocode_year',
                               load_codeset('ecp_concepts', 'ciccc') %>% 
-                                filter(concept_group == '2020_lohis'),
-                              'ecp_twoplus_lohis_2020')
+                                filter(concept_group == '2020_lohis_tract'),
+                              'ecp_twoplus_lohis_tract_2020'),
+  
+  'twoplus_lohis_cbg_2020' = list(geocode_lohis_bg %>%
+                                      filter(geocode_year == 2020, ngeo_lohis > 1),
+                                    valid_demo %>% select(-location_id),
+                                    'geocode_year',
+                                    load_codeset('ecp_concepts', 'ciccc') %>% 
+                                      filter(concept_group == '2020_lohis_cbg'),
+                                    'ecp_twoplus_lohis_cbg_2020')
   
 )

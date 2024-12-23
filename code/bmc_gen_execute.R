@@ -9,7 +9,21 @@ op_cs_spec <- site_cdm_tbl('visit_occurrence') %>%
   filter(visit_concept_id %in% c(9202L, 581399L)) %>%
   inner_join(select(site_cdm_tbl('care_site'), care_site_id, specialty_concept_id))
 
-geocode_tbls <- prep_geocodes()
+valid_ftf_dx <- cdm_tbl('visit_occurrence') %>%
+  select(site, person_id, visit_occurrence_id, visit_concept_id) %>%
+  filter(visit_concept_id %in% c(9201, 9202, 9203, 581399, 2000000048)) %>%
+  inner_join(select(cdm_tbl('condition_occurrence'), site, person_id, 
+                    visit_occurrence_id)) %>%
+  select(site, person_id) %>%
+  compute_new()
+
+valid_demo <- cdm_tbl('person') %>%
+  inner_join(valid_ftf_dx) %>%
+  filter(!is.na(birth_date) & 
+           !gender_concept_id %in% c(44814650, 44814653, 44814649)) %>%
+  distinct(site, person_id, location_id) %>% compute_new()
+
+geocode_tbls <- prep_geocodes(person_tbl = valid_demo)
 
 # op_spec <- select(site_cdm_tbl('visit_occurrence'), person_id, visit_concept_id,
 #                   provider_id, care_site_id) %>%
@@ -72,13 +86,7 @@ fact_tbl_list <- list(
                       'outpatient care site specialty',
                       'bmc_csvo_spec',
                       'concept_name'),
-  
-  # 'op_spec' = list(op_spec,
-  #                  'specialty_concept_id',
-  #                  'outpatient specialty (from specialty tbl)',
-  #                  'bmc_vo_spec',
-  #                  'concept_name'),
-  
+
   'adt_service' = list(site_cdm_tbl('adt_occurrence'),
                        'service_concept_id',
                        'ADT service_concept_id',
