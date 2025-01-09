@@ -1,0 +1,99 @@
+---
+title: "PEDSnet Geocoding Data Quality Summary"
+author: "PEDSnet Data Coordinating Center"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+output:
+  html_document:
+    df_print: paged
+    toc: yes
+    toc_collapsed: yes
+    toc_float: yes
+---
+
+```{r setup, include=FALSE}
+# Default taken from R notebook behavior: when knitting, wd will always be location of notebook
+base_dir <- '..'
+Sys.setenv(PEDSNET_SKIP_REQUEST_EXECUTION=1)
+try(source('../site/run.R')) # May not be able to make db connection
+
+# Set to "local" to read data from ../results, or another value to read from db
+data_source <- if_else(config('execution_mode') == 'distribution', 'local', 'not_local')
+
+require(tidyr)
+require(knitr)
+require(kableExtra)
+require(stringr)
+require(tibble)
+require(ggplot2)
+
+get_results <- function(tbl_name) {
+  if (data_source == 'local') {
+    rslt <- read_csv(paste0('../results/', tbl_name, '.csv'))
+  }
+  else {
+    rslt <- results_tbl(tbl_name) %>% collect()
+  }
+rslt
+}
+
+prettify_kable <- function(data) {
+  data %>% kable(digits = 4, format.args = list(big.mark = ',')) %>% 
+    kable_styling(bootstrap_options = c("striped", "hover")) %>% 
+    column_spec(1, bold = T, border_right = T)
+}
+
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+
+```
+
+# Broad Completeness Assessment
+
+Using a population of patients with a valid sex, valid DOB, and at least one face-to-face encounter, we assessed the proportion of patients for whom at least one location_id is able to be linked to a geocode at the census tract and/or block group level for the 2010 and 2020 census years.
+
+```{r}
+
+get_results('ecp_output_pp') %>%
+  filter(check_name %in% c('ecp_tract_2020', 'ecp_block_group_2020',
+                           'ecp_tract_2010', 'ecp_block_group_2010')) %>%
+  mutate(check_name = case_when(check_name == 'ecp_tract_2010' ~ '2010 Census Tract',
+                                check_name == 'ecp_tract_2020' ~ '2020 Census Tract',
+                                check_name == 'ecp_block_group_2010' ~ '2010 Census Block Group',
+                                check_name == 'ecp_block_group_2020' ~ '2020 Census Block Group')) %>%
+  ggplot(aes(x = site, y = prop_with_concept, fill = site)) +
+  geom_col() +
+  facet_wrap(~check_name) +
+  theme_minimal() +
+  theme(legend.position = 'none',
+        axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5)) +
+  labs(y = 'Prop. Patients with Geocoded Location',
+       x = 'Site')
+
+```
+
+# Pre-Normalization Residential History
+
+## Patients with 2+ Geocoded Location History Records
+
+Using a population of patients with a valid sex, valid DOB, and at least one face-to-face encounter, we assessed the proportion of patients for whom 2 or more distinct records in the location_history table are able to be linked to a geocode at the census tract and/or block group level for the 2010 and 2020 census years.
+
+Some patients have not moved and therefore are not expected to have multiple location_history records, so 100% satisfaction of this metric is unlikely. 
+
+```{r}
+
+get_results('ecp_output_pp') %>%
+  filter(check_name %in% c('ecp_twoplus_lohis_tract_2020', 'ecp_twoplus_lohis_cbg_2020',
+                           'ecp_twoplus_lohis_tract_2010', 'ecp_twoplus_lohis_cbg_2010')) %>%
+  mutate(check_name = case_when(check_name == 'ecp_twoplus_lohis_tract_2010' ~ '2010 Census Tract',
+                                check_name == 'ecp_twoplus_lohis_tract_2020' ~ '2020 Census Tract',
+                                check_name == 'ecp_twoplus_lohis_cbg_2010' ~ '2010 Census Block Group',
+                                check_name == 'ecp_twoplus_lohis_cbg_2020' ~ '2020 Census Block Group')) %>%
+  ggplot(aes(x = site, y = prop_with_concept, fill = site)) +
+  geom_col() +
+  facet_wrap(~check_name) +
+  theme_minimal() +
+  theme(legend.position = 'none',
+        axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5)) +
+  labs(y = 'Prop. Patients with 2+ Geocoded Locations',
+       x = 'Site')
+
+```
