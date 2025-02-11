@@ -119,11 +119,11 @@ config('retain_intermediates', NA)
 #' during processing of the request.
 #' If it is `NA`, the default value from site_info.R is used.
 #' @md
-config('results_schema', 'dqa_spark_test')
+config('results_schema', 'dqa_rox')
+config('results_schema_prev', 'dqa_rox')
 
-
-config('previous_version','v51')
-config('current_version','v52')
+config('previous_version','v55')
+config('current_version','v56')
 
 config('versions_filter',TRUE)
 config('versions_filter_col', 'site')

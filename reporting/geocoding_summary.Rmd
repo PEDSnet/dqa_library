@@ -11,14 +11,9 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-# Default taken from R notebook behavior: when knitting, wd will always be location of notebook
-base_dir <- '..'
-Sys.setenv(PEDSNET_SKIP_REQUEST_EXECUTION=1)
-try(source('../site/run.R')) # May not be able to make db connection
-
-# Set to "local" to read data from ../results, or another value to read from db
-data_source <- if_else(config('execution_mode') == 'distribution', 'local', 'not_local')
-
+require(argos)
+require(srcr)
+require(dplyr)
 require(tidyr)
 require(knitr)
 require(kableExtra)
@@ -26,14 +21,16 @@ require(stringr)
 require(tibble)
 require(ggplot2)
 
+geocoding_report <- argos$new()
+
+set_argos_default(geocoding_report)
+
+config('db_src', srcr(Sys.getenv('PEDSNET_DB_SRC_CONFIG_BASE')))
+config('results_name_tag', '')
+config('retain_intermediates', FALSE)
+
 get_results <- function(tbl_name) {
-  if (data_source == 'local') {
-    rslt <- read_csv(paste0('../results/', tbl_name, '.csv'))
-  }
-  else {
     rslt <- results_tbl(tbl_name) %>% collect()
-  }
-rslt
 }
 
 prettify_kable <- function(data) {
@@ -52,6 +49,8 @@ Using a population of patients with a valid sex, valid DOB, and at least one fac
 
 ```{r}
 
+config('results_schema', 'dqa_rox')
+
 get_results('ecp_output_pp') %>%
   filter(check_name %in% c('ecp_tract_2020', 'ecp_block_group_2020',
                            'ecp_tract_2010', 'ecp_block_group_2010')) %>%
@@ -63,6 +62,7 @@ get_results('ecp_output_pp') %>%
   geom_col() +
   facet_wrap(~check_name) +
   theme_minimal() +
+  scale_fill_brewer(palette = 'Paired') +
   theme(legend.position = 'none',
         axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5)) +
   labs(y = 'Prop. Patients with Geocoded Location',
@@ -72,13 +72,51 @@ get_results('ecp_output_pp') %>%
 
 # Pre-Normalization Residential History
 
+## 1+ Geocoded Location History Records
+
+Assessed the proportion of rows in the `location_history` table and patients that had at least one location history record that are able to be linked to a geocode at the census tract and/or block group level for the 2010 and 2020 census years.
+
+```{r}
+config('results_schema', 'dq_residential_history')
+
+row_level <- get_results('pct_loc_his_records_with_fips') %>%
+  pivot_longer(cols = !site) %>%
+  mutate(geocode_type = case_when(grepl('2010_tract', name) ~ '2010 Census Tract',
+                                  grepl('2020_tract', name) ~ '2020 Census Tract',
+                                  grepl('2010_block', name) ~ '2010 Census Block Group',
+                                  grepl('2020_block', name) ~ '2020 Census Block Group'),
+         analysis_level = 'Row')
+
+pt_level <- get_results('pct_pats_with_loc_his_and_fips') %>%
+  pivot_longer(cols = !site) %>%
+  mutate(geocode_type = case_when(grepl('2010_tract', name) ~ '2010 Census Tract',
+                                  grepl('2020_tract', name) ~ '2020 Census Tract',
+                                  grepl('2010_block', name) ~ '2010 Census Block Group',
+                                  grepl('2020_block', name) ~ '2020 Census Block Group'),
+         analysis_level = 'Patient',
+         value = ifelse(is.na(value), 0, value))
+
+row_level %>%
+  dplyr::union(pt_level) %>%
+  ggplot(aes(x = site, y = value, fill = analysis_level)) +
+  geom_col(position = 'dodge') +
+  facet_wrap(~geocode_type) +
+  theme_minimal() +
+  scale_fill_brewer(palette = 'Set2') +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5)) +
+  labs(x = 'Site',
+       y = 'Proportion with 1+ Geocode',
+       fill = 'Analysis Level')
+
+```
+
 ## Patients with 2+ Geocoded Location History Records
 
 Using a population of patients with a valid sex, valid DOB, and at least one face-to-face encounter, we assessed the proportion of patients for whom 2 or more distinct records in the location_history table are able to be linked to a geocode at the census tract and/or block group level for the 2010 and 2020 census years.
 
-Some patients have not moved and therefore are not expected to have multiple location_history records, so 100% satisfaction of this metric is unlikely. 
-
 ```{r}
+
+config('results_schema', 'dqa_rox')
 
 get_results('ecp_output_pp') %>%
   filter(check_name %in% c('ecp_twoplus_lohis_tract_2020', 'ecp_twoplus_lohis_cbg_2020',
@@ -93,7 +131,137 @@ get_results('ecp_output_pp') %>%
   theme_minimal() +
   theme(legend.position = 'none',
         axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5)) +
+  scale_fill_brewer(palette = 'Paired') +
   labs(y = 'Prop. Patients with 2+ Geocoded Locations',
        x = 'Site')
+
+```
+
+## Patients without Location History Records
+
+Assessed the proportion of patients who did not have evidence of any record in the `location_history` table.
+
+```{r}
+
+config('results_schema', 'dq_residential_history')
+
+get_results('pct_pats_without_loc_his_record') %>%
+  ggplot(aes(x = site, y = pct_pats_missing_loc_his_record, fill = site)) +
+  geom_col() +
+  theme_minimal() +
+  theme(legend.position = 'none',
+        axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5)) +
+  scale_fill_brewer(palette = 'Paired') +
+  labs(x = 'Site',
+       y = 'Prop. Patients Missing Loc. His. Record')
+
+```
+
+## Duplicate Location History Records
+
+Identified duplicate records by checking for repeated combinations of `person_id`, `census_block_group`, `start_date`, and `end_date` in the `location_history` table, then calculates the total count of duplicates and distinct duplicates for census year, and finally computes the percentage of duplicates for those census years.
+
+```{r}
+
+row_level <- get_results('pct_loc_his_records_dups') %>%
+  select(site, pct_loc_his_dup_records_2010, pct_loc_his_dup_records_2020) %>%
+  pivot_longer(!site) %>%
+  mutate(geocode_year = ifelse(grepl('2010', name), '2010 Census Block Group', 
+                               '2020 Census Block Group'),
+         analysis_level = 'Row',
+         value = ifelse(is.na(value), 0, value))
+
+pt_level <- get_results('pct_pats_with_dups') %>%
+  select(site, pct_pats_dup_records_2010, pct_pats_dup_records_2020) %>%
+  pivot_longer(!site) %>%
+  mutate(geocode_year = ifelse(grepl('2010', name), '2010 Census Block Group', 
+                               '2020 Census Block Group'),
+         analysis_level = 'Patient',
+         value = ifelse(is.na(value), 0, value))
+
+row_level %>%
+  union(pt_level) %>%
+  ggplot(aes(x = site, y = value, fill = analysis_level)) +
+  geom_col(position = 'dodge') +
+  facet_wrap(~geocode_year) +
+  theme_minimal() +
+  scale_fill_brewer(palette = 'Set2') +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5)) +
+  labs(x = 'Site',
+       y = 'Proportion Duplicates',
+       fill = 'Analysis Level')
+
+```
+
+## Overlapping Geocode Dates
+
+Identifies overlapping date ranges for the same `person_id` and `census_block_group` within each census year, and found the proportion of both rows and patients that had overlapping records.
+
+```{r}
+
+row_level <- get_results('pct_loc_his_records_with_overlapping_geocode_dates') %>%
+  select(site, pct_loc_his_recs_with_overlap_2010_cbg_dates, 
+         pct_loc_his_recs_with_overlap_2020_cbg_dates) %>%
+  pivot_longer(!site) %>%
+  mutate(geocode_year = ifelse(grepl('2010', name), '2010 Census Block Group', 
+                               '2020 Census Block Group'),
+         analysis_level = 'Row',
+         value = ifelse(is.na(value), 0, value))
+
+pt_level <- get_results('pct_pats_with_overlapping_geocode_dates') %>%
+  select(site, pct_pats_with_overlap_2010_cbg_dates, 
+         pct_pats_with_overlap_2020_cbg_dates) %>%
+  pivot_longer(!site) %>%
+  mutate(geocode_year = ifelse(grepl('2010', name), '2010 Census Block Group', 
+                               '2020 Census Block Group'),
+         analysis_level = 'Patient',
+         value = ifelse(is.na(value), 0, value))
+
+row_level %>%
+  union(pt_level) %>%
+  ggplot(aes(x = site, y = value, fill = analysis_level)) +
+  geom_col(position = 'dodge') +
+  facet_wrap(~geocode_year) +
+  theme_minimal() +
+  scale_fill_brewer(palette = 'Set2') +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5)) +
+  labs(x = 'Site',
+       y = 'Proportion with Overlapping Dates',
+       fill = 'Analysis Level')
+
+```
+
+## Patients with 30 Day Gap b/w Records
+
+Checks whether a patient's previous location history record ends more than 30 days before their next record starts
+
+```{r}
+
+get_results('pct_pats_with_30d_gap') %>%
+  ggplot(aes(x = site, y = pct_pats_with_30_day_gap, fill = site)) +
+  geom_col() +
+  theme_minimal() +
+  theme(legend.position = 'none',
+        axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5)) +
+  scale_fill_brewer(palette = 'Paired') +
+  labs(x = 'Site',
+       y = 'Prop. Patients with 30 Day Gap')
+
+```
+
+## Patients with Encompassing Location History
+
+Calculates the percentage of patients who have at least one location history record for each year from 2009 to 2024
+
+```{r}
+
+get_results('pct_pats_per_year_with_encompassing_loc_his') %>%
+  ggplot(aes(x = year, y = pct_pats_with_loc_his_for_year, color = site)) +
+  geom_line() +
+  theme_minimal() +
+  scale_color_brewer(palette = 'Paired') +
+  labs(x = 'Year',
+       y = 'Prop. Patients with Full History', 
+       color = 'Site')
 
 ```

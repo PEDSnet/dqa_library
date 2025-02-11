@@ -40,14 +40,14 @@
 #' @md
 config('db_src', {
   require(srcr);
-  srcr('argos_pedsnet_current')
+  srcr(Sys.getenv('PEDSNET_DB_SRC_CONFIG_BASE'))
 })
 
-config('db_src_prev', {
-  require(srcr);
-  srcr('argos_pedsnet_prev')
-
-})
+# config('db_src_prev', {
+#   require(srcr);
+#   srcr('argos_pedsnet_prev')
+# 
+# })
 
 #' Name of the schema, if any, to be prepended to CDM fact table names.
 #'
