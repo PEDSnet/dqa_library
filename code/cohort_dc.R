@@ -1,255 +1,146 @@
 
-
-
-#' @md
-#' compare cycles meta; the list should have both the table name  
-#' as well as 
-#' 
-#' @param meta_tbls a list of descriptions for the tables that are being computed;
-#' should contain both the table name as well as a description of the table
-#' @param versions_tbl_list a list of the computed tables comparing data cycles
-#' @param check_string the string for the check name
-#' 
-#' @return A four column table that has table name, description, number of columns,
-#' number of rows; this is the meta table for checking between versions
-#' 
-
-compute_dc_meta_tbl <- function(meta_tbls, 
-                                        #           versions_tbl_list,
-                                        check_string='dc') {
+#' Data Cycle Changes
+#'
+#' @param dc_tbl_list list of tables that should be tested in both the current and
+#'                    previous data model versions
+#'                    
+#'                    should be a named list where each element contains the name of
+#'                    the table as a string and any filter logic that should be applied
+#'                    to the table; if no filter logic is needed, the second element should
+#'                    be left as NA
+#' @param prev_ct_src a string indicating where the counts from the previous data model
+#'                    should be extracted: either `cdm` (to pull from the previous CDM instance)
+#'                    or `result` (to pull from a previous instance of check_dc output)
+#' @param prev_rslt_tbl if prev_ct_src = 'result', the name of the table where previous results
+#'                      are stored. automatically will pull this from the previously defined
+#'                      results_schema_prev config
+#' @param prev_rslt_db if prev_ct_src = 'result', the database connection to be used to 
+#'                     access the previous results; defaults to `config('db_src')`
+#' @param dc_meta_list list of metadata associated with each entry in `dc_tbl_list`
+#'                     
+#'                     should be structured as a nested list where each entry is named
+#'                     the same as the entry in `dc_tbl_list` and contains two elements:
+#'                     a longer description of the check and an abbreviated identifier to 
+#'                     represent the check (i.e. 'dr' for 'drug_exposure')
+#' @param check_string an abbreviated identifier to identify all output from this module
+#'                     defaults to `dc`
+#'
+#' @returns a list with two dataframes:
+#'          - `dc_cts`: dataframe containing the row and (where applicable) person counts for each table
+#'          - `dc_meta`: the metadata associated with each input table that appears in `dc_cts`
+#' @export
+#'
+#' @examples
+check_dc <- function(dc_tbl_list,
+                     prev_ct_src = 'cdm',
+                     prev_rslt_tbl = 'dc_output',
+                     prev_rslt_db = config('db_src'),
+                     dc_meta_list, 
+                     check_string = 'dc'){
   
-  
-  meta_tibble <- 
-    tibble(
-      check_name = character(),
-      check_description = character(),
-      check_type = character(),
-      version_previous = character(),
-      version_current = character()
-    )
-  
-  for(i in 1:length(meta_tbls)) {
-    
-    
-    full_tbl_name = paste0(check_string, '_', meta_tbls[[i]][[2]])
-    
-    table_type_name = full_tbl_name
-    table_description_thisround = meta_tbls[[i]][[1]]
-    
-    meta_tibble_thisround <- 
-      meta_tibble %>%
-      add_row(
-        check_name=table_type_name,
-        check_description = table_description_thisround,
-        check_type = check_string,
-        version_previous = config('previous_version'),
-        version_current = config('current_version')
-      )
-    
-    meta_tibble <- meta_tibble_thisround
-    
-  }
-  meta_tibble
-}
-
-
-#' compare both total counts in current db vs prev db
-#' as well as count of patients in current db vs prev db
-#' 
-#' @param prev_v_results the data cycle changes check output that includes
-#' the precomputed counts from the most recent version of the data model
-#' @param current_v_tbls A list that contains the tables from the current
-#' version of the db; 
-#' the name of the list will be the name of the table
-#' @param meta_tbls A list that contains: 
-#'  1. List name containing the same name as the `prev_v_tbls` and `current_v_tbls` list
-#'  2. Description of the 
-#' @param prev_v string of previous version of db
-#' @param current_v string of current version
-#' 
-#' @return tibble that has grouped variables, and total 
-#' row and patient counts of previous vs current versions 
-#' 
-#' 
-check_dc <- function(prev_v_results,
-                     current_v_tbls,
-                     meta_tbls,
-                     prev_v,
-                     current_v,
-                     site_nm,
-                     check_string='dc') {
+  site_nm <- config('site')
+  prev_v <- config('previous_version')
+  current_v <- config('current_version')
   
   cts <- list()
   
-  for(i in 1:length(current_v_tbls)) {
+  for(i in 1:length(dc_tbl_list)){
     
-    t=names(current_v_tbls[i])
+    cli::cli_inform(paste0('Computing ', names(dc_tbl_list[i])))
     
-    if(any(str_detect(colnames(current_v_tbls[[i]]),'person_id'))){
+    pid_check <- any(str_detect(colnames(dc_tbl_list[[i]][[1]]),'person_id'))
       
-    message(paste0('Computing ',names(current_v_tbls[i])))
-      
-    this_round_prev <- 
-      prev_v_results %>%
-      filter(site == site_nm,
-             database_version == prev_v,
-             domain == t) %>%
-      collect()
-    
-    this_round_current <- 
-      current_v_tbls[[i]] %>%
-      summarise(total_ct=n(),
-                total_pt_ct=n_distinct(person_id)) %>%
-      collect() %>% 
-      mutate(database_version=current_v)
-    
+    ## Current Tables
+    if(!is.na(dc_tbl_list[[i]][[2]])){
+      this_round_current <- dc_tbl_list[[i]][[1]] %>%
+        filter(!! rlang::parse_expr(dc_tbl_list[[i]][[2]]))
     }else{
+      this_round_current <- dc_tbl_list[[i]][[1]]
+      }
       
-      message(paste0('Computing ',names(current_v_tbls[i])))
+    if(pid_check){
+      this_round_current <- this_round_current %>% 
+        summarise(total_ct=n(),
+                  total_pt_ct=n_distinct(person_id)) %>%
+        collect() %>% 
+        mutate(database_version=current_v)
+    }else{
+      this_round_current <- this_round_current %>% 
+        summarise(total_ct=n(),
+                  total_pt_ct=0) %>%
+        collect() %>% 
+        mutate(database_version=current_v)
+    }
+      
+    ## Previous Tables
+    if(prev_ct_src == 'cdm'){
+      
+      if(!is.na(dc_tbl_list[[i]][[2]])){
+        this_round_prev <- dc_tbl_list[[i]][[3]] %>% 
+          filter(!! rlang::parse_expr(dc_tbl_list[[i]][[2]]))
+      }else{
+        this_round_prev <- dc_tbl_list[[i]][[3]]
+      }
+      
+      if(pid_check){
+        this_round_prev <- this_round_prev %>%
+          summarise(total_ct=n(),
+                    total_pt_ct=n_distinct(person_id)) %>%
+          collect() %>% 
+          mutate(database_version=prev_v)
+      }else{
+        this_round_prev <- this_round_prev %>%
+          summarise(total_ct=n(),
+                    total_pt_ct=0) %>%
+          collect() %>% 
+          mutate(database_version=prev_v)
+      }
+      
+    }else{
+      t <- names(dc_tbl_list[i])
       
       this_round_prev <- 
-        prev_v_results %>%
+        get_argos_default()$qual_tbl(name = prev_rslt_tbl, schema_tag = 'results_schema_prev', 
+                                     db = prev_rslt_db) %>%
         filter(site == site_nm,
                database_version == prev_v,
                domain == t) %>%
         collect()
-      
-      this_round_current <- 
-        current_v_tbls[[i]] %>%
-        summarise(total_ct=n(),
-                  total_pt_ct=0) %>%
-        collect() %>% 
-        mutate(database_version=current_v)
     }
     
+    q <- dc_meta_list[[i]][[2]]
+    t <- names(dc_tbl_list[i])
     
-    this_round <- this_round_current
-  
-    q=meta_tbls[[t]][[2]]
-    
-    cts[[names(current_v_tbls[i])]] <- 
-      this_round  %>% 
-      mutate(site = site_nm) %>%
-     # add_meta(check_lib=check_string) %>%
-      mutate(domain=t) %>%
-      mutate(check_name=paste0(check_string,'_',q)) %>%
-     # mutate(table_name = check_name_full) %>%
-      relocate(site, .before=total_ct)  %>% mutate(check_type=check_string) %>%
-      union(this_round_prev)
-    
-    cts
-    
-  }
-  
-  
-  meta <- compute_dc_meta_tbl(meta_tbls=meta_tbls,
-                                      #versions_tbl_list=combined_list,
-                                      check_string=check_string)
-  
-  cts[[paste0(check_string,'_meta')]] <- meta
-  
-  cts 
-  
-}
-
-
-#' compare both total counts in current db vs prev db
-#' as well as count of patients in current db vs prev db
-#' 
-#' @param prev_v_tbls A list that contains the tables from the previous 
-#' version of the db;
-#' the name of the list will be the name of the table;
-#' e.g., `('procedure_occurrence' = cdm_tbl_prev('procedure_occurrence'))`
-#' @param current_v_tbls A list that contains the tables from the current
-#' version of the db; 
-#' the name of the list will be the name of the table
-#' @param meta_tbls A list that contains: 
-#'  1. List name containing the same name as the `prev_v_tbls` and `current_v_tbls` list
-#'  2. Description of the 
-#' @param prev_v string of previous version of db
-#' @param current_v string of current version
-#' 
-#' @return tibble that has grouped variables, and total 
-#' row and patient counts of previous vs current versions 
-#' 
-#' 
-check_dc_init <- function(prev_v_tbls,
-                          current_v_tbls,
-                          meta_tbls,
-                          prev_v,
-                          current_v,
-                          site_nm,
-                          check_string='dc') {
-  
-  cts <- list()
-  
-  for(i in 1:length(prev_v_tbls)) {
-    
-    if(any(str_detect(colnames(prev_v_tbls[[i]]),'person_id'))){
-      
-      message(paste0('Computing ',names(prev_v_tbls[i])))
-      
-      this_round_prev <- 
-        prev_v_tbls[[i]] %>%
-        summarise(total_ct=n(),
-                  total_pt_ct=n_distinct(person_id)) %>%
-        collect() %>% 
-        mutate(database_version=prev_v)
-      
-      this_round_current <- 
-        current_v_tbls[[i]] %>%
-        summarise(total_ct=n(),
-                  total_pt_ct=n_distinct(person_id)) %>%
-        collect() %>% 
-        mutate(database_version=current_v)
-      
+    if(prev_ct_src == 'cdm'){
+      cts[[names(dc_tbl_list[i])]] <- 
+        this_round_current %>% 
+        union(this_round_prev) %>%
+        mutate(site = site_nm) %>%
+        mutate(domain=t) %>%
+        mutate(check_name=paste0(check_string,'_',q)) %>%
+        relocate(site, .before=total_ct)  %>% mutate(check_type=check_string)
     }else{
-      
-      message(paste0('Computing ',names(prev_v_tbls[i])))
-      
-      this_round_prev <- 
-        prev_v_tbls[[i]] %>%
-        summarise(total_ct=n(),
-                  total_pt_ct=0) %>%
-        collect() %>% 
-        mutate(database_version=prev_v)
-      
-      this_round_current <- 
-        current_v_tbls[[i]] %>%
-        summarise(total_ct=n(),
-                  total_pt_ct=0) %>%
-        collect() %>% 
-        mutate(database_version=current_v)
-    }
-    
-    
-    this_round <- 
-      dplyr::union(this_round_prev,
-                   this_round_current)
-    
-    t=names(prev_v_tbls[i])
-    q=meta_tbls[[t]][[2]]
-    
-    cts[[names(prev_v_tbls[i])]] <- 
-      this_round  %>% 
-      mutate(site = site_nm) %>%
-      # add_meta(check_lib=check_string) %>%
-      mutate(domain=t) %>%
-      mutate(check_name=paste0(check_string,'_',q)) %>%
-      # mutate(table_name = check_name_full) %>%
-      relocate(site, .before=total_ct)  %>% mutate(check_type=check_string)
+      cts[[names(dc_tbl_list[i])]] <- 
+        this_round_current %>% 
+        mutate(site = site_nm) %>%
+        mutate(domain=t) %>%
+        mutate(check_name=paste0(check_string,'_',q)) %>%
+        relocate(site, .before=total_ct)  %>% mutate(check_type=check_string) %>%
+        union(this_round_prev)
+      }
     
     cts
-    
+      
   }
   
-  
-  meta <- compute_dc_meta_tbl(meta_tbls=meta_tbls,
-                              #versions_tbl_list=combined_list,
+  meta <- compute_dc_meta_tbl(meta_tbls=dc_meta_list,
                               check_string=check_string)
   
-  cts[[paste0(check_string,'_meta')]] <- meta
+  collapse_cts <- purrr::reduce(.x = cts,
+                                .f = union)
   
-  cts 
+  final_list <- list('dc_cts' = collapse_cts,
+                     'dc_meta' = meta)
   
+  return(final_list)
 }

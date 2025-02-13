@@ -1,119 +1,95 @@
-# Vector of additional packages to load before executing the request
-config_append('extra_packages', c('tidyr','lubridate','stringr', 'dplyr'))
 
+.run  <- function() {
 
-#' Execute the request
-#'
-#' This function presumes the environment has been set up, and executes the
-#' steps of the request.
-#'
-#' In addition to performing queries and analyses, the execution path in this
-#' function should include periodic progress messages to the user, and logging
-#' of intermediate totals and timing data through [append_sum()].
-#'
-#' This function is also typically executed automatically, but is separated from
-#' the setup done in [.load()] to facilitate direct invocation during
-#' development and debugging.
-#'
-#' @param base_dir The name of the top-level directory for the request.  The default
-#'   is `config('base_dir')`, which should always be valid after execution of
-#'   [.load()].
-#'
-#' @return The return value is dependent on the content of the request, but is
-#'   typically a structure pointing to some or all of the retrieved data or
-#'   analysis results.  The value is not used by the framework itself.
-#' @md
-.run  <- function(base_dir = config('base_dir')) {
-
-  message('Starting execution with framework version ',
-          config('framework_version'))
-
-  message('Precompute Tables')
-  source(file.path(base_dir, 'code', 'precompute_tables.R'))
-
-  prev <- as.character(config('previous_version'))
-  curr <- as.character(config('current_version'))
-  site_nm <- as.character(config('site'))
-
-  message('DC (Data Cycle) Check')
-    source(file.path(base_dir, 'code', 'dc_execute.R'))
-  ## if first run
-  # dc_output <- check_dc_init(prev_v_tbls = dc_args_prev,
-  #                            current_v_tbls = dc_args_current,
-  #                            meta_tbls = dc_args_meta,
-  #                            prev_v = prev,
-  #                            current_v = curr,
-  #                            site_nm = site_nm)
+  ###'`Precompute Tables` ###
+  #' This step will precompute relevant tables for the rest of the data quality
+  #' analysis.
+  cli::cli_inform(cli::col_br_green('Precompute Tables'))
   
-  ## all subsequent runs
-  dc_output <- check_dc(prev_v_results = results_tbl_prev('dc_output',
-                                                          db = config('db_src')),
-                        current_v_tbls = dc_args_current,
-                        meta_tbls = dc_args_meta,
-                        prev_v = prev,
-                        current_v = curr,
-                        site_nm = site_nm)
-    dc_output_new <- dc_output[1:36]
-    dc_output_meta <- dc_output[[37]] %>%
-      copy_to(dest = config('db_src'))
+  source(file.path('code', 'precompute_tables.R'))
 
-    dc_output_df <-
-      reduce(.x=dc_output_new,
-             .f=dplyr::union)
 
-    output_tbl_append(dc_output_df,
-                    'dc_output')
-    output_tbl_append(dc_output_meta,
-                    'dc_meta')
+  ###' `Data Cycle Changes` ###
+  #' This check intakes the list defined in `dc_execute.R` to check how counts
+  #' have changed in CDM tables between the current and previous cycles.
+  #' 
+  #' If this is your first time executing this analysis or you have added a new
+  #' check type since the last execution, we recommend changing `prev_ct_src` to 
+  #' `cdm` to pull previous counts directly from a CDM instance.
+  #' 
+  cli::cli_inform(cli::col_br_green('Data Cycle Changes'))
+  
+  source(file.path('code', 'dc_execute.R'))
+  
+  dc_output <- check_dc(dc_tbl_list = dc_args_list,
+                        dc_meta_list = dc_args_meta,
+                        prev_ct_src = 'result', ## if first run or new check was added, change to cdm
+                        prev_rslt_tbl = 'dc_output',
+                        prev_rslt_db = config('db_src'))
 
-  message('VC (Vocabulary Conformance) and VS (Valueset Conformance) Check')
-    source(file.path(base_dir, 'code', 'vc_vs_execute.R'))
-    vc <- check_vc(vocabvals=vc_list)
-    vs <- check_vs(valuesets=vs_list)
-    vc_standard <- create_vc_vs_output(vc, vs_list, string_tbl_name = 'vc')
-    vs_standard <- create_vc_vs_output(vs, vs_list, string_tbl_name = 'vs')
+  output_tbl_append(dc_output[1],'dc_output')
+  output_tbl_append(dc_output[2],'dc_meta')
 
-    vc_reduce <- vc_standard %>% reduce(.f = dplyr::union)
-    output_tbl_append(vc_reduce, 'vc_output')
+  ###' `Vocabulary and Valueset Conformance` ###
+  cli::cli_inform(cli::col_br_green('Vocabulary and Valueset Conformance'))
+  
+  source(file.path('code', 'vc_vs_execute.R'))
+  
+  vc <- check_vc(vocabvals=vc_list)
+  vc_standard <- create_vc_vs_output(vc, vs_list, string_tbl_name = 'vc')
+  
+  vc_reduce <- vc_standard %>% reduce(.f = dplyr::union)
+  output_tbl_append(vc_reduce, 'vc_output')
+    
+  vs <- check_vs(valuesets=vs_list)
+  vs_standard <- create_vc_vs_output(vs, vs_list, string_tbl_name = 'vs')
 
-    vs_reduce <- vs_standard %>% reduce(.f = dplyr::union)
-    output_tbl_append(vs_reduce, 'vs_output')
+  vs_reduce <- vs_standard %>% reduce(.f = dplyr::union)
+  output_tbl_append(vs_reduce, 'vs_output')
 
-    # vc_vs_joined <- c(vc_standard,
-    #                   vs_standard)
-    # vc_vs_final <- vc_vs_joined %>% reduce(.f=dplyr::union)
-    # output_tbl_append(vc_vs_final,
-    #                   'vc_vs_violations')
+  ###' `Unmapped Concepts` ###
+  cli::cli_inform(cli::col_br_green('Unmapped Concepts'))
+  
+  source(file.path('code', 'uc_execute.R'))
+  
+  uc <- check_uc(concept_list=uc_args_list)
+  uc_reduce <- reduce(.x=uc,
+                      .f=dplyr::union)
+  output_tbl_append(uc_reduce,
+                    'uc_output')
+  
+  uc_by_year <- check_uc_by_year(uc_args_list)
+  uc_by_year_reduce <- reduce(.x=uc_by_year,
+                              .f=dplyr::union)
+  output_tbl_append(uc_by_year_reduce,
+                    'uc_by_year')
 
-  message('UC (Unmapped Concepts) Check')
-    source(file.path(base_dir, 'code', 'uc_execute.R'))
-    uc <- check_uc(concept_list=uc_args_list)
-    uc_by_year <- check_uc_by_year(uc_args_list)
-    uc_reduce <- reduce(.x=uc,
-                        .f=dplyr::union)
-    uc_by_year_reduce <- reduce(.x=uc_by_year,
-                                .f=dplyr::union)
-    output_tbl_append(uc_reduce,
-                      'uc_output')
-    output_tbl_append(uc_by_year_reduce,
-                      'uc_by_year')
+  ###' `Missing Field: visit_occurrence_id` ###
+  cli::cli_inform(cli::col_br_green('Missing Field: visit_occurrence_id'))
+  
+  source(file.path('code', 'mf_visitid_execute.R'))
+  
+  mf_visitid <- check_mf_visitid(mf_visitid_list)
+  mf_visitid_reduce <- reduce(.x=mf_visitid,
+                              .f=dplyr::union)
+  output_tbl_append(mf_visitid_reduce,
+                    'mf_visitid_output')
 
-  message('MF VisitID (Missing Field: Visit Occurrence ID) Check')
-    source(file.path(base_dir, 'code', 'mf_visitid_execute.R'))
-    mf_visitid <- check_mf_visitid(mf_visitid_list)
-    mf_visitid_reduce <- reduce(.x=mf_visitid,
-                                .f=dplyr::union)
-    output_tbl_append(mf_visitid_reduce,
-                      'mf_visitid_output')
+  ###' `Best Mapped Concepts` ###
+  cli::cli_inform(cli::col_br_green('Best Mapped Concepts'))
+  
+  source(file.path('code', 'bmc_gen_execute.R'))
+  
+  bmc_gen <- check_bmc_gen(fact_tbl_list)
+  bmc_gen_reduce <- reduce(.x=bmc_gen,
+                              .f=dplyr::union)
+  output_tbl_append(bmc_gen_reduce,
+                    'bmc_gen_output')
 
-  message('BMC (Best Mapped Concepts) Check')
-    source(file.path(base_dir, 'code', 'bmc_gen_execute.R'))
-    bmc_gen <- check_bmc_gen(fact_tbl_list)
-    bmc_gen_reduce <- reduce(.x=bmc_gen,
-                                .f=dplyr::union)
-    output_tbl_append(bmc_gen_reduce,
-                      'bmc_gen_output')
-
+  
+  
+  
+  
   message('Expected Concepts Present')
     source(file.path(base_dir, 'code', 'ecp_execute.R'))
     ecp <- check_ecp(ecp_codeset_list)

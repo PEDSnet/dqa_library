@@ -1,21 +1,18 @@
 
-
-
-
-#' Function to check for visits in a table having an associated visit_occurrence_id
+#' Missing Field: visit_occurrence_id
 #' 
-#' @param check_visit_list A list where each element is structured as:
-#' element name: string describing the table checking visits for
-#' 1st subelement: the table containing the `visit_occurrence_id`
-#' @param string_tbl_name defaults to name of check
+#' @param check_visit_list a list of lists where each element is named with the check description 
+#' and contains the following information:
+#'      1. the table in which missing visit ids should be identified
+#'      2. the check name identifier
+#' @param string_tbl_name the name of the check to be added in the output; defaults to `mf_visitid`
 #' 
-#' @return table with:
+#' @return a dataframe summarizing missing visit occurrence ids that are either null or cannot
+#' be linked back to the visit_occurrence table. includes the columns:
+#' 
 #' measure | total_visits | missing_visits_total | missing_visits_distinct | 
 #' visit_na | total_id | check_name | database_version | site
 #' 
-
-
-
 check_mf_visitid <- function(check_visit_list,
                              string_tbl_name='mf_visitid') {
   
@@ -23,6 +20,8 @@ check_mf_visitid <- function(check_visit_list,
   tbl_visits <- list()
   
   for(i in 1:length(check_visit_list)) {
+    
+    cli::cli_inform(paste0('Starting ', names(check_visit_list)[i]))
     
     total_rows <- 
       check_visit_list[[i]][[1]] %>%

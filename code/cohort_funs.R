@@ -1,41 +1,4 @@
 
-
-#' Connect to an existing CDM data table from previous cycle
-#'
-#' @param name The name of the table
-#' @param db The database connection; you will rarely need to specify this. 
-#' Defaults to `config('db_src_prev')`
-#'
-#' @return A [dplyr::tbl()]] pointing to the table
-#' @md
-
-results_tbl <- function(name, db = config('db_src'),
-                        results_tag =  TRUE, local_tag = FALSE) {
-  .qual_tbl(intermed_name(name, temporary = FALSE,
-                          results_tag = results_tag,
-                          local_tag = local_tag),
-            'results_schema', db)
-}
-
-
-#' Connect to an existing CDM data table from previous cycle
-#'
-#' @param name The name of the table
-#' @param db The database connection; you will rarely need to specify this. 
-#' Defaults to `config('db_src_prev')`
-#'
-#' @return A [dplyr::tbl()]] pointing to the table
-#' @md
-
-results_tbl_prev <- function(name, db = config('db_src_prev'),
-                        results_tag =  TRUE, local_tag = FALSE) {
-  .qual_tbl(intermed_name(name, temporary = FALSE,
-                          results_tag = results_tag,
-                          local_tag = local_tag,
-                          schema = 'results_schema_prev'),
-            'results_schema_prev', db)
-}
-
 #' Add site to the cdm_tbl
 #' 
 #' @param name the name of the table, as a string
@@ -48,12 +11,14 @@ results_tbl_prev <- function(name, db = config('db_src_prev'),
 #' 
 
 site_cdm_tbl <- function(name,
-                       site_filter = config('site_filter'),
-                       ...) {
+                         site_filter = config('site'),
+                         ...) {
   
   my_tbl <- cdm_tbl(name, ...)
   
-  if (!is.na(site_filter)) {
+  site_col_check <- any(colnames(my_tbl) %in% 'site')
+  
+  if (!is.na(site_filter) & site_col_check) {
     my_tbl_new <- filter(my_tbl,site == site_filter)
   } else {my_tbl_new <- my_tbl}
   
@@ -73,12 +38,14 @@ site_cdm_tbl <- function(name,
 #' @return the cdm_tbl_previous name with site as a grouper
 #' 
 site_cdm_tbl_prev <- function(name,
-                              site_filter = config('site_filter_previous'),
+                              site_filter = config('site'),
                               ...) {
   
   my_tbl <- cdm_tbl_prev(name)
   
-  if (!is.na(site_filter)) {
+  site_col_check <- any(colnames(my_tbl) %in% 'site')
+  
+  if (!is.na(site_filter) & site_col_check) {
     my_tbl_new <- filter(my_tbl,site == site_filter)
   } else {my_tbl_new <- my_tbl}
   
@@ -100,17 +67,17 @@ site_cdm_tbl_prev <- function(name,
 #' 
 
 output_tbl_append <- function(data, name = NA, local = FALSE,
-                              file = ifelse(config('execution_mode') !=
-                                              'development', TRUE, FALSE),
-                              db = ifelse(config('execution_mode') !=
-                                            'distribution', TRUE, FALSE),
+                              file = ifelse(config('results_target') !=
+                                              'file', FALSE, TRUE),
+                              db = ifelse(config('results_target') !=
+                                            'file', TRUE, FALSE),
                               results_tag = TRUE, ...) {
   
   if (is.na(name)) name <- quo_name(enquo(data))
   
-  if(db_exists_table(config('db_src'),intermed_name(name,temporary=FALSE))) {
+  if(db_exists_table(config('db_src'), name = intermed_name(name))) {
     
-    tmp <- results_tbl(name) %>% collect_new 
+    tmp <- results_tbl(name) %>% collect()
     new_tbl <- 
       dplyr::union(tmp,
                    data)
@@ -143,149 +110,6 @@ output_tbl_append <- function(data, name = NA, local = FALSE,
 cdm_tbl_prev <- 
   function(name, db = config('db_src_prev'))
     .qual_tbl(name, 'cdm_schema_prev', db)
-
-
-
-#' Group by any variable needed
-#' 
-#' @param tbl_name table name to group
-#' @param group_by_vars vector of variables to group by 
-#' @param current_cycle logical that flags whether table is in current cycle
-#' 
-#' @return the table grouped by the variables specified
-
-
-group_by_opt <- function(tbl_name,
-                         group_by_vars,
-                         current_cycle=TRUE) {
-  
-  if(is.na(group_by_vars) | length(group_by_vars) == 0) {cdm_tbl(tbl_name)}
-    else {
-      group_by_syms <- rlang::syms(group_by_vars)
-      if (current_cycle) {grpd_tbl <- 
-        cdm_tbl(tbl_name) %>%
-          group_by(!!! group_by_syms)
-      } else {grpd_tbl <- 
-        cdm_tbl_prev(tbl_name) %>%
-            group_by(!!! group_by_syms)}
-    }
-  
-  grpd_tbl
-  
-}
-
-
-
-#' list of tables to filter
-#' 
-#' @param filter_list
-#'  a list with the following structure:
-#'   - list element name should be the name of the db table in quotes (e.g., `'visit_occurrence'``)
-#'   - name of variables to filter by, enclosed by a quosure 
-#'       ---- e.g., `quos(visit_concept_id %in% c(9203L, 9201L, 9202L))` 
-#' @param current_cycle logical that flags whether table is in current cycle
-#' 
-#' @return a list of tables, with each element 
-#' filtered by the specifications
-#' 
-#' 
-
-
-filter_values <- function(filter_list,
-                          current_cycle=TRUE) {
-  
-  tbl_list <- list()
-  
-  for(i in 1:length(filter_list)) {
-    
-    tbl_name <- names(filter_list[i])
-    
-    if(is.na(filter_list[[i]])) {this_iteration <- cdm_tbl(tbl_name)}
-      else {
-        
-        if(current_cycle) {this_iteration <- 
-          cdm_tbl(tbl_name) %>% filter(!!!(filter_list[[i]]))
-        } else {this_iteration <- 
-          cdm_tbl_prev(tbl_name) %>% filter(!!!(filter_list[[i]]))}
-        
-        
-      }
-    
-    tbl_list[[paste0(names(filter_list[i]))]] <- this_iteration
-    
-    }
-    
-  tbl_list
-  
-}
-
-
-#' list of tables to group_by
-#' 
-#' @param filter_list
-#'  a list with the following structure:
-#'   - list element name should be the name of the db table in quotes (e.g., `'visit_occurrence'``)
-#'   - vector of variables to group by, with each element a string
-#'       ---- e.g., `c('visit_concept_id')` 
-#' @param current_cycle logical that flags whether table is in current cycle
-#' 
-#' @return a list of tables, with each element 
-#' filtered by the specifications
-#' 
-#' 
-
-
-group_by_values <- function(group_by_list,
-                            current_cycle=TRUE) {
-  
-  tbl_list <- list()
-  
-  if(length(group_by_list) == 0) {tbl_list = tbl_list
-  } else {
-    
-    for(i in 1:length(group_by_list)) {
-      
-      this_iteration <-
-        group_by_opt(tbl_name=names(group_by_list[i]),
-                     group_by_vars=group_by_list[[i]][[1]],
-                     current_cycle=current_cycle)
-      
-      tbl_list[[paste0(names(group_by_list[i]))]] <- this_iteration
-      
-    }
-    
-  }
-  
-  
-  tbl_list
-  
-}
-
-
-#' full list of tables
-#' 
-#' @param full_tbl_list list of tables where further manipulation is not necessary
-#' @param current_cycle logical that flags whether table is in current cycle
-#' 
-#' @return a list with each element being the table specified
-#' 
-
-
-full_tbl_values <- function(full_tbl_list,
-                            current_cycle=TRUE) {
-  tbl_list <- list()
-  
-  for(i in 1:length(full_tbl_list)) {
-    tbl_name <- full_tbl_list[[i]]
-    if(current_cycle) {this_iteration <- cdm_tbl(tbl_name)
-    } else {this_iteration <- cdm_tbl_prev(tbl_name)}
-        
-    tbl_list[[paste0(tbl_name)]] <- this_iteration
-  }
-  
-  tbl_list
-  
-}
 
 
 #' output a list of tables to the database 

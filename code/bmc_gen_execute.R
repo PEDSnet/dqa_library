@@ -1,6 +1,7 @@
 
-## Precompute outpatient specialty tables
+#################### PREP TABLES ##################################
 
+## Outpatient specialty tables
 op_prov_spec <- site_cdm_tbl('visit_occurrence') %>% 
   filter(visit_concept_id %in% c(9202L, 581399L)) %>%
   inner_join(select(site_cdm_tbl('provider'), provider_id, specialty_concept_id))
@@ -9,6 +10,8 @@ op_cs_spec <- site_cdm_tbl('visit_occurrence') %>%
   filter(visit_concept_id %in% c(9202L, 581399L)) %>%
   inner_join(select(site_cdm_tbl('care_site'), care_site_id, specialty_concept_id))
 
+## Cohort for geocoding metrics
+## Patients with a face to face visit, a diagnosis, and a valid sex & DOB
 valid_ftf_dx <- cdm_tbl('visit_occurrence') %>%
   select(site, person_id, visit_occurrence_id, visit_concept_id) %>%
   filter(visit_concept_id %in% c(9201, 9202, 9203, 581399, 2000000048)) %>%
@@ -23,6 +26,7 @@ valid_demo <- cdm_tbl('person') %>%
            !gender_concept_id %in% c(44814650, 44814653, 44814649)) %>%
   distinct(site, person_id, location_id) %>% compute_new()
 
+## Geocoding metrics (with cohort)
 geocode_tbls <- prep_geocodes(person_tbl = valid_demo)
 
 # op_spec <- select(site_cdm_tbl('visit_occurrence'), person_id, visit_concept_id,
@@ -37,15 +41,19 @@ geocode_tbls <- prep_geocodes(person_tbl = valid_demo)
 #   inner_join(select(site_cdm_tbl('specialty'), domain_id, entity_id, 
 #                     specialty_concept_id))
 
+
+######################## TABLE ARGS #########################################
+
+#' best mapped concepts element definitions
 #' 
-#' `fact_tbl_list` - a list of arguments that feed into the `check_bmc_gen` function
-#' 
-#' There are 5 elements required in each list entry:
+#' formatted as a named list of lists where each element is named with the check identifier 
+#' and contains the following information:
 #'    1. The table where the concept is located
 #'    2. The `*_concept_id` column with the relevant concept
 #'    3. A plain language string label for the check
 #'    4. The check name (formatted as `bmc_*`)
-#'    5. The column in the `concept` table that is needed (either concept_name or concept_class_id)
+#'    5. The column in the `concept` table that is needed to identify the concept 
+#'       (either concept_name or concept_class_id)
 
 fact_tbl_list <- list(
   

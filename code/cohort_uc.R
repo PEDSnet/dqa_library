@@ -1,21 +1,19 @@
 
-#' Function to check for value set conformance to a defined set
-#' @param concept_list a list that contains the following elements:
-#' - element name: description of the object that will be summarized
-#' - first element of sublist: the object that contains the element 
-#' that will be summarized (e.g., `site_cdm_tbl('drug_exposuer')`)
-#' - second element of sublist: the element that will be summarized
-#' - third element of sublist: application name as a string
-#' - fourth element of sublist: if `produce_mapped_list = TRUE` the name of the 
-#' source values of unmapped elements
-#' @param produce_mapped_list if `TRUE` then will show the value of the top unmapped values; 
-#' values > 10
-#' @param check_string the name of the check that will be named in the output. Defaults to 
-#' `st_conf_concepts_unmapped`
+#' Unmapped Concepts
 #' 
-#' @return 
-#' main table output with the table name `ct_conf_concepts_unmapped_grpd`:
-#'   tbl with the following columns:
+#' @param concept_list a list of lists that contains the following elements:
+#'   - name: check description
+#'      1. the table to look for unmapped concepts
+#'      2. the field in which unmapped concepts should be identified
+#'      3. the check name identifier
+#'      4. the source value field to identify source values associated with
+#'         unmapped concepts (used when produce_mapped_list = TRUE)
+#' @param produce_mapped_list if `TRUE` then will produce an additional table, automatically
+#' output to `results_schema`, identifying the source value of the top unmapped values 
+#' (limited to source values with > 10 appearances)
+#' @param check_string the name of the check that will be named in the output. Defaults to `uc`
+#' 
+#' @return a dataframe summarizing the amount of unmapped concepts per table/field. contains:
 #'   - site
 #'   - measure: from element name describing measuer
 #'   - total_rows: the denominator 
@@ -25,7 +23,7 @@
 #'   - unmapped_prop
 #'   
 #' if `produce_mapped_list` is `TRUE`, then the following table will be automatically output
-#' to the database with the table name `st_conf_concepts_grpd`:
+#' to the database with the table name `uc_grpd`:
 #'   - site
 #'   - unmapped_description
 #'   - database_version
@@ -38,7 +36,6 @@
 #' @export
 #'  
 #'                                                              
-
 check_uc <- function(concept_list,
                      produce_mapped_list=TRUE,
                      check_string = 'uc') {
@@ -111,14 +108,12 @@ check_uc <- function(concept_list,
   
 }
 
+#' Unmapped Concepts per Year
 #' 
-#' Function that produces output that contains unmapped values by year
+#' @param concept_list same list as function `check_uc`
+#' @param check_string the name of the check that will be named in the output. Defaults to `uc`
 #' 
-#' @param concept_list same list as function `check_st_conf_concepts_unmapped`
-#' @param check_string the name of the check that will be named in the output. Defaults to 
-#' `st_conf_concepts_unmapped`
-#' 
-#' @return the following table, called `st_conf_concepts_unmapped_by_year`
+#' @return a dataframe summarizing unmapped concepts throughout time. contains:
 #' 
 #' - site
 #' - year_date
@@ -129,9 +124,8 @@ check_uc <- function(concept_list,
 #' - database_version
 #' 
 #' 
-
 check_uc_by_year <- function(concept_list,
-                             check_string = 'uc_unmapped') {
+                             check_string = 'uc') {
   
   check_concepts <- list()
   

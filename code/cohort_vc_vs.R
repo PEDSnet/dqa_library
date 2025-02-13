@@ -1,19 +1,20 @@
 
-#' Function to check for value set conformance to a defined set
+#' Valueset Conformance
+#' 
 #' @param valuesets a list that contains the following values:
-#'  - name of list element: name of cdm_tbl as a string
-#'  - first element: name of file from either the specs directory or the actual codeset;
-#'  if from specifications, must follow the format `icccc`
-#'  - second element: the field in the table name; *** if the field name is the
-#'  name of the table_concept_id, then the second element does not need to exist.
-#' @param from_specs logical that determines if valueset exists in 
+#'  - name of list element: the check name identifier
+#'      1. the name of the relevant valueset that appears in the specs directory
+#'      2. the field in which valueset violations should be identified
+#'      3. the name of the CDM table where the field is located
+#' @param from_specs logical that determines if valueset exists in the specs directory
 #' @param string_tbl_name the table name prefixed to the output
-#' @return tbl with violations to concept_id check, with all cols in original table + columns in codeset
+#' 
+#' @return a dataframe with summary information about each value that does not 
+#'         appear in the valueset
 #' 
 #' @export
 #'  
 #'                                                              
-                                                                                                                                                                                
 check_vs <- function(valuesets,
                      from_specs=TRUE,
                      string_tbl_name='vs') {
@@ -26,8 +27,6 @@ check_vs <- function(valuesets,
    if(from_specs) {
      codeset_round <- load_codeset(valuesets[[i]][[1]], col_types = 'icccc')
     } else {codeset_round <- valuesets[[i]][[1]]}
-    
-    #codeset_round <- load_codeset(valuesets[[i]][[1]], col_types = 'icccc')
     
     if(length(valuesets[[i]]) > 1) {
       concept_id_fn <- paste0(valuesets[[i]][[2]])
@@ -97,14 +96,24 @@ check_vs <- function(valuesets,
 
 
 
-#' Function to search for all valid concept_ids in a certain vocabulary
-#' @param vocabvals a list with the following elements
-#'   - name of element: table name
-#'   - first element: a vector containing strings of acceptable voaabularies
-#'   - second element: the name of the field to check
-#' @param string_tbl_name the string table name; defaults to st_conf_voc
-#'   
-
+#' Vocabulary Conformance
+#' 
+#' @param vocabvals a list that contains the following values:
+#'  - name of list element: the check name identifier
+#'      1. the acceptable vocabulary for the field of interest, as they appear in the OMOP concept table
+#'      2. the field in which vocabulary violations should be identified
+#'      3. the name of the CDM table where the field is located
+#' @param string_tbl_name the table name prefixed to the output
+#' 
+#' @return a dataframe with summary information about each vocabulary that appears in the field, 
+#'         with violations marked in a T/F field
+#'         
+#'         vocabularies associated with "null" concepts are ignored, so proportions may not add
+#'         up to 1 as a result
+#' 
+#' @export
+#'  
+#' 
 check_vc <- function(vocabvals,
                      string_tbl_name='vc') {
   
@@ -114,19 +123,6 @@ check_vc <- function(vocabvals,
   
     input_list <- list()
     values <- c(vocabvals[[i]][[1]])
-    
-    # valid_concepts <- vocabulary_tbl('concept') %>%
-    #   filter(vocabulary_id %in% values) 
-    # 
-    # input_list[[names(vocabvals[i])]] <- list(values,
-    #                                           vocabvals[[i]][[2]],
-    #                                           vocabvals[[i]][[3]])
-    
-    # this_round <- check_vs(valuesets = input_list,
-    #                        from_specs = FALSE,
-    #                        string_tbl_name = string_tbl_name)
-      
-    # codeset_round <- load_codeset(valuesets[[i]][[1]], col_types = 'icccc')
       
     concept_id_fn <- vocabvals[[i]][[2]]
       
@@ -165,10 +161,6 @@ check_vc <- function(vocabvals,
       
       vocab_illegals[[names(vocabvals[i])]] <- illegal_values
       
-      # if(length(this_round) > 0) {
-      #   vocab_illegals[[paste0(names(this_round[1]))]] <- this_round[[1]]
-      # } else {vocab_illegals[[paste0(names(this_round[1]))]] <- NA}
-      
     }
   
   vocab_illegals
@@ -177,13 +169,14 @@ check_vc <- function(vocabvals,
 
 }
 
-#' combined vs checks into one table output
+#' Additional processing for VS & VC checks
 #' 
-#' @param tbl_list a list that contains all the vs violations
+#' @param tbl_list a list that contains all the vc or vs violations
 #' @param string_tbl_name a string that contains the table name for the check output
-#' @return a table with concepts and their counts that violate 
 #' 
-
+#' @return a pivoted version of the input table with dummy rows added for checks
+#'         that did not return any violations
+#' 
 create_vc_vs_output <- function(tbl_list,
                                 vs_list,
                                 string_tbl_name='vc') {
@@ -238,56 +231,4 @@ create_vc_vs_output <- function(tbl_list,
   }
   
   meta_tbl
-}
-
-
-#' metadata for the `st_conf_voc` check 
-#' 
-#' @param valuesets the list used in `check_st_conf_valueset_conceptid`
-#' @param valuesets_tbl_name the name of the table output in `create_vs_output`
-#' 
-#' 
-
-compute_metadata_conf_vs <- function(valuesets,
-                                     valuesets_output_tbl_name,
-                                     check_type,
-                                     db_version_arg = config('current_version'),
-                                     check_string='st_conf_vs') {
-  
-  
-  metavs <- tibble(
-    table_name = character(),
-    table_application = character(),
-    field_name = character(),
-    db_version = character(),
-    check_name = character(),
-    type = character()
-  )
-  
-  for(i in 1:length(valuesets)) {
-    
-    desc <- valuesets[[i]][[1]]
-    
-    if(length(valuesets[[i]]) > 1) {
-      concept_id_fn <- paste0(valuesets[[i]][[2]])
-    } else {concept_id_fn = paste0(names(valuesets[i]), '_concept_id')}
-    
-    desc_name <- valuesets_output_tbl_name
-    
-    final_thisround <- 
-      metavs %>%
-      add_row(
-        table_name = desc_name,
-        table_application = names(valuesets[i]),
-        field_name = concept_id_fn,
-        db_version = config('current_version'),
-        check_name = check_string,
-        type = check_type
-      )
-    
-    metavs <- final_thisround
-  }
-  
-  metavs
-  
 }

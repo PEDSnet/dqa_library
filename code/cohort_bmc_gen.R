@@ -1,16 +1,16 @@
 
-#' @md
-#' takes cohort of drug exposures, 
-#' joins to vocabulary table, 
-#' creates xwalk between drug and level 
+#' Find concept identifiers for BMC facts
 #' 
-#' @param drug_tbl defaults to `cdm_tbl('drug_exposure')`
+#' @param fact_tbl the CDM table associated with the check
+#' @param fact_concept_id the concept_id column in the `fact_tbl` that should be used
+#' to join to the concept table
+#' @param concept_field the field in the concept table used to identify the concept
+#' (usually concept_name or concept_class_id)
 #' @param concept_tbl defaults to `vocabulary_tbl('concept')`
 #' 
-#' @return the original drug_tbl with an extra 
-#' column called `rxnorm_level`
+#' @return the original fact_tbl that also contains a `concept_type` field that reflects
+#' the contents of the `concept_field` associated with each concept of interest
 #' 
-
 find_concept_names <- function(fact_tbl,
                                fact_concept_id,
                                concept_field,
@@ -31,16 +31,21 @@ find_concept_names <- function(fact_tbl,
 
 
 
-#' compute numbers proportion of rows and patients at
-#' each level of rxnorm drug level
+#' Best Mapped Concepts
 #' 
-#' @param drug_tbl_list_args A list of lists where list name is a description of
-#' what the table contains; 
-#'  1. The first element of the nested list is the table that will be computed; 
-#'  2. The second element of the nested list is a description of the table
+#' @param fact_tbl_list_args list of lists where each element is named with the check identifier 
+#' and contains the following information:
+#'    1. The table where the concept is located
+#'    2. The `*_concept_id` column with the relevant concept
+#'    3. A plain language string label for the check
+#'    4. The check name (formatted as `bmc_*`)
+#'    5. The column in the `concept` table that is needed to identify the concept 
+#'       (either concept_name or concept_class_id)
 #' @param check_string string that contains a description of the table
 #' 
-
+#' @return a dataframe summarizing the distribution of each concept type in the table/field
+#' of interest; best/not best designations will be applied to this table in the processing step
+#' 
 check_bmc_gen <- function(fact_tbl_list_args,
                           check_string='bmc') {
   

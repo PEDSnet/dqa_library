@@ -1,16 +1,13 @@
 
-
-#' list element definitions for `uc` check type
+#' unmapped concepts element definitions
 #' 
-#' List of lists
-#' 
-#' list name: check description 
-#' list first element: table to look for unmapped concepts
-#' list second element: field to look for unmapped concepts
-#' list third element: check name
-#' list fourth element: source value to look for potential
-#' source values that are unmapped
-#' 
+#' formatted as a named list of lists where each element is named with the check description 
+#' and contains the following information:
+#'      1. the table to look for unmapped concepts
+#'      2. the field in which unmapped concepts should be identified
+#'      3. the check name identifier
+#'      4. the source value field to identify source values associated with
+#'         unmapped concepts (used when produce_mapped_list = TRUE)
 
 uc_args_list <- 
   list(

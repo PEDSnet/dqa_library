@@ -1,5 +1,5 @@
 
-# Outpatient Labs
+## Outpatient Labs
 site_voml <- site_cdm_tbl('measurement_labs') %>%
   inner_join(select(site_cdm_tbl('visit_occurrence'),
     visit_occurrence_id, visit_concept_id)) %>%

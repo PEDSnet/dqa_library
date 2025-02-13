@@ -1,12 +1,12 @@
 
 
-#' list element definitions for the `mf_visitid` check type
+#' missing Field: visit_occurrence_id element definitions
 #' 
-#' List of lists
-#' 
-#' List name: description of table for which we look for missing visit_occurrence_id's
-#' First element: table for which visit_occurrence_id's are scanned
-#' Second element: check name
+#' formatted as a named list of lists where each element is named with the check description 
+#' and contains the following information:
+#'      1. the table in which missing visit ids should be identified
+#'      2. the check name identifier
+#'      
 #' 
 
 mf_visitid_list <- 

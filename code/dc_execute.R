@@ -1,31 +1,14 @@
 
+######################### PREP TABLES #####################################
 
-# c19_codes_dx_prev <- 
-#   load_codeset_spark('c19_dx','icccc') %>%
-#   copy_to_new(dest=config('db_src_prev'),
-#               df=.,
-#               name='c19_dx',
-#               temporary=TRUE,
-#               indexes=list('concept_id'))
+#' used to pre-compute tables to be used in the arguments for check_dc
+#' this is mostly used when more complex filter logic or joins are needed
+#' to achieve the table of interest for the count computation
+#' 
+#' i.e. looking at patients with diagnoses AND labs and how that changes over time
+#' 
 
-# c19_codes_labs_prev <- 
-#   load_codeset_spark('c19_viral_labs') %>%
-#   copy_to_new(dest=config('db_src_prev'),
-#               df=.,
-#               temporary=TRUE,
-#               indexes=list('concept_id'))
-# 
-# c19_dx_lab_prev <- 
-#   site_cdm_tbl_prev('condition_occurrence') %>%
-#   inner_join(c19_codes_dx_prev,
-#              by=c('condition_concept_id'='concept_id')) %>%
-#   select(person_id) %>%
-#   inner_join(site_cdm_tbl_prev('measurement_labs'),
-#              by='person_id') %>%
-#   inner_join(c19_codes_labs_prev,
-#              by=c('measurement_concept_id'='concept_id')) %>%
-#   distinct(person_id) %>% compute_new(temporary=TRUE,
-#                                       indexes=list('person_id'))
+site_nm <- config('site')
 
 c19_dx_lab_current <- 
   site_cdm_tbl('condition_occurrence') %>%
@@ -36,177 +19,91 @@ c19_dx_lab_current <-
              by='person_id') %>%
   inner_join(load_codeset('c19_viral_labs'),
              by=c('measurement_concept_id'='concept_id')) %>%
-  distinct(person_id) %>% compute_new(temporary=TRUE,
-                                      indexes=list('person_id'))
+  distinct(person_id) %>% compute_new()
 
-#' `dc_args_prev`
-#' list element definition for the `dc` check: PREVIOUS cycle
-#' 
-#' List of lists
-#' 
-#' List name: Check Domain (must match `dc_args_current`)
-#' List First Element: Table from Previous Cycle
-#' 
-#' `dc_args_current`
-#' list element definition for the `dc` check: CURRENT cycle
-#' 
-#' List of lists 
-#' 
-#' List name: Check Domain (must match `dc_args_prev`)
-#' List First Element: Table from Current Cycle
-#' 
-#' `dc_args_meta`
-#' 
-#' List name: Check Domain (must match `dc_args_prev` and `dc_args_current`)
-#' First Element: Check Description
-#' Second Element: Check Name
-#' 
- 
+# c19_dx_lab_prev <- 
+#   site_cdm_tbl_prev('condition_occurrence') %>%
+#   inner_join(load_codeset('c19_dx', db = config('db_src_prev)),
+#              by=c('condition_concept_id'='concept_id')) %>%
+#   select(person_id) %>%
+#   inner_join(site_cdm_tbl_prev('measurement_labs') ,
+#              by='person_id') %>%
+#   inner_join(load_codeset('c19_viral_labs', db = config('db_src_prev')),
+#              by=c('measurement_concept_id'='concept_id')) %>%
+#   distinct(person_id) %>% compute_new()
+
+########################## TABLE ARGS ######################################        
+
+#' The primary list containing the arguments for the check_dc function
+#' Should be structured as a named list, where the name of each element is a brief
+#' descriptor of the check. Each element should contain the following:
+#'   1. The table where current counts can be computed
+#'   2. A string with any filter logic that should be applied to filter down the table to
+#'      achieve the check of interest. If no filter logic is needed, set to NA
+#'   3. If you wish to retrieve counts from a previous data model instance, the table
+#'      where previous counts can be computed. The same filter logic will be applied to this
+#'      table as the table with current counts.
+#'      
+#'      If you are retrieving counts from a previous version of check_dc results, either
+#'      exclude this element or set to NA.
+
+dc_args_list <- 
   
-
-# dc_args_prev <- 
-#   list(
-#     'person' = site_cdm_tbl_prev('person'),
-#     'drug_exposure' = site_cdm_tbl_prev('drug_exposure'),
-#     'condition_occurrence' = site_cdm_tbl_prev('condition_occurrence'),
-#     'adt_occurrence' = site_cdm_tbl_prev('adt_occurrence'),
-#     'device_exposure' = site_cdm_tbl_prev('device_exposure'),
-#     'immunization' = site_cdm_tbl_prev('immunization'),
-#     'visit_occurrence' = site_cdm_tbl_prev('visit_occurrence'),
-#     'measurement_vitals' = site_cdm_tbl_prev('measurement_vitals'),
-#     'measurement_labs' = site_cdm_tbl_prev('measurement_labs'),
-#     'condition_outpatient' = site_cdm_tbl_prev('condition_occurrence') %>% filter(condition_type_concept_id %in%
-#                                                                                     c(2000000095L,
-#                                                                                       2000000096L,
-#                                                                                       2000000097L,
-#                                                                                       2000000101L,
-#                                                                                       2000000102L,
-#                                                                                       2000000103L)),
-#     'condition_inpatient' = site_cdm_tbl_prev('condition_occurrence') %>% filter(condition_type_concept_id %in%
-#                                                                                    c(2000000092L,
-#                                                                                      2000000093L,
-#                                                                                      2000000094L,
-#                                                                                      2000000098L,
-#                                                                                      2000000099L,
-#                                                                                      2000000100L)),
-#     'condition_ed' = site_cdm_tbl_prev('condition_occurrence') %>% filter(condition_type_concept_id %in%
-#                                                                             c(2000001280L,
-#                                                                               2000001281L,
-#                                                                               2000001282L,
-#                                                                               2000001283L,
-#                                                                               2000001284L,
-#                                                                               2000001285L)),
-#     'condition_op_billing' = site_cdm_tbl_prev('condition_occurrence') %>% filter(condition_type_concept_id %in%
-#                                                                                     c(2000000096L,
-#                                                                                       2000000097L,
-#                                                                                       2000000102L,
-#                                                                                       2000000103L)),
-#     'condition_op_order' = site_cdm_tbl_prev('condition_occurrence') %>% filter(condition_type_concept_id %in%
-#                                                                                   c(2000000095L, 2000000101)),
-#     'condition_ip_order' = site_cdm_tbl_prev('condition_occurrence') %>% filter(condition_type_concept_id %in%
-#                                                                                   c(2000000092L, 2000000098L)),
-#     'condition_ip_billing' = site_cdm_tbl_prev('condition_occurrence') %>% filter(condition_type_concept_id %in%
-#                                                                                     c(2000000099L,
-#                                                                                       2000000100L,
-#                                                                                       2000000093L,
-#                                                                                       2000000094L)),
-#     'adt_picu' = site_cdm_tbl_prev('adt_occurrence') %>% filter(service_concept_id == 2000000078L),
-#     'adt_nicu' = site_cdm_tbl_prev('adt_occurrence') %>% filter(service_concept_id == 2000000080L),
-#     'adt_cicu' = site_cdm_tbl_prev('adt_occurrence') %>% filter(service_concept_id == 2000000079L),
-#     'visit_op_office' = site_cdm_tbl_prev('visit_occurrence') %>% filter(visit_concept_id == 9202L),
-#     'visit_op_labs' = site_cdm_tbl_prev('visit_occurrence') %>% filter(visit_concept_id == 2000000469L),
-#     'visit_op_telehealth' = site_cdm_tbl_prev('visit_occurrence') %>% filter(visit_concept_id == 581399L),
-#     'visit_op_oa' = site_cdm_tbl_prev('visit_occurrence') %>% filter(visit_concept_id == 44814711L),
-#     'visit_ip' = site_cdm_tbl_prev('visit_occurrence') %>% filter(visit_concept_id == 9201L),
-#     'visit_edip' = site_cdm_tbl_prev('visit_occurrence') %>% filter(visit_concept_id == 2000000048L),
-#     'visit_ov' = site_cdm_tbl_prev('visit_occurrence') %>% filter(visit_concept_id == 2000000088L),
-#     'drug_rx' = site_cdm_tbl_prev('drug_exposure') %>% filter(drug_type_concept_id ==  38000177L),
-#     'drug_ip' = site_cdm_tbl_prev('drug_exposure') %>% filter(drug_type_concept_id == 38000180L),
-#     'procedures_billed' = site_cdm_tbl_prev('procedure_occurrence') %>% filter(procedure_type_concept_id %in%
-#                                                                                  c(44786630L,44786631L)),
-#     'procedures_ordered' = site_cdm_tbl_prev('procedure_occurrence') %>% filter(procedure_type_concept_id %in%
-#                                                                                   c(2000001494L,38000275L)),
-#     'procedures' = site_cdm_tbl_prev('procedure_occurrence'),
-#     'measurement_anthro' = site_cdm_tbl_prev('measurement_anthro'),
-#     'covid19_dx_labs' = c19_dx_lab_prev,
-#     'care_site' = site_cdm_tbl_prev('care_site'),
-#     'provider' = site_cdm_tbl_prev('provider'),
-#     'specialty' = site_cdm_tbl_prev('specialty')
-#   )
-
-################################################################        
-
-dc_args_current <- 
   list(
-    'person' = site_cdm_tbl('person'),
-    'drug_exposure' = site_cdm_tbl('drug_exposure'),
-    'condition_occurrence' = site_cdm_tbl('condition_occurrence'),
-    'adt_occurrence' = site_cdm_tbl('adt_occurrence'),
-    'device_exposure' = site_cdm_tbl('device_exposure'),
-    'immunization' = site_cdm_tbl('immunization'),
-    'visit_occurrence' = site_cdm_tbl('visit_occurrence'),
-    'measurement_vitals' = site_cdm_tbl('measurement_vitals'),
-    'measurement_labs' = site_cdm_tbl('measurement_labs'),
-    'condition_outpatient' = site_cdm_tbl('condition_occurrence') %>% filter(condition_type_concept_id %in%
-                                                                                    c(2000000095L,
-                                                                                      2000000096L,
-                                                                                      2000000097L,
-                                                                                      2000000101L,
-                                                                                      2000000102L,
-                                                                                      2000000103L)),
-    'condition_inpatient' = site_cdm_tbl('condition_occurrence') %>% filter(condition_type_concept_id %in%
-                                                                                   c(2000000092L,
-                                                                                     2000000093L,
-                                                                                     2000000094L,
-                                                                                     2000000098L,
-                                                                                     2000000099L,
-                                                                                     2000000100L)),
-    'condition_ed' = site_cdm_tbl('condition_occurrence') %>% filter(condition_type_concept_id %in%
-                                                                            c(2000001280L,
-                                                                              2000001281L,
-                                                                              2000001282L,
-                                                                              2000001283L,
-                                                                              2000001284L,
-                                                                              2000001285L)),
-    'condition_op_billing' = site_cdm_tbl('condition_occurrence') %>% filter(condition_type_concept_id %in%
-                                                                                    c(2000000096L,
-                                                                                      2000000097L,
-                                                                                      2000000102L,
-                                                                                      2000000103L)),
-    'condition_op_order' = site_cdm_tbl('condition_occurrence') %>% filter(condition_type_concept_id %in%
-                                                                                  c(2000000095L, 2000000101)),
-    'condition_ip_order' = site_cdm_tbl('condition_occurrence') %>% filter(condition_type_concept_id %in%
-                                                                                  c(2000000092L, 2000000098L)),
-    'condition_ip_billing' = site_cdm_tbl('condition_occurrence') %>% filter(condition_type_concept_id %in%
-                                                                                    c(2000000099L,
-                                                                                      2000000100L,
-                                                                                      2000000093L,
-                                                                                      2000000094L)),
-    'adt_picu' = site_cdm_tbl('adt_occurrence') %>% filter(service_concept_id == 2000000078L),
-    'adt_nicu' = site_cdm_tbl('adt_occurrence') %>% filter(service_concept_id == 2000000080L),
-    'adt_cicu' = site_cdm_tbl('adt_occurrence') %>% filter(service_concept_id == 2000000079L),
-    'visit_op_office' = site_cdm_tbl('visit_occurrence') %>% filter(visit_concept_id == 9202L),
-    'visit_op_labs' = site_cdm_tbl('visit_occurrence') %>% filter(visit_concept_id == 2000000469L),
-    'visit_op_telehealth' = site_cdm_tbl('visit_occurrence') %>% filter(visit_concept_id == 581399L),
-    'visit_op_oa' = site_cdm_tbl('visit_occurrence') %>% filter(visit_concept_id == 44814711L),
-    'visit_ip' = site_cdm_tbl('visit_occurrence') %>% filter(visit_concept_id == 9201L),
-    'visit_edip' = site_cdm_tbl('visit_occurrence') %>% filter(visit_concept_id == 2000000048L),
-    'visit_ov' = site_cdm_tbl('visit_occurrence') %>% filter(visit_concept_id == 2000000088L),
-    'drug_rx' = site_cdm_tbl('drug_exposure') %>% filter(drug_type_concept_id ==  38000177L),
-    'drug_ip' = site_cdm_tbl('drug_exposure') %>% filter(drug_type_concept_id == 38000180L),
-    'procedures_billed' = site_cdm_tbl('procedure_occurrence') %>% filter(procedure_type_concept_id %in%
-                                                                                 c(44786630L,44786631L)),
-    'procedures_ordered' = site_cdm_tbl('procedure_occurrence') %>% filter(procedure_type_concept_id %in%
-                                                                                  c(2000001494L,38000275L)),
-    'procedures' = site_cdm_tbl('procedure_occurrence'),
-    'measurement_anthro' = site_cdm_tbl('measurement_anthro'),
-    'covid19_dx_labs' = c19_dx_lab_current,
-    'care_site' = site_cdm_tbl('care_site'),
-    'provider' = site_cdm_tbl('provider'),
-    'specialty' = site_cdm_tbl('specialty')
+    'person' = list(site_cdm_tbl('person'), NA, NA),
+    'drug_exposure' = list(site_cdm_tbl('drug_exposure'), NA, NA),
+    'condition_occurrence' = list(site_cdm_tbl('condition_occurrence'), NA, NA),
+    'adt_occurrence' = list(site_cdm_tbl('adt_occurrence'), NA, NA),
+    'device_exposure' = list(site_cdm_tbl('device_exposure'), NA, NA),
+    'immunization' = list(site_cdm_tbl('immunization'), NA, NA),
+    'visit_occurrence' = list(site_cdm_tbl('visit_occurrence'), NA, NA),
+    'measurement_vitals' = list(site_cdm_tbl('measurement_vitals'), NA, NA),
+    'measurement_labs' = list(site_cdm_tbl('measurement_labs'), NA, NA),
+    'condition_outpatient' = list(site_cdm_tbl('condition_occurrence'), "condition_type_concept_id %in% c(2000000095, 2000000096,
+                                                        2000000097, 2000000101, 2000000102, 2000000103)", NA),
+    'condition_inpatient' = list(site_cdm_tbl('condition_occurrence'), "condition_type_concept_id %in% c(2000000092, 2000000093,
+                                                       2000000094, 2000000098, 2000000099, 2000000100)", NA),
+    'condition_ed' = list(site_cdm_tbl('condition_occurrence'), "condition_type_concept_id %in% c(2000001280, 2000001281,
+                                                2000001282, 2000001283, 2000001284, 2000001285)", NA),
+    'condition_op_billing' = list(site_cdm_tbl('condition_occurrence'), "condition_type_concept_id %in% c(2000000096,
+                                                        2000000097, 2000000102, 2000000103)", NA),
+    'condition_op_order' = list(site_cdm_tbl('condition_occurrence'), "condition_type_concept_id %in% c(2000000095, 2000000101)", NA),
+    'condition_ip_order' = list(site_cdm_tbl('condition_occurrence'), "condition_type_concept_id %in% c(2000000092, 2000000098)", NA),
+    'condition_ip_billing' = list(site_cdm_tbl('condition_occurrence'), "condition_type_concept_id %in% c(2000000099, 2000000100,
+                                                        2000000093, 2000000094)", NA),
+    'adt_picu' = list(site_cdm_tbl('adt_occurrence'), "service_concept_id == 2000000078", NA),
+    'adt_nicu' = list(site_cdm_tbl('adt_occurrence'), "service_concept_id == 2000000080", NA),
+    'adt_cicu' = list(site_cdm_tbl('adt_occurrence'), "service_concept_id == 2000000079", NA),
+    'visit_op_office' = list(site_cdm_tbl('visit_occurrence'), "visit_concept_id == 9202", NA),
+    'visit_op_labs' = list(site_cdm_tbl('visit_occurrence'), "visit_concept_id == 2000000469", NA),
+    'visit_op_telehealth' = list(site_cdm_tbl('visit_occurrence'), "visit_concept_id == 581399", NA),
+    'visit_op_oa' = list(site_cdm_tbl('visit_occurrence'), "visit_concept_id == 44814711", NA),
+    'visit_ip' = list(site_cdm_tbl('visit_occurrence'), "visit_concept_id == 9201", NA),
+    'visit_edip' = list(site_cdm_tbl('visit_occurrence'), "visit_concept_id == 2000000048", NA),
+    'visit_ov' = list(site_cdm_tbl('visit_occurrence'), "visit_concept_id == 2000000088", NA),
+    'drug_rx' = list(site_cdm_tbl('drug_exposure'), "drug_type_concept_id ==  38000177", NA),
+    'drug_ip' = list(site_cdm_tbl('drug_exposure'), "drug_type_concept_id == 38000180", NA),
+    'procedures_billed' = list(site_cdm_tbl('procedure_occurrence'), "procedure_type_concept_id %in% c(44786630,44786631)", NA),
+    'procedures_ordered' = list(site_cdm_tbl('procedure_occurrence'), "procedure_type_concept_id %in% c(2000001494,38000275)", NA),
+    'procedures' = list(site_cdm_tbl('procedure_occurrence'), NA, NA),
+    'measurement_anthro' = list(site_cdm_tbl('measurement_anthro'), NA, NA),
+    'covid19_dx_labs' = list(c19_dx_lab_current, NA, NA),
+    'care_site' = list(site_cdm_tbl('care_site'), NA, NA),
+    'provider' = list(site_cdm_tbl('provider'), NA, NA),
+    'specialty' = list(site_cdm_tbl('specialty'), NA, NA)
   )
 
-################################################################
+############################# METADATA ########################################
+
+#' A secondary list containing metadata information for each element in the
+#' primary table argument list.
+#' 
+#' Should be structured as a named list where each element has the same name as
+#' the associated element in the primary list. Each element should contain the 
+#' following:
+#'   1. A longer description of the check to describe what is being computed
+#'   2. A brief ID to more easily identify the check within the table. For example,
+#'      "dr" might be used to represent "drug_exposure"
 
 dc_args_meta <- 
   list(
@@ -248,5 +145,3 @@ dc_args_meta <-
     'specialty' = list('full specialty table', 'sp')
     
   )
-
-
