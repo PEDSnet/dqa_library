@@ -2,7 +2,7 @@
 .qual_name <- function(name, schema_tag, db = config('db_src')) {
   if (inherits(name, c('ident_q', 'dbplyr_schema'))) return(name)
   name_map <- config('table_names')
-  name <- ifelse(hasName(name_map, name), name_map[[name]], name)
+  name <- base::ifelse(hasName(name_map, name), name_map[[name]], name)
   if (! is.na(schema_tag)) {
     if (config_exists(schema_tag)) schema_tag <- config(schema_tag)
     if (! is.na(schema_tag)) {
@@ -34,19 +34,23 @@
 #' @md
 dbi_con <- function(db) {
   # R introspection is very limited, so best approach is to keep trying.
+  if (! any(is.object(db))) return(NULL)
   rslt <- NULL
   # DBI Connection
   if (! is.null(tryCatch( DBI::dbDataType(db, 1L),
-                         error = function (e) NULL))) return(db)
+                          error = function (e) NULL))) return(db)
   # Modern dbplyr
-  if (! is.null(tryCatch( { rslt <- remote_con(db) },
-                         error = function (e) NULL))) return(rslt)
+  if (any(class(db) == 'tbl_sql') &&
+      ! is.null(tryCatch( { rslt <- remote_con(db) },
+                          error = function (e) NULL))) return(rslt)
   # Older dbplyr query - breaks encapsulation
-  if (! is.null(tryCatch( { rslt <- db$src$con },
-                         error = function (e) NULL))) return(rslt)
+  if (exists('src', where = db) &&
+      ! is.null(tryCatch( { rslt <- db$src$con },
+                          error = function (e) NULL))) return(rslt)
   # Older dbplyr connection - breaks encapsulation
-  if (! is.null(tryCatch( { rslt <- db$con },
-                         error = function (e) NULL))) return(rslt)
+  if (exists('con', where = db) &&
+      ! is.null(tryCatch( { rslt <- db$con },
+                          error = function (e) NULL))) return(rslt)
   rslt
 }
 
@@ -183,7 +187,7 @@ intermed_name <- function(name = paste0(sample(letters, 12, replace = TRUE),
     name <- .add_name_tag(name, tag = results_tag, db = db)
   }
   .qual_name(name = name,
-             schema_tag = ifelse(temporary, NA, schema),
+             schema_tag = base::ifelse(temporary, NA, schema),
              db = db)
 }
 
@@ -213,6 +217,35 @@ results_name <- function(name, results_tag =  TRUE, local_tag = NA,
                 local_tag = local_tag, db = db)
 }
 
+# Try to figure out schema/table expressions in various forms
+.parse_tblspec <- function(spec) {
+  if (inherits(spec, 'Id')) {
+    elts <- spec
+  }
+  else if (inherits(spec, c('dbplyr_schema'))) {
+    elts <- unlist(spec)
+  }
+  else if (inherits(spec, c('ident_q'))) {
+    elts <- format(spec)
+  }
+  else if ((grepl('.', spec, fixed = TRUE) && ! grepl('["`]', spec))) {
+    # If we have an unquoted string with a '.', assume schema.table
+    elts <- unlist(strsplit(as.character(spec), '.', fixed = TRUE))
+  }
+  else if (grepl('["`].+["`]\\.["`]', spec)) {
+    # And one simple-minded try at a quoted identifier string
+    elts <-
+      gsub('["`]', '',
+           unlist(strsplit(as.character(spec), '["`].["`]')))
+  }
+  else {
+    elts <- spec
+  }
+  names(elts) <- rev(c('table', 'schema', 'catalog')[1:length(elts)])
+  elts
+  # nocov end
+}
+
 #' Drop a table in a database, schema-aware
 #'
 #' This function has the same purpose as [DBI::dbRemoveTable()], but many
@@ -236,15 +269,10 @@ results_name <- function(name, results_tag =  TRUE, local_tag = NA,
 db_remove_table <- function(db = config('db_src'), name,
                             temporary = FALSE, fail_if_missing = FALSE) {
   con <- dbi_con(db)
-  if (inherits(name, c('ident_q', 'dbplyr_schema'))) {
-    elts <- gsub('"', '',
-                 unlist(strsplit(as.character(name), '.', fixed = TRUE)))
-  }
-  else {
-    elts <- name
-  }
+  elts <- .parse_tblspec(name)
+
   sql <- paste0('drop table ',
-                ifelse(fail_if_missing, '', 'if exists '))
+                base::ifelse(fail_if_missing, '', 'if exists '))
   if (any(grepl('ora', class(con), ignore.case = TRUE))) {
     if (! db_exists_table(con, name)) return(TRUE)
     if (length(elts) > 1) {
@@ -290,13 +318,8 @@ db_remove_table <- function(db = config('db_src'), name,
 #' @md
 db_exists_table <- function(db = config('db_src'), name) {
   con <- dbi_con(db)
-  if (inherits(name, c('ident_q', 'dbplyr_schema'))) {
-    elts <- gsub('"', '',
-                 unlist(strsplit(as.character(name), '.', fixed = TRUE)))
-  }
-  else {
-    elts <- name
-  }
+  elts <- .parse_tblspec(name)
+
   if (any(grepl('ora', class(con), ignore.case = TRUE)) &&
       length(elts) > 1) {
     elts <- rev(elts)
@@ -315,12 +338,8 @@ db_exists_table <- function(db = config('db_src'), name) {
                             DBI::dbQuoteString(con, elts[1]), sep = ""))
     return(as.logical(dim(res)[1]))
   }
-  else if (any(class(con) == 'PqConnection') &&
-           length(elts) > 1) {
-    name <- DBI::SQL(paste0(DBI::dbQuoteIdentifier(con, elts[1]),
-                               '.',
-                               DBI::dbQuoteIdentifier(con, elts[2])))
-    return(DBI::dbExistsTable(con, name))
+  else if (any(class(con) == 'PqConnection') && length(elts) > 1) {
+    return(DBI::dbExistsTable(con, DBI::Id(elts)))
   }
   else {
     return(DBI::dbExistsTable(con, elts))
@@ -367,28 +386,28 @@ compute_new <- function(tblx,
                                       collapse = ""),
                         temporary = ! config('retain_intermediates'),
                         ...) {
-  if (!inherits(name, c('ident_q', 'dbplyr_schema')) && length(name) == 1) {
-    name <- gsub('\\s+','_', name, perl = TRUE)
-    name <- intermed_name(name, temporary)
-  }
-  con <- dbi_con(tblx)
-  if (db_exists_table(con, name)) db_remove_table(con, name)
-  if (config('db_trace')) {
-    show_query(tblx)
-    explain(tblx)
-    message(' -> ',
-            base::ifelse(packageVersion('dbplyr') < '2.0.0',
-                         dbplyr::as.sql(name),
-                         dbplyr::as.sql(name, con)))
-    start <- Sys.time()
-    message(start)
-  }
-  rslt <- dplyr::compute(tblx, name = name, temporary = temporary, ...)
-  if (config('db_trace')) {
-    end  <- Sys.time()
-    message(end, ' ==> ', format(end - start))
-  }
-  rslt
+    if (!inherits(name, c('ident_q', 'dbplyr_schema')) && length(name) == 1) {
+      name <- gsub('\\s+','_', name, perl = TRUE)
+      name <- intermed_name(name, temporary)
+    }
+    con <- dbi_con(tblx)
+    if (db_exists_table(con, name)) db_remove_table(con, name)
+    if (config('db_trace')) {
+      show_query(tblx)
+      if (config('can_explain')) explain(tblx)
+      message(' -> ',
+              base::ifelse(packageVersion('dbplyr') < '2.0.0',
+                           dbplyr::as.sql(name),
+                           dbplyr::as.sql(name, con)))
+      start <- Sys.time()
+      message(start)
+    }
+    rslt <- dplyr::compute(tblx, name = name, temporary = temporary, ...)
+    if (config('db_trace')) {
+      end  <- Sys.time()
+      message(end, ' ==> ', format(end - start))
+    }
+    rslt
 }
 
 
@@ -408,7 +427,7 @@ collect_new <- function(tblx, ...) {
   if (config('db_trace')) {
     if (inherits(tblx, 'tbl_sql')) {
       show_query(tblx)
-      explain(tblx)
+      if (config('can_explain')) explain(tblx)
     }
     message(' -> collect')
     start <- Sys.time()
@@ -457,9 +476,9 @@ copy_to_new <- function(dest = config('db_src'), df,
     message(start)
     message('Data: ', deparse(substitute(df)))
     message('Table name: ',
-            ifelse(packageVersion('dbplyr') < '2.0.0',
-                   dbplyr::as.sql(name),
-                   dbplyr::as.sql(name, dbi_con(dest))),
+            base::ifelse(packageVersion('dbplyr') < '2.0.0',
+                         dbplyr::as.sql(name),
+                         dbplyr::as.sql(name, dbi_con(dest))),
             ' (temp: ', temporary, ')')
     message('Data elements: ', paste(tbl_vars(df), collapse = ','))
     message('Rows: ', NROW(df))
@@ -485,8 +504,8 @@ copy_to_new <- function(dest = config('db_src'), df,
   dirs <- config('subdirs')
   collect_new(data) %>%
     write_csv(file.path(config('base_dir'),
-                        ifelse(local, dirs$local_dir, dirs$result_dir),
-                        paste0(name, '.csv')))
+                        base::ifelse(local, dirs$local_dir, dirs$result_dir),
+                        paste0(name, '.csv')), na = '')
 }
 
 #' Output contents of a tbl
@@ -519,14 +538,15 @@ copy_to_new <- function(dest = config('db_src'), df,
 #' because you know it will be used in a future request).
 #'
 #' @param data The tbl to write.
-#' @param name The name (only) of the ouptut.  Defaults to the name of `data`.
+#' @param name The name (only) of the output  Defaults to the name of `data`.
 #' @param local A value indicating whether the data should be written to a
 #'   local-only location, which is not typically returned with query results.
 #' @param file An indicator of whether the data should be written out as a CSV
 #'   file.  If it is FALSE, no file will be written. If it is TRUE, a CSV file
-#'   will be written named `name`, with a `.csv` suffix appended.
+#'   will be written named _name_, with a `.csv` suffix appended.
 #' @param db A database connection, to which to write the results table.  If it
-#'   is FALSE or NA, no database table is written
+#'   is FALSE or NA, no database table is written.  If it is TRUE, then
+#'   config('db_src') is used.
 #' @param results_tag A value indicating whether to add a request tag to the
 #'   output name (see [intermed_name()]) iff the results are written to the
 #'   database.
@@ -539,10 +559,9 @@ copy_to_new <- function(dest = config('db_src'), df,
 #'   intermediate tables for internal use during request execution
 #' @md
 output_tbl <- function(data, name = NA, local = FALSE,
-                       file = ifelse(config('execution_mode') !=
-                                       'development', TRUE, FALSE),
-                       db = if (config('execution_mode') !=
-                                  'distribution') config('db_src') else NA,
+                       file = base::ifelse(config('results_target') == 'file',
+                                           TRUE, FALSE),
+                       db = if (! file) config('results_target') else NA,
                        results_tag = TRUE, ...) {
   if (is.na(name)) name <- quo_name(enquo(data))
 
