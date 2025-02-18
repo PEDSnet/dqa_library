@@ -1,0 +1,114 @@
+concept_id,concept_code,concept_name,vocabulary_id
+37020282,92798-8,Candida lusitaniae DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+36203580,85777-1,Serratia marcescens DNA [Presence] by NAA with non-probe detection in Positive blood culture,LOINC
+36032118,96301-7,Bacteroides fragilis DNA [Presence] by NAA with non-probe detection in Positive blood culture,LOINC
+36031423,96305-8,Enterococcus faecium DNA [Presence] by NAA with non-probe detection in Positive blood culture,LOINC
+3015479,533-0,Mycobacterium sp identified in Blood by Organism specific culture,LOINC
+37019777,92783-0,Enterococcus faecalis DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+1001582,93404-2,Enterobacter cloacae complex DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+37021583,92767-3,Listeria sp DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+36031871,96302-5,Candida auris DNA [Presence] by NAA with non-probe detection in Positive blood culture,LOINC
+36203569,85766-4,Streptococcus sp DNA [Presence] by NAA with non-probe detection in Positive blood culture,LOINC
+37021079,92786-3,Corynebacterium sp DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+37019547,92785-5,Cutibacterium acnes DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+1002167,93403-4,Citrobacter sp DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+1001858,93396-0,Fusobacterium nucleatum DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+3043883,43703-8,Cytomegalovirus [Presence] in Blood by Shell vial culture,LOINC
+37020591,92777-2,Staphylococcus aureus DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+1001901,93384-6,Serratia sp DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+1616541,97050-9,Acinetobacter calcoaceticus-baumannii complex DNA [Presence] by NAA with non-probe detection in Positive blood culture,LOINC
+36203227,85780-5,Pseudomonas aeruginosa DNA [Presence] by NAA with non-probe detection in Positive blood culture,LOINC
+37020727,92787-1,Bacillus subtilis group DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+1175463,90425-0,Microorganism preliminary growth detection panel - Platelets from Blood product unit by Culture,LOINC
+37020358,92795-4,Candida guilliermondii DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+37019607,92804-4,Rhodotorula spp DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+37020107,92796-2,Candida kefyr DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+36032325,96311-6,Staphylococcus lugdunensis DNA [Presence] by NAA with non-probe detection in Positive blood culture,LOINC
+36203577,85774-8,Klebsiella oxytoca DNA [Presence] by NAA with non-probe detection in Positive blood culture,LOINC
+36203576,85773-0,Escherichia coli DNA [Presence] by NAA with non-probe detection in Positive blood culture,LOINC
+36031722,96307-4,Klebsiella pneumoniae+Klebsiella variicola+Klebsiella quasipneumoniae DNA [Presence] by NAA with non-probe detection in Positive blood culture,LOINC
+37020785,92799-6,Candida parapsilosis DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+36204426,85764-9,Staphylococcus sp DNA [Presence] by NAA with non-probe detection in Positive blood culture,LOINC
+36031280,96312-4,Stenotrophomonas maltophilia DNA [Presence] by NAA with non-probe detection in Positive blood culture,LOINC
+1001759,93392-9,Serratia marcescens DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+36203571,85768-0,Streptococcus pneumoniae DNA [Presence] by NAA with non-probe detection in Positive blood culture,LOINC
+36204424,85762-3,Blood pathogens panel by NAA with non-probe detection in Positive blood culture,LOINC
+36203583,85783-9,Candida krusei DNA [Presence] by NAA with non-probe detection in Positive blood culture,LOINC
+1001635,93400-0,Enterobacter aerogenes+Enterobacter amnigenus+Enterobacter gergoviae DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+37020000,92800-2,Candida tropicalis DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+37019807,92788-9,Bacillus cereus group DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+37020488,92771-5,Streptococcus pneumoniae DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+37020459,92802-8,Cryptococcus neoformans DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+46235459,75677-5,Deprecated Proteus sp (atpD) gene [Presence] by Nucleic acid capture and probe detection in Positive blood culture,LOINC
+46235458,75676-7,Deprecated Enterobacter sp (gyrB+metB) genes [Presence] by Nucleic acid capture and probe detection in Positive blood culture,LOINC
+36203582,85782-1,Candida glabrata DNA [Presence] by NAA with non-probe detection in Positive blood culture,LOINC
+36204425,85763-1,Listeria monocytogenes DNA [Presence] by NAA with non-probe detection in Positive blood culture,LOINC
+37021035,92772-3,Streptococcus anginosus group DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+1001898,93386-1,Pseudomonas aeruginosa DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+37020248,92791-3,Candida auris DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+36203579,85776-3,Proteus sp DNA [Presence] by NAA with non-probe detection in Positive blood culture,LOINC
+1002168,93388-7,Neisseria meningitidis DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+40770955,68366-4,Bacteria identified in Blood product unit by Culture,LOINC
+36031851,96308-2,Klebsiella aerogenes DNA [Presence] by NAA with non-probe detection in Positive blood culture,LOINC
+44816638,74740-2,Deprecated Streptococcus sp tuf gene [Presence] by Nucleic acid capture and probe detection in Positive blood culture,LOINC
+37020115,92793-9,Candida famata DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+37020485,92779-8,Micrococcus sp DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+3023368,600-7,Bacteria identified in Blood by Culture,LOINC
+37021439,92778-0,Staphylococcus sp DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+46235461,75679-1,Deprecated Klebsiella pneumoniae yggE gene [Presence] by Nucleic acid capture and probe detection in Positive blood culture,LOINC
+1001596,93385-3,Salmonella sp DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+37019902,92784-8,Enterococcus sp DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+37019710,92774-9,Streptococcus sp DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+37020838,92797-0,Candida krusei DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+1001521,93393-7,Proteus sp DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+4107893,30088009,Blood culture,SNOMED
+36203574,85771-4,Enterobacteriaceae DNA [Presence] by NAA with non-probe detection in Positive blood culture,LOINC
+1001537,93406-7,Acinetobacter baumannii DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+37019983,92803-6,Fusarium sp DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+37021336,92776-4,Staphylococcus epidermidis DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+44816646,74748-5,Deprecated Staphylococcus sp tuf gene [Presence] by Nucleic acid capture and probe detection in Positive blood culture,LOINC
+37019716,92794-7,Candida glabrata DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+46235470,75688-2,Deprecated Gram negative bacteria identified [Interpretation] by Nucleic acid capture and probe detection in Positive blood culture,LOINC
+36203568,85765-6,Staphylococcus aureus DNA [Presence] by NAA with non-probe detection in Positive blood culture,LOINC
+36032369,96313-2,Salmonella sp DNA [Presence] by NAA with non-probe detection in Positive blood culture,LOINC
+36203575,85772-2,Enterobacter cloacae complex DNA [Presence] by NAA with non-probe detection in Positive blood culture,LOINC
+3016977,599-1,Bacteria identified in Blood product unit by Aerobe culture,LOINC
+1002284,93395-2,Klebsiella pneumoniae DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+3009171,601-5,Fungus identified in Blood by Culture,LOINC
+36204423,85761-5,Klebsiella pneumoniae DNA [Presence] by NAA with non-probe detection in Positive blood culture,LOINC
+3017691,5835-4,Cytomegalovirus [Presence] in Blood by Organism specific culture,LOINC
+36203228,85781-3,Candida albicans DNA [Presence] by NAA with non-probe detection in Positive blood culture,LOINC
+36203572,85769-8,Streptococcus pyogenes DNA [Presence] by NAA with non-probe detection in Positive blood culture,LOINC
+36203570,85767-2,Streptococcus agalactiae DNA [Presence] by NAA with non-probe detection in Positive blood culture,LOINC
+37021509,92773-1,Streptococcus agalactiae DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+1002107,93391-1,Stenotrophomonas maltophilia DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+1001735,93405-9,Bacteroides fragilis DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+36031504,96310-8,Staphylococcus epidermidis DNA [Presence] by NAA with non-probe detection in Positive blood culture,LOINC
+3006673,17934-1,Bacteria identified in Blood by Anaerobe culture,LOINC
+1001702,93398-6,Klebsiella oxytoca DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+46235462,75680-9,Deprecated Klebsiella oxytoca (ompA) gene [Presence] by Nucleic acid capture and probe detection in Positive blood culture,LOINC
+37019531,92801-0,Cryptococcus gattii DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+36203573,85770-6,Acinetobacter baumannii DNA [Presence] by NAA with non-probe detection in Positive blood culture,LOINC
+36032205,96303-3,Cryptococcus gattii+neoformans DNA [Presence] by NAA with non-probe detection in Positive blood culture,LOINC
+46235463,75681-7,Deprecated Pseudomonas aeruginosa (sodA) gene [Presence] by Nucleic acid capture and probe detection in Positive blood culture,LOINC
+1002074,93402-6,Cronobacter sakazakii DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+1002265,93387-9,Proteus mirabilis DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+36203585,85785-4,Candida tropicalis DNA [Presence] by NAA with non-probe detection in Positive blood culture,LOINC
+37019570,92792-1,Candida dubliniensis DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+36203581,85778-9,Haemophilus influenzae DNA [Presence] by NAA with non-probe detection in Positive blood culture,LOINC
+37020017,92790-5,Candida albicans DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+36203226,85779-7,Neisseria meningitidis DNA [Presence] by NAA with non-probe detection in Positive blood culture,LOINC
+37020305,92775-6,Staphylococcus lugdunensis DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+36031982,96306-6,Enterobacterales DNA [Presence] by NAA with non-probe detection in Positive blood culture,LOINC
+37021132,92782-2,Enterococcus faecium DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+36031282,96304-1,Enterococcus faecalis DNA [Presence] by NAA with non-probe detection in Positive blood culture,LOINC
+1001957,93394-5,Morganella morganii DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+37019480,92781-4,Lactobacillus sp DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+37020933,92780-6,Listeria monocytogenes DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+1002093,93397-8,Haemophilus influenzae DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+1001636,93401-8,Escherichia coli DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+1001502,93399-4,Fusobacterium necrophorum DNA [Presence] by NAA with probe detection in Positive blood culture,LOINC
+3020227,6330-5,Campylobacter sp identified in Blood by Organism specific culture,LOINC
+3005745,17928-3,Bacteria identified in Blood by Aerobe culture,LOINC
+36203578,85775-5,Enterococcus sp DNA [Presence] by NAA with non-probe detection in Positive blood culture,LOINC
+36203584,85784-7,Candida parapsilosis DNA [Presence] by NAA with non-probe detection in Positive blood culture,LOINC

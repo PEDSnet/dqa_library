@@ -17,7 +17,7 @@ library(lubridate)
 source(file.path('setup', 'argos_wrapper.R'))
 
 ###' `Set site name` ###
-site <- 'seattle'
+site <- 'national'
 
 # Establish connection to database
 initialize_session(session_name = 'ndq_assessment',

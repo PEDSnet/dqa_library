@@ -1,0 +1,13 @@
+concept_id,concept_code,concept_name,vocabulary_id
+3023368,600-7,Bacteria identified in Blood by Culture,LOINC
+3006673,17934-1,Bacteria identified in Blood by Anaerobe culture,LOINC
+3009171,601-5,Fungus identified in Blood by Culture,LOINC
+742196,0140U,"Infectious disease (fungi), fungal pathogen identification, DNA (15 fungal targets), blood culture, amplified probe technique, each target reported as detected or not detected",CPT4
+1389747,87154,"Culture, typing; identification of blood pathogen and resistance typing, when performed, by nucleic acid (DNA or RNA) probe, multiplexed amplified probe technique including multiplex reverse transcription, when performed, per culture or isolate, 6 or m...",CPT4
+709838,0086U,"Infectious disease (bacterial and fungal), organism identification, blood culture, using rRNA FISH, 6 or more organism targets, reported as positive or negative with phenotypic minimum inhibitory concentration (MIC)-based antimicrobial susceptibility",CPT4
+3015479,533-0,Mycobacterium sp identified in Blood by Organism specific culture,LOINC
+3005745,17928-3,Bacteria identified in Blood by Aerobe culture,LOINC
+742197,0141U,"Infectious disease (bacteria and fungi), gram-positive organism identification and drug resistance element detection, DNA (20 gram-positive bacterial targets, 4 resistance genes, 1 pan gram-negative bacterial target, 1 pan Candida target), blood culture, ",CPT4
+4252846,409611004,Aerobic blood culture,SNOMED
+2212980,87040,"Culture, bacterial; blood, aerobic, with isolation and presumptive identification of isolates (includes anaerobic culture, if appropriate)",CPT4
+2213001,87103,"Culture, fungi (mold or yeast) isolation, with presumptive identification of isolates; blood",CPT4

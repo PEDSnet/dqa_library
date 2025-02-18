@@ -1,11 +1,11 @@
 
-#' list element definitions for `fot` check type
+#' facts over time element definitions
 #' 
-#' List of lists
+#' structured as a list of lists with the following inputs:
 #' 
-#' List Name: Check Name (output as check name)
-#' List First Element: The object for which the `fot` check is run against
-#' List Second Element: Check Description
+#' List Name: check name identifier
+#' List First Element: The table against which the FOT check should be executed
+#' List Second Element: a brief description of the check
 #' 
 
 time_tbls_list = list(

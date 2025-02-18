@@ -87,113 +87,113 @@
                     'bmc_gen_output')
 
   
+  ###' `Expected Concepts Present` ###
+  cli::cli_inform(cli::col_br_green('Expected Concepts Present'))
   
+  source(file.path('code', 'ecp_execute.R'))
   
+  ecp <- check_ecp(ecp_codeset_list[23:24])
+
+  output_tbl_append(ecp, 'ecp_output')
+
   
-  message('Expected Concepts Present')
-    source(file.path(base_dir, 'code', 'ecp_execute.R'))
-    ecp <- check_ecp(ecp_codeset_list)
+  ###' `Patient Facts/Records per Visit` ###
+  cli::cli_inform(cli::col_br_green('Patient Facts/Records per Visit'))
+  
+  source(file.path('code', 'pf_visits_execute.R'))
+  
+  pf_allvisits <- check_pf_visits(all_list)
+  pf_opvisits <- check_pf_visits(op_list,
+                                 visit_tbl = site_cdm_tbl('visit_occurrence') %>%
+                                   filter(visit_concept_id %in% c(9202L,581399L)))
+  pf_ipvisits <- check_pf_visits(ip_list,
+                                 visit_tbl = site_cdm_tbl('visit_occurrence') %>%
+                                   filter(visit_concept_id %in% c(9201L,2000000048L)))
+  pf_edvisits <- check_pf_visits(ed_list,
+                                 visit_tbl = site_cdm_tbl('visit_occurrence') %>%
+                                  filter(visit_concept_id %in% c(9203L,2000000048L)))
 
-    output_tbl_append(ecp,
-                      'ecp_output')
+  pf_long_ip <- check_pf_visits(long_ip_list,
+                                visit_tbl = results_tbl(paste0(config('site'), '_iptwo')))
 
-  message('PF Visits (Patient Facts for Visits) Check')
-    source(file.path(base_dir, 'code', 'pf_visits_execute.R'))
-    pf_allvisits <- check_pf_visits(all_list)
-    pf_opvisits <- check_pf_visits(op_list,
-                                   visit_tbl = site_cdm_tbl('visit_occurrence') %>%
-                                     filter(visit_concept_id %in% c(9202L,581399L)))
-    pf_ipvisits <- check_pf_visits(ip_list,
-                                   visit_tbl = site_cdm_tbl('visit_occurrence') %>%
-                                     filter(visit_concept_id %in% c(9201L,2000000048L)))
-    pf_edvisits <- check_pf_visits(ed_list,
-                                   visit_tbl = site_cdm_tbl('visit_occurrence') %>%
-                                    filter(visit_concept_id %in% c(9203L,2000000048L)))
+  pf_combined <-
+    c(pf_allvisits,
+      pf_opvisits,
+      pf_ipvisits,
+      pf_edvisits,
+      pf_long_ip)
 
-    pf_long_ip <- check_pf_visits(long_ip_list,
-                                  visit_tbl = results_tbl(paste0(config('site'), '_iptwo')))
+  pf_combined_reduce <-
+    reduce(.x=pf_combined,
+           .f=dplyr::union)
 
-    pf_combined <-
-      c(pf_allvisits,
-        pf_opvisits,
-        pf_ipvisits,
-        pf_edvisits,
-        pf_long_ip)
+  output_tbl_append(pf_combined_reduce,
+                    'pf_output')
 
-    pf_combined_reduce <-
-      reduce(.x=pf_combined,
-             .f=dplyr::union)
+    
+  ###' `Facts Over Time` ###
+  cli::cli_inform(cli::col_br_green('Facts Over Time'))
+  
+  source(file.path('code', 'fot_execute.R'))
+  
+  fot_all <- check_fot(time_tbls = time_tbls_list,
+                       time_frame = time_span,
+                       lookback_months = 1, 
+                       visits_only = FALSE,
+                       distinct_visits = TRUE)
+  fot_all_reduce <- reduce(.x=fot_all,
+                           .f=dplyr::union)
 
-    output_tbl_append(pf_combined_reduce,
-                      'pf_output')
+  ## get "all visits" denominator
+  fot_visit_denom <- fot_all_reduce %>% filter(check_name == 'fot_vi') %>%
+    select(site, month_end, row_cts, row_visits, row_pts) %>%
+    rename('total_pt' = row_pts,
+           'total_visit' = row_visits,
+           'total_row' = row_cts)
 
-  message('FOT (Facts Over Time) Check')
-    source(file.path(base_dir, 'code', 'fot_execute.R'))
-    fot_all <- check_fot(time_tbls = time_tbls_list,
-                         visits_only = FALSE)
-    fot_all_reduce <- reduce(.x=fot_all,
-                             .f=dplyr::union)
+  fot_w_denom <- fot_all_reduce %>% left_join(fot_visit_denom)
 
-    fot_visit_denom <- fot_all_reduce %>% filter(check_name == 'fot_vi') %>%
-      select(site, month_end, row_cts, row_visits, row_pts) %>%
-      rename('total_pt' = row_pts,
-             'total_visit' = row_visits,
-             'total_row' = row_cts)
+  output_tbl_append(fot_w_denom, 'fot_output')
 
-    fot_w_denom <- fot_all_reduce %>% left_join(fot_visit_denom)
+  
+  ###' `Domain Concordance` ###
+  cli::cli_inform(cli::col_br_green('Domain Concordance'))
+  
+  source(file.path('code', 'dcon_execute.R'))
+  
+  dcon_pt <- check_dcon(conc_tbls = conc_pts_list,
+                        check_string = 'dcon_pts') %>%
+    reduce(dplyr::union)
+  
+  dcon_visit <- check_dcon(conc_tbls = conc_visits_list,
+                           check_string = 'dcon_visits') %>%
+    reduce(dplyr::union)
+  
+  dcon_all <- dplyr::union(dcon_pt, dcon_visit)
 
-    output_tbl_append(fot_w_denom,
-                      'fot_output')
+  output_tbl_append(dcon_all, 'dcon_output')
 
-  message('Domain Concordance Check')
-    source(file.path(base_dir, 'code', 'dcon_execute.R'))
-    # dcon_all <- check_dcon_pts(conc_tbls = conc_pts_list)
-    # dcon_all_reduce <- reduce(.x=dcon_all,
-    #                           .f=dplyr::union)
-    dcon_pt <- check_dcon(conc_tbls = conc_pts_list,
-                          check_string = 'dcon_pts') %>%
-      reduce(dplyr::union)
-    dcon_visit <- check_dcon(conc_tbls = conc_visits_list,
-                             check_string = 'dcon_visits') %>%
-      reduce(dplyr::union)
-    dcon_all <- dplyr::union(dcon_pt, dcon_visit)
+  ## build metadata tables
+  dcon_meta <- check_dcon_pts_meta(conc_tbls_meta = conc_metadata)
+  output_tbl_append(dcon_meta,'dcon_meta')
 
-    output_tbl_append(dcon_all,
-                      'dcon_output')
-
-  # message('Domain Concordance Over Time')
-  #   dcon_pt_yr <- check_dcon_overtime(conc_tbls = conc_pts_list,
-  #                                       check_string = 'dcon_pts') %>%
-  #     reduce(dplyr::union)
-  #   dcon_visit_yr <- check_dcon_overtime(conc_tbls = conc_visits_list,
-  #                                          check_string = 'dcon_visits') %>%
-  #     reduce(dplyr::union)
-  #   dcon_all_yr <- dplyr::union(dcon_pt_yr, dcon_visit_yr)
-  #
-  #   output_tbl_append(dcon_all_yr,
-  #                     'dcon_by_yr')
-
-
-    dcon_meta <- check_dcon_pts_meta(conc_tbls_meta = conc_metadata)
-    output_tbl_append(dcon_meta,
-                      'dcon_meta')
-
-    message('Remove Precomputed Tables')
-    remove_precompute()
+  
+  ###' `Cleanup & Crosswalks`
+  cli::cli_inform(cli::col_br_green('Remove Precomputed Tables'))
+  
+  remove_precompute()
 
 
-    message('Uploading Crosswalks')
-    pf_mappings <- read_codeset('pf_mappings','cc')
-    output_tbl(pf_mappings,
-               'pf_mappings')
+  cli::cli_inform(cli::col_br_green('Upload Crosswalks'))
+  
+  pf_mappings <- read_codeset('pf_mappings','cc')
+  output_tbl(pf_mappings,'pf_mappings')
 
-    dc_mappings <- read_codeset('dc_mappings','cc')
-    output_tbl(dc_mappings,
-               'dc_mappings')
+  dc_mappings <- read_codeset('dc_mappings','cc')
+  output_tbl(dc_mappings,'dc_mappings')
 
-    check_meta <- read.csv('specs/dqa_check_metadata.csv')
-    output_tbl(check_meta,
-               'all_check_metadata')
+  check_meta <- read.csv('specs/dqa_check_metadata.csv')
+  output_tbl(check_meta,'dqa_check_metadata')
 
 
 

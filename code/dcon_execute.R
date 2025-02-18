@@ -1,15 +1,13 @@
 
-
-
-#' list element definitions for the `dcon_pts` check type
+#' list element definitions for domain concordance
 #' 
 #' List of lists
 #' 
 #' Name of list: check description
-#' First Element: First Domain
-#' Second Element: Second Domain
+#' First Element: First cohort definition
+#' Second Element: Second cohort definition
 #' Third Element: Check Name
-#' Fourth Element: chronic vs acute identifier (controls the distance between events required by the function)
+#' Fourth Element: the maximum number of days between each of the two events OR 'visit' if a visit based check
 #' 
 #' The order of first and second element must match the description order
 #' 
@@ -119,7 +117,14 @@ conc_visits_list <-
                                    'visit')
   )
 
-
+#' list element metadata for domain concordance check
+#' 
+#' should be structured as a list of list with the following elements:
+#' 
+#' name: the check name as it appears in the table args list (sublist element #3)
+#'     1: 'cohort_1' set equal to a description of the first cohort
+#'     2: 'cohort_2' set equal to a description of the second cohort
+#'
 
 conc_metadata <- 
   list(
