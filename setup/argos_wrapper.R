@@ -1,4 +1,40 @@
 
+#' Initialize argos session
+#'
+#' @param session_name an arbitrary string label to identify your session
+#' @param db_conn the database connection information; can either be a connection
+#' object like those created by DBI::dbConnect OR the path to a JSON file containing
+#' your connection information
+#' @param is_json a boolean indicating whether db_conn is a file path pointing to a JSON
+#' file or not
+#' @param base_directory the base or working directory; in a project-oriented workflow, this 
+#' will be the working directory established when opening the project.
+#' @param specs_subdirectory the subdirectory within the base directory where any files to be used in the analysis
+#' (i.e. concept sets) will be stored; defaults to `specs`
+#' @param results_subdirectory the subdirectory within the base directory where results should be output; 
+#' defaults to `results`
+#' @param default_file_output a boolean indicating whether output_tbl should output a file by default or
+#' if it should just output the results to the database; defaults to FALSE (i.e. no file output)
+#' @param cdm_schema the schema on the database where the data in a CDM format is stored
+#' @param results_schema the schema on the database where any results should be output
+#' @param vocabulary_schema the schema on the database where vocabulary reference tables 
+#' (i.e. the OHDSI vocabulary concept tables) are stored
+#' @param results_tag if desired, a suffix to be appended onto results tables to help organize
+#' project-specific output
+#' @param cache_enabled a boolean value indicating whether repeated attempts to load the same
+#' codeset (via load_codeset) should use a cached value rather than reloading; defaults to TRUE
+#' @param retain_intermediates a boolean indicating whether intermediate/temporary tables should be
+#' manifested and retained; defaults to FALSE
+#' @param db_trace a boolean indicating whether the query log should include
+#' detailed information about execution of SQL queries in the database 
+#' (essentially a "verbose" argument); defaults to TRUE
+#'
+#' @returns will quietly load all exported argos functions into the environment and establish
+#' the necessary configurations to allow them to operate; note that the argos session itself
+#' will NOT appear in the global environment pane in the RStudio IDE
+#' 
+#' the connection information will print after this function is run to confirm connection to the database of choice
+#' 
 initialize_session <- function(session_name,
                                db_conn,
                                is_json = FALSE,
