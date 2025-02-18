@@ -32,9 +32,11 @@ initialize_session(session_name = 'ndq_assessment',
 
 config('site', site)
 
-# needed if executing check_dc_init and pointing to previous CDM instance
-config('cdm_schema_prev', 'dcc_pedsnet')
+# location of prior CDM or results data (for data cycle changes check)
 config('db_src_prev', srcr(Sys.getenv('PEDSNET_PREV_CONFIG')))
+
+# needed if executing check_dc and pointing to previous CDM instance
+config('cdm_schema_prev', 'dcc_pedsnet')
 # needed if executing check_dc and pointing to previous results
 config('results_schema_prev', 'dqa_rox')
 
