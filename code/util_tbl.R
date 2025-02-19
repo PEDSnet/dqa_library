@@ -342,7 +342,7 @@ db_exists_table <- function(db = config('db_src'), name) {
     return(DBI::dbExistsTable(con, DBI::Id(elts)))
   }
   else {
-    return(DBI::dbExistsTable(con, elts))
+    return(DBI::dbExistsTable(con, DBI::Id(elts)))
   }
 }
 

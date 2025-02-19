@@ -180,6 +180,8 @@ config('execution_mode', 'development')
 #' @md
 config('db_trace', TRUE)
 
+config('results_target', TRUE)
+
 #' Request-specific caching of loaded codesets
 #'
 #' This Boolean value specifies whether repeated attempts to load the same
