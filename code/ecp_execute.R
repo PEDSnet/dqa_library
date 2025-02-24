@@ -1,32 +1,44 @@
 
-
-pcd <- site_cdm_tbl('procedure_occurrence') %>% select(person_id) %>% distinct()
-drg <- site_cdm_tbl('drug_exposure') %>% select(person_id) %>% distinct()
-ml <- site_cdm_tbl('measurement_labs') %>% select(person_id) %>% distinct()
+## Patients with procedure, drug, AND lab
+pcd <- site_cdm_tbl('procedure_occurrence') %>% select(person_id) %>% distinct() %>% compute_new()
+drg <- site_cdm_tbl('drug_exposure') %>% select(person_id) %>% distinct() %>% compute_new()
+ml <- site_cdm_tbl('measurement_labs') %>% select(person_id) %>% distinct() %>% compute_new()
 
 pdl_pts <- pcd %>%
   inner_join(drg) %>%
-  inner_join(ml) %>% compute_new()
+  inner_join(ml) %>% 
+  mutate(cohort_def = 'Patients with evidence of a procedure, drug, AND lab') %>%
+  compute_new()
 
+## Patients with face-to-face visit with a diagnosis, valid birth date, and valid sex
 valid_ftf_dx <- cdm_tbl('visit_occurrence') %>%
-  select(site, person_id, visit_occurrence_id, visit_concept_id) %>%
+  select(person_id, visit_occurrence_id, visit_concept_id) %>%
   filter(visit_concept_id %in% c(9201, 9202, 9203, 581399, 2000000048)) %>%
-  inner_join(select(cdm_tbl('condition_occurrence'), site, person_id, 
+  inner_join(select(cdm_tbl('condition_occurrence'), person_id, 
                     visit_occurrence_id)) %>%
-  select(site, person_id) %>%
+  select(person_id) %>%
   compute_new()
 
 valid_demo <- cdm_tbl('person') %>%
+  add_site() %>%
   inner_join(valid_ftf_dx) %>%
   filter(!is.na(birth_date) & 
            !gender_concept_id %in% c(44814650, 44814653, 44814649)) %>%
-  distinct(site, person_id, location_id) %>% compute_new()
+  distinct(site, person_id, location_id) %>% 
+  mutate(cohort_def = 'Patients with a valid sex, valid DOB, and at least one face to face visit associated with a diagnosis') %>%
+  compute_new()
 
 geocode_tbls <- prep_geocodes(person_tbl = valid_demo)
 geocode_tract <- copy_to_new(df = geocode_tbls$tract_level)
 geocode_cbg <- copy_to_new(df = geocode_tbls$block_group_level)
 geocode_lohis_tract <- copy_to_new(df = geocode_tbls$lohis_tract)
 geocode_lohis_bg <- copy_to_new(df = geocode_tbls$lohis_bg)
+
+## Patients with inpatient admission
+ip_admit <- cdm_tbl('visit_occurrence') %>%
+  filter(visit_concept_id %in% c(9201, 2000000048)) %>%
+  distinct(person_id) %>%
+  mutate(cohort_def = 'Patients with an inpatient admission (9201 or 2000000048)')
 
 #' List of inputs for check_ecp
 #'
@@ -214,6 +226,20 @@ ecp_codeset_list <- list(
                                     'geocode_year',
                                     load_codeset('ecp_concepts', 'ciccc') %>% 
                                       filter(concept_group == '2020_lohis_cbg'),
-                                    'ecp_twoplus_lohis_cbg_2020')
+                                    'ecp_twoplus_lohis_cbg_2020'),
+  
+  'blood_culture_labs' = list(site_cdm_tbl('measurement_labs'),
+                              ip_admit,
+                              'measurement_concept_id',
+                              load_codeset('ecp_concepts', 'ciccc') %>% 
+                                filter(concept_group == 'blood_culture_labs'),
+                              'ecp_blood_culture_labs'),
+  
+  'blood_culture_px' = list(site_cdm_tbl('procedure_occurrence'),
+                            ip_admit,
+                            'procedure_concept_id',
+                            load_codeset('ecp_concepts', 'ciccc') %>% 
+                              filter(concept_group == 'blood_culture_px'),
+                            'ecp_blood_culture_px')
   
 )

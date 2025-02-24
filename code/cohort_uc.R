@@ -160,7 +160,11 @@ check_uc_by_year <- function(concept_list,
     date_col_final <- 
       colnames(date_cols_unmapped)
     
-    sql_string <- paste0("extract(year from ", date_col_final, ")")
+    if(class(config('db_src')) %in% c('PostgreSQLConnection', 'PqConnection')){
+        sql_string <- paste0("extract(year from ", date_col_final, ")")
+    }else{
+        sql_string <- paste0('YEAR(', date_col_final, ')')
+      }
     
     total_rows <- 
       concept_list[[i]][[1]] %>%

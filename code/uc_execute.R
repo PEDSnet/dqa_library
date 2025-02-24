@@ -61,5 +61,13 @@ uc_args_list <-
      
      'billed procedure' = list(site_cdm_tbl('procedure_occurrence') %>% 
                                 filter(procedure_type_concept_id %in% c(44786630L,44786631)),
-                               'procedure_concept_id','uc_pb', 'procedure_source_value')
+                               'procedure_concept_id','uc_pb', 'procedure_source_value'),
+     
+     'payer plan class' = list(site_cdm_tbl('visit_payer') %>% mutate(payer_class = ifelse(plan_class == 'Other/Unknown', 0, 1)) %>%
+                                 inner_join(site_cdm_tbl('visit_occurrence') %>% select(visit_occurrence_id, visit_start_date)),
+                               'payer_class', 'uc_vpc', 'plan_name'),
+     
+     'payer plan type' = list(site_cdm_tbl('visit_payer') %>% mutate(payer_type = ifelse(plan_type == 'Other/Unknown', 0, 1)) %>%
+                                inner_join(site_cdm_tbl('visit_occurrence') %>% select(visit_occurrence_id, visit_start_date)),
+                              'payer_type', 'uc_vpt', 'plan_name')
   )

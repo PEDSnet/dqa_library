@@ -37,6 +37,7 @@ prep_geocodes <- function(fips_tbl = cdm_tbl('location_fips'),
   
   # Location History
   lohis_fips <- cdm_tbl('location_history') %>%
+    add_site() %>%
     filter(tolower(domain_id) == 'person') %>%
     rename(person_id = entity_id) %>%
     select(site, person_id, location_id, start_date, end_date) %>%

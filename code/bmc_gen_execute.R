@@ -10,14 +10,15 @@ op_cs_spec <- site_cdm_tbl('visit_occurrence') %>%
   inner_join(select(site_cdm_tbl('care_site'), care_site_id, specialty_concept_id))
 
 valid_ftf_dx <- cdm_tbl('visit_occurrence') %>%
-  select(site, person_id, visit_occurrence_id, visit_concept_id) %>%
+  select(person_id, visit_occurrence_id, visit_concept_id) %>%
   filter(visit_concept_id %in% c(9201, 9202, 9203, 581399, 2000000048)) %>%
-  inner_join(select(cdm_tbl('condition_occurrence'), site, person_id, 
+  inner_join(select(cdm_tbl('condition_occurrence'), person_id, 
                     visit_occurrence_id)) %>%
-  select(site, person_id) %>%
+  select(person_id) %>%
   compute_new()
 
 valid_demo <- cdm_tbl('person') %>%
+  add_site() %>%
   inner_join(valid_ftf_dx) %>%
   filter(!is.na(birth_date) & 
            !gender_concept_id %in% c(44814650, 44814653, 44814649)) %>%
