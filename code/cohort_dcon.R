@@ -204,7 +204,9 @@ check_dcon<- function(conc_tbls,
         inner_join(
           select(cohort_2, site, all_of(col_nm), date2)
         ) %>%
-        mutate(date_diff = abs((date1 - date2))) %>%
+        mutate(date_diff = sql(calc_days_between_dates(date_col_1 = 'date2', 
+                                                       date_col_2 = 'date1')),
+               date_diff = abs(as.numeric(date_diff))) %>%
         filter(date_diff <= days_diff_integer)
       
     }else{

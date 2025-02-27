@@ -215,7 +215,7 @@ config_append('extra_packages', c('tidyr','lubridate','stringr', 'dplyr'))
     output_tbl(dc_mappings,
                'dc_mappings')
 
-    check_meta <- read.csv('specs/dqa_check_descriptions.csv')
+    check_meta <- read.csv(file.path(base_dir, 'specs', 'dqa_check_descriptions.csv'))
     output_tbl(check_meta,
                'dqa_check_metadata')
 

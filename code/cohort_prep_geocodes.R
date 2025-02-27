@@ -14,12 +14,12 @@ prep_geocodes <- function(fips_tbl = cdm_tbl('location_fips'),
     
   # Current Locations
   current_locations <- person_tbl %>%
-    left_join(fips_tbl)
+    left_join(fips_tbl) %>% collect_new()
   
   add_nas <- current_locations %>%
     # filter(!is.na(geocode_state) & !is.na(geocode_county) &
     #          !is.na(geocode_tract)) %>%
-    collect_new() %>%
+    # collect_new() %>%
     mutate(across(where(is.character), ~ na_if(.,""))) %>%
     mutate(across(where(is.character), ~ na_if(.," ")))
   
@@ -42,12 +42,12 @@ prep_geocodes <- function(fips_tbl = cdm_tbl('location_fips'),
     rename(person_id = entity_id) %>%
     select(site, person_id, location_id, start_date, end_date) %>%
     left_join(fips_tbl) %>%
-    inner_join(person_tbl %>% select(site, person_id))
+    inner_join(person_tbl %>% select(site, person_id)) %>% collect_new()
   
   add_nas_lohis <- lohis_fips %>%
     # filter(!is.na(geocode_state) & !is.na(geocode_county) &
     #          !is.na(geocode_tract)) %>%
-    collect_new() %>%
+    # collect_new() %>%
     mutate(across(where(is.character), ~ na_if(.,""))) %>%
     mutate(across(where(is.character), ~ na_if(.," ")))
   
