@@ -38,7 +38,7 @@ geocode_lohis_bg <- copy_to_new(df = geocode_tbls$lohis_bg)
 ip_admit <- cdm_tbl('visit_occurrence') %>%
   filter(visit_concept_id %in% c(9201, 2000000048)) %>%
   distinct(person_id) %>%
-  mutate(cohort_def = 'Patients with an inpatient admission (9201 or 2000000048)')
+  mutate(cohort_def = 'Patients with an inpatient admission (9201 or 2000000048)') %>% compute_new()
 
 #' List of inputs for check_ecp
 #'

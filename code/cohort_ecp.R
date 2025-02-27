@@ -43,9 +43,10 @@ check_ecp <- function(ecp_list){
     fact_pts <- ecp_list[[i]][[1]] %>%
       inner_join(ecp_list[[i]][[2]]) %>%
       inner_join(ecp_list[[i]][[4]], by = join_cols) %>%
-      summarise(concept_pt_ct = n_distinct(person_id)) %>%collect()
+      summarise(concept_pt_ct = n_distinct(person_id)) %>% collect()
     
-    pt_cohort <- ecp_list[[i]][[2]] %>% ungroup() %>% distinct(cohort_def) %>% collect() %>% pull()
+    pt_cohort <- ecp_list[[i]][[2]] %>% collect() %>% ungroup() %>% distinct(cohort_def) %>% pull()
+    if(length(pt_cohort) > 0){pt_cohort <- pt_cohort}else{pt_cohort <- 'placeholder'}
     
     final_tbl <- total_pts %>%
       mutate(concept_pt_ct = fact_pts$concept_pt_ct,
