@@ -18,14 +18,17 @@ find_concept_names <- function(fact_tbl,
   
   
 
-  fact_tbl %>%
+  fact_tbl_new <- fact_tbl %>%
     rename(concept_id = !!sym(fact_concept_id)) %>%
     inner_join(
       select(concept_tbl,
              concept_id,
              !!sym(concept_field)),
       by=c('concept_id')
-    ) %>% rename(concept_type=!!sym(concept_field))
+    ) %>% rename(concept_type=!!sym(concept_field)) %>%
+    compute_new()
+  
+  return(fact_tbl_new)
   
 }
 
@@ -52,7 +55,7 @@ check_bmc_gen <- function(fact_tbl_list_args,
     
     if(grepl('fips_', names(fact_tbl_list_args[i]))){
       xwalk <- fact_tbl_list_args[[i]][[1]] %>%
-        rename(concept_type=!!sym(fact_tbl_list_args[[i]][[2]]))
+        rename(concept_type=!!sym(fact_tbl_list_args[[i]][[2]])) 
     }else{
       xwalk <-
         find_concept_names(fact_tbl = fact_tbl_list_args[[i]][[1]],
@@ -63,7 +66,7 @@ check_bmc_gen <- function(fact_tbl_list_args,
     total_cts <- 
       xwalk %>% 
       summarise(total_rows=n(),
-                total_pts=n_distinct(person_id)) %>% collect_new()
+                total_pts=n_distinct(person_id)) %>% collect()
     
     grps <- dplyr::group_vars(xwalk)
     
@@ -76,7 +79,7 @@ check_bmc_gen <- function(fact_tbl_list_args,
                 concept_pts=n_distinct(person_id)) %>% 
       rename('concept' = !!sym(concept_grpd)) %>%
       mutate(concept = as.character(concept)) %>%
-      collect_new()
+      collect()
     
     if(length(concept_grpd) > 1) {
       

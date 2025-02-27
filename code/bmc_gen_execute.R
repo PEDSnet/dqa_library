@@ -3,11 +3,13 @@
 
 op_prov_spec <- site_cdm_tbl('visit_occurrence') %>% 
   filter(visit_concept_id %in% c(9202L, 581399L)) %>%
-  inner_join(select(site_cdm_tbl('provider'), provider_id, specialty_concept_id))
+  inner_join(select(site_cdm_tbl('provider'), provider_id, specialty_concept_id)) %>%
+  compute_new()
 
 op_cs_spec <- site_cdm_tbl('visit_occurrence') %>% 
   filter(visit_concept_id %in% c(9202L, 581399L)) %>%
-  inner_join(select(site_cdm_tbl('care_site'), care_site_id, specialty_concept_id))
+  inner_join(select(site_cdm_tbl('care_site'), care_site_id, specialty_concept_id)) %>%
+  compute_new()
 
 valid_ftf_dx <- cdm_tbl('visit_occurrence') %>%
   select(person_id, visit_occurrence_id, visit_concept_id) %>%
@@ -51,14 +53,14 @@ geocode_tbls <- prep_geocodes(person_tbl = valid_demo)
 fact_tbl_list <- list(
   
   'admin' = list(site_cdm_tbl('drug_exposure') %>%
-                   filter(drug_type_concept_id %in% c(38000180L)),
+                   filter(drug_type_concept_id %in% c(38000180L)) %>% compute_new(),
                  'drug_concept_id',
                  'inpatient admin',
                  'bmc_rxnorm_di',
                  'concept_class_id'),
 
   'rx' =  list(site_cdm_tbl('drug_exposure') %>%
-                 filter(drug_type_concept_id %in% c(38000177L)),
+                 filter(drug_type_concept_id %in% c(38000177L)) %>% compute_new(),
                'drug_concept_id',
                'prescriptions',
                'bmc_rxnorm_dp',

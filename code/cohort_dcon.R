@@ -350,12 +350,12 @@ find_specialty <- function(visits,
                            specialty_conceptset) {
   prov_informative <- cdm_tbl('provider') %>% 
     inner_join(specialty_conceptset, by = c('specialty_concept_id' = 'concept_id')) %>% 
-    select(provider_id, prov_specialty = specialty_concept_id)
+    select(provider_id, prov_specialty = specialty_concept_id) %>% compute_new()
   cs_informative <- cdm_tbl('care_site') %>% 
     inner_join(specialty_conceptset, by = c('specialty_concept_id' = 'concept_id')) %>%
-    select(care_site_id, cs_specialty = specialty_concept_id)
+    select(care_site_id, cs_specialty = specialty_concept_id) %>% compute_new()
   
-  visits %>% 
+  new_tbl <- visits %>% 
     left_join(prov_informative, by = 'provider_id') %>% 
     left_join(cs_informative, by = 'care_site_id') %>% 
     filter(!is.na(prov_specialty) | !is.na(cs_specialty)) %>%
@@ -365,5 +365,7 @@ find_specialty <- function(visits,
                        prov_specialty == 38004477L ~ 38004477L,
                        cs_specialty == 38004477L ~ 38004477L,
                        TRUE ~ 0L)) %>% 
-    select(-prov_specialty, -cs_specialty)
+    select(-prov_specialty, -cs_specialty) %>% compute_new()
+  
+  return(new_tbl)
 }
