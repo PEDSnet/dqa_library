@@ -14,7 +14,7 @@ prep_geocodes <- function(fips_tbl = cdm_tbl('location_fips'),
     
   # Current Locations
   current_locations <- person_tbl %>%
-    left_join(fips_tbl) %>% collect_new()
+    left_join(fips_tbl) %>% collect()
   
   add_nas <- current_locations %>%
     # filter(!is.na(geocode_state) & !is.na(geocode_county) &
@@ -36,13 +36,15 @@ prep_geocodes <- function(fips_tbl = cdm_tbl('location_fips'),
            ndigit_fips = nchar(fips_code))
   
   # Location History
-  lohis_fips <- cdm_tbl('location_history') %>%
+  lohis_fips_int <- cdm_tbl('location_history') %>%
     add_site() %>%
     filter(tolower(domain_id) == 'person') %>%
     rename(person_id = entity_id) %>%
-    select(site, person_id, location_id, start_date, end_date) %>%
+    select(site, person_id, location_id, start_date, end_date) %>% compute_new()
+  
+  lohis_fips <- lohis_fips_int %>%
     left_join(fips_tbl) %>%
-    inner_join(person_tbl %>% select(site, person_id)) %>% collect_new()
+    inner_join(person_tbl %>% select(site, person_id)) %>% collect()
   
   add_nas_lohis <- lohis_fips %>%
     # filter(!is.na(geocode_state) & !is.na(geocode_county) &
