@@ -178,8 +178,8 @@ ecp_codeset_list <- list(
                   'ecp_weight'),
   
   'tract_2010' = list(geocode_tract %>%
-                        filter(ndigit_fips == 11 & geocode_year == 2010),
-                      valid_demo %>% select(-location_id),
+                        filter(ndigit_fips == 11 & geocode_year == 2010) %>% compute_new(),
+                      valid_demo %>% select(-location_id) %>% compute_new(),
                       'geocode_year',
                       load_codeset('ecp_concepts', 'ciccc') %>% 
                         filter(concept_group == '2010_tract') %>%
@@ -187,8 +187,8 @@ ecp_codeset_list <- list(
                       'ecp_tract_2010'),
   
   'tract_2020' = list(geocode_tract %>%
-                        filter(ndigit_fips == 11 & geocode_year == 2020),
-                      valid_demo %>% select(-location_id),
+                        filter(ndigit_fips == 11 & geocode_year == 2020) %>% compute_new(),
+                      valid_demo %>% select(-location_id) %>% compute_new(),
                       'geocode_year',
                       load_codeset('ecp_concepts', 'ciccc') %>% 
                         filter(concept_group == '2020_tract') %>%
@@ -196,8 +196,8 @@ ecp_codeset_list <- list(
                       'ecp_tract_2020'),
   
   'block_group_2010' = list(geocode_cbg %>%
-                              filter(ndigit_fips == 12 & geocode_year == 2010),
-                            valid_demo %>% select(-location_id),
+                              filter(ndigit_fips == 12 & geocode_year == 2010) %>% compute_new(),
+                            valid_demo %>% select(-location_id) %>% compute_new(),
                             'geocode_year',
                             load_codeset('ecp_concepts', 'ciccc') %>% 
                               filter(concept_group == '2010_cbg') %>%
@@ -205,8 +205,8 @@ ecp_codeset_list <- list(
                             'ecp_block_group_2010'),
   
   'block_group_2020' = list(geocode_cbg %>%
-                              filter(ndigit_fips == 12 & geocode_year == 2020),
-                            valid_demo %>% select(-location_id),
+                              filter(ndigit_fips == 12 & geocode_year == 2020) %>% compute_new(),
+                            valid_demo %>% select(-location_id) %>% compute_new(),
                             'geocode_year',
                             load_codeset('ecp_concepts', 'ciccc') %>% 
                               filter(concept_group == '2020_cbg') %>%
@@ -214,8 +214,8 @@ ecp_codeset_list <- list(
                             'ecp_block_group_2020'),
   
   'twoplus_lohis_tract_2010' = list(geocode_lohis_tract %>%
-                                filter(geocode_year == 2010, ngeo_lohis > 1),
-                              valid_demo %>% select(-location_id),
+                                filter(geocode_year == 2010, ngeo_lohis > 1) %>% compute_new(),
+                              valid_demo %>% select(-location_id) %>% compute_new(),
                               'geocode_year',
                               load_codeset('ecp_concepts', 'ciccc') %>% 
                                 filter(concept_group == '2010_lohis_tract') %>%
@@ -223,8 +223,8 @@ ecp_codeset_list <- list(
                               'ecp_twoplus_lohis_tract_2010'),
   
   'twoplus_lohis_cbg_2010' = list(geocode_lohis_bg %>%
-                                      filter(geocode_year == 2010, ngeo_lohis > 1),
-                                    valid_demo %>% select(-location_id),
+                                      filter(geocode_year == 2010, ngeo_lohis > 1) %>% compute_new(),
+                                    valid_demo %>% select(-location_id) %>% compute_new(),
                                     'geocode_year',
                                     load_codeset('ecp_concepts', 'ciccc') %>% 
                                       filter(concept_group == '2010_lohis_cbg') %>%
@@ -232,8 +232,8 @@ ecp_codeset_list <- list(
                                     'ecp_twoplus_lohis_cbg_2010'),
   
   'twoplus_lohis_tract_2020' = list(geocode_lohis_tract %>%
-                                filter(geocode_year == 2020, ngeo_lohis > 1),
-                              valid_demo %>% select(-location_id),
+                                filter(geocode_year == 2020, ngeo_lohis > 1) %>% compute_new(),
+                              valid_demo %>% select(-location_id) %>% compute_new(),
                               'geocode_year',
                               load_codeset('ecp_concepts', 'ciccc') %>% 
                                 filter(concept_group == '2020_lohis_tract') %>%
@@ -241,8 +241,8 @@ ecp_codeset_list <- list(
                               'ecp_twoplus_lohis_tract_2020'),
   
   'twoplus_lohis_cbg_2020' = list(geocode_lohis_bg %>%
-                                      filter(geocode_year == 2020, ngeo_lohis > 1),
-                                    valid_demo %>% select(-location_id),
+                                      filter(geocode_year == 2020, ngeo_lohis > 1) %>% compute_new(),
+                                    valid_demo %>% select(-location_id) %>% compute_new(),
                                     'geocode_year',
                                     load_codeset('ecp_concepts', 'ciccc') %>% 
                                       filter(concept_group == '2020_lohis_cbg') %>%
