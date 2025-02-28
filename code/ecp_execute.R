@@ -76,10 +76,10 @@ ecp_codeset_list <- list(
 
   'platelet_labs' = list(site_cdm_tbl('measurement_labs'),
                          pdl_pts,
-                               'measurement_concept_id',
-                               load_codeset('ecp_concepts', 'ciccc') %>%
-                                 filter(concept_group == 'platelets'),
-                               'ecp_platelet_count'),
+                        'measurement_concept_id',
+                       load_codeset('ecp_concepts', 'ciccc') %>%
+                         filter(concept_group == 'platelets') %>% compute_new(),
+                       'ecp_platelet_count'),
 
   'anc_labs' = list(site_cdm_tbl('measurement_labs'),
                     pdl_pts,
