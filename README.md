@@ -4,6 +4,13 @@ This repository contains the code that is used to generate the raw output of the
 
 For information about each individual execution of the 8 checks, please see [dqa_check_descriptions.xlsx](dqa_check_descriptions.xlsx). This file has plain language descriptions of each check execution, organized based on the check type, the check domain, and the check application. This is similar to how the information in the REDCap DQA Issues form is formatted, so it should hopefully simplify the process of connecting a check in the form to its description in the file.
 
+## Setup
+In order to prepare your environment to execute this step, open [setup/setup.R](setup/setup.R). This file is where the connection to your local database is established and where internal configurations are set that are used throughout the process.
+
+You will first need to set the name of the institution for which you are executing these checks. Then, you will set your database configuration information in the parameters of the `initialize_session` function. Documentation for those parameters can be found [here](setup/argos_wrapper.R). Your connection information can be read in from an external JSON file or the connection can be established within the R session using a package like DBI.
+
+The next configurations are primarily related to previous data, which is needed to execute the Data Cycle Changes check. If you plan to execute this check, you will need to set an additional database connection and set EITHER `cdm_schema_prev` or `results_schema_prev`. Then, you should set both `previous_version` and `current_version` to indicate each database version. If you do NOT plan to execute this check, just set `current_version`.
+
 ## Data Cycle Changes
 
 #### Files:
