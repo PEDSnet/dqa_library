@@ -41,6 +41,7 @@ output_tbl(site_prvo, paste0(config('site'), '_prvo'),
 site_ckddx <- site_cdm_tbl('condition_occurrence') %>%
   inner_join(load_codeset('dx_ckd','iccccc'),
              by=c('condition_concept_id'='concept_id')) %>%
+  add_site() %>%
   select(site, person_id, condition_concept_id, condition_start_date)
 
 output_tbl(site_ckddx, paste0(config('site'), '_ckddx'),
@@ -51,6 +52,7 @@ site_htnrx <- site_cdm_tbl('drug_exposure') %>%
   inner_join(
     load_codeset('rx_htn'),
     by=c('drug_concept_id'='concept_id')) %>%
+  add_site() %>%
   select(site, person_id, drug_concept_id, drug_exposure_start_date)
 
 output_tbl(site_htnrx, paste0(config('site'), '_htnrx'),
@@ -60,7 +62,10 @@ output_tbl(site_htnrx, paste0(config('site'), '_htnrx'),
 
 site_iptwo <- site_cdm_tbl('visit_occurrence') %>%
   filter(visit_concept_id %in% c(9201L, 2000000048L)) %>%
-  mutate(los = as.numeric(visit_end_date - visit_start_date)) %>%
+  # mutate(los = as.numeric(visit_end_date - visit_start_date)) %>%
+  mutate(los = sql(calc_days_between_dates(date_col_1 = 'visit_start_date', 
+                                           date_col_2 = 'visit_end_date')),
+         los = as.numeric(los)) %>%
   filter(los > 2)
 
 output_tbl(site_iptwo, paste0(config('site'), '_iptwo'),

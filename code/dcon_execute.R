@@ -20,67 +20,67 @@ onco_spec_prep <- find_specialty(visits = cdm_tbl('visit_occurrence'),
 
 conc_pts_list <-
   list(
-    'pts_with_ckd_dx_and_htn_rx' = list(results_tbl(paste0(config('site'),'_ckddx')),
-                                        results_tbl(paste0(config('site'),'_htnrx')),
+    'pts_with_ckd_dx_and_htn_rx' = list(results_tbl(paste0(config('site'),'_ckddx')) %>% add_site(),
+                                        results_tbl(paste0(config('site'),'_htnrx')) %>% add_site(),
                                         'dcon_pts_ckd-dx_htn-rx',
                                         730.5),
-    'asthma_dx_broncho_rx' = list(site_cdm_tbl('condition_occurrence') %>%
+    'asthma_dx_broncho_rx' = list(site_cdm_tbl('condition_occurrence') %>% add_site() %>%
                                     select(site, person_id, condition_concept_id, condition_start_date) %>%
                                     inner_join(load_codeset('dx_asthma'), by = c('condition_concept_id' = 'concept_id')) ,
-                                  site_cdm_tbl('drug_exposure') %>%
+                                  site_cdm_tbl('drug_exposure') %>% add_site() %>%
                                     select(site, person_id, drug_concept_id, drug_exposure_start_date) %>%
                                     inner_join(load_codeset('rx_albuterol'), by = c('drug_concept_id' = 'concept_id')) ,
                                   'dcon_asthma_dx_broncho_rx',
                                   90),
-    'leukemia_dx_onco_spec' = list(site_cdm_tbl('condition_occurrence') %>% select(site, person_id, condition_concept_id, condition_start_date) %>%
+    'leukemia_dx_onco_spec' = list(site_cdm_tbl('condition_occurrence') %>% add_site() %>% select(site, person_id, condition_concept_id, condition_start_date) %>%
                                      inner_join(load_codeset('dx_leukemia_lymphoma'), by = c('condition_concept_id' = 'concept_id')),
-                                   onco_spec_prep,
+                                   onco_spec_prep %>% add_site(),
                                    'dcon_leukemia_dx_onco_spec',
                                    90),
-    'nephsyn_dx_neph_spec' = list(site_cdm_tbl('condition_occurrence') %>% select(site, person_id, condition_concept_id, condition_start_date) %>%
+    'nephsyn_dx_neph_spec' = list(site_cdm_tbl('condition_occurrence') %>% add_site() %>% select(site, person_id, condition_concept_id, condition_start_date) %>%
                                     inner_join(load_codeset('dx_nephrotic_syndrome'), by = c('condition_concept_id' = 'concept_id')),
-                                  neph_spec_prep,
+                                  neph_spec_prep %>% add_site(),
                                   'dcon_nephsyn_dx_neph_spec',
                                   730.5),
-    'frac_dx_img_px' = list(cdm_tbl('condition_occurrence') %>% select(site, person_id, condition_concept_id, condition_start_date) %>%
+    'frac_dx_img_px' = list(cdm_tbl('condition_occurrence') %>% add_site() %>% select(site, person_id, condition_concept_id, condition_start_date) %>%
                               inner_join(load_codeset('dx_fracture'), by = c('condition_concept_id' = 'concept_id')),
-                            cdm_tbl('procedure_occurrence') %>% select(site, person_id, procedure_concept_id, procedure_date) %>%
+                            cdm_tbl('procedure_occurrence') %>% add_site() %>% select(site, person_id, procedure_concept_id, procedure_date) %>%
                               inner_join(load_codeset('px_radiologic'), by = c('procedure_concept_id' = 'concept_id')),
                             'dcon_frac_dx_img_px',
                             90),
-    't1d_dx_insulin_rx' = list(cdm_tbl('condition_occurrence') %>% select(site, person_id, condition_concept_id, condition_start_date) %>%
+    't1d_dx_insulin_rx' = list(cdm_tbl('condition_occurrence') %>% add_site() %>% select(site, person_id, condition_concept_id, condition_start_date) %>%
                                  inner_join(load_codeset('T1D_SNOMED_codes'), by = c('condition_concept_id' = 'concept_id')),
-                               cdm_tbl('drug_exposure') %>% select(site, person_id, drug_concept_id, drug_exposure_start_date) %>%
+                               cdm_tbl('drug_exposure') %>% add_site() %>% select(site, person_id, drug_concept_id, drug_exposure_start_date) %>%
                                  inner_join(load_codeset('insulin'), by = c('drug_concept_id' = 'concept_id')),
                                'dcon_t1d_dx_insulin_rx',
                                90),
-    'flu_dx_flu_neg_lab' = list(site_cdm_tbl('condition_occurrence') %>% select(site, person_id, condition_concept_id, condition_start_date) %>%
+    'flu_dx_flu_neg_lab' = list(site_cdm_tbl('condition_occurrence') %>% add_site() %>% select(site, person_id, condition_concept_id, condition_start_date) %>%
                               inner_join(load_codeset('dx_influenza'), by = c('condition_concept_id' = 'concept_id')),
-                            site_cdm_tbl('measurement_labs') %>% select(site, person_id, measurement_concept_id, measurement_date,
+                            site_cdm_tbl('measurement_labs') %>% add_site() %>% select(site, person_id, measurement_concept_id, measurement_date,
                                                                         value_as_concept_id) %>%
                               inner_join(load_codeset('lab_influenza'), by = c('measurement_concept_id' = 'concept_id')) %>%
                               filter(value_as_concept_id %in% c(9189L,9190L,45878583L,45884153L)),
                             'dcon_flu_dx_flu_neg_lab',
                             14),
-    'flu_dx_flu_pos_lab' = list(site_cdm_tbl('condition_occurrence') %>% select(site, person_id, condition_concept_id, condition_start_date) %>%
+    'flu_dx_flu_pos_lab' = list(site_cdm_tbl('condition_occurrence') %>% add_site() %>% select(site, person_id, condition_concept_id, condition_start_date) %>%
                                   inner_join(load_codeset('dx_influenza'), by = c('condition_concept_id' = 'concept_id')),
-                                site_cdm_tbl('measurement_labs') %>% select(site, person_id, measurement_concept_id, measurement_date,
+                                site_cdm_tbl('measurement_labs') %>% add_site() %>% select(site, person_id, measurement_concept_id, measurement_date,
                                                                             value_as_concept_id) %>%
                                   inner_join(load_codeset('lab_influenza'), by = c('measurement_concept_id' = 'concept_id')) %>%
                                   filter(value_as_concept_id %in% c(9191L,4126681L,45884084L,45878745L,4328749L,45876384L,45881666L)),
                                 'dcon_flu_dx_flu_pos_lab',
                                 14),
-    'rsv_dx_rsv_neg_lab' = list(site_cdm_tbl('condition_occurrence') %>% select(site, person_id, condition_concept_id, condition_start_date) %>%
+    'rsv_dx_rsv_neg_lab' = list(site_cdm_tbl('condition_occurrence') %>% add_site() %>% select(site, person_id, condition_concept_id, condition_start_date) %>%
                               inner_join(load_codeset('dx_rsv'), by = c('condition_concept_id' = 'concept_id')),
-                            site_cdm_tbl('measurement_labs') %>% select(site, person_id, measurement_concept_id, measurement_date,
+                            site_cdm_tbl('measurement_labs') %>% add_site() %>% select(site, person_id, measurement_concept_id, measurement_date,
                                                                         value_as_concept_id) %>%
                               inner_join(load_codeset('lab_rsv'), by = c('measurement_concept_id' = 'concept_id')) %>%
                               filter(value_as_concept_id %in% c(9189L,9190L,45878583L,45884153L)),
                             'dcon_rsv_dx_rsv_neg_lab',
                             14),
-    'rsv_dx_rsv_pos_lab' = list(site_cdm_tbl('condition_occurrence') %>% select(site, person_id, condition_concept_id, condition_start_date) %>%
+    'rsv_dx_rsv_pos_lab' = list(site_cdm_tbl('condition_occurrence') %>% add_site() %>% select(site, person_id, condition_concept_id, condition_start_date) %>%
                                   inner_join(load_codeset('dx_rsv'), by = c('condition_concept_id' = 'concept_id')),
-                                site_cdm_tbl('measurement_labs') %>% select(site, person_id, measurement_concept_id, measurement_date,
+                                site_cdm_tbl('measurement_labs') %>% add_site() %>% select(site, person_id, measurement_concept_id, measurement_date,
                                                                             value_as_concept_id) %>%
                                   inner_join(load_codeset('lab_rsv'), by = c('measurement_concept_id' = 'concept_id')) %>%
                                   filter(value_as_concept_id %in% c(9191L,4126681L,45884084L,45878745L,4328749L,45876384L,45881666L)),
@@ -89,29 +89,29 @@ conc_pts_list <-
   )
 
 conc_visits_list <-
-  list('ED_visits_ED_conds' = list(site_cdm_tbl('visit_occurrence') %>% filter(visit_concept_id==9203L) %>%
+  list('ED_visits_ED_conds' = list(site_cdm_tbl('visit_occurrence') %>% filter(visit_concept_id==9203L) %>% add_site() %>%
                                      select(site, person_id, visit_occurrence_id, visit_start_date),
                                    site_cdm_tbl('condition_occurrence') %>% filter(
                                      condition_type_concept_id %in% c(2000001280L,2000001281L,2000001282L,
-                                                                      2000001283L,2000001284L,2000001285L)) %>%
+                                                                      2000001283L,2000001284L,2000001285L)) %>% add_site() %>%
                                      select(site, person_id, visit_occurrence_id, condition_concept_id, condition_start_date), 
                                    'dcon_ed_visits_conds',
                                    'visit'),
-       'IP_visits_IP_conds' = list(site_cdm_tbl('visit_occurrence') %>% filter(visit_concept_id %in% c(9201)) %>%
+       'IP_visits_IP_conds' = list(site_cdm_tbl('visit_occurrence') %>% filter(visit_concept_id %in% c(9201)) %>% add_site() %>%
                                      select(site, person_id, visit_occurrence_id, visit_start_date),
                                    site_cdm_tbl('condition_occurrence') %>% filter(condition_type_concept_id %in%
                                                                                      c(2000000092L,2000000093L,
                                                                                        2000000094L,2000000098L,
-                                                                                       2000000099L,2000000100L)) %>%
+                                                                                       2000000099L,2000000100L)) %>% add_site() %>%
                                      select(site, person_id, visit_occurrence_id, condition_concept_id, condition_start_date),
                                    'dcon_ip_visits_conds',
                                    'visit'),
-       'OP_visits_op_conds' = list(site_cdm_tbl('visit_occurrence') %>% filter(visit_concept_id %in% c(9202L)) %>%
+       'OP_visits_op_conds' = list(site_cdm_tbl('visit_occurrence') %>% filter(visit_concept_id %in% c(9202L)) %>% add_site() %>%
                                      select(site, person_id, visit_occurrence_id, visit_start_date),
                                    site_cdm_tbl('condition_occurrence') %>% filter(condition_type_concept_id %in% 
                                                                                      c(2000000095L, 2000000096L,
                                                                                        2000000097L, 2000000101L,
-                                                                                       2000000102L, 2000000103L)) %>%
+                                                                                       2000000102L, 2000000103L)) %>% add_site() %>%
                                      select(site, person_id, visit_occurrence_id, condition_concept_id, condition_start_date),
                                    'dcon_op_visits_conds',
                                    'visit')

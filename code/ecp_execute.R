@@ -13,14 +13,15 @@ pdl_pts <- pcd %>%
 
 ## Patients with face-to-face visit with a diagnosis, valid birth date, and valid sex
 valid_ftf_dx <- cdm_tbl('visit_occurrence') %>%
-  select(site, person_id, visit_occurrence_id, visit_concept_id) %>%
+  select(person_id, visit_occurrence_id, visit_concept_id) %>%
   filter(visit_concept_id %in% c(9201, 9202, 9203, 581399, 2000000048)) %>%
-  inner_join(select(cdm_tbl('condition_occurrence'), site, person_id, 
+  inner_join(select(cdm_tbl('condition_occurrence'), person_id, 
                     visit_occurrence_id)) %>%
-  select(site, person_id) %>%
+  select(person_id) %>%
   compute_new()
 
 valid_demo <- cdm_tbl('person') %>%
+  add_site() %>%
   inner_join(valid_ftf_dx) %>%
   filter(!is.na(birth_date) & 
            !gender_concept_id %in% c(44814650, 44814653, 44814649)) %>%
@@ -37,7 +38,7 @@ geocode_lohis_bg <- copy_to_new(df = geocode_tbls$lohis_bg)
 ## Patients with inpatient admission
 ip_admit <- cdm_tbl('visit_occurrence') %>%
   filter(visit_concept_id %in% c(9201, 2000000048)) %>%
-  distinct(site, person_id) %>%
+  distinct(person_id) %>%
   mutate(cohort_def = 'Patients with an inpatient admission (9201 or 2000000048)')
 
 #' List of inputs for check_ecp

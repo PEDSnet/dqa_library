@@ -13,14 +13,15 @@ op_cs_spec <- site_cdm_tbl('visit_occurrence') %>%
 ## Cohort for geocoding metrics
 ## Patients with a face to face visit, a diagnosis, and a valid sex & DOB
 valid_ftf_dx <- cdm_tbl('visit_occurrence') %>%
-  select(site, person_id, visit_occurrence_id, visit_concept_id) %>%
+  select(person_id, visit_occurrence_id, visit_concept_id) %>%
   filter(visit_concept_id %in% c(9201, 9202, 9203, 581399, 2000000048)) %>%
-  inner_join(select(cdm_tbl('condition_occurrence'), site, person_id, 
+  inner_join(select(cdm_tbl('condition_occurrence'), person_id, 
                     visit_occurrence_id)) %>%
-  select(site, person_id) %>%
+  select(person_id) %>%
   compute_new()
 
 valid_demo <- cdm_tbl('person') %>%
+  add_site() %>%
   inner_join(valid_ftf_dx) %>%
   filter(!is.na(birth_date) & 
            !gender_concept_id %in% c(44814650, 44814653, 44814649)) %>%
@@ -28,19 +29,6 @@ valid_demo <- cdm_tbl('person') %>%
 
 ## Geocoding metrics (with cohort)
 geocode_tbls <- prep_geocodes(person_tbl = valid_demo)
-
-# op_spec <- select(site_cdm_tbl('visit_occurrence'), person_id, visit_concept_id,
-#                   provider_id, care_site_id) %>%
-#   filter(visit_concept_id %in% c(9202L, 581399L)) %>%
-#   pivot_longer(cols = c(provider_id, care_site_id),
-#                names_to = 'domain_id',
-#                values_to = 'entity_id') %>%
-#   mutate(domain_id = case_when(domain_id == 'provider_id' ~ 'PROVIDER',
-#                                domain_id == 'care_site_id' ~ 'CARE_SITE')) %>%
-#   mutate(entity_id = as.character(entity_id)) %>%
-#   inner_join(select(site_cdm_tbl('specialty'), domain_id, entity_id, 
-#                     specialty_concept_id))
-
 
 ######################## TABLE ARGS #########################################
 

@@ -3,6 +3,7 @@
 #' This will ensure the working directory is populated appropriately
 
 # Load required packages
+devtools::install_github('PEDSnet/argos')
 library(argos)
 library(srcr)
 library(dplyr)

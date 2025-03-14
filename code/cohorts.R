@@ -20,6 +20,7 @@ remove_precompute <- function() {
   db_remove_table(name = in_schema(config('results_schema'), paste0(config('site'),'_ckddx')))
   db_remove_table(name = in_schema(config('results_schema'), paste0(config('site'),'_htnrx')))
   db_remove_table(name = in_schema(config('results_schema'), paste0(config('site'),'_pdl_pts')))
+  db_remove_table(name = in_schema(config('results_schema'), paste0(config('site'),'_iptwo')))
   
 }
 
